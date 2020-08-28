@@ -1,0 +1,12 @@
+.\keilout\misc.o: src\FWLIB\misc.c
+.\keilout\misc.o: .\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\misc.h
+.\keilout\misc.o: .\src\CMSIS\stm32f10x.h
+.\keilout\misc.o: .\src\CMSIS\core_cm3.h
+.\keilout\misc.o: D:\keil\ARM\ARMCC\Bin\..\include\stdint.h
+.\keilout\misc.o: .\src\CMSIS\system_stm32f10x.h
+.\keilout\misc.o: .\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\stm32f10x_conf.h
+.\keilout\misc.o: .\dependence\RTE_Components.h
+.\keilout\misc.o: .\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO\stm32f10x_gpio.h
+.\keilout\misc.o: .\src\CMSIS\stm32f10x.h
+.\keilout\misc.o: .\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC\stm32f10x_rcc.h
+.\keilout\misc.o: .\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\misc.h

@@ -1,0 +1,5 @@
+xpm_cdc.sv,systemverilog,xil_defaultlib,D:/Vivado/Vivado/2018.3/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv,incdir="../../../ipstatic"incdir="../../../ipstatic"
+xpm_VCOMP.vhd,vhdl,xpm,D:/Vivado/Vivado/2018.3/data/ip/xpm/xpm_VCOMP.vhd,incdir="../../../ipstatic"incdir="../../../ipstatic"
+nexys4ddr_sys_clock_mmcm2_clk_wiz.v,verilog,xil_defaultlib,C:/Users/80944/Desktop/u500nexys4ddrdevkit/obj/ip/nexys4ddr_sys_clock_mmcm2/nexys4ddr_sys_clock_mmcm2_clk_wiz.v,incdir="../../../ipstatic"incdir="../../../ipstatic"
+nexys4ddr_sys_clock_mmcm2.v,verilog,xil_defaultlib,C:/Users/80944/Desktop/u500nexys4ddrdevkit/obj/ip/nexys4ddr_sys_clock_mmcm2/nexys4ddr_sys_clock_mmcm2.v,incdir="../../../ipstatic"incdir="../../../ipstatic"
+glbl.v,Verilog,xil_defaultlib,glbl.v

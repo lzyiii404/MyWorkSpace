@@ -1,0 +1,4 @@
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+$finish called at time : 187585 ns : File "D:/MyWorkSpace/FPGA/learn/learn_uart/learn_uart.srcs/sim_1/new/tb_uart_rx.v" Line 84
+$finish called at time : 187585 ns : File "D:/MyWorkSpace/FPGA/learn/learn_uart/learn_uart.srcs/sim_1/new/tb_uart_rx.v" Line 84

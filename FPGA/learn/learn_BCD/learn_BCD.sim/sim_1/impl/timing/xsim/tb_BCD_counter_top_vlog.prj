@@ -1,0 +1,7 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"tb_BCD_counter_top_time_impl.v" \
+"../../../../../learn_BCD.srcs/sim_1/new/tb_BCD_counter_top.v" \
+
+# Do not sort compile order
+nosort

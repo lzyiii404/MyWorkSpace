@@ -1,0 +1,18 @@
+--cpu Cortex-M3
+".\keilout\bsp_usart.o"
+".\keilout\dma.o"
+".\keilout\led.o"
+".\keilout\main.o"
+".\keilout\stm32f10x_usart.o"
+".\keilout\stm32f10x_rcc.o"
+".\keilout\stm32f10x_gpio.o"
+".\keilout\misc.o"
+".\keilout\stm32f10x_it.o"
+".\keilout\stm32f10x_exti.o"
+".\keilout\stm32f10x_dma.o"
+".\keilout\startup_stm32f10x_hd.o"
+".\keilout\system_stm32f10x.o"
+--strict --scatter ".\keilOut\DMA.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\DMA.map" -o .\keilOut\DMA.axf

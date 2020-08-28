@@ -1,0 +1,4 @@
+D:\jetbrains\apps\CLion\ch-0\201.6668.86\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" D:\MyWorkSpace\CPP\MyCode\opencv\ocr
+-- Configuring done
+-- Generating done
+-- Build files have been written to: D:/MyWorkSpace/CPP/MyCode/opencv/ocr/cmake-build-debug

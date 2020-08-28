@@ -1,0 +1,30 @@
+{
+    "configurations": [
+        {
+            "name": "win32",
+            "includePath": [
+                "d:\\MyWorkSpace\\STM32\\Learn\\F103\\USART\\dependence",
+                "d:\\MyWorkSpace\\STM32\\Learn\\F103\\USART\\src",
+                "d:\\MyWorkSpace\\STM32\\Learn\\F103\\USART\\dependence\\build-in",
+                "d:\\MyWorkSpace\\STM32\\Learn\\F103\\USART\\dependence\\build-in\\STD",
+                "d:\\MyWorkSpace\\STM32\\Learn\\F103\\USART\\dependence\\STM32F1xx_DFP",
+                "d:\\MyWorkSpace\\STM32\\Learn\\F103\\USART\\dependence\\STM32F1xx_DFP\\Startup",
+                "d:\\MyWorkSpace\\STM32\\Learn\\F103\\USART\\dependence\\STM32F1xx_DFP\\StdPeriphDrivers.Framework",
+                "d:\\MyWorkSpace\\STM32\\Learn\\F103\\USART\\dependence\\STM32F1xx_DFP\\StdPeriphDrivers.GPIO",
+                "d:\\MyWorkSpace\\STM32\\Learn\\F103\\USART\\dependence\\STM32F1xx_DFP\\StdPeriphDrivers.RCC",
+                "d:\\MyWorkSpace\\STM32\\Learn\\F103\\USART\\dependence\\STM32F1xx_DFP\\StdPeriphDrivers.USART",
+                "d:\\MyWorkSpace\\STM32\\Learn\\F103\\USART\\dependence\\STM32F1xx_DFP\\StdPeriphDrivers.EXTI",
+                "D:\\keil\\ARM\\ARMCC\\include",
+                "c:\\Users\\80944\\.vscode\\extensions\\cl.eide-1.2.1\\bin\\ARM\\CMSIS\\Include",
+                "d:\\MyWorkSpace\\STM32\\Learn\\F103\\USART\\pack\\Keil\\STM32F1xx_DFP.2.3.0\\Device\\StdPeriph_Driver\\inc",
+                "d:\\MyWorkSpace\\STM32\\Learn\\F103\\USART\\pack\\Keil\\STM32F1xx_DFP.2.3.0\\Device\\Include"
+            ],
+            "defines": [
+                "USE_STDPERIPH_DRIVER",
+                "STM32F10X_HD"
+            ],
+            "intelliSenseMode": "${default}"
+        }
+    ],
+    "version": 4
+}

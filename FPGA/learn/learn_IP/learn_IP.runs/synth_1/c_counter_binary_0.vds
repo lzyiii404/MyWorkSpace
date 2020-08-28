@@ -1,0 +1,32 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Sat Apr 18 13:20:19 2020
+# Process ID: 15516
+# Current directory: D:/MyWorkSpace/FPGA/learn/learn_IP/learn_IP.runs/synth_1
+# Command line: vivado.exe -log c_counter_binary_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source c_counter_binary_0.tcl
+# Log file: D:/MyWorkSpace/FPGA/learn/learn_IP/learn_IP.runs/synth_1/c_counter_binary_0.vds
+# Journal file: D:/MyWorkSpace/FPGA/learn/learn_IP/learn_IP.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source c_counter_binary_0.tcl -notrace
+Command: synth_design -top c_counter_binary_0 -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 17376 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 368.848 ; gain = 101.457
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'c_counter_binary_0' [D:/MyWorkSpace/FPGA/learn/learn_IP/learn_IP.ip_user_files/ip/c_counter_binary_0/c_counter_binary_0_stub.v:17]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 424.406 ; gain = 157.016
+---------------------------------------------------------------------------------
+ERROR: Top module empty or no top module found.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 424.406 ; gain = 157.016
+INFO: [Common 17-83] Releasing license: Synthesis
+3 Infos, 0 Warnings, 0 Critical Warnings and 1 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Vivado Synthesis failed
+INFO: [Common 17-206] Exiting Vivado at Sat Apr 18 13:20:25 2020...

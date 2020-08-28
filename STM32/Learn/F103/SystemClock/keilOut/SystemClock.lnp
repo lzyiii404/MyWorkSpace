@@ -1,0 +1,15 @@
+--cpu Cortex-M3
+".\keilout\led.o"
+".\keilout\main.o"
+".\keilout\systick.o"
+".\keilout\stm32f10x_rcc.o"
+".\keilout\stm32f10x_gpio.o"
+".\keilout\misc.o"
+".\keilout\stm32f10x_it.o"
+".\keilout\startup_stm32f10x_hd.o"
+".\keilout\stm32f1xx_opt.o"
+".\keilout\system_stm32f10x.o"
+--library_type=microlib --strict --scatter ".\keilOut\SystemClock.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\SystemClock.map" -o .\keilOut\SystemClock.axf

@@ -1,0 +1,9 @@
+1.变量形式+变量名+[数组长度]
+2.变量名[n]   n为第几个元素
+3.eg.
+      int main(){
+        int tmp1[10] {0};   //法一
+
+        int tmp2[10];       //法二
+        memset(tmp2, 0);    //需使#include <string.h>
+      }

@@ -1,0 +1,10 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../learn_block_nonblock.srcs/sources_1/new/block_nonblock.v" \
+"../../../../learn_block_nonblock.srcs/sim_1/new/tb_block_nonblock.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

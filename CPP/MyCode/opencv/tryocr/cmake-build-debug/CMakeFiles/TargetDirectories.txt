@@ -1,0 +1,3 @@
+D:/MyWorkSpace/CPP/MyCode/opencv/tryocr/cmake-build-debug/CMakeFiles/tryocr.dir
+D:/MyWorkSpace/CPP/MyCode/opencv/tryocr/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/MyWorkSpace/CPP/MyCode/opencv/tryocr/cmake-build-debug/CMakeFiles/rebuild_cache.dir

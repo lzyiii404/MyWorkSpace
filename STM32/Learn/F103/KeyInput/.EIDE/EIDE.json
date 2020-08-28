@@ -1,0 +1,190 @@
+{
+    "name": "KeyInput",
+    "type": "ARM",
+    "mode": "Release",
+    "dependenceList": [
+        {
+            "groupName": "custom",
+            "depList": [
+                {
+                    "name": "default",
+                    "incList": [
+                        ".\\dependence",
+                        ".\\src\\STARTUP",
+                        ".\\src",
+                        ".\\dependence\\build-in",
+                        ".\\dependence\\build-in\\STD",
+                        ".\\src\\CMSIS",
+                        ".\\src\\FWLIB",
+                        ".\\src\\USER",
+                        ".\\src\\DOC",
+                        ".\\dependence\\STM32F1xx_DFP",
+                        ".\\dependence\\STM32F1xx_DFP\\StdPeriphDrivers.Framework",
+                        ".\\dependence\\STM32F1xx_DFP\\GPIO",
+                        ".\\dependence\\STM32F1xx_DFP\\USART",
+                        ".\\dependence\\STM32F1xx_DFP\\StdPeriphDrivers.RCC",
+                        ".\\dependence\\STM32F1xx_DFP\\StdPeriphDrivers.GPIO"
+                    ],
+                    "libList": [],
+                    "sourceDirList": [],
+                    "defineList": [
+                        "USE_STDPERIPH_DRIVER",
+                        "STM32F10X_HD"
+                    ]
+                }
+            ]
+        },
+        {
+            "groupName": "STM32F1xx_DFP",
+            "depList": [
+                {
+                    "name": "StdPeriphDrivers.Framework",
+                    "incList": [
+                        ".\\pack\\Keil\\STM32F1xx_DFP.2.3.0\\Device\\StdPeriph_Driver\\inc",
+                        ".\\dependence\\STM32F1xx_DFP\\StdPeriphDrivers.Framework"
+                    ],
+                    "sourceDirList": [
+                        ".\\dependence\\STM32F1xx_DFP\\StdPeriphDrivers.Framework"
+                    ],
+                    "libList": [],
+                    "defineList": []
+                },
+                {
+                    "name": "GPIO",
+                    "incList": [
+                        ".\\dependence\\STM32F1xx_DFP\\GPIO"
+                    ],
+                    "sourceDirList": [
+                        ".\\dependence\\STM32F1xx_DFP\\GPIO"
+                    ],
+                    "libList": [],
+                    "defineList": []
+                },
+                {
+                    "name": "USART",
+                    "incList": [
+                        ".\\dependence\\STM32F1xx_DFP\\USART"
+                    ],
+                    "sourceDirList": [
+                        ".\\dependence\\STM32F1xx_DFP\\USART"
+                    ],
+                    "libList": [],
+                    "defineList": []
+                },
+                {
+                    "name": "StdPeriphDrivers.RCC",
+                    "incList": [
+                        ".\\dependence\\STM32F1xx_DFP\\StdPeriphDrivers.RCC"
+                    ],
+                    "sourceDirList": [
+                        ".\\dependence\\STM32F1xx_DFP\\StdPeriphDrivers.RCC"
+                    ],
+                    "libList": [],
+                    "defineList": []
+                },
+                {
+                    "name": "StdPeriphDrivers.GPIO",
+                    "incList": [
+                        ".\\dependence\\STM32F1xx_DFP\\StdPeriphDrivers.GPIO"
+                    ],
+                    "sourceDirList": [
+                        ".\\dependence\\STM32F1xx_DFP\\StdPeriphDrivers.GPIO"
+                    ],
+                    "libList": [],
+                    "defineList": []
+                }
+            ]
+        },
+        {
+            "groupName": "build-in",
+            "depList": [
+                {
+                    "name": "STD",
+                    "incList": [
+                        "D:\\keil\\ARM\\ARMCC\\include",
+                        "c:\\Users\\80944\\.vscode\\extensions\\cl.eide-1.2.1\\bin\\ARM\\CMSIS\\Include",
+                        ".\\dependence\\build-in\\STD"
+                    ],
+                    "sourceDirList": [
+                        ".\\dependence\\build-in\\STD"
+                    ],
+                    "libList": [
+                        "D:\\keil\\ARM\\ARMCC\\lib",
+                        "D:\\keil\\ARM\\ARMCC\\lib\\cpplib",
+                        "D:\\keil\\ARM\\ARMCC\\lib\\armlib"
+                    ],
+                    "defineList": []
+                }
+            ]
+        }
+    ],
+    "compileConfig": {
+        "cpuType": "Cortex-M3",
+        "optimizationLevel": "0",
+        "optimizationFocusOnTime": false,
+        "useMicroLib": false,
+        "floatingPointHardware": "default",
+        "useCustomScatterFile": false,
+        "scatterFilePath": "undefined",
+        "storageLayout": {
+            "RAM": [
+                {
+                    "tag": "IRAM",
+                    "id": 1,
+                    "mem": {
+                        "startAddr": "0x20000000",
+                        "size": "0x00010000"
+                    },
+                    "isChecked": true,
+                    "noInit": false
+                }
+            ],
+            "ROM": [
+                {
+                    "tag": "IROM",
+                    "id": 1,
+                    "mem": {
+                        "startAddr": "0x08000000",
+                        "size": "0x00080000"
+                    },
+                    "isChecked": true,
+                    "isStartup": true
+                }
+            ]
+        },
+        "oneELFSection": true,
+        "strictANSIC": false,
+        "enumIsInt": false,
+        "charIsSigned": false,
+        "languageMode": "",
+        "splitLoad": false,
+        "thumbMode": false,
+        "compileWarning": true
+    },
+    "srcDirs": [
+        ".\\src",
+        ".\\dependence"
+    ],
+    "outDir": ".\\out",
+    "uploadConfig": {
+        "bin": "undefined",
+        "useGuiDownloader": false,
+        "ramInfo": [
+            {
+                "startAddr": "0x20000000",
+                "size": "0x00005000"
+            }
+        ],
+        "endianMode": "Little",
+        "cpuInfo": {
+            "vendor": "ST",
+            "cpuName": "STM32F103C8"
+        },
+        "proType": 1,
+        "launchAppAfterProgram": true,
+        "securesChip": false,
+        "speed": 5000
+    },
+    "packDir": ".\\pack\\Keil\\STM32F1xx_DFP.2.3.0",
+    "deviceName": "STM32F103ZE"
+}

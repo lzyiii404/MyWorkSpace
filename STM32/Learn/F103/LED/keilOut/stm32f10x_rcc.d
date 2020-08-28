@@ -1,0 +1,12 @@
+.\keilout\stm32f10x_rcc.o: src\FWLIB\stm32f10x_rcc.c
+.\keilout\stm32f10x_rcc.o: .\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC\stm32f10x_rcc.h
+.\keilout\stm32f10x_rcc.o: .\src\CMSIS\stm32f10x.h
+.\keilout\stm32f10x_rcc.o: .\src\CMSIS\core_cm3.h
+.\keilout\stm32f10x_rcc.o: D:\Keiluvision5\ARM\ARMCC\Bin\..\include\stdint.h
+.\keilout\stm32f10x_rcc.o: .\src\CMSIS\system_stm32f10x.h
+.\keilout\stm32f10x_rcc.o: .\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\stm32f10x_conf.h
+.\keilout\stm32f10x_rcc.o: .\dependence\RTE_Components.h
+.\keilout\stm32f10x_rcc.o: .\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO\stm32f10x_gpio.h
+.\keilout\stm32f10x_rcc.o: .\src\CMSIS\stm32f10x.h
+.\keilout\stm32f10x_rcc.o: .\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC\stm32f10x_rcc.h
+.\keilout\stm32f10x_rcc.o: .\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\misc.h

@@ -1,0 +1,22 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "cwd": "${workspaceRoot}",
+            "type": "cortex-debug",
+            "request": "launch",
+            "name": "cortex-debug-launch",
+            "servertype": "jlink",
+            "interface": "swd",
+            "executable": "./out/DMA.elf",
+            "runToMain": true,
+            "cpu": "cortex-m3"
+        },
+        {
+            "type": "STM32",
+            "request": "launch",
+            "name": "STM32-launch",
+            "program": "d:\\MyWorkSpace\\STM32\\Learn\\F103\\DMA\\out\\DMA.elf"
+        }
+    ]
+}

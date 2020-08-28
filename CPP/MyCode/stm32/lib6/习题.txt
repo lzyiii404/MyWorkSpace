@@ -1,0 +1,7 @@
+1.明确数据关系；简化对数据块的操作；简化参数列表；减少维护。
+2.声明1：struct A {int a, int b....};
+          A A1;
+  声明2：struct {int a, int b...} A1;
+  声明3: typedef struct {int a, int b...} A;
+          A A1;
+  使用: A1.a = 1;

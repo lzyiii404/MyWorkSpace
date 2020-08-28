@@ -1,0 +1,6 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/MyWorkSpace/ZYNQ/FPGA/ROM/ROM.srcs/sources_1/ip/rom_ip/sim/rom_ip.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rom_ip
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/MyWorkSpace/ZYNQ/FPGA/ROM/ROM.srcs/sources_1/new/rom_test.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rom_test
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/MyWorkSpace/ZYNQ/FPGA/ROM/ROM.srcs/sim_1/new/tb_rom.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_rom_test

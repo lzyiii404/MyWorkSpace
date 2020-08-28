@@ -1,0 +1,8 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../../HXE8.srcs/sources_1/ip/vio_0/hdl" \
+"tb_hex8_time_impl.v" \
+"../../../../../HXE8.srcs/sources_1/new/hex8.v" \
+"../../../../../HXE8.srcs/sim_1/new/tb_hex8.v" \
+
+# Do not sort compile order
+nosort

@@ -1,0 +1,9 @@
+0.6
+2018.3
+Dec  7 2018
+00:33:28
+D:/MyWorkSpace/FPGA/learn/learn_uart/learn_uart.sim/sim_1/behav/xsim/glbl.v,1544155481,verilog,,,,glbl,,,,,,,,
+D:/MyWorkSpace/FPGA/learn/learn_uart/learn_uart.srcs/sim_1/new/tb_uart_rx.v,1589726259,verilog,,,,tb_uart_rx,,,,,,,,
+D:/MyWorkSpace/FPGA/learn/learn_uart/learn_uart.srcs/sim_1/new/tb_uart_tx.v,1589357647,verilog,,,,tb_uart_tx,,,,,,,,
+D:/MyWorkSpace/FPGA/learn/learn_uart/learn_uart.srcs/sources_1/new/uart_rx.v,1589958812,verilog,,D:/MyWorkSpace/FPGA/learn/learn_uart/learn_uart.srcs/sources_1/new/uart_tx.v,,uart_rx,,,,,,,,
+D:/MyWorkSpace/FPGA/learn/learn_uart/learn_uart.srcs/sources_1/new/uart_tx.v,1589360642,verilog,,D:/MyWorkSpace/FPGA/learn/learn_uart/learn_uart.srcs/sim_1/new/tb_uart_rx.v,,uart_tx,,,,,,,,

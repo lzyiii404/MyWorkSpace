@@ -1,0 +1,15 @@
+.\keilout\bsp_usart.o: src\bsp_usart.c
+.\keilout\bsp_usart.o: src\bsp_usart.h
+.\keilout\bsp_usart.o: .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\stm32f10x.h
+.\keilout\bsp_usart.o: .\src\core_cm3.h
+.\keilout\bsp_usart.o: D:\keil\ARM\ARMCC\Bin\..\include\stdint.h
+.\keilout\bsp_usart.o: .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\system_stm32f10x.h
+.\keilout\bsp_usart.o: .\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\stm32f10x_conf.h
+.\keilout\bsp_usart.o: .\dependence\RTE_Components.h
+.\keilout\bsp_usart.o: .\dependence\STM32F1xx_DFP\StdPeriphDrivers.EXTI\stm32f10x_exti.h
+.\keilout\bsp_usart.o: .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\stm32f10x.h
+.\keilout\bsp_usart.o: .\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO\stm32f10x_gpio.h
+.\keilout\bsp_usart.o: .\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC\stm32f10x_rcc.h
+.\keilout\bsp_usart.o: .\dependence\STM32F1xx_DFP\StdPeriphDrivers.USART\stm32f10x_usart.h
+.\keilout\bsp_usart.o: .\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\misc.h
+.\keilout\bsp_usart.o: D:\keil\ARM\ARMCC\Bin\..\include\stdio.h

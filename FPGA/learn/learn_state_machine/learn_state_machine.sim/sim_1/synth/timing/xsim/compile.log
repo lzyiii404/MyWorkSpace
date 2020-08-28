@@ -1,0 +1,5 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/MyWorkSpace/FPGA/learn/learn_state_machine/learn_state_machine.sim/sim_1/synth/timing/xsim/tb_state_machine_time_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module state_machine
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/MyWorkSpace/FPGA/learn/learn_state_machine/learn_state_machine.srcs/sim_1/new/tb_state_machine.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_state_machine

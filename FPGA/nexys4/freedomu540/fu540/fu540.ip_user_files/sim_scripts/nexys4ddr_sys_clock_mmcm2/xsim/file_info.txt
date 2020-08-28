@@ -1,0 +1,3 @@
+nexys4ddr_sys_clock_mmcm2_clk_wiz.v,verilog,xil_defaultlib,C:/Users/80944/Desktop/u500nexys4ddrdevkit/obj/ip/nexys4ddr_sys_clock_mmcm2/nexys4ddr_sys_clock_mmcm2_clk_wiz.v,incdir="$ref_dir/../../../ipstatic"incdir="../../../ipstatic"
+nexys4ddr_sys_clock_mmcm2.v,verilog,xil_defaultlib,C:/Users/80944/Desktop/u500nexys4ddrdevkit/obj/ip/nexys4ddr_sys_clock_mmcm2/nexys4ddr_sys_clock_mmcm2.v,incdir="$ref_dir/../../../ipstatic"incdir="../../../ipstatic"
+glbl.v,Verilog,xil_defaultlib,glbl.v

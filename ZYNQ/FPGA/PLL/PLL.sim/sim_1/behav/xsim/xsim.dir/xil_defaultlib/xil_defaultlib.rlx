@@ -1,0 +1,10 @@
+0.6
+2018.3
+Dec  7 2018
+00:33:28
+D:/MyWorkSpace/ZYNQ/FPGA/PLL/PLL.sim/sim_1/behav/xsim/glbl.v,1544155481,verilog,,,,glbl,,,,,,,,
+D:/MyWorkSpace/ZYNQ/FPGA/PLL/PLL.srcs/sim_1/new/top_tb.v,1594131563,verilog,,,,tb_top,,,../../../../PLL.srcs/sources_1/ip/clk_wiz,,,,,
+D:/MyWorkSpace/ZYNQ/FPGA/PLL/PLL.srcs/sources_1/ip/clk_wiz/clk_wiz.v,1594127241,verilog,,D:/MyWorkSpace/ZYNQ/FPGA/PLL/PLL.srcs/sources_1/new/LED.v,,clk_wiz,,,../../../../PLL.srcs/sources_1/ip/clk_wiz,,,,,
+D:/MyWorkSpace/ZYNQ/FPGA/PLL/PLL.srcs/sources_1/ip/clk_wiz/clk_wiz_clk_wiz.v,1594127241,verilog,,D:/MyWorkSpace/ZYNQ/FPGA/PLL/PLL.srcs/sources_1/ip/clk_wiz/clk_wiz.v,,clk_wiz_clk_wiz,,,../../../../PLL.srcs/sources_1/ip/clk_wiz,,,,,
+D:/MyWorkSpace/ZYNQ/FPGA/PLL/PLL.srcs/sources_1/new/LED.v,1594129058,verilog,,D:/MyWorkSpace/ZYNQ/FPGA/PLL/PLL.srcs/sources_1/new/top.v,,LED_set,,,../../../../PLL.srcs/sources_1/ip/clk_wiz,,,,,
+D:/MyWorkSpace/ZYNQ/FPGA/PLL/PLL.srcs/sources_1/new/top.v,1594131867,verilog,,D:/MyWorkSpace/ZYNQ/FPGA/PLL/PLL.srcs/sim_1/new/top_tb.v,,top,,,../../../../PLL.srcs/sources_1/ip/clk_wiz,,,,,

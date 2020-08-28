@@ -1,0 +1,7 @@
+verilog xil_defaultlib --include "../../../ipstatic" \
+"C:/Users/80944/Desktop/u500nexys4ddrdevkit/obj/ip/nexys4ddr_sys_clock_mmcm2/nexys4ddr_sys_clock_mmcm2_clk_wiz.v" \
+"C:/Users/80944/Desktop/u500nexys4ddrdevkit/obj/ip/nexys4ddr_sys_clock_mmcm2/nexys4ddr_sys_clock_mmcm2.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

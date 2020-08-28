@@ -1,0 +1,491 @@
+- name: Insight_hart_0_Tile
+  fields:
+  - name: FPU_regfile
+    dimensions:
+    - 32
+    width: 33
+  instances:
+  - name: core
+    description: Signals from the commit stage of the pipeline
+    dimensions: []
+    interface:
+      name: Insight_hart_0_Core
+      fields:
+      - name: clock
+        dimensions: []
+        width: 1
+      - name: reset
+        dimensions: []
+        width: 1
+      - name: regfile
+        dimensions:
+        - 32
+        width: 32
+      instances:
+      - name: traces
+        dimensions:
+        - 2
+        interface:
+          name: Insight_hart_0_Commit
+          fields:
+          - name: pc
+            description: The address of "instruction"
+            dimensions: []
+            width: 32
+          - name: instruction
+            description: The instruction at the commit stage
+            dimensions: []
+            width: 32
+          - name: commit
+            description: High when "instruction" is retired
+            dimensions: []
+            width: 1
+          - name: exception
+            description: High when an exception has occurred
+            dimensions: []
+            width: 1
+          - name: interrupt_fire
+            description: High when an interrupt ocurrs at this instruction
+            dimensions: []
+            width: 1
+          - name: mode
+            description: |-
+              The MSB is high for debug mode.
+              The lower two bits are encoded as follows:
+              U-mode:   b00
+              S-mode:   b01
+              reserved: b10
+              M-mode:   b11
+            dimensions: []
+            width: 3
+          - name: rs1_raddr
+            dimensions: []
+            width: 5
+          - name: rs1_rdata
+            dimensions: []
+            width: 32
+          - name: rs2_raddr
+            dimensions: []
+            width: 5
+          - name: rs2_rdata
+            dimensions: []
+            width: 32
+          - name: rd_wen
+            dimensions: []
+            width: 1
+          - name: rd_waddr
+            dimensions: []
+            width: 5
+          - name: rd_wdata
+            dimensions: []
+            width: 32
+          instances: []
+      - name: dcache
+        description: View of the request and response interface between the core and the data cache
+        dimensions: []
+        interface:
+          name: Insight_hart_0_DCache
+          fields: []
+          instances:
+          - name: req
+            description: The dcache request issued by the instruction at the commit stage
+            dimensions: []
+            interface:
+              name: Insight_hart_0_DCache_Req
+              fields:
+              - name: valid
+                description: High when the retiring instruction sends a valid, acknowledged cache request
+                dimensions: []
+                width: 1
+              - name: addr
+                description: Address of the request, may be virtual or physical
+                dimensions: []
+                width: 32
+              - name: wmask
+                description: Byte mask of cache write request, zero if request is a read
+                dimensions: []
+                width: 4
+              - name: wdata
+                description: Data to be written if request is a write
+                dimensions: []
+                width: 32
+              - name: cache_transaction_id
+                dimensions: []
+                width: 6
+              - name: cache_transaction_cmd
+                description: |-
+                  Encoded as follows:
+                  M_XRD:       b00000 int load
+                  M_XWR:       b00001 int store
+                  M_PFR:       b00010 prefetch with intent to read
+                  M_PFW:       b00011 prefetch with intent to write
+                  M_XA_SWAP:   b00100 atomic swap
+                  M_FLUSH_ALL: b00101 flush all lines
+                  M_XLR:       b00110 load reserved
+                  M_XSC:       b00111 store conditional
+                  M_XA_ADD:    b01000 atomic add
+                  M_XA_XOR:    b01001 atomic XOR
+                  M_XA_OR:     b01010 atomic OR
+                  M_XA_AND:    b01011 atomic AND
+                  M_XA_MIN:    b01100 atomic signed minimum
+                  M_XA_MAX:    b01101 atomic signed maximum
+                  M_XA_MINU:   b01110 atomic unsigned minimum
+                  M_XA_MAXU:   b01111 atomic unsigned maximum
+                  M_FLUSH:     b10000 write back dirty data and cede R/W permissions
+                  M_PWR:       b10001 partial (masked) store
+                  M_PRODUCE:   b10010 write back dirty data and cede W permissions
+                  M_CLEAN:     b10011 write back dirty data and retain R/W permissions
+                  M_SFENCE:    b10100 flush TLB
+                dimensions: []
+                width: 5
+              - name: cache_transaction_signed
+                description: For loads, signedness of the access
+                dimensions: []
+                width: 1
+              - name: cache_transaction_size
+                description: log2 of the number of bytes in the access
+                dimensions: []
+                width: 2
+              instances: []
+          - name: resp
+            description: The response to some previous request
+            dimensions: []
+            interface:
+              name: Insight_hart_0_DCache_Resp
+              fields:
+              - name: miss
+                dimensions: []
+                width: 1
+              - name: valid
+                dimensions: []
+                width: 1
+              - name: addr
+                description: Address of the request, may be virtual or physical
+                dimensions: []
+                width: 32
+              - name: rdata
+                dimensions: []
+                width: 32
+              - name: cache_transaction_id
+                dimensions: []
+                width: 6
+              - name: cache_transaction_cmd
+                description: |-
+                  Encoded as follows:
+                  M_XRD:       b00000 int load
+                  M_XWR:       b00001 int store
+                  M_PFR:       b00010 prefetch with intent to read
+                  M_PFW:       b00011 prefetch with intent to write
+                  M_XA_SWAP:   b00100 atomic swap
+                  M_FLUSH_ALL: b00101 flush all lines
+                  M_XLR:       b00110 load reserved
+                  M_XSC:       b00111 store conditional
+                  M_XA_ADD:    b01000 atomic add
+                  M_XA_XOR:    b01001 atomic XOR
+                  M_XA_OR:     b01010 atomic OR
+                  M_XA_AND:    b01011 atomic AND
+                  M_XA_MIN:    b01100 atomic signed minimum
+                  M_XA_MAX:    b01101 atomic signed maximum
+                  M_XA_MINU:   b01110 atomic unsigned minimum
+                  M_XA_MAXU:   b01111 atomic unsigned maximum
+                  M_FLUSH:     b10000 write back dirty data and cede R/W permissions
+                  M_PWR:       b10001 partial (masked) store
+                  M_PRODUCE:   b10010 write back dirty data and cede W permissions
+                  M_CLEAN:     b10011 write back dirty data and retain R/W permissions
+                  M_SFENCE:    b10100 flush TLB
+                dimensions: []
+                width: 5
+              - name: cache_transaction_signed
+                description: For loads, signedness of the access
+                dimensions: []
+                width: 1
+              - name: cache_transaction_size
+                description: log2 of the number of bytes in the access
+                dimensions: []
+                width: 2
+              instances: []
+  - name: csr
+    description: Signals from the CSR file
+    dimensions: []
+    interface:
+      name: Insight_hart_0_CSRFile
+      fields:
+      - name: mcause
+        description: Machine trap cause
+        dimensions: []
+        width: 32
+      - name: mepc
+        description: Machine exception program counter
+        dimensions: []
+        width: 32
+      - name: hart_id
+        dimensions: []
+        width: 1
+      - name: csr_time
+        dimensions: []
+        width: 32
+      instances:
+      - name: mstatus
+        description: Machine status register
+        dimensions: []
+        interface:
+          name: Insight_MStatus
+          fields:
+          - name: isa
+            dimensions: []
+            width: 32
+          - name: dprv
+            dimensions: []
+            width: 2
+          - name: sd
+            dimensions: []
+            width: 1
+          - name: zero2
+            dimensions: []
+            width: 27
+          - name: sxl
+            dimensions: []
+            width: 2
+          - name: uxl
+            dimensions: []
+            width: 2
+          - name: sd_rv32
+            dimensions: []
+            width: 1
+          - name: zero1
+            dimensions: []
+            width: 8
+          - name: tsr
+            dimensions: []
+            width: 1
+          - name: tw
+            dimensions: []
+            width: 1
+          - name: tvm
+            dimensions: []
+            width: 1
+          - name: mxr
+            dimensions: []
+            width: 1
+          - name: sum
+            dimensions: []
+            width: 1
+          - name: mprv
+            dimensions: []
+            width: 1
+          - name: xs
+            dimensions: []
+            width: 2
+          - name: fs
+            dimensions: []
+            width: 2
+          - name: mpp
+            dimensions: []
+            width: 2
+          - name: hpp
+            dimensions: []
+            width: 2
+          - name: spp
+            dimensions: []
+            width: 1
+          - name: mpie
+            dimensions: []
+            width: 1
+          - name: hpie
+            dimensions: []
+            width: 1
+          - name: spie
+            dimensions: []
+            width: 1
+          - name: upie
+            dimensions: []
+            width: 1
+          - name: mie
+            dimensions: []
+            width: 1
+          - name: hie
+            dimensions: []
+            width: 1
+          - name: sie
+            dimensions: []
+            width: 1
+          - name: uie
+            dimensions: []
+            width: 1
+          instances: []
+      - name: counters
+        dimensions:
+        - 2
+        interface:
+          name: Insight_hart_0_Counter
+          fields:
+          - name: event_sel
+            dimensions: []
+            width: 32
+          - name: inc
+            dimensions: []
+            width: 2
+          instances: []
+  - name: l1_dcache_backside
+    description: The TileLink interface between the L1 and L2 data caches
+    dimensions: []
+    interface:
+      name: Insight_hart_0_TL_Bundle
+      fields: []
+      instances:
+      - name: A
+        dimensions: []
+        interface:
+          name: Insight_hart_0_A
+          fields:
+          - name: ready
+            dimensions: []
+            width: 1
+          - name: valid
+            dimensions: []
+            width: 1
+          - name: corrupt
+            dimensions: []
+            width: 1
+          - name: data
+            dimensions: []
+            width: 64
+          - name: mask
+            dimensions: []
+            width: 8
+          - name: address
+            dimensions: []
+            width: 32
+          - name: source
+            dimensions: []
+            width: 3
+          - name: size
+            dimensions: []
+            width: 4
+          - name: param
+            dimensions: []
+            width: 3
+          - name: opcode
+            dimensions: []
+            width: 3
+          instances: []
+      - name: B
+        dimensions: []
+        interface:
+          name: Insight_hart_0_B
+          fields:
+          - name: ready
+            dimensions: []
+            width: 1
+          - name: valid
+            dimensions: []
+            width: 1
+          - name: corrupt
+            dimensions: []
+            width: 1
+          - name: data
+            dimensions: []
+            width: 64
+          - name: mask
+            dimensions: []
+            width: 8
+          - name: address
+            dimensions: []
+            width: 32
+          - name: source
+            dimensions: []
+            width: 3
+          - name: size
+            dimensions: []
+            width: 4
+          - name: param
+            dimensions: []
+            width: 2
+          - name: opcode
+            dimensions: []
+            width: 3
+          instances: []
+      - name: C
+        dimensions: []
+        interface:
+          name: Insight_hart_0_C
+          fields:
+          - name: ready
+            dimensions: []
+            width: 1
+          - name: valid
+            dimensions: []
+            width: 1
+          - name: corrupt
+            dimensions: []
+            width: 1
+          - name: data
+            dimensions: []
+            width: 64
+          - name: address
+            dimensions: []
+            width: 32
+          - name: source
+            dimensions: []
+            width: 3
+          - name: size
+            dimensions: []
+            width: 4
+          - name: param
+            dimensions: []
+            width: 3
+          - name: opcode
+            dimensions: []
+            width: 3
+          instances: []
+      - name: D
+        dimensions: []
+        interface:
+          name: Insight_hart_0_D
+          fields:
+          - name: ready
+            dimensions: []
+            width: 1
+          - name: valid
+            dimensions: []
+            width: 1
+          - name: corrupt
+            dimensions: []
+            width: 1
+          - name: data
+            dimensions: []
+            width: 64
+          - name: denied
+            dimensions: []
+            width: 1
+          - name: sink
+            dimensions: []
+            width: 1
+          - name: source
+            dimensions: []
+            width: 3
+          - name: size
+            dimensions: []
+            width: 4
+          - name: param
+            dimensions: []
+            width: 2
+          - name: opcode
+            dimensions: []
+            width: 3
+          instances: []
+      - name: E
+        dimensions: []
+        interface:
+          name: Insight_hart_0_E
+          fields:
+          - name: ready
+            dimensions: []
+            width: 1
+          - name: valid
+            dimensions: []
+            width: 1
+          - name: sink
+            dimensions: []
+            width: 1
+          instances: []

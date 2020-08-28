@@ -1,0 +1,17 @@
+..\obj\process_data.o: ..\HARDWARE\LCD\process_Data.c
+..\obj\process_data.o: ..\HARDWARE\LCD\process_Data.h
+..\obj\process_data.o: ..\SYSTEM\delay\delay.h
+..\obj\process_data.o: ..\SYSTEM\sys\sys.h
+..\obj\process_data.o: ..\USER\stm32f10x.h
+..\obj\process_data.o: ..\CORE\core_cm3.h
+..\obj\process_data.o: D:\Keiluvision5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\process_data.o: ..\USER\system_stm32f10x.h
+..\obj\process_data.o: ..\USER\stm32f10x_conf.h
+..\obj\process_data.o: ..\STM32F10x_FWLib\inc\stm32f10x_dbgmcu.h
+..\obj\process_data.o: ..\USER\stm32f10x.h
+..\obj\process_data.o: ..\STM32F10x_FWLib\inc\stm32f10x_gpio.h
+..\obj\process_data.o: ..\STM32F10x_FWLib\inc\stm32f10x_rcc.h
+..\obj\process_data.o: ..\STM32F10x_FWLib\inc\stm32f10x_usart.h
+..\obj\process_data.o: ..\STM32F10x_FWLib\inc\misc.h
+..\obj\process_data.o: ..\HARDWARE\LCD\lcd.h
+..\obj\process_data.o: ..\USER\Data.h

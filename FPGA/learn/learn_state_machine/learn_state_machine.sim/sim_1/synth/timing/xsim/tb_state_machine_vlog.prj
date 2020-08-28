@@ -1,0 +1,7 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"tb_state_machine_time_synth.v" \
+"../../../../../learn_state_machine.srcs/sim_1/new/tb_state_machine.v" \
+
+# Do not sort compile order
+nosort

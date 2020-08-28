@@ -1,0 +1,3 @@
+D:\jetbrains\apps\CLion\ch-0\201.6668.86\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\bouncyBall.dir/objects.a
+C:\mingw64\bin\ar.exe cr CMakeFiles\bouncyBall.dir/objects.a @CMakeFiles\bouncyBall.dir\objects1.rsp
+C:\mingw64\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\bouncyBall.dir/objects.a -Wl,--no-whole-archive  -o bouncyBall.exe -Wl,--out-implib,libbouncyBall.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\bouncyBall.dir\linklibs.rsp

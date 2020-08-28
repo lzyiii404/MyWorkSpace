@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/MyWorkSpace/CPP/MyCode/Project/bouncyBall/header.h
+stdio.h
+-
+time.h
+-
+stdlib.h
+-
+windows.h
+-
+math.h
+-
+
+D:/MyWorkSpace/CPP/MyCode/Project/bouncyBall/main.cpp
+header.h
+D:/MyWorkSpace/CPP/MyCode/Project/bouncyBall/header.h
+

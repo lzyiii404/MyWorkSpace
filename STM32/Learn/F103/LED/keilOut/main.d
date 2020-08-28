@@ -1,0 +1,12 @@
+.\keilout\main.o: src\USER\main.c
+.\keilout\main.o: .\src\CMSIS\stm32f10x.h
+.\keilout\main.o: .\src\CMSIS\core_cm3.h
+.\keilout\main.o: D:\Keiluvision5\ARM\ARMCC\Bin\..\include\stdint.h
+.\keilout\main.o: .\src\CMSIS\system_stm32f10x.h
+.\keilout\main.o: .\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\stm32f10x_conf.h
+.\keilout\main.o: .\dependence\RTE_Components.h
+.\keilout\main.o: .\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO\stm32f10x_gpio.h
+.\keilout\main.o: .\src\CMSIS\stm32f10x.h
+.\keilout\main.o: .\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC\stm32f10x_rcc.h
+.\keilout\main.o: .\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\misc.h
+.\keilout\main.o: src\USER\led.h

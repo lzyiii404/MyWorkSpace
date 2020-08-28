@@ -1,0 +1,9 @@
+0.6
+2018.3
+Dec  7 2018
+00:33:28
+D:/MyWorkSpace/FPGA/learn/learn_BCD/learn_BCD.sim/sim_1/behav/xsim/glbl.v,1544155481,verilog,,,,glbl,,,,,,,,
+D:/MyWorkSpace/FPGA/learn/learn_BCD/learn_BCD.srcs/sim_1/new/tb_BCD_counter.v,1587198337,verilog,,,,tb_BCD_counter,,,,,,,,
+D:/MyWorkSpace/FPGA/learn/learn_BCD/learn_BCD.srcs/sim_1/new/tb_BCD_counter_top.v,1587204013,verilog,,,,tb_BCD_counter_top,,,,,,,,
+D:/MyWorkSpace/FPGA/learn/learn_BCD/learn_BCD.srcs/sources_1/new/BCD_counter.v,1587211764,verilog,,D:/MyWorkSpace/FPGA/learn/learn_BCD/learn_BCD.srcs/sources_1/new/BCD_counter_top.v,,BCD_counter,,,,,,,,
+D:/MyWorkSpace/FPGA/learn/learn_BCD/learn_BCD.srcs/sources_1/new/BCD_counter_top.v,1587202781,verilog,,D:/MyWorkSpace/FPGA/learn/learn_BCD/learn_BCD.srcs/sim_1/new/tb_BCD_counter_top.v,,BCD_counter_top,,,,,,,,

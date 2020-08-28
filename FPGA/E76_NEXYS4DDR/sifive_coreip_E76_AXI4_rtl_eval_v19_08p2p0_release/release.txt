@@ -1,0 +1,71 @@
+CoreIP E76 RTL Notes (Evaluation)
+    Release: v19.08p2p0
+    Date: 12/06/2019
+  
+Description
+    This is an evaluation release with limited address range, to be used for FPGA and software testing.
+    Note that some of the included tests may fail due to limited address range, omittted components, etc.
+    
+Changes in v19.08p2p0
+    * Fixed erratum in which the TDO pin may remain driven after reset
+Changes in v19.08p1p0
+    * Fixed erratum in which Debug.SBCS had incorrect reset value for SBACCESS
+    * Fixed typos and other minor documentation errors
+Changes in v19.08p0
+    * `32&nbsp;kiB` DLS is now present
+    * The Debug Module memory region is no longer accessible in M-mode
+    * Addition of the CDISCARD instruction for invalidating data cache lines without writeback
+
+Top-level ports:
+    See the Interfaces chapter in the user_guide.pdf located in the docs directory
+
+Generated Address Map
+    See the Memory Map chapter in the manual.pdf located in the docs directory
+
+High-level directory structure
+    base directory
+	├── arty_a7_100t-sifive
+        │   ├── coreip-arty-userguide-v19_08.pdf
+	│   ├── design.bit
+	│   └── design.mcs
+	├── docs
+	│   ├── manual.pdf
+	│   └── user_guide.pdf
+	├── freedom-e-sdk
+	│   ├── bsp
+	│   │   ├── design-arty
+	│   │   │   ├── design.dts
+	│   │   └── design-rtl
+	│   │   │   ├── design.dts
+	│   ├── freedom-metal
+	│   └── software
+	│       ├── coremark
+	│       ├── dhrystone
+	│       ├── empty
+	│       │   └── release
+	├── info
+	│   └── sifive_insight.yml
+	├── rtl
+	│   ├── design
+	│   │   ├── SiFive_CoreIPSubsystem.v
+	│   ├── memories
+	│   ├── sifive_insight
+	│   └── testbench
+	└── src
+
+Getting Started:
+FPGA bitstream and Software Tests
+The bitstream is located in the arty_a7_100t-sifive directory. The .mcs or .bit file can be flashed onto an Arty A7-100T using SiFive's Freedom Studio (available for download from www.sifive.com/boards). Software tests are available in the freedom-e-sdk directory. For information on how to use Freedom-E-SDK,  visit www.github.com/sifive/freedom-e-sdk; software examples and Freedom Metal are also described. Refer to coreip-arty-userguide for detailed information.
+
+RTL Simulation
+To build an RTL simulator, run the make command in the base directory. Three supported simulators are VCS, Xcelium, and Verilator. For the requirements and options used, read the Makefile. Refer to the Simulation Testbench chapter in the User Guide.
+    For example,
+    % make empty.vpd 
+    % make all-waves 
+    % make all-vcs-waves
+  
+Verilog Files
+The verilog modules are located in the rtl directory. The top-level synthesizable module name is SiFive_CoreIPSubsystem.v
+
+For additional support, contact the SiFive Help Desk at support@sifive.com
+

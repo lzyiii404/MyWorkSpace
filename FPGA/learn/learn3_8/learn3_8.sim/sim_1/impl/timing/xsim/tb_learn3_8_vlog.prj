@@ -1,0 +1,7 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"tb_learn3_8_time_impl.v" \
+"../../../../../learn3_8.srcs/sim_1/new/tb_my3_8.v" \
+
+# Do not sort compile order
+nosort

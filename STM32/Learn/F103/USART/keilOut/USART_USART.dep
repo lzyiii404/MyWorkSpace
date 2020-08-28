@@ -1,0 +1,149 @@
+Dependencies for Project 'USART', Target 'USART': (DO NOT MODIFY !)
+F (.\src\bsp_usart.c)(0x5E55DEBE)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\dependence -I .\src -I .\dependence\build-in -I .\dependence\build-in\STD -I .\dependence\STM32F1xx_DFP -I .\dependence\STM32F1xx_DFP\Startup -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.USART -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.ADC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.BKP -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.CAN -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.CEC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.CRC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.DAC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.DBGMCU -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.DMA -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.EXTI -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.Flash -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.FSMC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.I2C -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.IWDG -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.PWR -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.RTC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.SDIO -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.SPI -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.TIM -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.WWDG -I .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\StdPeriph_Driver\inc -I .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include-I D:\MyWorkSpace\STM32\Learn\F103\USART\RTE-I D:\keil\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-I D:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\keilout\bsp_usart.o --omf_browse .\keilout\bsp_usart.crf --depend .\keilout\bsp_usart.d)
+I (src\bsp_usart.h)(0x5E55DE8D)
+I (.\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\stm32f10x.h)(0x58259ADC)
+I (.\src\core_cm3.h)(0x5E4E12E0)
+I (D:\keil\ARM\ARMCC\include\stdint.h)(0x569DEA3A)
+I (.\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\system_stm32f10x.h)(0x58259ADC)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\stm32f10x_conf.h)(0x52FA5040)
+I (.\dependence\RTE_Components.h)(0x5E551044)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.EXTI\stm32f10x_exti.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO\stm32f10x_gpio.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC\stm32f10x_rcc.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.USART\stm32f10x_usart.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\misc.h)(0x52FA4D8F)
+I (D:\keil\ARM\ARMCC\include\stdio.h)(0x569DEA3A)
+F (.\src\bsp_usart.h)(0x5E55DE8D)()
+F (.\src\core_cm3.h)(0x5E4E12E0)()
+F (.\src\led.c)(0x5E54D970)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\dependence -I .\src -I .\dependence\build-in -I .\dependence\build-in\STD -I .\dependence\STM32F1xx_DFP -I .\dependence\STM32F1xx_DFP\Startup -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.USART -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.ADC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.BKP -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.CAN -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.CEC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.CRC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.DAC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.DBGMCU -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.DMA -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.EXTI -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.Flash -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.FSMC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.I2C -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.IWDG -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.PWR -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.RTC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.SDIO -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.SPI -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.TIM -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.WWDG -I .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\StdPeriph_Driver\inc -I .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include-I D:\MyWorkSpace\STM32\Learn\F103\USART\RTE-I D:\keil\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-I D:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\keilout\led.o --omf_browse .\keilout\led.crf --depend .\keilout\led.d)
+I (src\led.h)(0x5E54D970)
+I (.\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\stm32f10x.h)(0x58259ADC)
+I (.\src\core_cm3.h)(0x5E4E12E0)
+I (D:\keil\ARM\ARMCC\include\stdint.h)(0x569DEA3A)
+I (.\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\system_stm32f10x.h)(0x58259ADC)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\stm32f10x_conf.h)(0x52FA5040)
+I (.\dependence\RTE_Components.h)(0x5E551044)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.EXTI\stm32f10x_exti.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO\stm32f10x_gpio.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC\stm32f10x_rcc.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.USART\stm32f10x_usart.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\misc.h)(0x52FA4D8F)
+F (.\src\led.h)(0x5E54D970)()
+F (.\src\main.c)(0x5E55DD99)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\dependence -I .\src -I .\dependence\build-in -I .\dependence\build-in\STD -I .\dependence\STM32F1xx_DFP -I .\dependence\STM32F1xx_DFP\Startup -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.USART -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.ADC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.BKP -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.CAN -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.CEC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.CRC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.DAC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.DBGMCU -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.DMA -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.EXTI -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.Flash -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.FSMC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.I2C -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.IWDG -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.PWR -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.RTC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.SDIO -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.SPI -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.TIM -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.WWDG -I .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\StdPeriph_Driver\inc -I .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include-I D:\MyWorkSpace\STM32\Learn\F103\USART\RTE-I D:\keil\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-I D:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\keilout\main.o --omf_browse .\keilout\main.crf --depend .\keilout\main.d)
+I (.\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\stm32f10x.h)(0x58259ADC)
+I (.\src\core_cm3.h)(0x5E4E12E0)
+I (D:\keil\ARM\ARMCC\include\stdint.h)(0x569DEA3A)
+I (.\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\system_stm32f10x.h)(0x58259ADC)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\stm32f10x_conf.h)(0x52FA5040)
+I (.\dependence\RTE_Components.h)(0x5E551044)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.EXTI\stm32f10x_exti.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO\stm32f10x_gpio.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC\stm32f10x_rcc.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.USART\stm32f10x_usart.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\misc.h)(0x52FA4D8F)
+I (src\bsp_usart.h)(0x5E55DE8D)
+I (D:\keil\ARM\ARMCC\include\stdio.h)(0x569DEA3A)
+I (src\led.h)(0x5E54D970)
+F (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.USART\stm32f10x_usart.c)(0x52FA4D8F)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\dependence -I .\src -I .\dependence\build-in -I .\dependence\build-in\STD -I .\dependence\STM32F1xx_DFP -I .\dependence\STM32F1xx_DFP\Startup -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.USART -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.ADC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.BKP -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.CAN -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.CEC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.CRC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.DAC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.DBGMCU -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.DMA -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.EXTI -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.Flash -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.FSMC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.I2C -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.IWDG -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.PWR -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.RTC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.SDIO -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.SPI -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.TIM -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.WWDG -I .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\StdPeriph_Driver\inc -I .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include-I D:\MyWorkSpace\STM32\Learn\F103\USART\RTE-I D:\keil\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-I D:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\keilout\stm32f10x_usart.o --omf_browse .\keilout\stm32f10x_usart.crf --depend .\keilout\stm32f10x_usart.d)
+I (dependence\STM32F1xx_DFP\StdPeriphDrivers.USART\stm32f10x_usart.h)(0x52FA4D8F)
+I (.\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\stm32f10x.h)(0x58259ADC)
+I (.\src\core_cm3.h)(0x5E4E12E0)
+I (D:\keil\ARM\ARMCC\include\stdint.h)(0x569DEA3A)
+I (.\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\system_stm32f10x.h)(0x58259ADC)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\stm32f10x_conf.h)(0x52FA5040)
+I (.\dependence\RTE_Components.h)(0x5E551044)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.EXTI\stm32f10x_exti.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO\stm32f10x_gpio.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC\stm32f10x_rcc.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.USART\stm32f10x_usart.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\misc.h)(0x52FA4D8F)
+F (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.USART\stm32f10x_usart.h)(0x52FA4D8F)()
+F (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC\stm32f10x_rcc.c)(0x52FA4D8F)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\dependence -I .\src -I .\dependence\build-in -I .\dependence\build-in\STD -I .\dependence\STM32F1xx_DFP -I .\dependence\STM32F1xx_DFP\Startup -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.USART -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.ADC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.BKP -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.CAN -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.CEC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.CRC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.DAC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.DBGMCU -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.DMA -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.EXTI -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.Flash -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.FSMC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.I2C -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.IWDG -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.PWR -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.RTC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.SDIO -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.SPI -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.TIM -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.WWDG -I .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\StdPeriph_Driver\inc -I .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include-I D:\MyWorkSpace\STM32\Learn\F103\USART\RTE-I D:\keil\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-I D:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\keilout\stm32f10x_rcc.o --omf_browse .\keilout\stm32f10x_rcc.crf --depend .\keilout\stm32f10x_rcc.d)
+I (dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC\stm32f10x_rcc.h)(0x52FA4D8F)
+I (.\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\stm32f10x.h)(0x58259ADC)
+I (.\src\core_cm3.h)(0x5E4E12E0)
+I (D:\keil\ARM\ARMCC\include\stdint.h)(0x569DEA3A)
+I (.\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\system_stm32f10x.h)(0x58259ADC)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\stm32f10x_conf.h)(0x52FA5040)
+I (.\dependence\RTE_Components.h)(0x5E551044)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.EXTI\stm32f10x_exti.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO\stm32f10x_gpio.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC\stm32f10x_rcc.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.USART\stm32f10x_usart.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\misc.h)(0x52FA4D8F)
+F (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC\stm32f10x_rcc.h)(0x52FA4D8F)()
+F (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO\stm32f10x_gpio.c)(0x52FA4D8F)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\dependence -I .\src -I .\dependence\build-in -I .\dependence\build-in\STD -I .\dependence\STM32F1xx_DFP -I .\dependence\STM32F1xx_DFP\Startup -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.USART -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.ADC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.BKP -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.CAN -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.CEC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.CRC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.DAC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.DBGMCU -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.DMA -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.EXTI -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.Flash -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.FSMC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.I2C -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.IWDG -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.PWR -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.RTC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.SDIO -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.SPI -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.TIM -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.WWDG -I .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\StdPeriph_Driver\inc -I .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include-I D:\MyWorkSpace\STM32\Learn\F103\USART\RTE-I D:\keil\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-I D:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\keilout\stm32f10x_gpio.o --omf_browse .\keilout\stm32f10x_gpio.crf --depend .\keilout\stm32f10x_gpio.d)
+I (dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO\stm32f10x_gpio.h)(0x52FA4D8F)
+I (.\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\stm32f10x.h)(0x58259ADC)
+I (.\src\core_cm3.h)(0x5E4E12E0)
+I (D:\keil\ARM\ARMCC\include\stdint.h)(0x569DEA3A)
+I (.\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\system_stm32f10x.h)(0x58259ADC)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\stm32f10x_conf.h)(0x52FA5040)
+I (.\dependence\RTE_Components.h)(0x5E551044)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.EXTI\stm32f10x_exti.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO\stm32f10x_gpio.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC\stm32f10x_rcc.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.USART\stm32f10x_usart.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\misc.h)(0x52FA4D8F)
+F (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO\stm32f10x_gpio.h)(0x52FA4D8F)()
+F (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\misc.c)(0x52FA4D8F)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\dependence -I .\src -I .\dependence\build-in -I .\dependence\build-in\STD -I .\dependence\STM32F1xx_DFP -I .\dependence\STM32F1xx_DFP\Startup -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.USART -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.ADC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.BKP -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.CAN -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.CEC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.CRC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.DAC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.DBGMCU -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.DMA -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.EXTI -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.Flash -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.FSMC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.I2C -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.IWDG -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.PWR -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.RTC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.SDIO -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.SPI -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.TIM -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.WWDG -I .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\StdPeriph_Driver\inc -I .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include-I D:\MyWorkSpace\STM32\Learn\F103\USART\RTE-I D:\keil\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-I D:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\keilout\misc_1.o --omf_browse .\keilout\misc_1.crf --depend .\keilout\misc_1.d)
+I (dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\misc.h)(0x52FA4D8F)
+I (.\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\stm32f10x.h)(0x58259ADC)
+I (.\src\core_cm3.h)(0x5E4E12E0)
+I (D:\keil\ARM\ARMCC\include\stdint.h)(0x569DEA3A)
+I (.\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\system_stm32f10x.h)(0x58259ADC)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\stm32f10x_conf.h)(0x52FA5040)
+I (.\dependence\RTE_Components.h)(0x5E551044)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.EXTI\stm32f10x_exti.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO\stm32f10x_gpio.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC\stm32f10x_rcc.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.USART\stm32f10x_usart.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\misc.h)(0x52FA4D8F)
+F (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\misc.h)(0x52FA4D8F)()
+F (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\stm32f10x_conf.h)(0x52FA5040)()
+F (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\stm32f10x_it.c)(0x5E55DEDF)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\dependence -I .\src -I .\dependence\build-in -I .\dependence\build-in\STD -I .\dependence\STM32F1xx_DFP -I .\dependence\STM32F1xx_DFP\Startup -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.USART -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.ADC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.BKP -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.CAN -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.CEC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.CRC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.DAC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.DBGMCU -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.DMA -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.EXTI -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.Flash -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.FSMC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.I2C -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.IWDG -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.PWR -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.RTC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.SDIO -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.SPI -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.TIM -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.WWDG -I .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\StdPeriph_Driver\inc -I .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include-I D:\MyWorkSpace\STM32\Learn\F103\USART\RTE-I D:\keil\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-I D:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\keilout\stm32f10x_it.o --omf_browse .\keilout\stm32f10x_it.crf --depend .\keilout\stm32f10x_it.d)
+I (dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\stm32f10x_it.h)(0x52FA4D8F)
+I (.\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\stm32f10x.h)(0x58259ADC)
+I (.\src\core_cm3.h)(0x5E4E12E0)
+I (D:\keil\ARM\ARMCC\include\stdint.h)(0x569DEA3A)
+I (.\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\system_stm32f10x.h)(0x58259ADC)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\stm32f10x_conf.h)(0x52FA5040)
+I (.\dependence\RTE_Components.h)(0x5E551044)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.EXTI\stm32f10x_exti.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO\stm32f10x_gpio.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC\stm32f10x_rcc.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.USART\stm32f10x_usart.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\misc.h)(0x52FA4D8F)
+I (.\src\bsp_usart.h)(0x5E55DE8D)
+I (D:\keil\ARM\ARMCC\include\stdio.h)(0x569DEA3A)
+I (.\src\led.h)(0x5E54D970)
+F (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\stm32f10x_it.h)(0x52FA4D8F)()
+F (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.EXTI\stm32f10x_exti.c)(0x52FA4D8F)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\dependence -I .\src -I .\dependence\build-in -I .\dependence\build-in\STD -I .\dependence\STM32F1xx_DFP -I .\dependence\STM32F1xx_DFP\Startup -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.USART -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.ADC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.BKP -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.CAN -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.CEC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.CRC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.DAC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.DBGMCU -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.DMA -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.EXTI -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.Flash -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.FSMC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.I2C -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.IWDG -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.PWR -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.RTC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.SDIO -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.SPI -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.TIM -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.WWDG -I .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\StdPeriph_Driver\inc -I .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include-I D:\MyWorkSpace\STM32\Learn\F103\USART\RTE-I D:\keil\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-I D:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\keilout\stm32f10x_exti.o --omf_browse .\keilout\stm32f10x_exti.crf --depend .\keilout\stm32f10x_exti.d)
+I (dependence\STM32F1xx_DFP\StdPeriphDrivers.EXTI\stm32f10x_exti.h)(0x52FA4D8F)
+I (.\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\stm32f10x.h)(0x58259ADC)
+I (.\src\core_cm3.h)(0x5E4E12E0)
+I (D:\keil\ARM\ARMCC\include\stdint.h)(0x569DEA3A)
+I (.\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\system_stm32f10x.h)(0x58259ADC)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\stm32f10x_conf.h)(0x52FA5040)
+I (.\dependence\RTE_Components.h)(0x5E551044)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.EXTI\stm32f10x_exti.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO\stm32f10x_gpio.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC\stm32f10x_rcc.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.USART\stm32f10x_usart.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\misc.h)(0x52FA4D8F)
+F (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.EXTI\stm32f10x_exti.h)(0x52FA4D8F)()
+F (.\dependence\STM32F1xx_DFP\Startup\RTE_Device.h)(0x59283406)()
+F (.\dependence\STM32F1xx_DFP\Startup\startup_stm32f10x_hd.s)(0x58259ADC)(--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1"-I D:\MyWorkSpace\STM32\Learn\F103\USART\RTE-I D:\keil\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-I D:\keil\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 518" --pd "STM32F10X_HD SETA 1"--list .\listings\startup_stm32f10x_hd.lst --xref -o .\keilout\startup_stm32f10x_hd.o --depend .\keilout\startup_stm32f10x_hd.d)
+F (.\dependence\STM32F1xx_DFP\Startup\system_stm32f10x.c)(0x58259ADC)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\dependence -I .\src -I .\dependence\build-in -I .\dependence\build-in\STD -I .\dependence\STM32F1xx_DFP -I .\dependence\STM32F1xx_DFP\Startup -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.USART -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.ADC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.BKP -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.CAN -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.CEC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.CRC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.DAC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.DBGMCU -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.DMA -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.EXTI -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.Flash -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.FSMC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.I2C -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.IWDG -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.PWR -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.RTC -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.SDIO -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.SPI -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.TIM -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.WWDG -I .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\StdPeriph_Driver\inc -I .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include-I D:\MyWorkSpace\STM32\Learn\F103\USART\RTE-I D:\keil\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-I D:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\keilout\system_stm32f10x.o --omf_browse .\keilout\system_stm32f10x.crf --depend .\keilout\system_stm32f10x.d)
+I (.\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\stm32f10x.h)(0x58259ADC)
+I (.\src\core_cm3.h)(0x5E4E12E0)
+I (D:\keil\ARM\ARMCC\include\stdint.h)(0x569DEA3A)
+I (.\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\system_stm32f10x.h)(0x58259ADC)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\stm32f10x_conf.h)(0x52FA5040)
+I (.\dependence\RTE_Components.h)(0x5E551044)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.EXTI\stm32f10x_exti.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO\stm32f10x_gpio.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC\stm32f10x_rcc.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.USART\stm32f10x_usart.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\misc.h)(0x52FA4D8F)
+F (.\dependence\RTE_Components.h)(0x5E551044)()

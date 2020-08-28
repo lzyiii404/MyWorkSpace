@@ -1,0 +1,12 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../key.srcs/sources_1/new/ctrl_led.v" \
+"../../../../key.srcs/sources_1/new/key_input_debounce.v" \
+"../../../../key.srcs/sources_1/new/top_key_add_sub.v" \
+"../../../../key.srcs/sim_1/new/tb_top.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

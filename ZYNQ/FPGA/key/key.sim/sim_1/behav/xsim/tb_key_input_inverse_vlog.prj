@@ -1,0 +1,10 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../key.srcs/sources_1/new/key_input_inverse.v" \
+"../../../../key.srcs/sim_1/new/key_input_inverse_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

@@ -1,0 +1,7 @@
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+Warning : input CLKIN1 period and attribute CLKIN1_PERIOD on PLLE2_ADV instance tb_test_FIFO.u_test_FIFO.u0_clk_PLL.inst.plle2_adv_inst are not same.
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+Warning : input CLKIN1 period and attribute CLKIN1_PERIOD on PLLE2_ADV instance tb_test_FIFO.u_test_FIFO.u0_clk_PLL.inst.plle2_adv_inst are not same.
+$finish called at time : 100 us : File "D:/MyWorkSpace/ZYNQ/FPGA/FIFO/FIFO.srcs/sim_1/new/tb_test_fifo.v" Line 35

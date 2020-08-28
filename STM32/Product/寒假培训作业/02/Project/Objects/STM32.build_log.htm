@@ -1,0 +1,92 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¦ÌVision V5.18.0.0
+Copyright (C) 2016 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: a 809440459@qq.com, a, LIC=AK1X7-ECEVL-RD8K3-AF4C0-HQE6Y-ZX0VF
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Professional  Version: 5.18
+Toolchain Path:  D:\keil\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 1 (build 61)
+Assembler:       Armasm.exe V5.06 update 1 (build 61)
+Linker/Locator:  ArmLink.exe V5.06 update 1 (build 61)
+Library Manager: ArmAr.exe V5.06 update 1 (build 61)
+Hex Converter:   FromElf.exe V5.06 update 1 (build 61)
+CPU DLL:         SARMCM3.DLL V5.18
+Dialog DLL:      DCM.DLL V1.13.6.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V2.0.18.0
+Dialog DLL:      TCM.DLL V1.14.8.0
+ 
+<h2>Project:</h2>
+D:\MyWorkSpace\STM32\Product\02\Project\STM32.uvprojx
+Project File Date:  02/22/2020
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 1 (build 61)', folder: 'D:\keil\ARM\ARMCC\Bin'
+Rebuild target 'Target 1'
+compiling Timer.c...
+..\HW\Timer\Timer.c(20): error:  #5: cannot open source input file "stm32f10x_tim.h": No such file or directory
+  #include "stm32f10x_tim.h"
+..\HW\Timer\Timer.c: 0 warnings, 1 error
+compiling LED.c...
+..\App\LED\LED.c(20): error:  #5: cannot open source input file "stm32f10x_conf.h": No such file or directory
+  #include <stm32f10x_conf.h>
+..\App\LED\LED.c: 0 warnings, 1 error
+compiling stm32f10x_flash.c...
+..\FW\src\stm32f10x_flash.c(23): error:  #5: cannot open source input file "stm32f10x_flash.h": No such file or directory
+  #include "stm32f10x_flash.h"
+..\FW\src\stm32f10x_flash.c: 0 warnings, 1 error
+compiling Queue.c...
+..\HW\UART1\Queue.h(22): error:  #5: cannot open source input file "DataType.h": No such file or directory
+  #include "DataType.h"
+..\HW\UART1\Queue.c: 0 warnings, 1 error
+compiling stm32f10x_gpio.c...
+..\FW\src\stm32f10x_gpio.c(23): error:  #5: cannot open source input file "stm32f10x_gpio.h": No such file or directory
+  #include "stm32f10x_gpio.h"
+..\FW\src\stm32f10x_gpio.c: 0 warnings, 1 error
+compiling Main.c...
+..\App\Main\Main.c(20): error:  #5: cannot open source input file "stm32f10x_conf.h": No such file or directory
+  #include <stm32f10x_conf.h>
+..\App\Main\Main.c: 0 warnings, 1 error
+compiling RCC.c...
+..\HW\RCC\RCC.h(22): error:  #5: cannot open source input file "DataType.h": No such file or directory
+  #include "DataType.h"
+..\HW\RCC\RCC.c: 0 warnings, 1 error
+compiling stm32f10x_rcc.c...
+..\FW\src\stm32f10x_rcc.c(23): error:  #5: cannot open source input file "stm32f10x_rcc.h": No such file or directory
+  #include "stm32f10x_rcc.h"
+..\FW\src\stm32f10x_rcc.c: 0 warnings, 1 error
+compiling stm32f10x_tim.c...
+..\FW\src\stm32f10x_tim.c(23): error:  #5: cannot open source input file "stm32f10x_tim.h": No such file or directory
+  #include "stm32f10x_tim.h"
+..\FW\src\stm32f10x_tim.c: 0 warnings, 1 error
+compiling stm32f10x_usart.c...
+..\FW\src\stm32f10x_usart.c(23): error:  #5: cannot open source input file "stm32f10x_usart.h": No such file or directory
+  #include "stm32f10x_usart.h"
+..\FW\src\stm32f10x_usart.c: 0 warnings, 1 error
+compiling NVIC.c...
+..\ARM\NVIC\NVIC.h(22): error:  #5: cannot open source input file "DataType.h": No such file or directory
+  #include "DataType.h"
+..\ARM\NVIC\NVIC.c: 0 warnings, 1 error
+compiling SysTick.c...
+..\ARM\SysTick\SysTick.h(22): error:  #5: cannot open source input file "DataType.h": No such file or directory
+  #include "DataType.h"
+..\ARM\SysTick\SysTick.c: 0 warnings, 1 error
+compiling core_cm3.c...
+compiling stm32f10x_it.c...
+compiling system_stm32f10x.c...
+".\Objects\STM32.axf" - 12 Error(s), 0 Warning(s).
+
+<h2>Collection of Component include folders:</h2>
+  D:\MyWorkSpace\STM32\Product\02\Project\RTE
+  D:\keil\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+Target not created.
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>

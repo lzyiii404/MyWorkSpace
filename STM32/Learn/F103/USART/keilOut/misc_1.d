@@ -1,0 +1,14 @@
+.\keilout\misc_1.o: dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\misc.c
+.\keilout\misc_1.o: dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\misc.h
+.\keilout\misc_1.o: .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\stm32f10x.h
+.\keilout\misc_1.o: .\src\core_cm3.h
+.\keilout\misc_1.o: D:\keil\ARM\ARMCC\Bin\..\include\stdint.h
+.\keilout\misc_1.o: .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\system_stm32f10x.h
+.\keilout\misc_1.o: .\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\stm32f10x_conf.h
+.\keilout\misc_1.o: .\dependence\RTE_Components.h
+.\keilout\misc_1.o: .\dependence\STM32F1xx_DFP\StdPeriphDrivers.EXTI\stm32f10x_exti.h
+.\keilout\misc_1.o: .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\stm32f10x.h
+.\keilout\misc_1.o: .\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO\stm32f10x_gpio.h
+.\keilout\misc_1.o: .\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC\stm32f10x_rcc.h
+.\keilout\misc_1.o: .\dependence\STM32F1xx_DFP\StdPeriphDrivers.USART\stm32f10x_usart.h
+.\keilout\misc_1.o: .\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\misc.h

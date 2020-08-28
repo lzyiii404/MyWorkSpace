@@ -1,0 +1,101 @@
+Dependencies for Project 'SystemClock', Target 'SystemClock': (DO NOT MODIFY !)
+F (.\src\led.c)(0x5E5486B1)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\dependence -I .\src -I .\dependence\build-in -I .\dependence\build-in\STD -I .\dependence\STM32F1xx_DFP -I .\dependence\STM32F1xx_DFP\Startup -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC -I .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include -I .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\StdPeriph_Driver\inc-I D:\Keiluvision5\ARM\RV31\INC-I D:\Keiluvision5\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o .\keilout\led.o --omf_browse .\keilout\led.crf --depend .\keilout\led.d)
+I (src\led.h)(0x5ED1150E)
+I (.\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\stm32f10x.h)(0x58259ADC)
+I (.\dependence\STM32F1xx_DFP\Startup\core_cm3.h)(0x5E4E12E0)
+I (D:\Keiluvision5\ARM\ARMCC\include\stdint.h)(0x569DEA3A)
+I (.\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\system_stm32f10x.h)(0x58259ADC)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\stm32f10x_conf.h)(0x52FA5040)
+I (.\dependence\RTE_Components.h)(0x5E5486E2)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO\stm32f10x_gpio.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC\stm32f10x_rcc.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\misc.h)(0x52FA4D8F)
+F (.\src\led.h)(0x5ED1150E)()
+F (.\src\main.c)(0x5E549066)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\dependence -I .\src -I .\dependence\build-in -I .\dependence\build-in\STD -I .\dependence\STM32F1xx_DFP -I .\dependence\STM32F1xx_DFP\Startup -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC -I .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include -I .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\StdPeriph_Driver\inc-I D:\Keiluvision5\ARM\RV31\INC-I D:\Keiluvision5\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o .\keilout\main.o --omf_browse .\keilout\main.crf --depend .\keilout\main.d)
+I (.\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\stm32f10x.h)(0x58259ADC)
+I (.\dependence\STM32F1xx_DFP\Startup\core_cm3.h)(0x5E4E12E0)
+I (D:\Keiluvision5\ARM\ARMCC\include\stdint.h)(0x569DEA3A)
+I (.\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\system_stm32f10x.h)(0x58259ADC)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\stm32f10x_conf.h)(0x52FA5040)
+I (.\dependence\RTE_Components.h)(0x5E5486E2)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO\stm32f10x_gpio.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC\stm32f10x_rcc.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\misc.h)(0x52FA4D8F)
+I (src\led.h)(0x5ED1150E)
+I (src\Systick.h)(0x5E549014)
+F (.\src\Systick.c)(0x5E548EAE)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\dependence -I .\src -I .\dependence\build-in -I .\dependence\build-in\STD -I .\dependence\STM32F1xx_DFP -I .\dependence\STM32F1xx_DFP\Startup -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC -I .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include -I .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\StdPeriph_Driver\inc-I D:\Keiluvision5\ARM\RV31\INC-I D:\Keiluvision5\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o .\keilout\systick.o --omf_browse .\keilout\systick.crf --depend .\keilout\systick.d)
+I (src\Systick.h)(0x5E549014)
+I (.\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\stm32f10x.h)(0x58259ADC)
+I (.\dependence\STM32F1xx_DFP\Startup\core_cm3.h)(0x5E4E12E0)
+I (D:\Keiluvision5\ARM\ARMCC\include\stdint.h)(0x569DEA3A)
+I (.\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\system_stm32f10x.h)(0x58259ADC)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\stm32f10x_conf.h)(0x52FA5040)
+I (.\dependence\RTE_Components.h)(0x5E5486E2)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO\stm32f10x_gpio.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC\stm32f10x_rcc.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\misc.h)(0x52FA4D8F)
+F (.\src\Systick.h)(0x5E549014)()
+F (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC\stm32f10x_rcc.c)(0x52FA4D8F)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\dependence -I .\src -I .\dependence\build-in -I .\dependence\build-in\STD -I .\dependence\STM32F1xx_DFP -I .\dependence\STM32F1xx_DFP\Startup -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC -I .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include -I .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\StdPeriph_Driver\inc-I D:\Keiluvision5\ARM\RV31\INC-I D:\Keiluvision5\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o .\keilout\stm32f10x_rcc.o --omf_browse .\keilout\stm32f10x_rcc.crf --depend .\keilout\stm32f10x_rcc.d)
+I (dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC\stm32f10x_rcc.h)(0x52FA4D8F)
+I (.\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\stm32f10x.h)(0x58259ADC)
+I (.\dependence\STM32F1xx_DFP\Startup\core_cm3.h)(0x5E4E12E0)
+I (D:\Keiluvision5\ARM\ARMCC\include\stdint.h)(0x569DEA3A)
+I (.\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\system_stm32f10x.h)(0x58259ADC)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\stm32f10x_conf.h)(0x52FA5040)
+I (.\dependence\RTE_Components.h)(0x5E5486E2)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO\stm32f10x_gpio.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC\stm32f10x_rcc.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\misc.h)(0x52FA4D8F)
+F (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC\stm32f10x_rcc.h)(0x52FA4D8F)()
+F (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO\stm32f10x_gpio.c)(0x52FA4D8F)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\dependence -I .\src -I .\dependence\build-in -I .\dependence\build-in\STD -I .\dependence\STM32F1xx_DFP -I .\dependence\STM32F1xx_DFP\Startup -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC -I .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include -I .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\StdPeriph_Driver\inc-I D:\Keiluvision5\ARM\RV31\INC-I D:\Keiluvision5\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o .\keilout\stm32f10x_gpio.o --omf_browse .\keilout\stm32f10x_gpio.crf --depend .\keilout\stm32f10x_gpio.d)
+I (dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO\stm32f10x_gpio.h)(0x52FA4D8F)
+I (.\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\stm32f10x.h)(0x58259ADC)
+I (.\dependence\STM32F1xx_DFP\Startup\core_cm3.h)(0x5E4E12E0)
+I (D:\Keiluvision5\ARM\ARMCC\include\stdint.h)(0x569DEA3A)
+I (.\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\system_stm32f10x.h)(0x58259ADC)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\stm32f10x_conf.h)(0x52FA5040)
+I (.\dependence\RTE_Components.h)(0x5E5486E2)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO\stm32f10x_gpio.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC\stm32f10x_rcc.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\misc.h)(0x52FA4D8F)
+F (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO\stm32f10x_gpio.h)(0x52FA4D8F)()
+F (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\misc.c)(0x52FA4D8F)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\dependence -I .\src -I .\dependence\build-in -I .\dependence\build-in\STD -I .\dependence\STM32F1xx_DFP -I .\dependence\STM32F1xx_DFP\Startup -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC -I .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include -I .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\StdPeriph_Driver\inc-I D:\Keiluvision5\ARM\RV31\INC-I D:\Keiluvision5\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o .\keilout\misc.o --omf_browse .\keilout\misc.crf --depend .\keilout\misc.d)
+I (dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\misc.h)(0x52FA4D8F)
+I (.\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\stm32f10x.h)(0x58259ADC)
+I (.\dependence\STM32F1xx_DFP\Startup\core_cm3.h)(0x5E4E12E0)
+I (D:\Keiluvision5\ARM\ARMCC\include\stdint.h)(0x569DEA3A)
+I (.\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\system_stm32f10x.h)(0x58259ADC)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\stm32f10x_conf.h)(0x52FA5040)
+I (.\dependence\RTE_Components.h)(0x5E5486E2)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO\stm32f10x_gpio.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC\stm32f10x_rcc.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\misc.h)(0x52FA4D8F)
+F (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\misc.h)(0x52FA4D8F)()
+F (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\stm32f10x_conf.h)(0x52FA5040)()
+F (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\stm32f10x_it.c)(0x534392B8)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\dependence -I .\src -I .\dependence\build-in -I .\dependence\build-in\STD -I .\dependence\STM32F1xx_DFP -I .\dependence\STM32F1xx_DFP\Startup -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC -I .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include -I .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\StdPeriph_Driver\inc-I D:\Keiluvision5\ARM\RV31\INC-I D:\Keiluvision5\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o .\keilout\stm32f10x_it.o --omf_browse .\keilout\stm32f10x_it.crf --depend .\keilout\stm32f10x_it.d)
+I (dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\stm32f10x_it.h)(0x52FA4D8F)
+I (.\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\stm32f10x.h)(0x58259ADC)
+I (.\dependence\STM32F1xx_DFP\Startup\core_cm3.h)(0x5E4E12E0)
+I (D:\Keiluvision5\ARM\ARMCC\include\stdint.h)(0x569DEA3A)
+I (.\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\system_stm32f10x.h)(0x58259ADC)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\stm32f10x_conf.h)(0x52FA5040)
+I (.\dependence\RTE_Components.h)(0x5E5486E2)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO\stm32f10x_gpio.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC\stm32f10x_rcc.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\misc.h)(0x52FA4D8F)
+F (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\stm32f10x_it.h)(0x52FA4D8F)()
+F (.\dependence\STM32F1xx_DFP\Startup\core_cm3.h)(0x5E4E12E0)()
+F (.\dependence\STM32F1xx_DFP\Startup\RTE_Device.h)(0x59283406)()
+F (.\dependence\STM32F1xx_DFP\Startup\startup_stm32f10x_hd.s)(0x58259ADC)(--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1"-I D:\Keiluvision5\ARM\RV31\INC-I D:\Keiluvision5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 518"--list .\listings\startup_stm32f10x_hd.lst --xref -o .\keilout\startup_stm32f10x_hd.o --depend .\keilout\startup_stm32f10x_hd.d)
+F (.\dependence\STM32F1xx_DFP\Startup\STM32F1xx_OPT.s)(0x527BA9CE)(--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1"-I D:\Keiluvision5\ARM\RV31\INC-I D:\Keiluvision5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 518"--list .\listings\stm32f1xx_opt.lst --xref -o .\keilout\stm32f1xx_opt.o --depend .\keilout\stm32f1xx_opt.d)
+F (.\dependence\STM32F1xx_DFP\Startup\system_stm32f10x.c)(0x58259ADC)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\dependence -I .\src -I .\dependence\build-in -I .\dependence\build-in\STD -I .\dependence\STM32F1xx_DFP -I .\dependence\STM32F1xx_DFP\Startup -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO -I .\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC -I .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include -I .\pack\Keil\STM32F1xx_DFP.2.3.0\Device\StdPeriph_Driver\inc-I D:\Keiluvision5\ARM\RV31\INC-I D:\Keiluvision5\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o .\keilout\system_stm32f10x.o --omf_browse .\keilout\system_stm32f10x.crf --depend .\keilout\system_stm32f10x.d)
+I (.\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\stm32f10x.h)(0x58259ADC)
+I (.\dependence\STM32F1xx_DFP\Startup\core_cm3.h)(0x5E4E12E0)
+I (D:\Keiluvision5\ARM\ARMCC\include\stdint.h)(0x569DEA3A)
+I (.\pack\Keil\STM32F1xx_DFP.2.3.0\Device\Include\system_stm32f10x.h)(0x58259ADC)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\stm32f10x_conf.h)(0x52FA5040)
+I (.\dependence\RTE_Components.h)(0x5E5486E2)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.GPIO\stm32f10x_gpio.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.RCC\stm32f10x_rcc.h)(0x52FA4D8F)
+I (.\dependence\STM32F1xx_DFP\StdPeriphDrivers.Framework\misc.h)(0x52FA4D8F)
+F (.\dependence\RTE_Components.h)(0x5E5486E2)()

@@ -1,0 +1,1 @@
+--cpu Cortex-M3 --info summarysizes --load_addr_map_info --info sizes --info totals --info unused --info veneers --strict --scatter "d:\MyWorkSpace\STM32\Learn\F103\DMA\out\DMA.sct" --map --xref --callgraph --symbols --list "d:\MyWorkSpace\STM32\Learn\F103\DMA\out\DMA.map" "d:\MyWorkSpace\STM32\Learn\F103\DMA\out\main.o" -o "d:\MyWorkSpace\STM32\Learn\F103\DMA\out\DMA.axf"
