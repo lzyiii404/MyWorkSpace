@@ -21,7 +21,7 @@
 
 
 module ax_PWM 
-    #(parameter N = 16) //参数传递
+    #(parameter N = 16) //parameter passing
     (
     clk, rst_n, period, duty, pwm_out
     );
