@@ -32,7 +32,8 @@
       "deque": "cpp",
       "unordered_map": "cpp",
       "string_view": "cpp",
-      "initializer_list": "cpp"
+      "initializer_list": "cpp",
+      "ostream": "cpp"
     },
     "fileheader.LastModifiedBy": "jy.Huang",
     "fileheader.Author": "jy.Huang"
