@@ -233,8 +233,8 @@ void BLE_Init(){
 }
 
 void WIFI_Init(){
-  char WIFI_SSID[64];
-  char WIFI_PW[64];
+  char WIFI_SSID[64] = {'\0'};
+  char WIFI_PW[64] = {'\0'};
   pinMode(LED_PIN, OUTPUT);      // set the LED pin mode
 
   digitalWrite(LED_PIN, HIGH);
