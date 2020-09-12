@@ -70,9 +70,7 @@ WiFiServer server(80);
 //LED
 #define LED_PIN     2
 
-char* WIFI_SSID;
-char* WIFI_PW;
-void get_WIFI_SSID_PW(){
+void get_WIFI_SSID_PW(char* WIFI_SSID, char* WIFI_PW){
   char tmp_ch;
   EEPROM.begin(EEPROM_MAX_WIDTH);
   for(int i = EEPROM_WIFI_ADDR; i < EEPROM_WIFI_ADDR + EEPROM_WIFI_ADDR_WIDTH; i++){
@@ -235,6 +233,8 @@ void BLE_Init(){
 }
 
 void WIFI_Init(){
+  char WIFI_SSID[64];
+  char WIFI_PW[64];
   pinMode(LED_PIN, OUTPUT);      // set the LED pin mode
 
   digitalWrite(LED_PIN, HIGH);
@@ -242,8 +242,9 @@ void WIFI_Init(){
   delay(10);
 
   // We start by connecting to a WiFi network
-
-  get_WIFI_SSID_PW();
+  Serial.println("Get wifi_ssid_pw");
+  get_WIFI_SSID_PW(WIFI_SSID, WIFI_PW);
+  Serial.println("get it!");
 
   Serial.println();
   Serial.println();
