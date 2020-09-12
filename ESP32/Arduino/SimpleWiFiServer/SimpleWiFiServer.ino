@@ -27,10 +27,10 @@ ported for sparkfun esp32
 
 #include <WiFi.h>
 
-const char* ssid     = "7003";
-const char* password = "123454321";
+const char* ssid     = "Huang_WIFI_test";
+const char* password = "huang123";
 
-
+WiFiServer server(80);
 
 void setup()
 {

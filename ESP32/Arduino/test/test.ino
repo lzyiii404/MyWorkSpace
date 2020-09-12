@@ -35,13 +35,15 @@
 #define EEPROM_WRITE_PW           'C'
 #define EEPROM_READ_PW            'D'
 
-#define EEPROM_MAX_WIDTH          128
+#define EEPROM_MAX_WIDTH          130
 
 #define EEPROM_WIFI_ADDR          0
 #define EEPROM_WIFI_ADDR_WIDTH    64
 
 #define EEPROM_PW_ADDR            64
 #define EEPROM_PW_ADDR_WIDTH      64
+
+#define EEPROM_MODE_ADDR          129
 
 //蓝牙对象创建
 BLEServer *pServer = NULL;
@@ -50,6 +52,13 @@ bool deviceConnected = false;
 bool oldDeviceConnected = false;
 uint8_t txValue = 0;
 
+//wifi 对象创建
+WiFiServer server(80);
+
+//由于蓝牙与 wifi 在 Arduino 上不能同时运行，故分开模式选择
+#define BLE_MODE    0
+#define WIFI_MODE   1
+
 // See the following for generating UUIDs:
 // https://www.uuidgenerator.net/
 
@@ -57,7 +66,10 @@ uint8_t txValue = 0;
 
 //WIFI
 #define WIFI_CONNECT              'E'
-#define WIFI_DISCONNECT           'F'
+
+//LED
+#define LED_PIN     2
+
 char* WIFI_SSID;
 char* WIFI_PW;
 void get_WIFI_SSID_PW(){
@@ -102,41 +114,16 @@ void read_EEPROM(int start_addr, int addr_width){
   }
 }
 
-void WIFI_Connect(){
-  get_WIFI_SSID_PW();
-  WiFi.begin(WIFI_SSID, WIFI_PW);
-
-  while (WiFi.status() != WL_CONNECTED) {
-        delay(500);
-        Serial.print(".");
-  }
-  Serial.println(WiFi.localIP());
-
+void change_Mode(){
+  EEPROM.begin(EEPROM_MAX_WIDTH);
+  EEPROM.write(EEPROM_MODE_ADDR, (EEPROM.read(EEPROM_MODE_ADDR) == WIFI_MODE ? BLE_MODE : WIFI_MODE));
+  EEPROM.commit();
+  Serial.println(EEPROM.read(EEPROM_MODE_ADDR));
+  delay(0xff);
+  ESP.restart();
 }
 
-void WIFI_Disconnect(){
-  WiFi.disconnect();
-  Serial.println("disconnected!");
-}
-
-
-void WIFI_operate(char op){
-  switch (op)
-  {
-  case WIFI_CONNECT:
-    WIFI_Connect();
-    break;
-    
-  case WIFI_DISCONNECT:
-    WIFI_Disconnect();
-    break;
-  
-  default:
-    break;
-  }
-}
-
-void EEPROM_operate(char op, std::string rxValue){
+void Operate(char op, std::string rxValue){
   switch (op)
   {
   case EEPROM_WRITE_WIFI_NAME:
@@ -154,7 +141,11 @@ void EEPROM_operate(char op, std::string rxValue){
   case EEPROM_READ_PW:
     read_EEPROM(EEPROM_PW_ADDR, EEPROM_PW_ADDR_WIDTH);
     break;
-  
+
+  case WIFI_CONNECT:
+    change_Mode();
+    break;
+
   default:
     break;
   }
@@ -183,8 +174,7 @@ class MyCallbacks: public BLECharacteristicCallbacks {
           Serial.println();
       }
 
-      EEPROM_operate(rxValue[0], rxValue);
-      WIFI_operate(rxValue[0]);
+      Operate(rxValue[0], rxValue);
     }
 };
 
@@ -244,15 +234,81 @@ void BLE_Init(){
   Serial.println("Waiting");
 }
 
+void WIFI_Init(){
+  pinMode(LED_PIN, OUTPUT);      // set the LED pin mode
+
+  digitalWrite(LED_PIN, HIGH);
+
+  delay(10);
+
+  // We start by connecting to a WiFi network
+
+  get_WIFI_SSID_PW();
+
+  Serial.println();
+  Serial.println();
+  Serial.print("Connecting to ");
+  Serial.println(WIFI_SSID);
+
+  WiFi.begin(WIFI_SSID, WIFI_PW);
+
+  while (WiFi.status() != WL_CONNECTED) {
+      delay(500);
+      Serial.print(".");
+  }
+
+  Serial.println("");
+  Serial.println("WiFi connected.");
+  Serial.println("IP address: ");
+  Serial.println(WiFi.localIP());
+  
+  server.begin();
+}
+
+void WIFI_process(){
+   WiFiClient client = server.available();   // listen for incoming clients
+
+  if (client) {                             // if you get a client,
+    Serial.println("New Client.");           // print a message out the serial port
+    String currentLine = "";                // make a String to hold incoming data from the client
+    while (client.connected()) {            // loop while the client's connected
+      if (client.available()) {             // if there's bytes to read from the client,
+        delay(0xffff);
+      }
+    }
+    // close the connection:
+    client.stop();
+    Serial.println("Client Disconnected.");
+    change_Mode();
+  }
+}
+
 
 void setup() {
   Serial.begin(115200);
-  BLE_Init();
-
-
+  EEPROM.begin(EEPROM_MAX_WIDTH);
+  switch (EEPROM.read(EEPROM_MODE_ADDR))
+  {
+    case BLE_MODE:
+      BLE_Init();
+      break;
+    
+    case WIFI_MODE:
+      WIFI_Init();
+      break;
+  }
 }
 
 void loop() {
-  check_BLE_Connected();
+  switch (EEPROM.read(EEPROM_MODE_ADDR))
+  {
+  case BLE_MODE:
+    check_BLE_Connected();
+    break;
+  
+  case WIFI_MODE:
+    WIFI_process();
+    break;
+  }
 
 }
