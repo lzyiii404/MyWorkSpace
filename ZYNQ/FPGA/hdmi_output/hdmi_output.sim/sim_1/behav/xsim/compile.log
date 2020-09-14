@@ -1,0 +1,6 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/MyWorkSpace/ZYNQ/FPGA/hdmi_output/hdmi_output.ip_user_files/ipstatic/src/ClockGen.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ClockGen'
+ERROR: [VRFC 10-2987] 'resetbridge' is not compiled in library 'xil_defaultlib' [D:/MyWorkSpace/ZYNQ/FPGA/hdmi_output/hdmi_output.ip_user_files/ipstatic/src/ClockGen.vhd:56]
+ERROR: [VRFC 10-2987] 'syncasync' is not compiled in library 'xil_defaultlib' [D:/MyWorkSpace/ZYNQ/FPGA/hdmi_output/hdmi_output.ip_user_files/ipstatic/src/ClockGen.vhd:64]
+ERROR: [VRFC 10-3782] unit 'behavioral' ignored due to previous errors [D:/MyWorkSpace/ZYNQ/FPGA/hdmi_output/hdmi_output.ip_user_files/ipstatic/src/ClockGen.vhd:46]
+INFO: [VRFC 10-3070] VHDL file 'D:/MyWorkSpace/ZYNQ/FPGA/hdmi_output/hdmi_output.ip_user_files/ipstatic/src/ClockGen.vhd' ignored due to errors

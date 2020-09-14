@@ -27,6 +27,6 @@
 using namespace std;
 int main(){
     int a = 1;
-    int *p = &a;
-    cout << p << '\t' << *p << endl;
+    int *b = &a;
+    cout << *b << '\t' << b[0] << endl;
 }

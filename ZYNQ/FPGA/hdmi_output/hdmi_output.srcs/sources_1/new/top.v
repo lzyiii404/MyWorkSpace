@@ -44,6 +44,7 @@ module top(
     wire [7 : 0] video_g;
     wire [7 : 0] video_b;
 
+    //输出像素点数颜色
     color_bar u0_hdmi_color_bar(
         .clk                (video_clk),  
         .rst                (1'b0),  
@@ -55,14 +56,16 @@ module top(
         .rgb_b              (video_b)   
     );
 
+    //时钟分频模块
+
     video_clock u0_video_clk(
         .clk_in             (sys_clk),
         .reset              (1'b0),
-        .locked             (),
+        .locked             (),             //时钟稳定后会拉高
         .clk_out_74_25      (video_clk),
         .clk_out_371_25     (video_clk_5x)
     );
-
+    //hdmi显示驱动模块
     rgb2dvi_0 u0_rgb2dvi(
         .TMDS_Clk_p         (TMDS_CLK_p),
         .TMDS_Clk_n         (TMDS_Clk_n),
