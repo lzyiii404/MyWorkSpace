@@ -256,3 +256,10 @@ con
 
 16:24:24 INFO  : Launch script is exported to file 'D:\MyWorkSpace\ZYNQ\ARM\Hello_world\Hello_world.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_hello_world.elf_on_local.tcl'
 17:11:49 INFO  : Disconnected from the channel tcfchan#6.
+17:12:17 INFO  : Registering command handlers for SDK TCF services
+17:12:18 INFO  : Launching XSCT server: xsct.bat -interactive D:\MyWorkSpace\ZYNQ\ARM\Hello_world\Hello_world.sdk\temp_xsdb_launch_script.tcl
+17:12:20 INFO  : XSCT server has started successfully.
+17:12:20 INFO  : Successfully done setting XSCT server connection channel  
+17:12:20 INFO  : Successfully done setting SDK workspace  
+17:12:20 INFO  : Processing command line option -hwspec D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/design_1_wrapper.hdf.
+17:12:20 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
