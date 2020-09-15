@@ -3,7 +3,7 @@
 	<section name="org.eclipse.equinox.internal.p2.ui.dialogs.InstallWizard.SelectableIUsPage">
 		<item value="200" key="DetailsSashWeight"/>
 		<item value="300" key="NameColumnWidth"/>
-		<item value="100" key="VersionColumnWidth"/>
+		<item value="181" key="VersionColumnWidth"/>
 		<item value="200" key="IDColumnWidth"/>
 		<item value="800" key="ListSashWeight"/>
 	</section>
@@ -30,6 +30,6 @@
 		<item value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-21|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI" key="DIALOG_FONT_NAME"/>
 		<item value="625" key="DIALOG_HEIGHT"/>
 		<item value="61" key="DIALOG_X_ORIGIN"/>
-		<item value="203" key="DIALOG_Y_ORIGIN"/>
+		<item value="87" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>
