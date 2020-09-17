@@ -16,6 +16,7 @@ import pymysql
 import time
 
 url="http://127.0.0.1:5000/upload"
+# url='https://860156cec067cd313572f3959a4f1001.m.pipedream.net'
 # files={'xlsx':open(filename,"rb")}
 data=json.dumps({
     'filename':'1',
@@ -23,3 +24,4 @@ data=json.dumps({
 })
 
 r=requests.post(url,data=data)
+print(r.text)

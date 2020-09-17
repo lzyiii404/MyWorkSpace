@@ -17,8 +17,8 @@ import time
 
 app = Flask(__name__)
 
-# HOST = '172.26.228.138'
-HOST = '127.0.0.1'
+HOST = '172.26.220.188'
+# HOST = '127.0.0.1'
 PORT = '5000'
 DATABASE_NAME = 'Devices'
 USERNAME = 'root'
@@ -34,12 +34,20 @@ def upload():
         # file1 = request.files.get("json")
         data = json.loads(request.get_data(as_text=True))
         print(type(data))
-        print(data)
-        print('filename: '+ data['filename'])
+        print(data['time-stamp'])
+        # print(request.get_data(as_text=True))
+        # data = json.loads(request.get_data(as_text=True))
+        # print(type(data))
+        # print(data)
+        # print('filename: '+ data['filename'])
         # if file1 is None:
         #     return 'nothing found'
         # file1.save('data\\'+filename+'.json')
-    return jsonify({'msg':'ok'})
+        return jsonify({'msg':'ok'})
+
+    elif  request.method == "GET":
+        req = request
+        return jsonify({"msg": "JY dl TQL!!!"})
 
 
 if __name__=='__main__':

@@ -16,7 +16,7 @@ const char* ssid = "Huang_WIFI_test";
 const char* password = "huang123";
 
 //Your Domain name with URL path or IP address with path
-const char* serverName = "http://172.26.228.138:5000";
+const char serverName[] = "http://172.26.220.188:5000/upload";
 
 // the following variables are unsigned longs because the time, measured in
 // milliseconds, will quickly become a bigger number than can be stored in an int.
@@ -51,7 +51,7 @@ void loop() {
       
       // Your Domain name with URL path or IP address with path
       http.begin(serverName);
-      Serial.print("post to");
+      Serial.print("post to ");
       Serial.println(serverName);
       // Specify content-type header
       // http.addHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -62,7 +62,7 @@ void loop() {
       
       // If you need an HTTP request with a content type: application/json, use the following:
       http.addHeader("Content-Type", "application/json");
-      int httpResponseCode = http.POST("{\'filename\':\'tPmAT5Ab3j7F9\',\'sensor\':\'BME280\',\'value1\':\'24.25\',\'value2\':\'49.54\',\'value3\':\'1005.14\'}");
+      int httpResponseCode = http.POST("{\"time-stamp\":\"tPmAT5Ab3j7F9\",\"sensor\":\"BME280\",\"value1\":\"24.25\",\"value2\":\"49.54\",\"value3\":\"1005.14\"}");
 
       // If you need an HTTP request with a content type: text/plain
       //http.addHeader("Content-Type", "text/plain");
@@ -70,6 +70,7 @@ void loop() {
      
       Serial.print("HTTP Response code: ");
       Serial.println(httpResponseCode);
+      // Serial.print(http.GET());
         
       // Free resources
       http.end();
