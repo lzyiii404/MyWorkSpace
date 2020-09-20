@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Thu Sep 17 17:01:08 2020
+# Process ID: 10072
+# Current directory: D:/MyWorkSpace/ZYNQ/ARM/Hello_world
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent21736 D:\MyWorkSpace\ZYNQ\ARM\Hello_world\Hello_world.xpr
+# Log file: D:/MyWorkSpace/ZYNQ/ARM/Hello_world/vivado.log
+# Journal file: D:/MyWorkSpace/ZYNQ/ARM/Hello_world\vivado.jou
+#-----------------------------------------------------------
+start_gui

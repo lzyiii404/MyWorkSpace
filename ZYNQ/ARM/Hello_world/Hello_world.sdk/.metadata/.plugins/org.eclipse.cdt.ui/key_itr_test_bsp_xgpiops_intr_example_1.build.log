@@ -1,0 +1,8 @@
+11:42:52 **** Auto Build of configuration Debug for project key_itr_test_bsp_xgpiops_intr_example_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+
+11:42:52 Build Finished (took 270ms)
+

@@ -48,7 +48,11 @@
 #include <stdio.h>
 #include "platform.h"
 #include "xil_printf.h"
+#include "xgpiops.h"
+#include "xstatus.h"
+#include "xparameters.h"
 
+#define GPIO_DEVICE_ID  	XPAR_XGPIOPS_0_DEVICE_ID
 
 int main()
 {
@@ -57,6 +61,33 @@ int main()
 		print("Hello World\n\r");
 
     }
+    int Status;
+	XGpioPs_Config *ConfigPtr;
+	XGpioPs Gpio;	/* The driver instance for GPIO Device. */
+
+    ConfigPtr = XGpioPs_LookupConfig(GPIO_DEVICE_ID);
+	Status = XGpioPs_CfgInitialize(&Gpio, ConfigPtr,
+					ConfigPtr->BaseAddr);
+
+	if (Status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+	XGpioPs_SetDirectionPin(&Gpio, 0, 1);
+	XGpioPs_SetDirectionPin(&Gpio, 13, 1);
+	XGpioPs_SetOutputEnablePin(&Gpio, 0, 1);
+	XGpioPs_SetOutputEnablePin(&Gpio, 13, 1);
+
+	while(1){
+		XGpioPs_WritePin(&Gpio, 0, 1);
+		XGpioPs_WritePin(&Gpio, 13, 0);
+		sleep(1);
+
+		XGpioPs_WritePin(&Gpio, 0, 0);
+		XGpioPs_WritePin(&Gpio, 13, 1);
+		sleep(1);
+	}
+
 
     cleanup_platform();
     return 0;

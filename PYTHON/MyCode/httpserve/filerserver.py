@@ -17,7 +17,7 @@ import time
 
 app = Flask(__name__)
 
-HOST = '172.26.220.188'
+HOST = '172.26.163.161'
 # HOST = '127.0.0.1'
 PORT = '5000'
 DATABASE_NAME = 'Devices'
@@ -34,7 +34,7 @@ def upload():
         # file1 = request.files.get("json")
         data = json.loads(request.get_data(as_text=True))
         print(type(data))
-        print(data['time-stamp'])
+        print(data)
         # print(request.get_data(as_text=True))
         # data = json.loads(request.get_data(as_text=True))
         # print(type(data))

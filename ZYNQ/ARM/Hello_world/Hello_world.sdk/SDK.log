@@ -305,3 +305,277 @@ con
 19:12:25 INFO  : Successfully done setting SDK workspace  
 19:12:25 INFO  : Processing command line option -hwspec D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/design_1_wrapper.hdf.
 19:12:25 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+17:02:29 INFO  : Registering command handlers for SDK TCF services
+17:02:30 INFO  : Launching XSCT server: xsct.bat -interactive D:\MyWorkSpace\ZYNQ\ARM\Hello_world\Hello_world.sdk\temp_xsdb_launch_script.tcl
+17:02:33 INFO  : XSCT server has started successfully.
+17:02:33 INFO  : Successfully done setting XSCT server connection channel  
+17:02:34 INFO  : Successfully done setting SDK workspace  
+17:02:34 INFO  : Processing command line option -hwspec D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/design_1_wrapper.hdf.
+17:02:34 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+17:03:38 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:03:38 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+17:03:38 INFO  : 'jtag frequency' command is executed.
+17:03:38 INFO  : Sourcing of 'D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+17:03:38 INFO  : Context for 'APU' is selected.
+17:03:38 INFO  : System reset is completed.
+17:03:41 INFO  : 'after 3000' command is executed.
+17:03:41 INFO  : Context for 'APU' is selected.
+17:03:41 INFO  : Hardware design information is loaded from 'D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+17:03:41 INFO  : 'configparams force-mem-access 1' command is executed.
+17:03:41 INFO  : Context for 'APU' is selected.
+17:03:42 INFO  : 'ps7_init' command is executed.
+17:03:42 INFO  : 'ps7_post_config' command is executed.
+17:03:42 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:03:42 INFO  : The application 'D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/hello_world/Debug/hello_world.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:03:42 INFO  : 'configparams force-mem-access 0' command is executed.
+17:03:42 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS1 210512180081"} -index 0
+rst -system
+after 3000
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS1 210512180081"} -index 0
+loadhw -hw D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS1 210512180081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS1 210512180081"} -index 0
+dow D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/hello_world/Debug/hello_world.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:03:42 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:03:42 INFO  : 'con' command is executed.
+17:03:42 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS1 210512180081"} -index 0
+con
+----------------End of Script----------------
+
+17:03:42 INFO  : Launch script is exported to file 'D:\MyWorkSpace\ZYNQ\ARM\Hello_world\Hello_world.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_hello_world.elf_on_local.tcl'
+22:30:54 INFO  : Registering command handlers for SDK TCF services
+22:31:00 INFO  : Launching XSCT server: xsct.bat -interactive D:\MyWorkSpace\ZYNQ\ARM\Hello_world\Hello_world.sdk\temp_xsdb_launch_script.tcl
+22:31:05 INFO  : XSCT server has started successfully.
+22:31:06 INFO  : Successfully done setting XSCT server connection channel  
+22:31:06 INFO  : Successfully done setting SDK workspace  
+22:31:06 INFO  : Processing command line option -hwspec D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/design_1_wrapper.hdf.
+22:31:06 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+10:04:18 INFO  : Registering command handlers for SDK TCF services
+10:04:19 INFO  : Launching XSCT server: xsct.bat -interactive D:\MyWorkSpace\ZYNQ\ARM\Hello_world\Hello_world.sdk\temp_xsdb_launch_script.tcl
+10:04:25 INFO  : XSCT server has started successfully.
+10:04:25 INFO  : Successfully done setting XSCT server connection channel  
+10:04:27 INFO  : Successfully done setting SDK workspace  
+10:04:27 INFO  : Processing command line option -hwspec D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/design_1_wrapper.hdf.
+10:04:27 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+11:07:53 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:07:53 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+11:07:53 INFO  : 'jtag frequency' command is executed.
+11:07:53 INFO  : Sourcing of 'D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+11:07:53 INFO  : Context for 'APU' is selected.
+11:07:54 INFO  : System reset is completed.
+11:07:57 INFO  : 'after 3000' command is executed.
+11:07:57 INFO  : Context for 'APU' is selected.
+11:07:57 INFO  : Hardware design information is loaded from 'D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+11:07:57 INFO  : 'configparams force-mem-access 1' command is executed.
+11:07:57 INFO  : Context for 'APU' is selected.
+11:07:57 INFO  : 'ps7_init' command is executed.
+11:07:57 INFO  : 'ps7_post_config' command is executed.
+11:07:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:07:57 INFO  : The application 'D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/hello_world/Debug/hello_world.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:07:57 INFO  : 'configparams force-mem-access 0' command is executed.
+11:07:57 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS1 210512180081"} -index 0
+rst -system
+after 3000
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS1 210512180081"} -index 0
+loadhw -hw D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS1 210512180081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS1 210512180081"} -index 0
+dow D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/hello_world/Debug/hello_world.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:07:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:07:57 INFO  : 'con' command is executed.
+11:07:57 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS1 210512180081"} -index 0
+con
+----------------End of Script----------------
+
+11:07:57 INFO  : Launch script is exported to file 'D:\MyWorkSpace\ZYNQ\ARM\Hello_world\Hello_world.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_hello_world.elf_on_local.tcl'
+11:21:32 INFO  : Example project hello_world_bsp_xgpiops_polled_example_1 has been created successfully.
+11:27:51 INFO  : Disconnected from the channel tcfchan#1.
+11:27:52 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:27:52 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+11:27:52 INFO  : 'jtag frequency' command is executed.
+11:27:52 INFO  : Sourcing of 'D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+11:27:52 INFO  : Context for 'APU' is selected.
+11:27:52 INFO  : System reset is completed.
+11:27:55 INFO  : 'after 3000' command is executed.
+11:27:55 INFO  : Context for 'APU' is selected.
+11:27:57 INFO  : Hardware design information is loaded from 'D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+11:27:57 INFO  : 'configparams force-mem-access 1' command is executed.
+11:27:57 INFO  : Context for 'APU' is selected.
+11:27:57 INFO  : 'ps7_init' command is executed.
+11:27:57 INFO  : 'ps7_post_config' command is executed.
+11:27:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:27:57 INFO  : The application 'D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/hello_world/Debug/hello_world.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:27:57 INFO  : 'configparams force-mem-access 0' command is executed.
+11:27:57 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS1 210512180081"} -index 0
+rst -system
+after 3000
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS1 210512180081"} -index 0
+loadhw -hw D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS1 210512180081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS1 210512180081"} -index 0
+dow D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/hello_world/Debug/hello_world.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:27:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:27:57 INFO  : 'con' command is executed.
+11:27:57 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS1 210512180081"} -index 0
+con
+----------------End of Script----------------
+
+11:27:57 INFO  : Launch script is exported to file 'D:\MyWorkSpace\ZYNQ\ARM\Hello_world\Hello_world.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_hello_world.elf_on_local.tcl'
+11:28:23 INFO  : Disconnected from the channel tcfchan#2.
+11:28:24 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:28:24 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+11:28:24 INFO  : 'jtag frequency' command is executed.
+11:28:24 INFO  : Sourcing of 'D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+11:28:24 INFO  : Context for 'APU' is selected.
+11:28:24 INFO  : System reset is completed.
+11:28:27 INFO  : 'after 3000' command is executed.
+11:28:27 INFO  : Context for 'APU' is selected.
+11:28:28 INFO  : Hardware design information is loaded from 'D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+11:28:28 INFO  : 'configparams force-mem-access 1' command is executed.
+11:28:28 INFO  : Context for 'APU' is selected.
+11:28:28 INFO  : 'ps7_init' command is executed.
+11:28:28 INFO  : 'ps7_post_config' command is executed.
+11:28:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:28:29 INFO  : The application 'D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/hello_world/Debug/hello_world.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:28:29 INFO  : 'configparams force-mem-access 0' command is executed.
+11:28:29 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS1 210512180081"} -index 0
+rst -system
+after 3000
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS1 210512180081"} -index 0
+loadhw -hw D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS1 210512180081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS1 210512180081"} -index 0
+dow D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/hello_world/Debug/hello_world.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:28:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:28:29 INFO  : 'con' command is executed.
+11:28:29 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS1 210512180081"} -index 0
+con
+----------------End of Script----------------
+
+11:28:29 INFO  : Launch script is exported to file 'D:\MyWorkSpace\ZYNQ\ARM\Hello_world\Hello_world.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_hello_world.elf_on_local.tcl'
+11:35:04 INFO  : Disconnected from the channel tcfchan#3.
+11:35:05 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:35:05 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+11:35:05 INFO  : 'jtag frequency' command is executed.
+11:35:05 INFO  : Sourcing of 'D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+11:35:05 INFO  : Context for 'APU' is selected.
+11:35:05 INFO  : System reset is completed.
+11:35:08 INFO  : 'after 3000' command is executed.
+11:35:08 INFO  : Context for 'APU' is selected.
+11:35:09 INFO  : Hardware design information is loaded from 'D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+11:35:09 INFO  : 'configparams force-mem-access 1' command is executed.
+11:35:09 INFO  : Context for 'APU' is selected.
+11:35:10 INFO  : 'ps7_init' command is executed.
+11:35:10 INFO  : 'ps7_post_config' command is executed.
+11:35:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:35:10 INFO  : The application 'D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/hello_world/Debug/hello_world.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:35:10 INFO  : 'configparams force-mem-access 0' command is executed.
+11:35:10 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS1 210512180081"} -index 0
+rst -system
+after 3000
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS1 210512180081"} -index 0
+loadhw -hw D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS1 210512180081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS1 210512180081"} -index 0
+dow D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/hello_world/Debug/hello_world.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:35:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:35:10 INFO  : 'con' command is executed.
+11:35:10 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS1 210512180081"} -index 0
+con
+----------------End of Script----------------
+
+11:35:10 INFO  : Launch script is exported to file 'D:\MyWorkSpace\ZYNQ\ARM\Hello_world\Hello_world.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_hello_world.elf_on_local.tcl'
+11:40:24 INFO  : Disconnected from the channel tcfchan#4.
+11:40:25 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:40:25 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+11:40:25 INFO  : 'jtag frequency' command is executed.
+11:40:25 INFO  : Sourcing of 'D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+11:40:25 INFO  : Context for 'APU' is selected.
+11:40:25 INFO  : System reset is completed.
+11:40:28 INFO  : 'after 3000' command is executed.
+11:40:28 INFO  : Context for 'APU' is selected.
+11:40:29 INFO  : Hardware design information is loaded from 'D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+11:40:29 INFO  : 'configparams force-mem-access 1' command is executed.
+11:40:29 INFO  : Context for 'APU' is selected.
+11:40:30 INFO  : 'ps7_init' command is executed.
+11:40:30 INFO  : 'ps7_post_config' command is executed.
+11:40:30 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:40:30 INFO  : The application 'D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/hello_world/Debug/hello_world.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:40:30 INFO  : 'configparams force-mem-access 0' command is executed.
+11:40:30 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS1 210512180081"} -index 0
+rst -system
+after 3000
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS1 210512180081"} -index 0
+loadhw -hw D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS1 210512180081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS1 210512180081"} -index 0
+dow D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/hello_world/Debug/hello_world.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:40:30 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:40:30 INFO  : 'con' command is executed.
+11:40:30 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS1 210512180081"} -index 0
+con
+----------------End of Script----------------
+
+11:40:30 INFO  : Launch script is exported to file 'D:\MyWorkSpace\ZYNQ\ARM\Hello_world\Hello_world.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_hello_world.elf_on_local.tcl'
+11:42:51 INFO  : Example project key_itr_test_bsp_xgpiops_intr_example_1 has been created successfully.
+19:25:34 INFO  : Launching XSCT server: xsct.bat -interactive D:\MyWorkSpace\ZYNQ\ARM\Hello_world\Hello_world.sdk\temp_xsdb_launch_script.tcl

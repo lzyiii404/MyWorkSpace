@@ -11,6 +11,7 @@
 <includePath path="#undef __ARM_FEATURE_DOTPROD" removed="true"/>
 <includePath path="#undef __ARM_FEATURE_UNALIGNED" removed="true"/>
 <includePath path="d:\xilinx\sdk\2018.3\gnu\aarch32\nt\gcc-arm-none-eabi\bin\../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/include"/>
+<includePath path="#undef __ARM_FEATURE_LDREX" removed="true"/>
 <includePath path="#undef __ARM_FEATURE_QRDMX" removed="true"/>
 <includePath path="#undef __ARM_FEATURE_DSP" removed="true"/>
 <includePath path="d:\xilinx\sdk\2018.3\gnu\aarch32\nt\gcc-arm-none-eabi\bin\../arm-none-eabi/libc/usr/include"/>
