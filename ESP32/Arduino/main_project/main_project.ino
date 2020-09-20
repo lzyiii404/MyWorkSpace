@@ -1,24 +1,10 @@
 /*
-    Video: https://www.youtube.com/watch?v=oCMOYS71NIU
-    Based on Neil Kolban example for IDF: https://github.com/nkolban/esp32-snippets/blob/master/cpp_utils/tests/BLE%20Tests/SampleNotify.cpp
-    Ported to Arduino ESP32 by Evandro Copercini
+ * @Author: jy.Huang 
+ * @Date: 2020-09-20 15:43:53 
+ * @Last Modified by: jy.Huang
+ * @Last Modified time: 2020-09-20 17:07:17
+ */
 
-   Create a BLE server that, once we receive a connection, will send periodic notifications.
-   The service advertises itself as: 6E400001-B5A3-F393-E0A9-E50E24DCCA9E
-   Has a characteristic of: 6E400002-B5A3-F393-E0A9-E50E24DCCA9E - used for receiving data with "WRITE" 
-   Has a characteristic of: 6E400003-B5A3-F393-E0A9-E50E24DCCA9E - used to send data with  "NOTIFY"
-
-   The design of creating the BLE server is:
-   1. Create a BLE Server
-   2. Create a BLE Service
-   3. Create a BLE Characteristic on the Service
-   4. Create a BLE Descriptor on the characteristic
-   5. Start the service.
-   6. Start advertising.
-
-   In this example rxValue is the data received (only accessible inside that function).
-   And txValue is the data to be sent, in this example just a byte incremented every second. 
-*/
 #include <BLEDevice.h>
 #include <BLEServer.h>
 #include <BLEUtils.h>
@@ -27,101 +13,145 @@
 #include "EEPROM.h"
 
 #include <WiFi.h>
+#include <HTTPClient.h>
 
 //EEPROM 存储 WIFI 及密码
 //EEPROM 操作
-#define EEPROM_WRITE_WIFI_NAME    'A'
-#define EEPROM_READ_WIFI_NAME     'B'
-#define EEPROM_WRITE_PW           'C'
-#define EEPROM_READ_PW            'D'
+#define EEPROM_WRITE_WIFI_NAME 'A'
+#define EEPROM_READ_WIFI_NAME 'B'
+#define EEPROM_WRITE_PW 'C'
+#define EEPROM_READ_PW 'D'
+#define EEPROM_WRITE_HTTP 'E'
+#define EEPROM_READ_HTTP 'F'
 
-#define EEPROM_MAX_WIDTH          130
+#define EEPROM_MAX_WIDTH 130
 
-#define EEPROM_WIFI_ADDR          0
-#define EEPROM_WIFI_ADDR_WIDTH    64
+#define EEPROM_WIFI_ADDR 0
+#define EEPROM_WIFI_ADDR_WIDTH 32
 
-#define EEPROM_PW_ADDR            64
-#define EEPROM_PW_ADDR_WIDTH      64
+#define EEPROM_PW_ADDR 32
+#define EEPROM_PW_ADDR_WIDTH 32
 
-#define EEPROM_MODE_ADDR          129
+#define EEPROM_HTTP_ADDR 64
+#define EEPROM_HTTP_ADDR_WIDTH 128
+
+#define EEPROM_WIFI_STATE_ADDR 129
 
 //蓝牙对象创建
 BLEServer *pServer = NULL;
-BLECharacteristic * pTxCharacteristic;
+BLECharacteristic *pTxCharacteristic;
 bool deviceConnected = false;
 bool oldDeviceConnected = false;
 uint8_t txValue = 0;
 
-//wifi 对象创建
-WiFiServer server(80);
-
-//由于蓝牙与 wifi 在 Arduino 上不能同时运行，故分开模式选择
-#define BLE_MODE    0
-#define WIFI_MODE   1
+char serverName[64] = {'\0'};
+unsigned long lastTime = 0;
+// Timer set to 10 minutes (600000)
+//unsigned long timerDelay = 600000;
+// Set timer to 5 seconds (5000)
+unsigned long timerDelay = 5000;
 
 // See the following for generating UUIDs:
 // https://www.uuidgenerator.net/
 
-#define SERVICE_UUID           "6E400001-B5A3-F393-E0A9-E50E24DCCA9E" // UART service UUID
+#define SERVICE_UUID "6E400001-B5A3-F393-E0A9-E50E24DCCA9E" // UART service UUID
 
 //WIFI
-#define WIFI_CONNECT              'E'
+#define WIFI_CONNECT 'G'
+
+#define HTTP_ALLOW_POST 'H'
+#define HTTP_NOTALLOW_PSOT 'I'
+// #define WIFI_DISCONNECT           'H'
+
+#define POST_DENY 0
+#define POST_ADMINT 1
+
+uint8_t post_state = POST_DENY;
+
+#define WIFI_CONNECTED 1
+#define WIFI_DISCONNECTED 0
 
 //LED
-#define LED_PIN     2
+#define LED_PIN 2
 
-void get_WIFI_SSID_PW(char* WIFI_SSID, char* WIFI_PW){
+/**********************************************************************************************************/
+
+void get_HTTP_URL()
+{
   char tmp_ch;
   EEPROM.begin(EEPROM_MAX_WIDTH);
-  for(int i = EEPROM_WIFI_ADDR; i < EEPROM_WIFI_ADDR + EEPROM_WIFI_ADDR_WIDTH; i++){
+  for (int i = EEPROM_HTTP_ADDR; i < EEPROM_HTTP_ADDR + EEPROM_HTTP_ADDR_WIDTH; i++)
+  {
     tmp_ch = EEPROM.read(i);
-    if(tmp_ch == '\0')
+    if (tmp_ch == '\0')
+      break;
+    else
+      serverName[i] = tmp_ch;
+  }
+}
+
+void get_WIFI_SSID_PW(char *WIFI_SSID, char *WIFI_PW)
+{
+  char tmp_ch;
+  EEPROM.begin(EEPROM_MAX_WIDTH);
+  for (int i = EEPROM_WIFI_ADDR; i < EEPROM_WIFI_ADDR + EEPROM_WIFI_ADDR_WIDTH; i++)
+  {
+    tmp_ch = EEPROM.read(i);
+    if (tmp_ch == '\0')
       break;
     else
       WIFI_SSID[i] = tmp_ch;
   }
-  for(int i = EEPROM_PW_ADDR; i < EEPROM_PW_ADDR + EEPROM_PW_ADDR_WIDTH; i++){
+  for (int i = EEPROM_PW_ADDR; i < EEPROM_PW_ADDR + EEPROM_PW_ADDR_WIDTH; i++)
+  {
     tmp_ch = EEPROM.read(i);
-    if(tmp_ch == '\0')
+    if (tmp_ch == '\0')
       break;
     else
       WIFI_PW[i - EEPROM_PW_ADDR] = tmp_ch;
   }
 }
 
-void write_EEPROM(int start_addr, int addr_width, std::string rxValue){
+void write_EEPROM(int start_addr, int addr_width, std::string rxValue)
+{
   EEPROM.begin(EEPROM_MAX_WIDTH);
   //初始化地址
-  for(int i = start_addr; i < start_addr + addr_width; i++){
+  for (int i = start_addr; i < start_addr + addr_width; i++)
+  {
     EEPROM.write(i, 0);
   }
   //写入EEPROM
-  for(int i = start_addr; i < start_addr + rxValue.length(); i++){
+  for (int i = start_addr; i < start_addr + rxValue.length(); i++)
+  {
     EEPROM.write(i, rxValue[i + 1 - start_addr]);
   }
   EEPROM.commit();
 }
 
-void read_EEPROM(int start_addr, int addr_width){
+void read_EEPROM(int start_addr, int addr_width)
+{
   char tmp_ch;
   EEPROM.begin(EEPROM_MAX_WIDTH);
   //初始化写入地址
-  for(int i = start_addr; i < start_addr + addr_width; i++){
+  for (int i = start_addr; i < start_addr + addr_width; i++)
+  {
     tmp_ch = EEPROM.read(i);
     Serial.print(tmp_ch);
   }
 }
 
-void change_Mode(){
+void change_WIFI_State()
+{
   EEPROM.begin(EEPROM_MAX_WIDTH);
-  EEPROM.write(EEPROM_MODE_ADDR, (EEPROM.read(EEPROM_MODE_ADDR) == WIFI_MODE ? BLE_MODE : WIFI_MODE));
+  EEPROM.write(EEPROM_WIFI_STATE_ADDR, (EEPROM.read(EEPROM_WIFI_STATE_ADDR) == WIFI_CONNECTED ? WIFI_DISCONNECTED : WIFI_CONNECTED));
   EEPROM.commit();
-  Serial.println(EEPROM.read(EEPROM_MODE_ADDR));
+  Serial.println(EEPROM.read(EEPROM_WIFI_STATE_ADDR));
   delay(0xff);
-  ESP.restart();
+  // ESP.restart();
 }
 
-void Operate(char op, std::string rxValue){
+void Operate(char op, std::string rxValue)
+{
   switch (op)
   {
   case EEPROM_WRITE_WIFI_NAME:
@@ -141,8 +171,16 @@ void Operate(char op, std::string rxValue){
     break;
 
   case WIFI_CONNECT:
-    change_Mode();
+    WIFI_Init();
+    change_WIFI_State();
     break;
+
+  case HTTP_ALLOW_POST:
+    post_state = POST_ADMINT;
+    break;
+
+  case HTTP_NOTALLOW_PSOT:
+    post_state = POST_DENY;
 
   default:
     break;
@@ -150,55 +188,66 @@ void Operate(char op, std::string rxValue){
 }
 
 //连接服务中断
-class MyServerCallbacks: public BLEServerCallbacks {
-    void onConnect(BLEServer* pServer) {
-      deviceConnected = true;
-    };
+class MyServerCallbacks : public BLEServerCallbacks
+{
+  void onConnect(BLEServer *pServer)
+  {
+    deviceConnected = true;
+  };
 
-    void onDisconnect(BLEServer* pServer) {
-      deviceConnected = false;
-    }
+  void onDisconnect(BLEServer *pServer)
+  {
+    deviceConnected = false;
+  }
 };
 
 //蓝牙数据接收中断
-class MyCallbacks: public BLECharacteristicCallbacks {
-    void onWrite(BLECharacteristic *pCharacteristic) {
-      std::string rxValue = pCharacteristic->getValue();
+class MyCallbacks : public BLECharacteristicCallbacks
+{
+  void onWrite(BLECharacteristic *pCharacteristic)
+  {
+    std::string rxValue = pCharacteristic->getValue();
 
-      if (rxValue.length() > 0) {
-        Serial.print("Received Value: ");
-        for (int i = 0; i < rxValue.length(); i++)
-          Serial.print(rxValue[i]);
-          Serial.println();
-      }
-
-      Operate(rxValue[0], rxValue);
+    if (rxValue.length() > 0)
+    {
+      Serial.print("Received Value: ");
+      for (int i = 0; i < rxValue.length(); i++)
+        Serial.print(rxValue[i]);
+      Serial.println();
     }
+
+    Operate(rxValue[0], rxValue);
+  }
 };
 
-void check_BLE_Connected(){
-  if (deviceConnected) {
-        pTxCharacteristic->setValue(&txValue, 1);
-        pTxCharacteristic->notify();
-        txValue++;
-		delay(10); // bluetooth stack will go into congestion, if too many packets are sent
-	}
+void check_BLE_Connected()
+{
+  if (deviceConnected)
+  {
+    pTxCharacteristic->setValue(&txValue, 1);
+    pTxCharacteristic->notify();
+    txValue++;
+    delay(10); // bluetooth stack will go into congestion, if too many packets are sent
+  }
 
-    // disconnecting
-    if (!deviceConnected && oldDeviceConnected) {
-        delay(500); // give the bluetooth stack the chance to get things ready
-        pServer->startAdvertising(); // restart advertising
-        Serial.println("advertising");
-        oldDeviceConnected = deviceConnected;
-    }
-    // connecting
-    if (deviceConnected && !oldDeviceConnected) {
-		// do stuff here on connecting
-        oldDeviceConnected = deviceConnected;
-    }
+  // disconnecting
+  if (!deviceConnected && oldDeviceConnected)
+  {
+    delay(500);                  // give the bluetooth stack the chance to get things ready
+    pServer->startAdvertising(); // restart advertising
+    Serial.println("advertising");
+    oldDeviceConnected = deviceConnected;
+  }
+  // connecting
+  if (deviceConnected && !oldDeviceConnected)
+  {
+    // do stuff here on connecting
+    oldDeviceConnected = deviceConnected;
+  }
 }
 
-void BLE_Init(){
+void BLE_Init()
+{
   // Create the BLE Device
   BLEDevice::init("ESP32");
 
@@ -211,16 +260,14 @@ void BLE_Init(){
 
   // Create a BLE Characteristic
   pTxCharacteristic = pService->createCharacteristic(
-										SERVICE_UUID,
-										BLECharacteristic::PROPERTY_NOTIFY
-									);
-                      
+      SERVICE_UUID,
+      BLECharacteristic::PROPERTY_NOTIFY);
+
   pTxCharacteristic->addDescriptor(new BLE2902());
 
-  BLECharacteristic * pRxCharacteristic = pService->createCharacteristic(
-											 SERVICE_UUID,
-											BLECharacteristic::PROPERTY_WRITE
-										);
+  BLECharacteristic *pRxCharacteristic = pService->createCharacteristic(
+      SERVICE_UUID,
+      BLECharacteristic::PROPERTY_WRITE);
 
   pRxCharacteristic->setCallbacks(new MyCallbacks());
 
@@ -232,10 +279,12 @@ void BLE_Init(){
   Serial.println("Waiting");
 }
 
-void WIFI_Init(){
-  char WIFI_SSID[64] = {'\0'};
-  char WIFI_PW[64] = {'\0'};
-  pinMode(LED_PIN, OUTPUT);      // set the LED pin mode
+void WIFI_Init()
+{
+  char WIFI_SSID[32] = {'\0'};
+  char WIFI_PW[32] = {'\0'};
+
+  pinMode(LED_PIN, OUTPUT); // set the LED pin mode
 
   digitalWrite(LED_PIN, HIGH);
 
@@ -253,63 +302,68 @@ void WIFI_Init(){
 
   WiFi.begin(WIFI_SSID, WIFI_PW);
 
-  while (WiFi.status() != WL_CONNECTED) {
-      delay(500);
-      Serial.print(".");
+  while (WiFi.status() != WL_CONNECTED)
+  {
+    delay(500);
+    Serial.print(".");
   }
 
   Serial.println("");
   Serial.println("WiFi connected.");
   Serial.println("IP address: ");
   Serial.println(WiFi.localIP());
-  
-  server.begin();
+  get_HTTP_URL();
+  Serial.println("Got HTTP Server.");
 }
 
-void WIFI_process(){
-   WiFiClient client = server.available();   // listen for incoming clients
+void WIFI_process()
+{
+  if ((millis() - lastTime) > timerDelay)
+  {
+    //Check WiFi connection status
+    if (WiFi.status() == WL_CONNECTED)
+    {
 
-  if (client) {                             // if you get a client,
-    Serial.println("New Client.");           // print a message out the serial port
-    String currentLine = "";                // make a String to hold incoming data from the client
-    while (client.connected()) {            // loop while the client's connected
-      if (client.available()) {             // if there's bytes to read from the client,
-        delay(0xffff);
+      if (post_state == POST_ADMINT)
+      {
+        HTTPClient http;
+
+        // Your Domain name with URL path or IP address with path
+        http.begin(serverName);
+        Serial.print("post to ");
+        Serial.println(serverName);
+
+        http.addHeader("Content-Type", "application/json");
+        int httpResponseCode = http.POST("{\"time-stamp\":\"2019.1.1-01：01：01\",\"sensor-ID\":\"12345678\",\"state\":\"move\",\"rpm\":\"12.12\",\"signal\":\"9\",\"movement_slow\":\"12.34\",\"movement_fast\":\"12.34\"}");
+
+        Serial.print("HTTP Response code: ");
+        Serial.println(httpResponseCode);
+
+        http.end();
       }
     }
-    // close the connection:
-    client.stop();
-    Serial.println("Client Disconnected.");
-    change_Mode();
+    else
+    {
+      Serial.println("WiFi Disconnected");
+      change_WIFI_State();
+    }
+    lastTime = millis();
   }
 }
 
-
-void setup() {
+void setup()
+{
   Serial.begin(115200);
   EEPROM.begin(EEPROM_MAX_WIDTH);
-  switch (EEPROM.read(EEPROM_MODE_ADDR))
-  {
-    case BLE_MODE:
-      BLE_Init();
-      break;
-    
-    case WIFI_MODE:
-      WIFI_Init();
-      break;
-  }
+  BLE_Init();
+  
+  if(EEPROM.read(EEPROM_WIFI_STATE_ADDR) == WIFI_CONNECTED)
+    WIFI_Init;
 }
 
-void loop() {
-  switch (EEPROM.read(EEPROM_MODE_ADDR))
-  {
-  case BLE_MODE:
-    check_BLE_Connected();
-    break;
-  
-  case WIFI_MODE:
+void loop()
+{
+  check_BLE_Connected();
+  if(EEPROM.read(EEPROM_WIFI_STATE_ADDR) == WIFI_CONNECTED)
     WIFI_process();
-    break;
-  }
-
 }
