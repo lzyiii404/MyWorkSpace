@@ -1,0 +1,24 @@
+9/23/2020 9:12:56 AM: ################################
+9/23/2020 9:12:56 AM: Starting update
+9/23/2020 9:12:56 AM: Toolbox update folder: D:\MyWorkSpace\SolidWork\updates\
+9/23/2020 9:12:56 AM: Toolbox folder: D:\MyWorkSpace\SolidWork\
+9/23/2020 9:12:56 AM: Installation Media Location: E:\\Toolbox\
+9/23/2020 9:12:56 AM: Database: D:\MyWorkSpace\SolidWork\lang\english\swbrowser.sldedb
+9/23/2020 9:12:56 AM: Run from IM: True
+9/23/2020 9:12:56 AM: Processing: 1600_Install Ansi Inch.tbox
+9/23/2020 9:12:58 AM: Processing: 1600_Install Ansi Metric.tbox
+9/23/2020 9:12:58 AM: Processing: 1600_Install AS.tbox
+9/23/2020 9:12:59 AM: Processing: 1600_Install BSI.tbox
+9/23/2020 9:12:59 AM: Processing: 1600_Install CISC.tbox
+9/23/2020 9:12:59 AM: Processing: 1600_Install DIN.tbox
+9/23/2020 9:13:01 AM: Processing: 1600_Install GB.tbox
+9/23/2020 9:13:04 AM: Processing: 1600_Install IS.tbox
+9/23/2020 9:13:04 AM: Processing: 1600_Install ISO.tbox
+9/23/2020 9:13:05 AM: Processing: 1600_Install JIS.tbox
+9/23/2020 9:13:07 AM: Processing: 1600_Install KS.tbox
+9/23/2020 9:13:08 AM: Processing: 1600_Install MIL.tbox
+9/23/2020 9:13:09 AM: Processing: 1600_Install SKF.tbox
+9/23/2020 9:13:09 AM: Processing: 1600_Install Torrington Inch.tbox
+9/23/2020 9:13:09 AM: Processing: 1600_Install Torrington Metric.tbox
+9/23/2020 9:13:09 AM: Processing: 1600_Install Truarc.tbox
+9/23/2020 9:13:09 AM: Processing: 1600_Install Unistrut.tbox
