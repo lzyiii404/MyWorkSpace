@@ -62,23 +62,31 @@ int main()
 
     }
     int Status;
+    //初始化器件指针
 	XGpioPs_Config *ConfigPtr;
 	XGpioPs Gpio;	/* The driver instance for GPIO Device. */
 
+	//查找器件的配置信息
     ConfigPtr = XGpioPs_LookupConfig(GPIO_DEVICE_ID);
+
+    //初始化GPIO驱动并返回初始化状态
 	Status = XGpioPs_CfgInitialize(&Gpio, ConfigPtr,
 					ConfigPtr->BaseAddr);
 
 	if (Status != XST_SUCCESS) {
 		return XST_FAILURE;
 	}
-
+	//设置GPIO方向
 	XGpioPs_SetDirectionPin(&Gpio, 0, 1);
 	XGpioPs_SetDirectionPin(&Gpio, 13, 1);
+
+	//设置输出使能
 	XGpioPs_SetOutputEnablePin(&Gpio, 0, 1);
 	XGpioPs_SetOutputEnablePin(&Gpio, 13, 1);
 
 	while(1){
+
+		//写数据输出到GPIO引脚
 		XGpioPs_WritePin(&Gpio, 0, 1);
 		XGpioPs_WritePin(&Gpio, 13, 0);
 		sleep(1);

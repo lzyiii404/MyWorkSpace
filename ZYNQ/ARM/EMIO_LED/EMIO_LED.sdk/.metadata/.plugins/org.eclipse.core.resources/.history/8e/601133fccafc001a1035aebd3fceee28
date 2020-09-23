@@ -1,0 +1,75 @@
+#include <stdio.h>
+#include <xgpiops.h>
+#include <xparameters.h>
+#include <sleep.h>
+#include <xil_printf.h>
+
+#define GPIO_DEVICE_ID		XPAR_XGPIOPS_0_DEVICE_ID
+
+#define MIO_LED0	0
+#define MIO_LED1	13
+
+#define MIO_KEY1	50
+#define MIO_KEY2	51
+
+#define OUTPUT		1
+#define INPUT		0
+
+#define ENABLE		1
+#define DISABLE		0
+
+XGpioPs_Config* Config_ptr;
+
+XGpioPs	Gpio;
+
+int main(){
+	int state_LED0 = 0;
+	int state_LED1 = 1;
+	print("Using EMIO!");
+
+	Config_ptr = XGpioPs_LookupConfig(GPIO_DEVICE_ID);
+
+	XGpioPs_CfgInitialize(&Gpio, Config_ptr, Config_ptr -> BaseAddr);
+
+	XGpioPs_SetDirectionPin(&Gpio, MIO_LED0, OUTPUT);
+	XGpioPs_SetDirectionPin(&Gpio, MIO_LED1, OUTPUT);
+
+	XGpioPs_SetDirectionPin(&Gpio, MIO_KEY1, INPUT);
+	XGpioPs_SetDirectionPin(&Gpio, MIO_KEY2, INPUT);
+
+
+	XGpioPs_SetOutputEnablePin(&Gpio, MIO_LED0, ENABLE);
+	XGpioPs_SetOutputEnablePin(&Gpio, MIO_LED1, ENABLE);
+
+	XGpioPs_WritePin(&Gpio, MIO_LED0, state_LED0);
+	XGpioPs_WritePin(&Gpio, MIO_LED1, state_LED1);
+
+	while (1){
+		if (!XGpioPs_ReadPin(&Gpio, MIO_KEY1)){
+			usleep(10);
+			if(!XGpioPs_ReadPin(&Gpio, MIO_KEY1)){
+				state_LED0 = !state_LED0;
+				XGpioPs_WritePin(&Gpio, MIO_LED0, state_LED0);
+
+				while (!XGpioPs_ReadPin(&Gpio, MIO_KEY1)){
+					usleep(50);
+				}
+			}
+		}
+
+		if (!XGpioPs_ReadPin(&Gpio, MIO_KEY2)){
+					usleep(10);
+					if(!XGpioPs_ReadPin(&Gpio, MIO_KEY2)){
+						state_LED1 = !state_LED1;
+						XGpioPs_WritePin(&Gpio, MIO_LED1, state_LED1);
+
+						while (!XGpioPs_ReadPin(&Gpio, MIO_KEY2)){
+							usleep(50);
+						}
+					}
+				}
+	}
+
+
+
+}

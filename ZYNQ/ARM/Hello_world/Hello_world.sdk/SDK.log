@@ -579,3 +579,10 @@ con
 11:40:30 INFO  : Launch script is exported to file 'D:\MyWorkSpace\ZYNQ\ARM\Hello_world\Hello_world.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_hello_world.elf_on_local.tcl'
 11:42:51 INFO  : Example project key_itr_test_bsp_xgpiops_intr_example_1 has been created successfully.
 19:25:34 INFO  : Launching XSCT server: xsct.bat -interactive D:\MyWorkSpace\ZYNQ\ARM\Hello_world\Hello_world.sdk\temp_xsdb_launch_script.tcl
+19:18:11 INFO  : Registering command handlers for SDK TCF services
+19:18:11 INFO  : Launching XSCT server: xsct.bat -interactive D:\MyWorkSpace\ZYNQ\ARM\Hello_world\Hello_world.sdk\temp_xsdb_launch_script.tcl
+19:18:13 INFO  : XSCT server has started successfully.
+19:18:13 INFO  : Successfully done setting XSCT server connection channel  
+19:18:14 INFO  : Successfully done setting SDK workspace  
+19:18:14 INFO  : Processing command line option -hwspec D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/design_1_wrapper.hdf.
+19:18:14 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.

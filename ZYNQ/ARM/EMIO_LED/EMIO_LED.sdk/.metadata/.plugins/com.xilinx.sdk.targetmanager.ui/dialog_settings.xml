@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="Auto Detect" key="EMIO_armA9_system_wrapper_hw_platform_0-device"/>
+	<item value="EMIO_armA9_system_wrapper_hw_platform_0" key="programfpga.hwplatform"/>
+	<item value="" key="EMIO_armA9_system_wrapper_hw_platform_0-bmmFile"/>
+	<item value="Local" key="EMIO_armA9_system_wrapper_hw_platform_0-target"/>
+	<item value="false" key="EMIO_armA9_system_wrapper_hw_platform_0-partial_bit"/>
+	<item value="D:\MyWorkSpace\ZYNQ\ARM\EMIO_LED\EMIO_LED.runs\impl_1\zynq_embedded_system_wrapper.bit" key="EMIO_armA9_system_wrapper_hw_platform_0-bitFile"/>
+</section>
