@@ -17,7 +17,7 @@ import time
 
 app = Flask(__name__)
 
-HOST = '192.168.1.174'
+HOST = '172.26.17.146'
 # HOST = '127.0.0.1'
 PORT = '5000'
 DATABASE_NAME = 'Devices'

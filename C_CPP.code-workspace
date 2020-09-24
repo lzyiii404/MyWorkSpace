@@ -33,7 +33,8 @@
       "unordered_map": "cpp",
       "string_view": "cpp",
       "initializer_list": "cpp",
-      "ostream": "cpp"
+      "ostream": "cpp",
+      "functional": "cpp"
     },
     "fileheader.LastModifiedBy": "jy.Huang",
     "fileheader.Author": "jy.Huang"

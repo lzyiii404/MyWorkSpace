@@ -1,0 +1,89 @@
+/*
+  Rui Santos
+  Complete project details at Complete project details at https://RandomNerdTutorials.com/esp32-http-get-post-arduino/
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files.
+
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+*/
+
+#include <WiFi.h>
+#include <HTTPClient.h>
+#include <time.h>
+
+const char* ssid = "Huang_WIFI_test";
+const char* password = "huang123";
+
+const char* ntpServer = "pool.ntp.org";
+const long  gmtOffset_sec = 28800;
+const int   daylightOffset_sec = 28800;
+
+//Your Domain name with URL path or IP address with path
+// char serverName[64] = "http://192.168.1.174:5000/upload";
+
+// the following variables are unsigned longs because the time, measured in
+// milliseconds, will quickly become a bigger number than can be stored in an int.
+unsigned long lastTime = 0;
+// Timer set to 10 minutes (600000)
+//unsigned long timerDelay = 600000;
+// Set timer to 5 seconds (5000)
+unsigned long timerDelay = 5000;
+
+void setup() {
+  Serial.begin(115200);
+
+  WiFi.begin(ssid, password);
+  Serial.println("Connecting");
+  while(WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("");
+  Serial.print("Connected to WiFi network with IP Address: ");
+  Serial.println(WiFi.localIP());
+ 
+//   Serial.println("Timer set to 5 seconds (timerDelay variable), it will take 5 seconds before publishing the first reading.");
+}
+
+void loop() {
+  //Send an HTTP POST request every 10 minutes
+//   if ((millis() - lastTime) > timerDelay) {
+//     //Check WiFi connection status
+//     if(WiFi.status()== WL_CONNECTED){
+//       HTTPClient http;
+      
+//       // Your Domain name with URL path or IP address with path
+//       http.begin(serverName);
+//       Serial.print("post to ");
+//       Serial.println(serverName);
+//       // Specify content-type header
+//       // http.addHeader("Content-Type", "application/x-www-form-urlencoded");
+//       // Data to send with HTTP POST
+//       // String httpRequestData = "api_key=tPmAT5Ab3j7F9&sensor=BME280&value1=24.25&value2=49.54&value3=1005.14";           
+//       // Send HTTP POST request
+//       // int httpResponseCode = http.POST(httpRequestData);
+      
+//       // If you need an HTTP request with a content type: application/json, use the following:
+//       http.addHeader("Content-Type", "application/json");
+//       int httpResponseCode = http.POST("{\"time-stamp\":\"2019.1.1-01：01：01\",\"sensor-ID\":\"12345678\",\"state\":\"move\",\"rpm\":\"12.12\",\"signal\":\"9\",\"movement_slow\":\"12.34\",\"movement_fast\":\"12.34\"}");
+      
+//       // If you need an HTTP request with a content type: text/plain
+//       //http.addHeader("Content-Type", "text/plain");
+//       //int httpResponseCode = http.POST("Hello, World!");
+     
+//       Serial.print("HTTP Response code: ");
+//       Serial.println(httpResponseCode);
+//       // Serial.print(http.GET());
+        
+//       // Free resources
+//       http.end();
+//     }
+//     else {
+//       Serial.println("WiFi Disconnected");
+//     }
+//     lastTime = millis();
+//   }
+    if()
+}

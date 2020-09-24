@@ -6,7 +6,7 @@
 #define SerialRadar Serial2 // Used for communication with the radar
 #define SerialDebug Serial  // Used for printing debug information
 // Pin definitions
-#define RESET_PIN 2
+#define RESET_PIN 4
 #define RADAR_RX_PIN 16
 //
 // The following values can be found in XeThru Module Communication Protocol:
@@ -72,6 +72,40 @@ typedef struct RespirationMessage
     float movement_slow;
     float movement_fast;
 };
+
+void Init_radar(){
+    pinMode(RADAR_RX_PIN, OUTPUT);
+    digitalWrite(RADAR_RX_PIN, HIGH);
+    pinMode(RESET_PIN, OUTPUT);
+    digitalWrite(RESET_PIN, LOW);
+    delay(100);
+    digitalWrite(RESET_PIN, HIGH);
+    // Set up serial communication
+    SerialRadar.begin(115200);
+    // SerialDebug.begin(115200);
+    // After the module resets, the XTS_SPRS_BOOTING message is sent. Then, after the
+    // module booting sequence is completed and the module is ready to accept further
+    // commands, the XTS_SPRS_READY command is issued. Let's wait for this.
+    wait_for_ready_message();
+    // Stop the module, in case it is running
+    stop_module();
+    // Load respiration profile
+    load_profile(XTS_ID_APP_RESPIRATION_2);
+    // Configure the noisemap
+    configure_noisemap();
+    // Set detection zone
+    set_detection_zone(0.4, 2.0);
+    // Set sensitivity
+    set_sensitivity(9);
+    // Enable only the Sleep message, disable all others
+    enable_output_message(XTS_ID_SLEEP_STATUS);
+    disable_output_message(XTS_ID_RESP_STATUS);
+    disable_output_message(XTS_ID_RESPIRATION_MOVINGLIST);
+    disable_output_message(XTS_ID_RESPIRATION_DETECTIONLIST);
+    // Run profile - after this the radar will start sending the sleep message we enabled above
+    run_profile();
+}
+
 void setup()
 {
     // Getting the startup sequence right:
