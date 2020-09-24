@@ -33,9 +33,9 @@
 #define EEPROM_PW_ADDR_WIDTH 32
 
 #define EEPROM_HTTP_ADDR 64
-#define EEPROM_HTTP_ADDR_WIDTH 128
+#define EEPROM_HTTP_ADDR_WIDTH 64
 
-#define EEPROM_WIFI_STATE_ADDR 129
+#define EEPROM_MODE_STATE_ADDR 129
 
 //蓝牙对象创建
 BLEServer *pServer = NULL;
@@ -59,17 +59,17 @@ unsigned long timerDelay = 5000;
 //WIFI
 #define WIFI_CONNECT 'G'
 
-#define HTTP_ALLOW_POST 'H'
-#define HTTP_NOTALLOW_PSOT 'I'
+// #define HTTP_ALLOW_POST 'H'
+// #define HTTP_NOTALLOW_PSOT 'I'
 // #define WIFI_DISCONNECT           'H'
 
-#define POST_DENY 0
-#define POST_ADMINT 1
+// #define POST_DENY 0
+// #define POST_ADMINT 1
 
-uint8_t post_state = POST_DENY;
+uint8_t Mode_state = NULL;
 
-#define WIFI_CONNECTED 1
-#define WIFI_DISCONNECTED 0
+#define WIFI_MODE 1
+#define BLE_MODE 0
 
 //LED
 #define LED_PIN 2
@@ -86,7 +86,7 @@ void get_HTTP_URL()
     if (tmp_ch == '\0')
       break;
     else
-      serverName[i] = tmp_ch;
+      serverName[i - EEPROM_HTTP_ADDR] = tmp_ch;
   }
 }
 
@@ -140,14 +140,19 @@ void read_EEPROM(int start_addr, int addr_width)
   }
 }
 
-void change_WIFI_State()
+void change_Mode()
 {
   EEPROM.begin(EEPROM_MAX_WIDTH);
-  EEPROM.write(EEPROM_WIFI_STATE_ADDR, (EEPROM.read(EEPROM_WIFI_STATE_ADDR) == WIFI_CONNECTED ? WIFI_DISCONNECTED : WIFI_CONNECTED));
+  EEPROM.write(EEPROM_MODE_STATE_ADDR, (EEPROM.read(EEPROM_MODE_STATE_ADDR) == WIFI_MODE ? BLE_MODE : WIFI_MODE));
   EEPROM.commit();
-  Serial.println(EEPROM.read(EEPROM_WIFI_STATE_ADDR));
+  Serial.println(EEPROM.read(EEPROM_MODE_STATE_ADDR));
   delay(0xff);
-  // ESP.restart();
+  ESP.restart();
+}
+
+int get_Mode_state()
+{
+  return EEPROM.read(EEPROM_MODE_STATE_ADDR);
 }
 
 void Operate(char op, std::string rxValue)
@@ -170,19 +175,28 @@ void Operate(char op, std::string rxValue)
     read_EEPROM(EEPROM_PW_ADDR, EEPROM_PW_ADDR_WIDTH);
     break;
 
+  case EEPROM_WRITE_HTTP:
+    write_EEPROM(EEPROM_HTTP_ADDR, EEPROM_HTTP_ADDR_WIDTH, rxValue);
+    break;
+
+  case EEPROM_READ_HTTP:
+    read_EEPROM(EEPROM_HTTP_ADDR, EEPROM_HTTP_ADDR_WIDTH);
+    break;
+
   case WIFI_CONNECT:
-    WIFI_Init();
-    change_WIFI_State();
+    // WIFI_Init();
+    change_Mode();
     break;
 
-  case HTTP_ALLOW_POST:
-    post_state = POST_ADMINT;
-    break;
+    // case HTTP_ALLOW_POST:
+    //   post_state = POST_ADMINT;
+    //   break;
 
-  case HTTP_NOTALLOW_PSOT:
-    post_state = POST_DENY;
+    // case HTTP_NOTALLOW_PSOT:
+    //   post_state = POST_DENY;
 
   default:
+    Serial.println("Wrong command!!");
     break;
   }
 }
@@ -302,8 +316,16 @@ void WIFI_Init()
 
   WiFi.begin(WIFI_SSID, WIFI_PW);
 
+  uint32_t cnt_fail = 0;
+
   while (WiFi.status() != WL_CONNECTED)
   {
+    if (cnt_fail++ >= 60){
+      Serial.println("Unable to connect to WIFI");
+      Serial.println("Please re enter the SSID / PW!");
+      delay(0xff);
+      change_Mode();
+    }
     delay(500);
     Serial.print(".");
   }
@@ -314,38 +336,44 @@ void WIFI_Init()
   Serial.println(WiFi.localIP());
   get_HTTP_URL();
   Serial.println("Got HTTP Server.");
+  Serial.println(serverName);
 }
 
 void WIFI_process()
 {
-  if ((millis() - lastTime) > timerDelay)
-  {
+    if ((millis() - lastTime) > timerDelay) {
     //Check WiFi connection status
-    if (WiFi.status() == WL_CONNECTED)
-    {
-
-      if (post_state == POST_ADMINT)
-      {
-        HTTPClient http;
-
-        // Your Domain name with URL path or IP address with path
-        http.begin(serverName);
-        Serial.print("post to ");
-        Serial.println(serverName);
-
-        http.addHeader("Content-Type", "application/json");
-        int httpResponseCode = http.POST("{\"time-stamp\":\"2019.1.1-01：01：01\",\"sensor-ID\":\"12345678\",\"state\":\"move\",\"rpm\":\"12.12\",\"signal\":\"9\",\"movement_slow\":\"12.34\",\"movement_fast\":\"12.34\"}");
-
-        Serial.print("HTTP Response code: ");
-        Serial.println(httpResponseCode);
-
-        http.end();
-      }
+    if(WiFi.status()== WL_CONNECTED){
+      HTTPClient http;
+      
+      // Your Domain name with URL path or IP address with path
+      http.begin(serverName);
+      Serial.print("post to ");
+      Serial.println(serverName);
+      // Specify content-type header
+      // http.addHeader("Content-Type", "application/x-www-form-urlencoded");
+      // Data to send with HTTP POST
+      // String httpRequestData = "api_key=tPmAT5Ab3j7F9&sensor=BME280&value1=24.25&value2=49.54&value3=1005.14";           
+      // Send HTTP POST request
+      // int httpResponseCode = http.POST(httpRequestData);
+      
+      // If you need an HTTP request with a content type: application/json, use the following:
+      http.addHeader("Content-Type", "application/json");
+      int httpResponseCode = http.POST("{\"time-stamp\":\"2019.1.1-01：01：01\",\"sensor-ID\":\"12345678\",\"state\":\"move\",\"rpm\":\"12.12\",\"signal\":\"9\",\"movement_slow\":\"12.34\",\"movement_fast\":\"12.34\"}");
+      
+      // If you need an HTTP request with a content type: text/plain
+      //http.addHeader("Content-Type", "text/plain");
+      //int httpResponseCode = http.POST("Hello, World!");
+     
+      Serial.print("HTTP Response code: ");
+      Serial.println(httpResponseCode);
+      // Serial.print(http.GET());
+        
+      // Free resources
+      http.end();
     }
-    else
-    {
+    else {
       Serial.println("WiFi Disconnected");
-      change_WIFI_State();
     }
     lastTime = millis();
   }
@@ -355,15 +383,41 @@ void setup()
 {
   Serial.begin(115200);
   EEPROM.begin(EEPROM_MAX_WIDTH);
-  BLE_Init();
+
+  Mode_state = get_Mode_state();
+
+  switch (Mode_state)
+  {
+  case BLE_MODE:
+    BLE_Init();
+    break;
   
-  if(EEPROM.read(EEPROM_WIFI_STATE_ADDR) == WIFI_CONNECTED)
-    WIFI_Init;
+  case WIFI_MODE:
+    WIFI_Init();
+    break;
+
+  default:
+    ESP.restart();
+    break;
+  }
+
 }
 
 void loop()
 {
-  check_BLE_Connected();
-  if(EEPROM.read(EEPROM_WIFI_STATE_ADDR) == WIFI_CONNECTED)
+  switch (Mode_state)
+  {
+  case BLE_MODE:
+    check_BLE_Connected();
+    break;
+  
+  case WIFI_MODE:
     WIFI_process();
+    break;
+
+  default:
+    ESP.restart();
+    break;
+  }
+  
 }
