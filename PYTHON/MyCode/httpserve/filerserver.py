@@ -32,9 +32,14 @@ def upload():
     if request.method == 'POST':
         req=request
         # file1 = request.files.get("json")
-        data = json.loads(request.get_data(as_text=True))
+        # data = json.loads(request.get_data(as_text=True))
+        data = request.get_data(as_text=True)
         print(type(data))
         print(data)
+        filename = time.strftime('%Y_%m_%d_%H_%M_%S', time.localtime())
+        f = open('D:\\MyWorkSpace\\PYTHON\\MyCode\\httpserve\\data\\' + filename + '.json', 'w+')
+        f.write(data)
+        # print(filename)
         # print(request.get_data(as_text=True))
         # data = json.loads(request.get_data(as_text=True))
         # print(type(data))
