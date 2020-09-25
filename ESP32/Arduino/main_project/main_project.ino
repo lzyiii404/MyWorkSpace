@@ -508,13 +508,13 @@ void clear_json_data(){
 void creat_json_head(){
   json_data.append("{\"sensor-Id\":\"");
   json_data.append(SERVICE_UUID);
-  json_data.append("\",\"num\":\"5\",\"pack\":[");
+  json_data.append("\",\"num\":\"60\",\"pack\":[");
 }
 
 void float2string(float num){
   char tmp[6];
   sprintf(tmp, "%.1f", num);
-  SerialDebug.println("get tmp");
+  // SerialDebug.println("get tmp");
   json_data.append(tmp);
 }
 
@@ -527,11 +527,11 @@ void int2string(int num){
 void add_data2json(RespirationMessage* msg){
   json_data.append("{\"state\":\"");
   json_data.append(states[msg->state_code]);
-  SerialDebug.println("add states");
+  // SerialDebug.println("add states");
   json_data.append("\",\"RPM\":\"");
   // json_data.append(to_string(msg->rpm));
   float2string(msg->rpm);
-  SerialDebug.println("add rpm");
+  // SerialDebug.println("add rpm");
   json_data.append("\",\"Distance\":\"");
   // json_data.append(to_string(msg->distance));
   float2string(msg->distance);
@@ -864,7 +864,7 @@ void Radar_process(){
     SerialDebug.println("finish add date2json");
     get_Msg_Times++;
     SerialDebug.println(get_Msg_Times);
-    if (get_Msg_Times > 5){
+    if (get_Msg_Times >= 60){
       add_json_tail();
       // SerialDebug.println("Show the json and Post it!");
       WIFI_process();

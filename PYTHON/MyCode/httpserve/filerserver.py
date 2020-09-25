@@ -17,8 +17,8 @@ import time
 
 app = Flask(__name__)
 
-HOST = '172.26.17.146'
-# HOST = '127.0.0.1'
+# HOST = '172.26.17.146'
+HOST = '192.168.1.174'
 PORT = '5000'
 DATABASE_NAME = 'Devices'
 USERNAME = 'root'
@@ -37,7 +37,7 @@ def upload():
         print(type(data))
         print(data)
         filename = time.strftime('%Y_%m_%d_%H_%M_%S', time.localtime())
-        f = open('D:\\MyWorkSpace\\PYTHON\\MyCode\\httpserve\\data\\' + filename + '.json', 'w+')
+        f = open('D:\\MyWorkSpace\\PYTHON\\MyCode\\httpserve\\data\\9_25\\' + filename + '.json', 'w+')
         f.write(data)
         # print(filename)
         # print(request.get_data(as_text=True))
