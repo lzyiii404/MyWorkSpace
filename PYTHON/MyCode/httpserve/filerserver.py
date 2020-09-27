@@ -37,7 +37,7 @@ def upload():
         print(type(data))
         print(data)
         filename = time.strftime('%Y_%m_%d_%H_%M_%S', time.localtime())
-        f = open('D:\\MyWorkSpace\\PYTHON\\MyCode\\httpserve\\data\\9_25\\' + filename + '.json', 'w+')
+        f = open('D:\\MyWorkSpace\\PYTHON\\MyCode\\httpserve\\data\\9_27\\' + filename + '.json', 'w+')
         f.write(data)
         # print(filename)
         # print(request.get_data(as_text=True))
