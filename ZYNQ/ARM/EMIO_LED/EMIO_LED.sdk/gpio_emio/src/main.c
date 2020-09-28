@@ -8,7 +8,7 @@
 #define GPIO_DEVICE_ID		XPAR_XGPIOPS_0_DEVICE_ID
 
 #define GPIO_INTERRUPT_ID	XPAR_XGPIOPS_0_INTR// #52
-#define INTC_DEVICE_ID		XPAR_SCUGIC_0_DEVICE_ID
+#define INTC_DEVICE_ID		XPAR_SCUGIC_SINGLE_DEVICE_ID
 
 #define MIO_LED0	0
 #define MIO_LED1	13
@@ -16,7 +16,7 @@
 #define MIO_KEY1	50
 #define MIO_KEY2	51
 
-#define EMIO_KEY1	54
+#define EMIO_KEY1	53
 
 #define OUTPUT		1
 #define INPUT		0
@@ -32,7 +32,7 @@ XGpioPs	Gpio;
 XScuGic Intc;
 
 void Init_Interrupt_System(XScuGic* GicInstancePtr, XGpioPs* Gpio, u16 GpioIntrId);
-void IntrHandle(void* CallBackRef, u32 Bank, u32 Status);
+void IntrHandler();
 
 int main(){
 	int state_LED0 = 0;
@@ -87,26 +87,26 @@ int main(){
 			}
 		}
 
-		if (!XGpioPs_ReadPin(&Gpio, EMIO_KEY1)){
-			usleep(10);
-			if(!XGpioPs_ReadPin(&Gpio, EMIO_KEY1)){
-				state_LED0 = !state_LED0;
-				state_LED1 = !state_LED1;
-				XGpioPs_WritePin(&Gpio, MIO_LED0, state_LED0);
-				XGpioPs_WritePin(&Gpio, MIO_LED1, state_LED1);
-
-				while (!XGpioPs_ReadPin(&Gpio, EMIO_KEY1)){
-					usleep(50);
-				}
-			}
-		}
+//		if (!XGpioPs_ReadPin(&Gpio, EMIO_KEY1)){
+//			usleep(10);
+//			if(!XGpioPs_ReadPin(&Gpio, EMIO_KEY1)){
+//				state_LED0 = !state_LED0;
+//				state_LED1 = !state_LED1;
+//				XGpioPs_WritePin(&Gpio, MIO_LED0, state_LED0);
+//				XGpioPs_WritePin(&Gpio, MIO_LED1, state_LED1);
+//
+//				while (!XGpioPs_ReadPin(&Gpio, EMIO_KEY1)){
+//					usleep(50);
+//				}
+//			}
+//		}
 	}
 
 }
 
 void Init_Interrupt_System(XScuGic* GicInstancePtr, XGpioPs* Gpio, u16 GpioIntrId){
 
-	//查找配置信息
+	//查找配置GIC信息
 	Intc_Config_ptr = XScuGic_LookupConfig(INTC_DEVICE_ID);
 	XScuGic_CfgInitialize(GicInstancePtr, Intc_Config_ptr, Intc_Config_ptr->CpuBaseAddress);
 
@@ -115,11 +115,8 @@ void Init_Interrupt_System(XScuGic* GicInstancePtr, XGpioPs* Gpio, u16 GpioIntrI
 	Xil_ExceptionInit();
 
 	//注册IRQ异常注册处理程序
-	Xil_ExceptionRegisterHandler(XIL_EXCEPTION_ID_INT,
+	Xil_ExceptionRegisterHandler(XIL_EXCEPTION_ID_IRQ_INT,
 			(Xil_ExceptionHandler)XScuGic_InterruptHandler, GicInstancePtr);
-
-	//开启
-	Xil_ExceptionEnable();
 
 	//使能处理器中断
 	Xil_ExceptionEnableMask(XIL_EXCEPTION_IRQ);
@@ -134,14 +131,16 @@ void Init_Interrupt_System(XScuGic* GicInstancePtr, XGpioPs* Gpio, u16 GpioIntrI
 	XScuGic_Enable(GicInstancePtr, GpioIntrId);
 
 	//设置MIO引脚中断出发类型为下降沿
-	XGpioPs_SetIntrTypePin(Gpio, MIO_KEY1, XGPIOPS_IRQ_TYPE_EDGE_FALLING);
+	XGpioPs_SetIntrTypePin(Gpio, EMIO_KEY1, XGPIOPS_IRQ_TYPE_EDGE_FALLING);
 
 	//打开MIO引脚中断使能信号
-	XGpioPs_IntrEnablePin(Gpio, MIO_KEY1);
+	XGpioPs_IntrEnablePin(Gpio, EMIO_KEY1);
 
+	Xil_ExceptionEnable();
 }
 
 
-void IntrHandle(void* CallBackRef, u32 Bank, Status){
-
+void IntrHandler(){
+	print("interrupt detected!");
+	XGpioPs_IntrDisablePin(&Gpio, EMIO_KEY1);
 }
