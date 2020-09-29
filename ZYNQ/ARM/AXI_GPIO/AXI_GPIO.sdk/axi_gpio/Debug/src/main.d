@@ -16,7 +16,12 @@ src/main.o src/main.o: ../src/main.c \
  ../../axi_gpio_bsp/ps7_cortexa9_0/include/xgpiops_hw.h \
  ../../axi_gpio_bsp/ps7_cortexa9_0/include/xplatform_info.h \
  ../../axi_gpio_bsp/ps7_cortexa9_0/include/xil_printf.h \
- ../../axi_gpio_bsp/ps7_cortexa9_0/include/xparameters.h
+ ../../axi_gpio_bsp/ps7_cortexa9_0/include/xparameters.h \
+ ../../axi_gpio_bsp/ps7_cortexa9_0/include/xil_exception.h \
+ ../../axi_gpio_bsp/ps7_cortexa9_0/include/xscugic.h \
+ ../../axi_gpio_bsp/ps7_cortexa9_0/include/xscugic_hw.h \
+ ../../axi_gpio_bsp/ps7_cortexa9_0/include/xil_exception.h \
+ ../../axi_gpio_bsp/ps7_cortexa9_0/include/sleep.h
 
 ../../axi_gpio_bsp/ps7_cortexa9_0/include/xgpio.h:
 
@@ -53,3 +58,13 @@ src/main.o src/main.o: ../src/main.c \
 ../../axi_gpio_bsp/ps7_cortexa9_0/include/xil_printf.h:
 
 ../../axi_gpio_bsp/ps7_cortexa9_0/include/xparameters.h:
+
+../../axi_gpio_bsp/ps7_cortexa9_0/include/xil_exception.h:
+
+../../axi_gpio_bsp/ps7_cortexa9_0/include/xscugic.h:
+
+../../axi_gpio_bsp/ps7_cortexa9_0/include/xscugic_hw.h:
+
+../../axi_gpio_bsp/ps7_cortexa9_0/include/xil_exception.h:
+
+../../axi_gpio_bsp/ps7_cortexa9_0/include/sleep.h:

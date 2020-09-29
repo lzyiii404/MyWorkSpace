@@ -149,3 +149,525 @@ arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=non
 D:\MyWorkSpace\ZYNQ\ARM\AXI_GPIO\AXI_GPIO.sdk\axi_gpio_bsp\ps7_cortexa9_0\libsrc\standalone_v6_8\src/xil-crt0.S:138: undefined reference to `main'
 collect2.exe: error: ld returned 1 exit status
 make: *** [makefile:41: axi_gpio.elf] Error 1
+17:02:25 **** Clean-only build of configuration Debug for project axi_gpio ****
+make clean 
+rm -rf  ./src/main.o  ./src/main.d  axi_gpio.elf.size  axi_gpio.elf
+' '
+17:02:25 **** Auto Build of configuration Debug for project axi_gpio ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_gpio_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:20:1: error: unknown type name 'XScuGic_Config'; did you mean 'XGpio_Config'?
+ XScuGic_Config* IntrConfig;
+ ^~~~~~~~~~~~~~
+ XGpio_Config
+../src/main.c:24:1: error: unknown type name 'XScuGic'
+ XScuGic Intc;
+ ^~~~~~~
+../src/main.c:26:26: error: unknown type name 'XScuGic'
+ void InitInterruptSystem(XScuGic* GicInstancePtr, XGpio* Gpio, u16 GpioIntrId);
+                          ^~~~~~~
+../src/main.c: In function 'main':
+../src/main.c:45:2: warning: implicit declaration of function 'InitInterruptSystem' [-Wimplicit-function-declaration]
+  InitInterruptSystem(&Intc, &AXI_Gpio, AXI_GPIO_DEVICE_ID);
+  ^~~~~~~~~~~~~~~~~~~
+../src/main.c: At top level:
+../src/main.c:49:26: error: unknown type name 'XScuGic'
+ void InitInterruptSystem(XScuGic* GicInstancePtr, XGpio* AXI_Gpio, u16 AXI_GpioIntrId){
+                          ^~~~~~~
+make: *** [src/subdir.mk:23: src/main.o] Error 1
+17:02:44 **** Auto Build of configuration Debug for project axi_gpio ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_gpio_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:20:1: error: unknown type name 'XScuGic_Config'; did you mean 'XGpio_Config'?
+ XScuGic_Config* IntrConfig;
+ ^~~~~~~~~~~~~~
+ XGpio_Config
+../src/main.c:24:1: error: unknown type name 'XScuGic'
+ XScuGic Intc;
+ ^~~~~~~
+../src/main.c:26:26: error: unknown type name 'XScuGic'
+ void InitInterruptSystem(XScuGic* GicInstancePtr, XGpio* AXI_Gpio, u16 AXI_GpioIntrId);
+                          ^~~~~~~
+../src/main.c: In function 'main':
+../src/main.c:45:2: warning: implicit declaration of function 'InitInterruptSystem' [-Wimplicit-function-declaration]
+  InitInterruptSystem(&Intc, &AXI_Gpio, AXI_GPIO_DEVICE_ID);
+  ^~~~~~~~~~~~~~~~~~~
+../src/main.c: At top level:
+../src/main.c:49:26: error: unknown type name 'XScuGic'
+ void InitInterruptSystem(XScuGic* GicInstancePtr, XGpio* AXI_Gpio, u16 AXI_GpioIntrId){
+                          ^~~~~~~
+make: *** [src/subdir.mk:23: src/main.o] Error 1
+17:03:43 **** Auto Build of configuration Debug for project axi_gpio ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_gpio_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: axi_gpio.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_gpio_bsp/ps7_cortexa9_0/lib -o "axi_gpio.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi_gpio.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi_gpio.elf  |tee "axi_gpio.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  32420	   1944	  22648	  57012	   deb4	axi_gpio.elf
+'Finished building: axi_gpio.elf.size'
+' '
+17:10:17 **** Auto Build of configuration Debug for project axi_gpio ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_gpio_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: axi_gpio.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_gpio_bsp/ps7_cortexa9_0/lib -o "axi_gpio.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi_gpio.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi_gpio.elf  |tee "axi_gpio.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  32696	   1944	  22664	  57304	   dfd8	axi_gpio.elf
+'Finished building: axi_gpio.elf.size'
+' '
+17:10:19 **** Auto Build of configuration Debug for project axi_gpio ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+17:10:30 **** Auto Build of configuration Debug for project axi_gpio ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_gpio_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: axi_gpio.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_gpio_bsp/ps7_cortexa9_0/lib -o "axi_gpio.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi_gpio.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi_gpio.elf  |tee "axi_gpio.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  32696	   1944	  22664	  57304	   dfd8	axi_gpio.elf
+'Finished building: axi_gpio.elf.size'
+' '
+18:09:26 **** Auto Build of configuration Debug for project axi_gpio ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_gpio_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'InitInterruptSystem':
+../src/main.c:67:29: error: unknown type name 't'
+  print("Init interrupt!\n");t
+                             ^
+../src/main.c:68:15: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  IntrConfig = XScuGic_LookupConfig(INTC_DEVICE_ID);
+               ^~~~~~~~~~~~~~~~~~~~
+../src/main.c:69:62: error: invalid type argument of '->' (have 'int')
+  XScuGic_CfgInitialize(GicInstancePtr, IntrConfig, IntrConfig->CpuBaseAddress);
+                                                              ^~
+../src/main.c:69:40: warning: passing argument 2 of 'XScuGic_CfgInitialize' makes pointer from integer without a cast [-Wint-conversion]
+  XScuGic_CfgInitialize(GicInstancePtr, IntrConfig, IntrConfig->CpuBaseAddress);
+                                        ^~~~~~~~~~
+In file included from ../src/main.c:6:0:
+../../axi_gpio_bsp/ps7_cortexa9_0/include/xscugic.h:334:6: note: expected 'XScuGic_Config * {aka struct <anonymous> *}' but argument is of type 'int'
+ s32  XScuGic_CfgInitialize(XScuGic *InstancePtr, XScuGic_Config *ConfigPtr,
+      ^~~~~~~~~~~~~~~~~~~~~
+make: *** [src/subdir.mk:23: src/main.o] Error 1
+18:09:55 **** Auto Build of configuration Debug for project axi_gpio ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_gpio_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: axi_gpio.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_gpio_bsp/ps7_cortexa9_0/lib -o "axi_gpio.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi_gpio.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi_gpio.elf  |tee "axi_gpio.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  32728	   1944	  22664	  57336	   dff8	axi_gpio.elf
+'Finished building: axi_gpio.elf.size'
+' '
+18:10:59 **** Incremental Build of configuration Debug for project axi_gpio ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+18:14:27 **** Incremental Build of configuration Debug for project axi_gpio ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_gpio_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: axi_gpio.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_gpio_bsp/ps7_cortexa9_0/lib -o "axi_gpio.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi_gpio.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi_gpio.elf  |tee "axi_gpio.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  32760	   1944	  22664	  57368	   e018	axi_gpio.elf
+'Finished building: axi_gpio.elf.size'
+' '
+18:15:04 **** Incremental Build of configuration Debug for project axi_gpio ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_gpio_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'InitInterruptSystem':
+../src/main.c:69:2: error: expected ';' before 'IntrConfig'
+  IntrConfig = XScuGic_LookupConfig(INTC_DEVICE_ID);
+  ^~~~~~~~~~
+make: *** [src/subdir.mk:23: src/main.o] Error 1
+18:16:38 **** Incremental Build of configuration Debug for project axi_gpio ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_gpio_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'InitInterruptSystem':
+../src/main.c:69:2: error: expected ';' before 'IntrConfig'
+  IntrConfig = XScuGic_LookupConfig(INTC_DEVICE_ID);
+  ^~~~~~~~~~
+make: *** [src/subdir.mk:23: src/main.o] Error 1
+18:17:08 **** Auto Build of configuration Debug for project axi_gpio ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_gpio_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'InitInterruptSystem':
+../src/main.c:68:28: error: stray '\243' in program
+  print("Init interrupt!\n")£»
+                            ^
+../src/main.c:68:29: error: stray '\273' in program
+  print("Init interrupt!\n")£»
+                             ^
+../src/main.c:69:2: error: expected ';' before 'IntrConfig'
+  IntrConfig = XScuGic_LookupConfig(INTC_DEVICE_ID);
+  ^~~~~~~~~~
+make: *** [src/subdir.mk:23: src/main.o] Error 1
+18:17:14 **** Auto Build of configuration Debug for project axi_gpio ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_gpio_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: axi_gpio.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_gpio_bsp/ps7_cortexa9_0/lib -o "axi_gpio.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi_gpio.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi_gpio.elf  |tee "axi_gpio.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  32748	   1944	  22664	  57356	   e00c	axi_gpio.elf
+'Finished building: axi_gpio.elf.size'
+' '
+18:17:19 **** Incremental Build of configuration Debug for project axi_gpio ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+18:17:34 **** Auto Build of configuration Debug for project axi_gpio ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_gpio_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: axi_gpio.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_gpio_bsp/ps7_cortexa9_0/lib -o "axi_gpio.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi_gpio.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi_gpio.elf  |tee "axi_gpio.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  32748	   1944	  22664	  57356	   e00c	axi_gpio.elf
+'Finished building: axi_gpio.elf.size'
+' '
+18:17:37 **** Incremental Build of configuration Debug for project axi_gpio ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+18:27:41 **** Auto Build of configuration Debug for project axi_gpio ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_gpio_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: axi_gpio.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_gpio_bsp/ps7_cortexa9_0/lib -o "axi_gpio.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi_gpio.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi_gpio.elf  |tee "axi_gpio.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  32812	   1944	  22664	  57420	   e04c	axi_gpio.elf
+'Finished building: axi_gpio.elf.size'
+' '
+18:27:55 **** Incremental Build of configuration Debug for project axi_gpio ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+18:28:42 **** Auto Build of configuration Debug for project axi_gpio ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_gpio_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+In file included from ../../axi_gpio_bsp/ps7_cortexa9_0/include/xgpio.h:132:0,
+                 from ../src/main.c:1:
+../src/main.c: In function 'main':
+../../axi_gpio_bsp/ps7_cortexa9_0/include/xgpio_l.h:136:21: warning: passing argument 1 of 'print' makes pointer from integer without a cast [-Wint-conversion]
+ #define XGpio_In32  Xil_In32
+                     ^
+../../axi_gpio_bsp/ps7_cortexa9_0/include/xgpio_l.h:178:2: note: in expansion of macro 'XGpio_In32'
+  XGpio_In32((BaseAddress) + (RegOffset))
+  ^~~~~~~~~~
+../src/main.c:52:9: note: in expansion of macro 'XGpio_ReadReg'
+   print(XGpio_ReadReg(AXI_Gpio.BaseAddress, 0x00000001));
+         ^~~~~~~~~~~~~
+In file included from ../../axi_gpio_bsp/ps7_cortexa9_0/include/xil_io.h:61:0,
+                 from ../../axi_gpio_bsp/ps7_cortexa9_0/include/xgpio_l.h:83,
+                 from ../../axi_gpio_bsp/ps7_cortexa9_0/include/xgpio.h:132,
+                 from ../src/main.c:1:
+../../axi_gpio_bsp/ps7_cortexa9_0/include/xil_printf.h:40:6: note: expected 'const char8 * {aka const char *}' but argument is of type 'u32 {aka long unsigned int}'
+ void print( const char8 *ptr);
+      ^~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: axi_gpio.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_gpio_bsp/ps7_cortexa9_0/lib -o "axi_gpio.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi_gpio.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi_gpio.elf  |tee "axi_gpio.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  32824	   1944	  22664	  57432	   e058	axi_gpio.elf
+'Finished building: axi_gpio.elf.size'
+' '
+18:28:47 **** Incremental Build of configuration Debug for project axi_gpio ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+18:29:07 **** Incremental Build of configuration Debug for project axi_gpio ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+18:29:28 **** Incremental Build of configuration Debug for project axi_gpio ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+18:29:56 **** Incremental Build of configuration Debug for project axi_gpio ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+18:30:45 **** Auto Build of configuration Debug for project axi_gpio ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_gpio_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:53:9: warning: passing argument 1 of 'print' makes pointer from integer without a cast [-Wint-conversion]
+   print(tmp);
+         ^~~
+In file included from ../../axi_gpio_bsp/ps7_cortexa9_0/include/xil_io.h:61:0,
+                 from ../../axi_gpio_bsp/ps7_cortexa9_0/include/xgpio_l.h:83,
+                 from ../../axi_gpio_bsp/ps7_cortexa9_0/include/xgpio.h:132,
+                 from ../src/main.c:1:
+../../axi_gpio_bsp/ps7_cortexa9_0/include/xil_printf.h:40:6: note: expected 'const char8 * {aka const char *}' but argument is of type 'int'
+ void print( const char8 *ptr);
+      ^~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: axi_gpio.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_gpio_bsp/ps7_cortexa9_0/lib -o "axi_gpio.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi_gpio.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi_gpio.elf  |tee "axi_gpio.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  32852	   1944	  22664	  57460	   e074	axi_gpio.elf
+'Finished building: axi_gpio.elf.size'
+' '
+18:31:18 **** Auto Build of configuration Debug for project axi_gpio ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_gpio_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: axi_gpio.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_gpio_bsp/ps7_cortexa9_0/lib -o "axi_gpio.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi_gpio.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi_gpio.elf  |tee "axi_gpio.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  83392	   3380	  23424	 110196	  1ae74	axi_gpio.elf
+'Finished building: axi_gpio.elf.size'
+' '
+18:31:22 **** Incremental Build of configuration Debug for project axi_gpio ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+18:31:52 **** Auto Build of configuration Debug for project axi_gpio ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_gpio_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: axi_gpio.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_gpio_bsp/ps7_cortexa9_0/lib -o "axi_gpio.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi_gpio.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi_gpio.elf  |tee "axi_gpio.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  83392	   3380	  23424	 110196	  1ae74	axi_gpio.elf
+'Finished building: axi_gpio.elf.size'
+' '
+18:32:01 **** Auto Build of configuration Debug for project axi_gpio ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_gpio_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:57:3: error: expected ';' before 'if'
+   if (key_statue){
+   ^~
+make: *** [src/subdir.mk:23: src/main.o] Error 1
+18:32:03 **** Incremental Build of configuration Debug for project axi_gpio ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_gpio_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:57:3: error: expected ';' before 'if'
+   if (key_statue){
+   ^~
+make: *** [src/subdir.mk:23: src/main.o] Error 1
+18:32:16 **** Auto Build of configuration Debug for project axi_gpio ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_gpio_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: axi_gpio.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_gpio_bsp/ps7_cortexa9_0/lib -o "axi_gpio.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi_gpio.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi_gpio.elf  |tee "axi_gpio.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  83400	   3380	  23424	 110204	  1ae7c	axi_gpio.elf
+'Finished building: axi_gpio.elf.size'
+' '
+18:32:19 **** Incremental Build of configuration Debug for project axi_gpio ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+18:32:42 **** Incremental Build of configuration Debug for project axi_gpio ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+18:35:57 **** Incremental Build of configuration Debug for project axi_gpio ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+18:37:37 **** Incremental Build of configuration Debug for project axi_gpio ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_gpio_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: axi_gpio.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_gpio_bsp/ps7_cortexa9_0/lib -o "axi_gpio.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: axi_gpio.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size axi_gpio.elf  |tee "axi_gpio.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  32776	   1944	  22664	  57384	   e028	axi_gpio.elf
+'Finished building: axi_gpio.elf.size'
+' '
