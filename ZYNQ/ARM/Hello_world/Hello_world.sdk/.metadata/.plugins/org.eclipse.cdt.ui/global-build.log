@@ -322,3 +322,757 @@ arm-none-eabi-size hello_world.elf  |tee "hello_world.elf.size"
   27264	   1152	  22584	  51000	   c738	hello_world.elf
 'Finished building: hello_world.elf.size'
 ' '
+18:55:50 **** Clean-only build of configuration Debug for project key_itr_test_bsp_xgpiops_intr_example_1 ****
+make clean 
+rm -rf  ./src/xgpiops_intr_example.o  ./src/xgpiops_intr_example.d  key_itr_test_bsp_xgpiops_intr_example_1.elf.size  key_itr_test_bsp_xgpiops_intr_example_1.elf
+' '
+18:55:51 **** Auto Build of configuration Debug for project key_itr_test_bsp_xgpiops_intr_example_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xgpiops_intr_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xgpiops_intr_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../key_itr_test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/xgpiops_intr_example.d" -MT"src/xgpiops_intr_example.o" -o "src/xgpiops_intr_example.o" "../src/xgpiops_intr_example.c"
+../src/xgpiops_intr_example.c:64:10: fatal error: xparameters.h: No such file or directory
+ #include "xparameters.h"
+          ^~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [src/subdir.mk:23: src/xgpiops_intr_example.o] Error 1
+18:56:39 **** Build of project key_intr_bsp ****
+make -k all 
+"Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/devcfg_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/dmaps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/emacps_v3_8/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v3_8/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/gpiops_v3_4/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/qspips_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scugic_v3_10/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v3_10/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/sdps_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v3_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/standalone_v6_8/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v6_8/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/uartps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/xadcps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make libs in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling coresightps_dcc"
+arm-none-eabi-ar: creating ../../../lib/libxil.a
+"Running Make libs in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling cpu_cortexa9"
+"Running Make libs in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling ddrps"
+"Running Make libs in ps7_cortexa9_0/libsrc/devcfg_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling devcfg"
+"Running Make libs in ps7_cortexa9_0/libsrc/dmaps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling dmaps"
+"Running Make libs in ps7_cortexa9_0/libsrc/emacps_v3_8/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v3_8/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling emacps"
+"Running Make libs in ps7_cortexa9_0/libsrc/gpiops_v3_4/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling gpiops"
+"Running Make libs in ps7_cortexa9_0/libsrc/qspips_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling qspips"
+"Running Make libs in ps7_cortexa9_0/libsrc/scugic_v3_10/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v3_10/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scugic"
+"Running Make libs in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scutimer"
+"Running Make libs in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scuwdt"
+"Running Make libs in ps7_cortexa9_0/libsrc/sdps_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v3_6/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling sdps"
+"Running Make libs in ps7_cortexa9_0/libsrc/standalone_v6_8/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v6_8/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling standalone"
+In file included from usleep.c:56:0:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from xil_sleeptimer.c:51:0:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from xtime_l.c:49:0:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from sleep.c:53:0:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/uartps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling uartps"
+"Running Make libs in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling usbps"
+"Running Make libs in ps7_cortexa9_0/libsrc/xadcps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling xadcps"
+'Finished building libraries'
+18:56:57 **** Build of configuration Debug for project key_intr ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../key_intr_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: key_intr.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../key_intr_bsp/ps7_cortexa9_0/lib -o "key_intr.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+../../key_intr_bsp/ps7_cortexa9_0/lib\libxil.a(xil-crt0.o): In function `_start':
+D:\MyWorkSpace\ZYNQ\ARM\Hello_world\Hello_world.sdk\key_intr_bsp\ps7_cortexa9_0\libsrc\standalone_v6_8\src/xil-crt0.S:138: undefined reference to `main'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:41: key_intr.elf] Error 1
+19:07:02 **** Auto Build of configuration Debug for project key_intr ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../key_intr_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'SetupInterruptSystem':
+../src/main.c:40:28: error: 'GPIO_BANK' undeclared (first use in this function); did you mean 'XGPIOPS_BANK1'?
+  XGpioPs_SetIntrType(Gpio, GPIO_BANK, 0x00, 0xFFFFFFFF, 0x00);
+                            ^~~~~~~~~
+                            XGPIOPS_BANK1
+../src/main.c:40:28: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:47:41: warning: left shift count >= width of type [-Wshift-count-overflow]
+  XGpioPs_IntrEnable(Gpio, GPIO_BANK, (1 << Input_Pin));
+                                         ^~
+../src/main.c: In function 'IntrHandler':
+../src/main.c:71:3: error: 'AllButtonsPressed' undeclared (first use in this function)
+   AllButtonsPressed = TRUE;
+   ^~~~~~~~~~~~~~~~~
+make: *** [src/subdir.mk:23: src/main.o] Error 1
+19:08:56 **** Auto Build of configuration Debug for project key_intr ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../key_intr_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'SetupInterruptSystem':
+../src/main.c:48:41: warning: left shift count >= width of type [-Wshift-count-overflow]
+  XGpioPs_IntrEnable(Gpio, GPIO_BANK, (1 << Input_Pin));
+                                         ^~
+'Finished building: ../src/main.c'
+' '
+'Building target: key_intr.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../key_intr_bsp/ps7_cortexa9_0/lib -o "key_intr.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+../../key_intr_bsp/ps7_cortexa9_0/lib\libxil.a(xil-crt0.o): In function `_start':
+D:\MyWorkSpace\ZYNQ\ARM\Hello_world\Hello_world.sdk\key_intr_bsp\ps7_cortexa9_0\libsrc\standalone_v6_8\src/xil-crt0.S:138: undefined reference to `main'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:41: key_intr.elf] Error 1
+19:17:02 **** Auto Build of configuration Debug for project key_intr ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../key_intr_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'SetupInterruptSystem':
+../src/main.c:64:41: warning: left shift count >= width of type [-Wshift-count-overflow]
+  XGpioPs_IntrEnable(Gpio, GPIO_BANK, (1 << Input_Pin));
+                                         ^~
+'Finished building: ../src/main.c'
+' '
+'Building target: key_intr.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../key_intr_bsp/ps7_cortexa9_0/lib -o "key_intr.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: key_intr.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size key_intr.elf  |tee "key_intr.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30208	   1928	  22632	  54768	   d5f0	key_intr.elf
+'Finished building: key_intr.elf.size'
+' '
+19:17:26 **** Auto Build of configuration Debug for project key_intr ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../key_intr_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'SetupInterruptSystem':
+../src/main.c:66:41: warning: left shift count >= width of type [-Wshift-count-overflow]
+  XGpioPs_IntrEnable(Gpio, GPIO_BANK, (1 << Input_Pin));
+                                         ^~
+'Finished building: ../src/main.c'
+' '
+'Building target: key_intr.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../key_intr_bsp/ps7_cortexa9_0/lib -o "key_intr.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: key_intr.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size key_intr.elf  |tee "key_intr.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30200	   1928	  22632	  54760	   d5e8	key_intr.elf
+'Finished building: key_intr.elf.size'
+' '
+19:17:28 **** Auto Build of configuration Debug for project key_intr ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+19:17:44 **** Incremental Build of configuration Debug for project key_intr ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+19:19:32 **** Auto Build of configuration Debug for project key_intr ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../key_intr_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'SetupInterruptSystem':
+../src/main.c:66:41: warning: left shift count >= width of type [-Wshift-count-overflow]
+  XGpioPs_IntrEnable(Gpio, GPIO_BANK, (1 << Input_Pin));
+                                         ^~
+'Finished building: ../src/main.c'
+' '
+'Building target: key_intr.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../key_intr_bsp/ps7_cortexa9_0/lib -o "key_intr.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: key_intr.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size key_intr.elf  |tee "key_intr.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30200	   1928	  22632	  54760	   d5e8	key_intr.elf
+'Finished building: key_intr.elf.size'
+' '
+19:20:13 **** Auto Build of configuration Debug for project key_intr ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../key_intr_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: key_intr.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../key_intr_bsp/ps7_cortexa9_0/lib -o "key_intr.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: key_intr.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size key_intr.elf  |tee "key_intr.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30196	   1928	  22632	  54756	   d5e4	key_intr.elf
+'Finished building: key_intr.elf.size'
+' '
+19:20:19 **** Incremental Build of configuration Debug for project key_intr ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+19:20:49 **** Auto Build of configuration Debug for project key_intr ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../key_intr_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: key_intr.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../key_intr_bsp/ps7_cortexa9_0/lib -o "key_intr.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: key_intr.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size key_intr.elf  |tee "key_intr.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30224	   1928	  22632	  54784	   d600	key_intr.elf
+'Finished building: key_intr.elf.size'
+' '
+19:20:54 **** Incremental Build of configuration Debug for project key_intr ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+20:00:41 **** Auto Build of configuration Debug for project key_intr ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../key_intr_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: key_intr.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../key_intr_bsp/ps7_cortexa9_0/lib -o "key_intr.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: key_intr.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size key_intr.elf  |tee "key_intr.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30244	   1928	  22632	  54804	   d614	key_intr.elf
+'Finished building: key_intr.elf.size'
+' '
+20:02:10 **** Auto Build of configuration Debug for project key_intr ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../key_intr_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: key_intr.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../key_intr_bsp/ps7_cortexa9_0/lib -o "key_intr.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: key_intr.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size key_intr.elf  |tee "key_intr.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30232	   1928	  22632	  54792	   d608	key_intr.elf
+'Finished building: key_intr.elf.size'
+' '
+20:02:17 **** Incremental Build of configuration Debug for project key_intr ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+20:03:12 **** Auto Build of configuration Debug for project key_intr ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../key_intr_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:38:7: warning: unused variable 'tmp' [-Wunused-variable]
+   int tmp = XGpioPs_ReadPin(&Gpio, Input_Pin);
+       ^~~
+'Finished building: ../src/main.c'
+' '
+'Building target: key_intr.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../key_intr_bsp/ps7_cortexa9_0/lib -o "key_intr.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: key_intr.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size key_intr.elf  |tee "key_intr.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30260	   1928	  22632	  54820	   d624	key_intr.elf
+'Finished building: key_intr.elf.size'
+' '
+20:03:30 **** Auto Build of configuration Debug for project key_intr ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../key_intr_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:39:3: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   printf("%d\n", tmp);
+   ^~~~~~
+../src/main.c:39:3: warning: incompatible implicit declaration of built-in function 'printf'
+../src/main.c:39:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+'Finished building: ../src/main.c'
+' '
+'Building target: key_intr.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../key_intr_bsp/ps7_cortexa9_0/lib -o "key_intr.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: key_intr.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size key_intr.elf  |tee "key_intr.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  80760	   3364	  23392	 107516	  1a3fc	key_intr.elf
+'Finished building: key_intr.elf.size'
+' '
+20:03:51 **** Auto Build of configuration Debug for project key_intr ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../key_intr_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: key_intr.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../key_intr_bsp/ps7_cortexa9_0/lib -o "key_intr.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: key_intr.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size key_intr.elf  |tee "key_intr.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  80760	   3364	  23392	 107516	  1a3fc	key_intr.elf
+'Finished building: key_intr.elf.size'
+' '
+20:03:57 **** Incremental Build of configuration Debug for project key_intr ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+20:07:32 **** Auto Build of configuration Debug for project key_intr ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../key_intr_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: key_intr.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../key_intr_bsp/ps7_cortexa9_0/lib -o "key_intr.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: key_intr.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size key_intr.elf  |tee "key_intr.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  80824	   3364	  23392	 107580	  1a43c	key_intr.elf
+'Finished building: key_intr.elf.size'
+' '
+20:07:40 **** Incremental Build of configuration Debug for project key_intr ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+20:33:43 **** Incremental Build of configuration Debug for project key_intr ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../key_intr_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: key_intr.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../key_intr_bsp/ps7_cortexa9_0/lib -o "key_intr.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: key_intr.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size key_intr.elf  |tee "key_intr.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30260	   1928	  22632	  54820	   d624	key_intr.elf
+'Finished building: key_intr.elf.size'
+' '
+20:36:11 **** Auto Build of configuration Debug for project key_intr ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../key_intr_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: key_intr.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../key_intr_bsp/ps7_cortexa9_0/lib -o "key_intr.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: key_intr.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size key_intr.elf  |tee "key_intr.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30260	   1928	  22632	  54820	   d624	key_intr.elf
+'Finished building: key_intr.elf.size'
+' '
+20:36:14 **** Incremental Build of configuration Debug for project key_intr ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+20:37:07 **** Auto Build of configuration Debug for project key_intr ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../key_intr_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'IntrHandler':
+../src/main.c:84:1: error: number of arguments doesn't match prototype
+ {
+ ^
+../src/main.c:23:6: error: prototype declaration
+ void IntrHandler(void *CallBackRef, u32 Bank, u32 Status);
+      ^~~~~~~~~~~
+../src/main.c:89:29: error: incompatible type for argument 1 of 'XGpioPs_ReadPin'
+  DataRead = XGpioPs_ReadPin(Gpio, Input_Pin);
+                             ^~~~
+In file included from ../src/main.c:2:0:
+../../key_intr_bsp/ps7_cortexa9_0/include/xgpiops.h:231:5: note: expected 'XGpioPs * {aka struct <anonymous> *}' but argument is of type 'XGpioPs {aka struct <anonymous>}'
+ u32 XGpioPs_ReadPin(XGpioPs *InstancePtr, u32 Pin);
+     ^~~~~~~~~~~~~~~
+../src/main.c:91:27: error: incompatible type for argument 1 of 'XGpioPs_SetDirectionPin'
+   XGpioPs_SetDirectionPin(Gpio, Output_Pin, 1);
+                           ^~~~
+In file included from ../src/main.c:2:0:
+../../key_intr_bsp/ps7_cortexa9_0/include/xgpiops.h:233:6: note: expected 'XGpioPs * {aka struct <anonymous> *}' but argument is of type 'XGpioPs {aka struct <anonymous>}'
+ void XGpioPs_SetDirectionPin(XGpioPs *InstancePtr, u32 Pin, u32 Direction);
+      ^~~~~~~~~~~~~~~~~~~~~~~
+../src/main.c:92:30: error: incompatible type for argument 1 of 'XGpioPs_SetOutputEnablePin'
+   XGpioPs_SetOutputEnablePin(Gpio, Output_Pin, 1);
+                              ^~~~
+In file included from ../src/main.c:2:0:
+../../key_intr_bsp/ps7_cortexa9_0/include/xgpiops.h:235:6: note: expected 'XGpioPs * {aka struct <anonymous> *}' but argument is of type 'XGpioPs {aka struct <anonymous>}'
+ void XGpioPs_SetOutputEnablePin(XGpioPs *InstancePtr, u32 Pin, u32 OpEnable);
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.c:93:20: error: incompatible type for argument 1 of 'XGpioPs_WritePin'
+   XGpioPs_WritePin(Gpio, Output_Pin, 0);
+                    ^~~~
+In file included from ../src/main.c:2:0:
+../../key_intr_bsp/ps7_cortexa9_0/include/xgpiops.h:232:6: note: expected 'XGpioPs * {aka struct <anonymous> *}' but argument is of type 'XGpioPs {aka struct <anonymous>}'
+ void XGpioPs_WritePin(XGpioPs *InstancePtr, u32 Pin, u32 Data);
+      ^~~~~~~~~~~~~~~~
+make: *** [src/subdir.mk:23: src/main.o] Error 1
+20:37:09 **** Incremental Build of configuration Debug for project key_intr ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../key_intr_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'IntrHandler':
+../src/main.c:84:1: error: number of arguments doesn't match prototype
+ {
+ ^
+../src/main.c:23:6: error: prototype declaration
+ void IntrHandler(void *CallBackRef, u32 Bank, u32 Status);
+      ^~~~~~~~~~~
+../src/main.c:89:29: error: incompatible type for argument 1 of 'XGpioPs_ReadPin'
+  DataRead = XGpioPs_ReadPin(Gpio, Input_Pin);
+                             ^~~~
+In file included from ../src/main.c:2:0:
+../../key_intr_bsp/ps7_cortexa9_0/include/xgpiops.h:231:5: note: expected 'XGpioPs * {aka struct <anonymous> *}' but argument is of type 'XGpioPs {aka struct <anonymous>}'
+ u32 XGpioPs_ReadPin(XGpioPs *InstancePtr, u32 Pin);
+     ^~~~~~~~~~~~~~~
+../src/main.c:91:27: error: incompatible type for argument 1 of 'XGpioPs_SetDirectionPin'
+   XGpioPs_SetDirectionPin(Gpio, Output_Pin, 1);
+                           ^~~~
+In file included from ../src/main.c:2:0:
+../../key_intr_bsp/ps7_cortexa9_0/include/xgpiops.h:233:6: note: expected 'XGpioPs * {aka struct <anonymous> *}' but argument is of type 'XGpioPs {aka struct <anonymous>}'
+ void XGpioPs_SetDirectionPin(XGpioPs *InstancePtr, u32 Pin, u32 Direction);
+      ^~~~~~~~~~~~~~~~~~~~~~~
+../src/main.c:92:30: error: incompatible type for argument 1 of 'XGpioPs_SetOutputEnablePin'
+   XGpioPs_SetOutputEnablePin(Gpio, Output_Pin, 1);
+                              ^~~~
+In file included from ../src/main.c:2:0:
+../../key_intr_bsp/ps7_cortexa9_0/include/xgpiops.h:235:6: note: expected 'XGpioPs * {aka struct <anonymous> *}' but argument is of type 'XGpioPs {aka struct <anonymous>}'
+ void XGpioPs_SetOutputEnablePin(XGpioPs *InstancePtr, u32 Pin, u32 OpEnable);
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.c:93:20: error: incompatible type for argument 1 of 'XGpioPs_WritePin'
+   XGpioPs_WritePin(Gpio, Output_Pin, 0);
+                    ^~~~
+In file included from ../src/main.c:2:0:
+../../key_intr_bsp/ps7_cortexa9_0/include/xgpiops.h:232:6: note: expected 'XGpioPs * {aka struct <anonymous> *}' but argument is of type 'XGpioPs {aka struct <anonymous>}'
+ void XGpioPs_WritePin(XGpioPs *InstancePtr, u32 Pin, u32 Data);
+      ^~~~~~~~~~~~~~~~
+make: *** [src/subdir.mk:23: src/main.o] Error 1
+20:37:25 **** Auto Build of configuration Debug for project key_intr ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../key_intr_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'IntrHandler':
+../src/main.c:84:1: error: number of arguments doesn't match prototype
+ {
+ ^
+../src/main.c:23:6: error: prototype declaration
+ void IntrHandler(void *CallBackRef, u32 Bank, u32 Status);
+      ^~~~~~~~~~~
+make: *** [src/subdir.mk:23: src/main.o] Error 1
+20:37:36 **** Auto Build of configuration Debug for project key_intr ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../key_intr_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: key_intr.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../key_intr_bsp/ps7_cortexa9_0/lib -o "key_intr.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: key_intr.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size key_intr.elf  |tee "key_intr.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30256	   1928	  22632	  54816	   d620	key_intr.elf
+'Finished building: key_intr.elf.size'
+' '
+20:37:41 **** Incremental Build of configuration Debug for project key_intr ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+20:38:46 **** Incremental Build of configuration Debug for project key_intr ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../key_intr_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: key_intr.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../key_intr_bsp/ps7_cortexa9_0/lib -o "key_intr.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: key_intr.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size key_intr.elf  |tee "key_intr.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30256	   1928	  22632	  54816	   d620	key_intr.elf
+'Finished building: key_intr.elf.size'
+' '
+20:48:27 **** Auto Build of configuration Debug for project key_intr ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../key_intr_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:93:1: error: expected identifier or '(' before '}' token
+ }
+ ^
+make: *** [src/subdir.mk:23: src/main.o] Error 1
+20:48:54 **** Auto Build of configuration Debug for project key_intr ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../key_intr_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: key_intr.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../key_intr_bsp/ps7_cortexa9_0/lib -o "key_intr.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: key_intr.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size key_intr.elf  |tee "key_intr.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30212	   1928	  22632	  54772	   d5f4	key_intr.elf
+'Finished building: key_intr.elf.size'
+' '
+20:48:57 **** Incremental Build of configuration Debug for project key_intr ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+21:02:18 **** Auto Build of configuration Debug for project key_intr ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../key_intr_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'IntrHandler':
+../src/main.c:96:3: error: too few arguments to function 'XGpioPs_WritePin'
+   XGpioPs_WritePin(&Gpio, led_status);
+   ^~~~~~~~~~~~~~~~
+In file included from ../src/main.c:2:0:
+../../key_intr_bsp/ps7_cortexa9_0/include/xgpiops.h:232:6: note: declared here
+ void XGpioPs_WritePin(XGpioPs *InstancePtr, u32 Pin, u32 Data);
+      ^~~~~~~~~~~~~~~~
+make: *** [src/subdir.mk:23: src/main.o] Error 1
+21:02:19 **** Incremental Build of configuration Debug for project key_intr ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../key_intr_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'IntrHandler':
+../src/main.c:96:3: error: too few arguments to function 'XGpioPs_WritePin'
+   XGpioPs_WritePin(&Gpio, led_status);
+   ^~~~~~~~~~~~~~~~
+In file included from ../src/main.c:2:0:
+../../key_intr_bsp/ps7_cortexa9_0/include/xgpiops.h:232:6: note: declared here
+ void XGpioPs_WritePin(XGpioPs *InstancePtr, u32 Pin, u32 Data);
+      ^~~~~~~~~~~~~~~~
+make: *** [src/subdir.mk:23: src/main.o] Error 1
+21:02:47 **** Auto Build of configuration Debug for project key_intr ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../key_intr_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: key_intr.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../key_intr_bsp/ps7_cortexa9_0/lib -o "key_intr.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: key_intr.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size key_intr.elf  |tee "key_intr.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30272	   1928	  22648	  54848	   d640	key_intr.elf
+'Finished building: key_intr.elf.size'
+' '
+21:02:50 **** Auto Build of configuration Debug for project key_intr ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../key_intr_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: key_intr.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../key_intr_bsp/ps7_cortexa9_0/lib -o "key_intr.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: key_intr.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size key_intr.elf  |tee "key_intr.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30272	   1928	  22648	  54848	   d640	key_intr.elf
+'Finished building: key_intr.elf.size'
+' '
+21:02:52 **** Incremental Build of configuration Debug for project key_intr ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.

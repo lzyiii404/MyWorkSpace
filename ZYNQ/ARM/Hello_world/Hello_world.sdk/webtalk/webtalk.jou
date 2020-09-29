@@ -2,8 +2,8 @@
 # Webtalk v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # 
-# Start of session at: Sat Sep 19 11:52:03 2020
-# Process ID: 548
+# Start of session at: Mon Sep 28 19:45:24 2020
+# Process ID: 22400
 # Current directory: D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/webtalk
 # Command line: wbtcv.exe -mode batch -source sdk_webtalk.tcl
 # Log file: D:/MyWorkSpace/ZYNQ/ARM/Hello_world/Hello_world.sdk/webtalk/webtalk.log
