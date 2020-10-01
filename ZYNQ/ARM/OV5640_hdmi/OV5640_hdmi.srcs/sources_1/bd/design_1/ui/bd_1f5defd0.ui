@@ -1,0 +1,76 @@
+{
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 6.8.11  2018-08-07 bk=1.4403 VDI=40 GEI=35 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port cmos_vsync_0 -pg 1 -y 770 -defaultsOSRD
+preplace port cmos_pclk_0 -pg 1 -y 750 -defaultsOSRD
+preplace port DDR -pg 1 -y 710 -defaultsOSRD
+preplace port TMDS -pg 1 -y 280 -defaultsOSRD
+preplace port cmos_href_0 -pg 1 -y 730 -defaultsOSRD
+preplace port cmos1_2c -pg 1 -y 750 -defaultsOSRD
+preplace port hdmi_oen -pg 1 -y 300 -defaultsOSRD
+preplace port cmos_rstn -pg 1 -y 480 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -y 730 -defaultsOSRD
+preplace portBus cmos_d_0 -pg 1 -y 710 -defaultsOSRD
+preplace inst v_axi4s_vid_out_0 -pg 1 -lvl 5 -y 320 -defaultsOSRD
+preplace inst v_tc_0 -pg 1 -lvl 4 -y 320 -defaultsOSRD
+preplace inst axi_vdma_0 -pg 1 -lvl 4 -y 580 -defaultsOSRD
+preplace inst axi_vdma_1 -pg 1 -lvl 4 -y 810 -defaultsOSRD
+preplace inst axi_smc -pg 1 -lvl 5 -y 760 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 6 -y 480 -defaultsOSRD
+preplace inst rst_ps7_0_142M -pg 1 -lvl 1 -y 620 -defaultsOSRD
+preplace inst xlconcat_0 -pg 1 -lvl 5 -y 620 -defaultsOSRD
+preplace inst xlconcat_1 -pg 1 -lvl 2 -y 910 -defaultsOSRD
+preplace inst rgb2dvi_0 -pg 1 -lvl 6 -y 290 -defaultsOSRD
+preplace inst alinx_ov5640_0 -pg 1 -lvl 2 -y 760 -defaultsOSRD
+preplace inst axis_subset_converter_0 -pg 1 -lvl 3 -y 780 -defaultsOSRD
+preplace inst axi_dynclk_0 -pg 1 -lvl 4 -y 90 -defaultsOSRD
+preplace inst ps7_0_axi_periph -pg 1 -lvl 3 -y 420 -defaultsOSRD
+preplace inst rst_ps7_0_100M -pg 1 -lvl 2 -y 400 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 6 -y 780 -defaultsOSRD
+preplace netloc ps7_0_axi_periph_M02_AXI 1 3 1 1110
+preplace netloc processing_system7_0_DDR 1 6 1 NJ
+preplace netloc axi_vdma_1_M_AXI_S2MM 1 4 1 1560
+preplace netloc axis_subset_converter_0_M_AXIS 1 3 1 N
+preplace netloc cmos_pclk_0_1 1 0 2 NJ 750 NJ
+preplace netloc axi_dynclk_0_PXL_CLK_O 1 3 3 1150 180 1540 80 1890
+preplace netloc axi_vdma_0_M_AXI_MM2S 1 4 1 1520
+preplace netloc v_axi4s_vid_out_0_vid_io_out 1 5 1 N
+preplace netloc processing_system7_0_M_AXI_GP0 1 2 5 780 920 NJ 920 NJ 920 NJ 920 2370
+preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 2 4 770 630 1140 470 NJ 470 1870J
+preplace netloc axi_dynclk_0_LOCKED_O 1 4 2 NJ 110 1880
+preplace netloc axi_smc_M00_AXI 1 5 1 N
+preplace netloc axi_vdma_0_M_AXIS_MM2S 1 4 1 1510
+preplace netloc xlconcat_1_dout 1 2 1 770J
+preplace netloc rst_ps7_0_142M_peripheral_aresetn 1 1 4 370 980 NJ 980 NJ 980 1570
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 7 20 510 410 970 NJ 970 NJ 970 NJ 970 NJ 970 2360
+preplace netloc v_tc_0_irq 1 4 1 1530
+preplace netloc ps7_0_axi_periph_M03_AXI 1 3 1 1100
+preplace netloc alinx_ov5640_0_m_axis_video 1 2 1 N
+preplace netloc processing_system7_0_IIC_0 1 6 1 NJ
+preplace netloc axi_dynclk_0_PXL_CLK_5X_O 1 4 2 NJ 90 1870
+preplace netloc ps7_0_axi_periph_M01_AXI 1 3 1 1120
+preplace netloc rgb2dvi_0_TMDS 1 6 1 NJ
+preplace netloc cmos_d_0_1 1 0 2 30J 720 390J
+preplace netloc xlconcat_0_dout 1 5 1 1870
+preplace netloc processing_system7_0_FIXED_IO 1 6 1 NJ
+preplace netloc cmos_href_0_1 1 0 2 NJ 730 NJ
+preplace netloc axi_vdma_0_mm2s_introut 1 4 1 N
+preplace netloc axi_gpio_0_GPIO 1 6 1 NJ
+preplace netloc ps7_0_axi_periph_M04_AXI 1 3 3 NJ 460 NJ 460 N
+preplace netloc rgb2dvi_0_oen 1 6 1 NJ
+preplace netloc processing_system7_0_FCLK_CLK0 1 1 6 410 300 760 620 1130 700 1540J 550 1880 650 2350
+preplace netloc v_tc_0_vtiming_out 1 4 1 1530
+preplace netloc ps7_0_axi_periph_M00_AXI 1 3 1 1100
+preplace netloc cmos_vsync_0_1 1 0 2 NJ 770 380J
+preplace netloc processing_system7_0_FCLK_CLK1 1 0 7 30 520 400 650 750 860 1110 690 1550 850 1890 910 2350
+preplace netloc rst_ps7_0_100M_interconnect_aresetn 1 2 1 750
+levelinfo -pg 1 0 200 580 940 1330 1720 2120 2390 -top 0 -bot 990
+"
+}
+{
+   "da_axi4_cnt":"19",
+   "da_board_cnt":"1",
+   "da_clkrst_cnt":"3",
+   "da_ps7_cnt":"4"
+}

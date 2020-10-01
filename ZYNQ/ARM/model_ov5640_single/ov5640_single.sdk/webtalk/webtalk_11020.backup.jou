@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# 
+# Start of session at: Tue Sep 29 22:29:12 2020
+# Process ID: 11020
+# Current directory: D:/MyWorkSpace/ZYNQ/ARM/22_ov5640_single/ov5640_single.sdk/webtalk
+# Command line: wbtcv.exe -mode batch -source sdk_webtalk.tcl
+# Log file: D:/MyWorkSpace/ZYNQ/ARM/22_ov5640_single/ov5640_single.sdk/webtalk/webtalk.log
+# Journal file: D:/MyWorkSpace/ZYNQ/ARM/22_ov5640_single/ov5640_single.sdk/webtalk\webtalk.jou
+#-----------------------------------------------------------
+source sdk_webtalk.tcl
