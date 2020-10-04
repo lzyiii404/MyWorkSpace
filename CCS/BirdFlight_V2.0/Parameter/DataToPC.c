@@ -58,7 +58,7 @@ void sendRTInfo(void){
             break;
     }
 
-    scia_msg(DataToPC);
+    scib_msg(DataToPC);
 }
 
 /* 上传陀螺仪原始数据（单位°/S）  */
@@ -74,7 +74,7 @@ void sendGyroData(void)
     FloatToUnsignedchar(3,RT_Info.GyroX,GyroDataToPC);
     FloatToUnsignedchar(7,RT_Info.GyroY,GyroDataToPC);
     FloatToUnsignedchar(11,RT_Info.GyroZ,GyroDataToPC);
-    scia_msg(GyroDataToPC);
+    scib_msg(GyroDataToPC);
 }
 
 
@@ -91,7 +91,7 @@ void sendAccData(void)
     FloatToUnsignedchar(3,RT_Info.accXaxis,AccDataToPC);
     FloatToUnsignedchar(7,RT_Info.accYaxis,AccDataToPC);
     FloatToUnsignedchar(11,RT_Info.accZaxis,AccDataToPC);
-    scia_msg(AccDataToPC);
+    scib_msg(AccDataToPC);
 }
 
 /* 上传磁力计原始数据（单位°/S）  */
@@ -107,7 +107,7 @@ void sendMagData(void)
     FloatToUnsignedchar(3,RT_Info.MagX,MagDataToPC);
     FloatToUnsignedchar(7,RT_Info.MagY,MagDataToPC);
     FloatToUnsignedchar(11,RT_Info.MagZ,MagDataToPC);
-    scia_msg(MagDataToPC);
+    scib_msg(MagDataToPC);
 }
 
 
@@ -122,74 +122,74 @@ void sendParaInfo(void)
     FloatToUnsignedchar(3,PID_ParaInfo.Pitch.Kp,paraToPC);
     FloatToUnsignedchar(7,PID_ParaInfo.Pitch.Ki,paraToPC);
     FloatToUnsignedchar(11,PID_ParaInfo.Pitch.Kd,paraToPC);
-    scia_msg(paraToPC);
+    scib_msg(paraToPC);
 
     paraToPC[2]=0X03;
     FloatToUnsignedchar(3,PID_ParaInfo.Roll.Kp,paraToPC);
     FloatToUnsignedchar(7,PID_ParaInfo.Roll.Ki,paraToPC);
     FloatToUnsignedchar(11,PID_ParaInfo.Roll.Kd,paraToPC);
-    scia_msg(paraToPC);
+    scib_msg(paraToPC);
 
     paraToPC[2]=0X04;
     FloatToUnsignedchar(3,PID_ParaInfo.PitchRate.Kp,paraToPC);
     FloatToUnsignedchar(7,PID_ParaInfo.PitchRate.Ki,paraToPC);
     FloatToUnsignedchar(11,PID_ParaInfo.PitchRate.Kd,paraToPC);
-    scia_msg(paraToPC);
+    scib_msg(paraToPC);
 
     paraToPC[2]=0X05;
     FloatToUnsignedchar(3,PID_ParaInfo.RollRate.Kp,paraToPC);
     FloatToUnsignedchar(7,PID_ParaInfo.RollRate.Ki,paraToPC);
     FloatToUnsignedchar(11,PID_ParaInfo.RollRate.Kd,paraToPC);
-    scia_msg(paraToPC);
+    scib_msg(paraToPC);
 
 
     paraToPC[2]=0X06;
     FloatToUnsignedchar(3,PID_ParaInfo.Yaw.Kp,paraToPC);
     FloatToUnsignedchar(7,PID_ParaInfo.Yaw.Ki,paraToPC);
     FloatToUnsignedchar(11,PID_ParaInfo.Yaw.Kd,paraToPC);
-    scia_msg(paraToPC);
+    scib_msg(paraToPC);
 
     paraToPC[2]=0X07;
     FloatToUnsignedchar(3,PID_ParaInfo.YawRate.Kp,paraToPC);
     FloatToUnsignedchar(7,PID_ParaInfo.YawRate.Ki,paraToPC);
     FloatToUnsignedchar(11,PID_ParaInfo.YawRate.Kd,paraToPC);
-    scia_msg(paraToPC);
+    scib_msg(paraToPC);
 
     paraToPC[2]=0X08;
     FloatToUnsignedchar(3,PID_ParaInfo.PosZ.Kp,paraToPC);
     FloatToUnsignedchar(7,PID_ParaInfo.PosZ.Ki,paraToPC);
     FloatToUnsignedchar(11,PID_ParaInfo.PosZ.Kd,paraToPC);
-    scia_msg(paraToPC);
+    scib_msg(paraToPC);
 
     paraToPC[2]=0X09;
     FloatToUnsignedchar(3,PID_ParaInfo.VelZ.Kp,paraToPC);
     FloatToUnsignedchar(7,PID_ParaInfo.VelZ.Ki,paraToPC);
     FloatToUnsignedchar(11,PID_ParaInfo.VelZ.Kd,paraToPC);
-    scia_msg(paraToPC);
+    scib_msg(paraToPC);
 
     paraToPC[2]=0X0A;
     FloatToUnsignedchar(3,PID_ParaInfo.PosX.Kp,paraToPC);
     FloatToUnsignedchar(7,PID_ParaInfo.PosX.Ki,paraToPC);
     FloatToUnsignedchar(11,PID_ParaInfo.PosX.Kd,paraToPC);
-    scia_msg(paraToPC);
+    scib_msg(paraToPC);
 
     paraToPC[2]=0X0B;
     FloatToUnsignedchar(3,PID_ParaInfo.PosY.Kp,paraToPC);
     FloatToUnsignedchar(7,PID_ParaInfo.PosY.Ki,paraToPC);
     FloatToUnsignedchar(11,PID_ParaInfo.PosY.Kd,paraToPC);
-    scia_msg(paraToPC);
+    scib_msg(paraToPC);
 
     paraToPC[2]=0X0C;
     FloatToUnsignedchar(3,PID_ParaInfo.VelX.Kp,paraToPC);
     FloatToUnsignedchar(7,PID_ParaInfo.VelX.Ki,paraToPC);
     FloatToUnsignedchar(11,PID_ParaInfo.VelX.Kd,paraToPC);
-    scia_msg(paraToPC);
+    scib_msg(paraToPC);
 
     paraToPC[2]=0X0D;
     FloatToUnsignedchar(3,PID_ParaInfo.VelY.Kp,paraToPC);
     FloatToUnsignedchar(7,PID_ParaInfo.VelY.Ki,paraToPC);
     FloatToUnsignedchar(11,PID_ParaInfo.VelY.Kd,paraToPC);
-    scia_msg(paraToPC);
+    scib_msg(paraToPC);
 }
 
 

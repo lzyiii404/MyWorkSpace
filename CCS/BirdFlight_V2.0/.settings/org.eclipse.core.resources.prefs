@@ -2,7 +2,6 @@ eclipse.preferences.version=1
 encoding//AlgorithmLibrary/PositionEstimation.c=UTF-8
 encoding//AlgorithmLibrary/SimpleDigitalFiltering.c=UTF-8
 encoding//Control/Attitude_control.c=UTF-8
-encoding//Control/Position_control.c=UTF-8
 encoding//Debug/AlgorithmLibrary/subdir_rules.mk=UTF-8
 encoding//Debug/AlgorithmLibrary/subdir_vars.mk=UTF-8
 encoding//Debug/Control/subdir_rules.mk=UTF-8

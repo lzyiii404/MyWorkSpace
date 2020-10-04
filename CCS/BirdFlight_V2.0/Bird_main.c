@@ -301,7 +301,8 @@ static  void  App_TaskAttitude (void *p_arg){
    float PreparationRoll = 0;
    bool PreparationFlag;
     while (DEF_TRUE) {
-        if(FlightControl.OnOff == Drone_On && RT_Info.Height >= 0.01f){
+        if(FlightControl.OnOff == Drone_On && RT_Info.Height >= -0.01f){
+//        if(FlightControl.OnOff == Drone_On){
             if(FlightControl.DroneMode == Drone_Mode_4Axis){
                 if(Preparationtime < 800){
                     Preparationtime ++;
@@ -337,6 +338,9 @@ static  void  App_TaskAttitude (void *p_arg){
             OriginalVelZ.iOut = 0;
             OriginalVelX.iOut = 0;
             OriginalVelY.iOut = 0;
+            Target_Info.Height = 0.0f;
+            Target_Info.Pitch = 0.0f;
+            Target_Info.Roll = 0.0f;
             PWM_OUTPUT(0,0,0,0);
         }
         OSTimeDly(5);
@@ -360,9 +364,9 @@ static  void  App_TaskPosition (void *p_arg){
    /* Prevent compiler warning for not using 'p_arg'       */
    (void)&p_arg;
    /* Task body, always written as an infinite loop.       */
-   float Climbing = 0.015;
-   float Declining = 0.008;
-   Target_Info.Height = 0.80;
+   float Climbing = 0.008f;
+   float Declining = 0.002f;
+   Target_Info.Height = 0.90f;
     while (DEF_TRUE) {
         if(FlightControl.DroneMode == Drone_Mode_4Axis){
             Position_control(Fly_Mode,Climbing,Declining);
@@ -481,6 +485,7 @@ static  void  App_TaskProcessPCData (void *p_arg){
    /* Task body, always written as an infinite loop.       */
     while (DEF_TRUE) {
         OSSemPend (&ProcessPCData_proc,0,&err);
+
         Process_PCData(RecivePCData);
     }
 }
