@@ -15,14 +15,14 @@ import os
 import pymysql
 import time
 import os
-path = os.getcwd()
+# path = os.getcwd()
 # a_path = os.path.join(path, "b_file/a.txt")
 # print(a_path)
 
 app = Flask(__name__)
 
 # HOST = '172.26.1.146'
-# HOST = '192.168.1.174'
+HOST = '192.168.1.174'
 PORT = '5000'
 # DATABASE_NAME = 'Devices'
 # USERNAME = 'root'
@@ -41,9 +41,11 @@ def upload():
         print(type(data))
         print(data)
         # filename = time.strftime('%Y_%m_%d_%H_%M_%S', time.localtime())
-        filePath = os.path.join(path'123.json')
-        print(filePath)
-        f = open(filePath, 'w+')
+        # filePath = os.path.join(path'123.json')
+        # print(filePath)
+        filename = time.strftime('%Y_%m_%d_%H_%M_%S', time.localtime())
+        f = open('D:\\MyWorkSpace\\PYTHON\\MyCode\\httpserve\\data\\10_3\\' + filename + '.json', 'w+')
+        # f = open(filePath, 'w+')
         f.write(data)
         # print(filename)
         # print(request.get_data(as_text=True))
@@ -62,7 +64,7 @@ def upload():
 
 
 if __name__=='__main__':
-    app.run(port=5000)
+    app.run(host=HOST,port=5000)
 
 
 
