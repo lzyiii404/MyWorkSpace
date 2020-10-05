@@ -44,7 +44,7 @@ def upload():
         # filePath = os.path.join(path'123.json')
         # print(filePath)
         filename = time.strftime('%Y_%m_%d_%H_%M_%S', time.localtime())
-        f = open('D:\\MyWorkSpace\\PYTHON\\MyCode\\httpserve\\data\\10_3\\' + filename + '.json', 'w+')
+        f = open('D:\\MyWorkSpace\\PYTHON\\MyCode\\httpserve\\data\\10_4\\' + filename + '.json', 'w+')
         # f = open(filePath, 'w+')
         f.write(data)
         # print(filename)
