@@ -1,10 +1,10 @@
-// Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+// Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-// Date        : Thu Sep 20 17:01:03 2018
-// Host        : DESKTOP-2GP67RG running 64-bit major release  (build 9200)
+// Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+// Date        : Thu Oct  8 16:03:41 2020
+// Host        : Huang running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
-//               D:/ax7020/15_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ip/system_axis_subset_converter_0_1/system_axis_subset_converter_0_1_stub.v
+//               D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ip/system_axis_subset_converter_0_1/system_axis_subset_converter_0_1_stub.v
 // Design      : system_axis_subset_converter_0_1
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg400-2
@@ -13,7 +13,7 @@
 // This empty module with port declaration file causes synthesis tools to infer a black box for IP.
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
-(* X_CORE_INFO = "top_system_axis_subset_converter_0_1,Vivado 2017.4" *)
+(* X_CORE_INFO = "top_system_axis_subset_converter_0_1,Vivado 2018.3" *)
 module system_axis_subset_converter_0_1(aclk, aresetn, s_axis_tvalid, s_axis_tready, 
   s_axis_tdata, s_axis_tkeep, s_axis_tlast, s_axis_tuser, m_axis_tvalid, m_axis_tready, 
   m_axis_tdata, m_axis_tkeep, m_axis_tlast, m_axis_tuser)

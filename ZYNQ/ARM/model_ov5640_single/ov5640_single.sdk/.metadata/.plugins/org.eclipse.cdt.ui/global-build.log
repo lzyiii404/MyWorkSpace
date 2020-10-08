@@ -446,3 +446,13 @@ arm-none-eabi-size an5642_test.elf  |tee "an5642_test.elf.size"
   60756	   2648	18687952	18751356	11e1f7c	an5642_test.elf
 'Finished building: an5642_test.elf.size'
 ' '
+16:33:14 **** Incremental Build of configuration Debug for project an5642_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:36:47 **** Incremental Build of configuration Debug for project an5642_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.

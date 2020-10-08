@@ -1,10 +1,10 @@
--- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+-- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
--- Date        : Fri Sep 21 10:13:32 2018
--- Host        : DESKTOP-2GP67RG running 64-bit major release  (build 9200)
+-- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+-- Date        : Thu Oct  8 16:01:50 2020
+-- Host        : Huang running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
---               D:/update7020/15_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0_sim_netlist.vhdl
+--               D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0_sim_netlist.vhdl
 -- Design      : system_processing_system7_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -3457,7 +3457,7 @@ entity system_processing_system7_0_0 is
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of system_processing_system7_0_0 : entity is "yes";
   attribute X_CORE_INFO : string;
-  attribute X_CORE_INFO of system_processing_system7_0_0 : entity is "processing_system7_v5_5_processing_system7,Vivado 2017.4";
+  attribute X_CORE_INFO of system_processing_system7_0_0 : entity is "processing_system7_v5_5_processing_system7,Vivado 2018.3";
 end system_processing_system7_0_0;
 
 architecture STRUCTURE of system_processing_system7_0_0 is

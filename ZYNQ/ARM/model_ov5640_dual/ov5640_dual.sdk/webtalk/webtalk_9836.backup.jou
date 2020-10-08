@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# 
+# Start of session at: Thu Sep 19 16:11:44 2019
+# Process ID: 9836
+# Current directory: F:/xilinx_project/AX7020/2017_NewCourse/course_s2_sdk/14_ov5640_dual/ov5640_dual.sdk/webtalk
+# Command line: wbtcv.exe -mode batch -source sdk_webtalk.tcl
+# Log file: F:/xilinx_project/AX7020/2017_NewCourse/course_s2_sdk/14_ov5640_dual/ov5640_dual.sdk/webtalk/webtalk.log
+# Journal file: F:/xilinx_project/AX7020/2017_NewCourse/course_s2_sdk/14_ov5640_dual/ov5640_dual.sdk/webtalk\webtalk.jou
+#-----------------------------------------------------------
+source sdk_webtalk.tcl

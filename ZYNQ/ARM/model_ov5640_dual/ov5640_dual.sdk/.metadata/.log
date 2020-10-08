@@ -1,0 +1,234 @@
+!SESSION 2020-10-07 13:28:47.669 -----------------------------------------------
+eclipse.buildId=2018.3
+java.version=1.8.0_112
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_CN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_dual/ov5640_dual.sdk
+
+This is a continuation of log file D:\MyWorkSpace\ZYNQ\ARM\model_ov5640_dual\ov5640_dual.sdk\.metadata\.bak_0.log
+Created Time: 2020-10-07 13:28:57.925
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.925
+!MESSAGE XSCT Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "axivdma" && VERSION == "6.4"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.928
+!MESSAGE XSCT command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "axivdma" && VERSION == "6.4"  && TYPE == "DRIVER"}]], Result: [null, D:/Xilinx/SDK/2018.3/data\embeddedsw\XilinxProcessorIPLib\drivers\axivdma_v6_4]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.929
+!MESSAGE XSCT Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "axivdma" && VERSION == "6.4"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.932
+!MESSAGE XSCT command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "axivdma" && VERSION == "6.4"  && TYPE == "DRIVER"}]], Result: [null, D:/Xilinx/SDK/2018.3/data\embeddedsw\XilinxProcessorIPLib\drivers\axivdma_v6_4]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.933
+!MESSAGE XSCT Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "axivdma" && VERSION == "6.4"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.936
+!MESSAGE XSCT command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "axivdma" && VERSION == "6.4"  && TYPE == "DRIVER"}]], Result: [null, D:/Xilinx/SDK/2018.3/data\embeddedsw\XilinxProcessorIPLib\drivers\axivdma_v6_4]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.936
+!MESSAGE XSCT Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "axivdma" && VERSION == "6.4"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.939
+!MESSAGE XSCT command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "axivdma" && VERSION == "6.4"  && TYPE == "DRIVER"}]], Result: [null, D:/Xilinx/SDK/2018.3/data\embeddedsw\XilinxProcessorIPLib\drivers\axivdma_v6_4]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.940
+!MESSAGE XSCT Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "dmaps" && VERSION == "2.3"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.943
+!MESSAGE XSCT command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "dmaps" && VERSION == "2.3"  && TYPE == "DRIVER"}]], Result: [null, D:/Xilinx/SDK/2018.3/data\embeddedsw\XilinxProcessorIPLib\drivers\dmaps_v2_3]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.943
+!MESSAGE XSCT Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "dmaps" && VERSION == "2.3"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.946
+!MESSAGE XSCT command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "dmaps" && VERSION == "2.3"  && TYPE == "DRIVER"}]], Result: [null, D:/Xilinx/SDK/2018.3/data\embeddedsw\XilinxProcessorIPLib\drivers\dmaps_v2_3]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.947
+!MESSAGE XSCT Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "emacps" && VERSION == "3.6"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.950
+!MESSAGE XSCT command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "emacps" && VERSION == "3.6"  && TYPE == "DRIVER"}]], Result: [null, D:/Xilinx/SDK/2018.3/data\embeddedsw\XilinxProcessorIPLib\drivers\emacps_v3_6]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.950
+!MESSAGE XSCT Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "gpiops" && VERSION == "3.3"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.954
+!MESSAGE XSCT command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "gpiops" && VERSION == "3.3"  && TYPE == "DRIVER"}]], Result: [null, D:/Xilinx/SDK/2018.3/data\embeddedsw\XilinxProcessorIPLib\drivers\gpiops_v3_3]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.955
+!MESSAGE XSCT Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "iicps" && VERSION == "3.5"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.957
+!MESSAGE XSCT command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "iicps" && VERSION == "3.5"  && TYPE == "DRIVER"}]], Result: [null, D:/Xilinx/SDK/2018.3/data\embeddedsw\XilinxProcessorIPLib\drivers\iicps_v3_5]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.958
+!MESSAGE XSCT Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "iicps" && VERSION == "3.5"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.961
+!MESSAGE XSCT command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "iicps" && VERSION == "3.5"  && TYPE == "DRIVER"}]], Result: [null, D:/Xilinx/SDK/2018.3/data\embeddedsw\XilinxProcessorIPLib\drivers\iicps_v3_5]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.962
+!MESSAGE XSCT Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "qspips" && VERSION == "3.4"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.964
+!MESSAGE XSCT command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "qspips" && VERSION == "3.4"  && TYPE == "DRIVER"}]], Result: [null, D:/Xilinx/SDK/2018.3/data\embeddedsw\XilinxProcessorIPLib\drivers\qspips_v3_4]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.965
+!MESSAGE XSCT Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "scugic" && VERSION == "3.8"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.968
+!MESSAGE XSCT command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "scugic" && VERSION == "3.8"  && TYPE == "DRIVER"}]], Result: [null, D:/Xilinx/SDK/2018.3/data\embeddedsw\XilinxProcessorIPLib\drivers\scugic_v3_8]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.968
+!MESSAGE XSCT Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "sdps" && VERSION == "3.3"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.971
+!MESSAGE XSCT command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "sdps" && VERSION == "3.3"  && TYPE == "DRIVER"}]], Result: [null, D:/Xilinx/SDK/2018.3/data\embeddedsw\XilinxProcessorIPLib\drivers\sdps_v3_3]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.972
+!MESSAGE XSCT Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "uartps" && VERSION == "3.5"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.975
+!MESSAGE XSCT command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "uartps" && VERSION == "3.5"  && TYPE == "DRIVER"}]], Result: [null, D:/Xilinx/SDK/2018.3/data\embeddedsw\XilinxProcessorIPLib\drivers\uartps_v3_5]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.976
+!MESSAGE XSCT Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "xadcps" && VERSION == "2.2"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.979
+!MESSAGE XSCT command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "xadcps" && VERSION == "2.2"  && TYPE == "DRIVER"}]], Result: [null, D:/Xilinx/SDK/2018.3/data\embeddedsw\XilinxProcessorIPLib\drivers\xadcps_v2_2]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.979
+!MESSAGE XSCT Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "vtc" && VERSION == "7.2"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.982
+!MESSAGE XSCT command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "vtc" && VERSION == "7.2"  && TYPE == "DRIVER"}]], Result: [null, D:/Xilinx/SDK/2018.3/data\embeddedsw\XilinxProcessorIPLib\drivers\vtc_v7_2]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.983
+!MESSAGE XSCT Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "axivdma" && VERSION == "6.4"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.986
+!MESSAGE XSCT command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "axivdma" && VERSION == "6.4"  && TYPE == "DRIVER"}]], Result: [null, D:/Xilinx/SDK/2018.3/data\embeddedsw\XilinxProcessorIPLib\drivers\axivdma_v6_4]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.987
+!MESSAGE XSCT Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "axivdma" && VERSION == "6.4"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.990
+!MESSAGE XSCT command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "axivdma" && VERSION == "6.4"  && TYPE == "DRIVER"}]], Result: [null, D:/Xilinx/SDK/2018.3/data\embeddedsw\XilinxProcessorIPLib\drivers\axivdma_v6_4]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.990
+!MESSAGE XSCT Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "axivdma" && VERSION == "6.4"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.993
+!MESSAGE XSCT command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "axivdma" && VERSION == "6.4"  && TYPE == "DRIVER"}]], Result: [null, D:/Xilinx/SDK/2018.3/data\embeddedsw\XilinxProcessorIPLib\drivers\axivdma_v6_4]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.994
+!MESSAGE XSCT Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "axivdma" && VERSION == "6.4"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.997
+!MESSAGE XSCT command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "axivdma" && VERSION == "6.4"  && TYPE == "DRIVER"}]], Result: [null, D:/Xilinx/SDK/2018.3/data\embeddedsw\XilinxProcessorIPLib\drivers\axivdma_v6_4]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:57.998
+!MESSAGE XSCT Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "dmaps" && VERSION == "2.3"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:58.001
+!MESSAGE XSCT command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "dmaps" && VERSION == "2.3"  && TYPE == "DRIVER"}]], Result: [null, D:/Xilinx/SDK/2018.3/data\embeddedsw\XilinxProcessorIPLib\drivers\dmaps_v2_3]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:58.001
+!MESSAGE XSCT Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "dmaps" && VERSION == "2.3"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:58.004
+!MESSAGE XSCT command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "dmaps" && VERSION == "2.3"  && TYPE == "DRIVER"}]], Result: [null, D:/Xilinx/SDK/2018.3/data\embeddedsw\XilinxProcessorIPLib\drivers\dmaps_v2_3]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:58.005
+!MESSAGE XSCT Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "emacps" && VERSION == "3.6"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:58.008
+!MESSAGE XSCT command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "emacps" && VERSION == "3.6"  && TYPE == "DRIVER"}]], Result: [null, D:/Xilinx/SDK/2018.3/data\embeddedsw\XilinxProcessorIPLib\drivers\emacps_v3_6]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:58.008
+!MESSAGE XSCT Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "gpiops" && VERSION == "3.3"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:58.011
+!MESSAGE XSCT command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "gpiops" && VERSION == "3.3"  && TYPE == "DRIVER"}]], Result: [null, D:/Xilinx/SDK/2018.3/data\embeddedsw\XilinxProcessorIPLib\drivers\gpiops_v3_3]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:58.012
+!MESSAGE XSCT Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "iicps" && VERSION == "3.5"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:58.015
+!MESSAGE XSCT command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "iicps" && VERSION == "3.5"  && TYPE == "DRIVER"}]], Result: [null, D:/Xilinx/SDK/2018.3/data\embeddedsw\XilinxProcessorIPLib\drivers\iicps_v3_5]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:58.016
+!MESSAGE XSCT Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "iicps" && VERSION == "3.5"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:58.019
+!MESSAGE XSCT command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "iicps" && VERSION == "3.5"  && TYPE == "DRIVER"}]], Result: [null, D:/Xilinx/SDK/2018.3/data\embeddedsw\XilinxProcessorIPLib\drivers\iicps_v3_5]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:58.019
+!MESSAGE XSCT Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "qspips" && VERSION == "3.4"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:58.022
+!MESSAGE XSCT command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "qspips" && VERSION == "3.4"  && TYPE == "DRIVER"}]], Result: [null, D:/Xilinx/SDK/2018.3/data\embeddedsw\XilinxProcessorIPLib\drivers\qspips_v3_4]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:58.023
+!MESSAGE XSCT Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "scugic" && VERSION == "3.8"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:58.026
+!MESSAGE XSCT command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "scugic" && VERSION == "3.8"  && TYPE == "DRIVER"}]], Result: [null, D:/Xilinx/SDK/2018.3/data\embeddedsw\XilinxProcessorIPLib\drivers\scugic_v3_8]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:58.027
+!MESSAGE XSCT Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "sdps" && VERSION == "3.3"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:58.030
+!MESSAGE XSCT command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "sdps" && VERSION == "3.3"  && TYPE == "DRIVER"}]], Result: [null, D:/Xilinx/SDK/2018.3/data\embeddedsw\XilinxProcessorIPLib\drivers\sdps_v3_3]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:58.031
+!MESSAGE XSCT Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "uartps" && VERSION == "3.5"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:58.034
+!MESSAGE XSCT command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "uartps" && VERSION == "3.5"  && TYPE == "DRIVER"}]], Result: [null, D:/Xilinx/SDK/2018.3/data\embeddedsw\XilinxProcessorIPLib\drivers\uartps_v3_5]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:58.035
+!MESSAGE XSCT Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "xadcps" && VERSION == "2.2"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:58.038
+!MESSAGE XSCT command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "xadcps" && VERSION == "2.2"  && TYPE == "DRIVER"}]], Result: [null, D:/Xilinx/SDK/2018.3/data\embeddedsw\XilinxProcessorIPLib\drivers\xadcps_v2_2]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:58.038
+!MESSAGE XSCT Command: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "vtc" && VERSION == "7.2"  && TYPE == "DRIVER"}]], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:58.041
+!MESSAGE XSCT command with result: [hsi get_property REPOSITORY [hsi get_sw_cores -filter {NAME == "vtc" && VERSION == "7.2"  && TYPE == "DRIVER"}]], Result: [null, D:/Xilinx/SDK/2018.3/data\embeddedsw\XilinxProcessorIPLib\drivers\vtc_v7_2]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:58.123
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_dual/ov5640_dual.sdk/system_wrapper_hw_platform_0/system.hdf D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_dual/ov5640_dual.sdk/dual_an5642_test_bsp/system.mss ], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:58.125
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_dual/ov5640_dual.sdk/system_wrapper_hw_platform_0/system.hdf D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_dual/ov5640_dual.sdk/dual_an5642_test_bsp/system.mss ], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:58.126
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_dual/ov5640_dual.sdk/system_wrapper_hw_platform_0/system.hdf D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_dual/ov5640_dual.sdk/dual_an5642_test_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:58.128
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_dual/ov5640_dual.sdk/system_wrapper_hw_platform_0/system.hdf D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_dual/ov5640_dual.sdk/dual_an5642_test_bsp/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "6.5",
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:58.131
+!MESSAGE XSCT Command: [::hsi::utils::get_libs_from_sw D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_dual/ov5640_dual.sdk/system_wrapper_hw_platform_0/system.hdf D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_dual/ov5640_dual.sdk/dual_an5642_test_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:58.133
+!MESSAGE XSCT command with result: [::hsi::utils::get_libs_from_sw D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_dual/ov5640_dual.sdk/system_wrapper_hw_platform_0/system.hdf D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_dual/ov5640_dual.sdk/dual_an5642_test_bsp/system.mss], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:58.135
+!MESSAGE XSCT Command: [::hsi::utils::closesw D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_dual/ov5640_dual.sdk/dual_an5642_test_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:58.137
+!MESSAGE XSCT command with result: [::hsi::utils::closesw D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_dual/ov5640_dual.sdk/dual_an5642_test_bsp/system.mss], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:28:59.961
+!MESSAGE XSCT Command: [::hsi::utils::openhw D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_dual/ov5640_dual.sdk/system_wrapper_hw_platform_1/system.hdf], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2020-10-07 13:29:01.487
+!MESSAGE XSCT command with result: [::hsi::utils::openhw D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_dual/ov5640_dual.sdk/system_wrapper_hw_platform_1/system.hdf], Result: [null, ]. Thread: main

@@ -1,8 +1,8 @@
-Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date         : Thu Sep 20 16:56:05 2018
-| Host         : DESKTOP-2GP67RG running 64-bit major release  (build 9200)
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Thu Oct  8 16:05:00 2020
+| Host         : Huang running 64-bit major release  (build 9200)
 | Command      : report_utilization -file system_alinx_ov5640_0_0_utilization_synth.rpt -pb system_alinx_ov5640_0_0_utilization_synth.pb
 | Design       : system_alinx_ov5640_0_0
 | Device       : 7z020clg400-2
@@ -30,15 +30,15 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                | 1047 |     0 |     53200 |  1.97 |
-|   LUT as Logic             |  936 |     0 |     53200 |  1.76 |
-|   LUT as Memory            |  111 |     0 |     17400 |  0.64 |
+| Slice LUTs*                | 1042 |     0 |     53200 |  1.96 |
+|   LUT as Logic             |  932 |     0 |     53200 |  1.75 |
+|   LUT as Memory            |  110 |     0 |     17400 |  0.63 |
 |     LUT as Distributed RAM |    0 |     0 |           |       |
-|     LUT as Shift Register  |  111 |     0 |           |       |
-| Slice Registers            | 1840 |     0 |    106400 |  1.73 |
-|   Register as Flip Flop    | 1840 |     0 |    106400 |  1.73 |
+|     LUT as Shift Register  |  110 |     0 |           |       |
+| Slice Registers            | 1854 |     0 |    106400 |  1.74 |
+|   Register as Flip Flop    | 1854 |     0 |    106400 |  1.74 |
 |   Register as Latch        |    0 |     0 |    106400 |  0.00 |
-| F7 Muxes                   |    8 |     0 |     26600 |  0.03 |
+| F7 Muxes                   |    3 |     0 |     26600 |  0.01 |
 | F8 Muxes                   |    0 |     0 |     13300 |  0.00 |
 +----------------------------+------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
@@ -59,7 +59,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 19    |          Yes |           - |        Reset |
 | 15    |          Yes |         Set |            - |
-| 1806  |          Yes |       Reset |            - |
+| 1820  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -149,19 +149,19 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     | 1806 |        Flop & Latch |
-| LUT6     |  435 |                 LUT |
-| LUT4     |  161 |                 LUT |
-| LUT2     |  145 |                 LUT |
-| LUT5     |  143 |                 LUT |
-| LUT3     |  127 |                 LUT |
+| FDRE     | 1820 |        Flop & Latch |
+| LUT6     |  473 |                 LUT |
+| LUT4     |  166 |                 LUT |
+| LUT2     |  152 |                 LUT |
+| LUT3     |  140 |                 LUT |
+| LUT5     |   88 |                 LUT |
 | SRLC32E  |   83 |  Distributed Memory |
-| SRL16E   |   82 |  Distributed Memory |
-| CARRY4   |   74 |          CarryLogic |
-| LUT1     |   46 |                 LUT |
+| SRL16E   |   81 |  Distributed Memory |
+| CARRY4   |   72 |          CarryLogic |
+| LUT1     |   49 |                 LUT |
 | FDCE     |   19 |        Flop & Latch |
 | FDSE     |   15 |        Flop & Latch |
-| MUXF7    |    8 |               MuxFx |
+| MUXF7    |    3 |               MuxFx |
 | SRLC16E  |    2 |  Distributed Memory |
 | RAMB36E1 |    2 |        Block Memory |
 +----------+------+---------------------+

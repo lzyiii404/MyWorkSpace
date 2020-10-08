@@ -1,10 +1,10 @@
-// Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+// Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-// Date        : Thu Sep 20 16:56:05 2018
-// Host        : DESKTOP-2GP67RG running 64-bit major release  (build 9200)
+// Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+// Date        : Thu Oct  8 16:05:00 2020
+// Host        : Huang running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
-//               D:/ax7020/15_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ip/system_alinx_ov5640_0_0/system_alinx_ov5640_0_0_stub.v
+//               D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ip/system_alinx_ov5640_0_0/system_alinx_ov5640_0_0_stub.v
 // Design      : system_alinx_ov5640_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg400-2
@@ -13,7 +13,7 @@
 // This empty module with port declaration file causes synthesis tools to infer a black box for IP.
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
-(* X_CORE_INFO = "alinx_ov5640,Vivado 2017.4" *)
+(* X_CORE_INFO = "alinx_ov5640,Vivado 2018.3" *)
 module system_alinx_ov5640_0_0(cmos_vsync, cmos_href, cmos_pclk, cmos_d, 
   m_axis_video_aclk, m_axis_video_aresetn, m_axis_video_tdata, m_axis_video_tvalid, 
   m_axis_video_tready, m_axis_video_tuser, m_axis_video_tlast, m_axis_video_tkeep)
