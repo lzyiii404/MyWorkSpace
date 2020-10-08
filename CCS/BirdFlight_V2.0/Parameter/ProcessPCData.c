@@ -25,6 +25,7 @@ void Process_PCData(Uint16 *PCData){
                 FlightControl.OnOff = Drone_Off;
             }
             else if(PCData[3]==1){
+                FlightControl.landFlag=0;
                 FlightControl.OnOff = Drone_On;
             }
             else if(PCData[3]==2){

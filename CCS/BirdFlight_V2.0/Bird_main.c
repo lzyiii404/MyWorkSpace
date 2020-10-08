@@ -301,7 +301,7 @@ static  void  App_TaskAttitude (void *p_arg){
    float PreparationRoll = 0;
    bool PreparationFlag;
     while (DEF_TRUE) {
-        if(FlightControl.OnOff == Drone_On && RT_Info.Height >= -0.01f){
+        if(FlightControl.OnOff == Drone_On && RT_Info.Height >= 0.01f){
 //        if(FlightControl.OnOff == Drone_On){
             if(FlightControl.DroneMode == Drone_Mode_4Axis){
                 if(Preparationtime < 800){
@@ -338,7 +338,7 @@ static  void  App_TaskAttitude (void *p_arg){
             OriginalVelZ.iOut = 0;
             OriginalVelX.iOut = 0;
             OriginalVelY.iOut = 0;
-            Target_Info.Height = 0.0f;
+            Target_Info.Height = 1.00f;
             Target_Info.Pitch = 0.0f;
             Target_Info.Roll = 0.0f;
             PWM_OUTPUT(0,0,0,0);
@@ -364,9 +364,9 @@ static  void  App_TaskPosition (void *p_arg){
    /* Prevent compiler warning for not using 'p_arg'       */
    (void)&p_arg;
    /* Task body, always written as an infinite loop.       */
-   float Climbing = 0.008f;
-   float Declining = 0.002f;
-   Target_Info.Height = 0.90f;
+   float Climbing = 0.012f;
+   float Declining = 0.006f;
+   Target_Info.Height = 1.00f;
     while (DEF_TRUE) {
         if(FlightControl.DroneMode == Drone_Mode_4Axis){
             Position_control(Fly_Mode,Climbing,Declining);
