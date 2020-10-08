@@ -1,0 +1,7 @@
+<annotationInfo>
+<annotationInfo>
+<item  id="9" filename="led_control/led_control.cpp" linenumber="6" name="exitcond" contextFuncName="led_control" moduleName="led_control" rtlName="exitcond_fu_50_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="11" fileDirectory="D:\MyWorkSpace\ZYNQ\HLS"><\/item>
+<item  id="11" filename="led_control/led_control.cpp" linenumber="6" name="i_1" contextFuncName="led_control" moduleName="led_control" rtlName="i_1_fu_56_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="26" fileDirectory="D:\MyWorkSpace\ZYNQ\HLS"><\/item>
+<item  id="14" filename="led_control/led_control.cpp" linenumber="7" name="not_s" contextFuncName="led_control" moduleName="led_control" rtlName="led_V" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="11" fileDirectory="D:\MyWorkSpace\ZYNQ\HLS"><\/item>
+<\/annotationInfo>
+</annotationInfo>

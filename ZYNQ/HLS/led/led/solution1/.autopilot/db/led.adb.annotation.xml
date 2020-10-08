@@ -1,6 +1,0 @@
-<annotationInfo>
-<annotationInfo>
-<item  id="9" filename="led/led.cpp" linenumber="6" name="exitcond" contextFuncName="led" moduleName="led" rtlName="exitcond_fu_51_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="11" fileDirectory="D:\MyWorkSpace\ZYNQ\HLS\led"><\/item>
-<item  id="11" filename="led/led.cpp" linenumber="6" name="i_1" contextFuncName="led" moduleName="led" rtlName="i_1_fu_57_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="26" fileDirectory="D:\MyWorkSpace\ZYNQ\HLS\led"><\/item>
-<\/annotationInfo>
-</annotationInfo>

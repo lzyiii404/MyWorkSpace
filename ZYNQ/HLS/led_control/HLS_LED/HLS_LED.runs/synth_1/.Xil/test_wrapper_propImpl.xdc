@@ -1,0 +1,5 @@
+set_property SRC_FILE_INFO {cfile:D:/MyWorkSpace/ZYNQ/HLS/led_control/HLS_LED/HLS_LED.srcs/constrs_1/new/led.xdc rfile:../../../HLS_LED.srcs/constrs_1/new/led.xdc id:1} [current_design]
+set_property src_info {type:XDC file:1 line:3 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN U18 [get_ports ap_clk_0]
+set_property src_info {type:XDC file:1 line:4 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN M14 [get_ports {led_V_0[0]}]
