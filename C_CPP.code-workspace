@@ -34,7 +34,12 @@
       "string_view": "cpp",
       "initializer_list": "cpp",
       "ostream": "cpp",
-      "functional": "cpp"
+      "functional": "cpp",
+      "iosfwd": "cpp",
+      "fstream": "cpp",
+      "iomanip": "cpp",
+      "sstream": "cpp",
+      "streambuf": "cpp"
     },
     "fileheader.LastModifiedBy": "jy.Huang",
     "fileheader.Author": "jy.Huang"
