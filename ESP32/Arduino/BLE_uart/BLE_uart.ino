@@ -23,12 +23,15 @@
 #include <BLEServer.h>
 #include <BLEUtils.h>
 #include <BLE2902.h>
+#include <iostream>
 
 BLEServer *pServer = NULL;
 BLECharacteristic * pTxCharacteristic;
 bool deviceConnected = false;
 bool oldDeviceConnected = false;
 uint8_t txValue = 0;
+
+bool getRxdata = false;
 
 // See the following for generating UUIDs:
 // https://www.uuidgenerator.net/
@@ -48,6 +51,21 @@ class MyServerCallbacks: public BLEServerCallbacks {
     }
 };
 
+void Process_Rxdata(std::string rxValue){
+  std::string get_ssid, get_pw;
+  int pos = 0;
+  
+  pos = rxValue.find(':') + 2;
+  while (rxValue[pos] != '\"')
+    get_ssid.push_back(rxValue[pos++]);
+  
+  pos = rxValue.find(':', pos) + 2;
+  while (rxValue[pos] != '\"')
+    get_pw.push_back(rxValue[pos++]);
+
+  Serial.println(get_ssid.c_str());
+  Serial.println(get_pw.c_str());
+}
 class MyCallbacks: public BLECharacteristicCallbacks {
     void onWrite(BLECharacteristic *pCharacteristic) {
       std::string rxValue = pCharacteristic->getValue();
@@ -60,16 +78,20 @@ class MyCallbacks: public BLECharacteristicCallbacks {
 
         Serial.println();
         Serial.println("*********");
+
+        Process_Rxdata(rxValue);
       }
     }
 };
+
+
 
 
 void setup() {
   Serial.begin(115200);
 
   // Create the BLE Device
-  BLEDevice::init("UART Service");
+  BLEDevice::init("ESP32");
 
   // Create the BLE Server
   pServer = BLEDevice::createServer();
@@ -104,10 +126,11 @@ void setup() {
 void loop() {
 
     if (deviceConnected) {
-        pTxCharacteristic->setValue(&txValue, 1);
+      if (getRxdata){
+        pTxCharacteristic->setValue("got it!");
         pTxCharacteristic->notify();
-        txValue++;
-		delay(10); // bluetooth stack will go into congestion, if too many packets are sent
+      }
+		delay(50); // bluetooth stack will go into congestion, if too many packets are sent
 	}
 
     // disconnecting

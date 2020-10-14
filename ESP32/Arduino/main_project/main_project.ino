@@ -37,6 +37,15 @@
 
 #define EEPROM_MODE_STATE_ADDR 129
 
+//WIFI
+#define WIFI_CONNECT 'G'
+
+/*********************************************************
+ *      输入wifi：huang       指令：Ahuang
+ *      输入pw:   123         指令：C123
+ *      输入服务器地址：       指令: Ehttp://xxxx
+ * ******************************************************/
+
 //蓝牙对象创建
 BLEServer *pServer = NULL;
 BLECharacteristic *pTxCharacteristic;
@@ -56,8 +65,6 @@ unsigned long timerDelay = 5000;
 
 #define SERVICE_UUID "6E400001-B5A3-F393-E0A9-E50E24DCCA9E" // UART service UUID
 
-//WIFI
-#define WIFI_CONNECT 'G'
 
 // #define HTTP_ALLOW_POST 'H'
 // #define HTTP_NOTALLOW_PSOT 'I'
