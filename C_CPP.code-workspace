@@ -39,7 +39,8 @@
       "fstream": "cpp",
       "iomanip": "cpp",
       "sstream": "cpp",
-      "streambuf": "cpp"
+      "streambuf": "cpp",
+      "stack": "cpp"
     },
     "fileheader.LastModifiedBy": "jy.Huang",
     "fileheader.Author": "jy.Huang"
