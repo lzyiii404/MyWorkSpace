@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include "platform.h"
+#include "xil_printf.h"
+#include "xparameters.h"
+
+#define XPAR_LED_STATE_0_DEVICE_ID	0
+#define XPAR_LED_STATE_0_S_AXI_AXILITES_BASEADDR	0x43c00000
+#define XPAR_LED_STATE_0_S_AXI_AXILITES_HIGHADDR	0x43c0ffff
+
+int main()
+{
+    init_platform();
+
+    print("Hello World\n\r");
+
+    cleanup_platform();
+    return 0;
+}

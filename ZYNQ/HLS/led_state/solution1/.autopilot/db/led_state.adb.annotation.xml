@@ -1,0 +1,8 @@
+<annotationInfo>
+<annotationInfo>
+<item  id="17" filename="led_state/led_state.cpp" linenumber="8" name="i_cast" contextFuncName="led_state" moduleName="led_state" rtlName="i_cast_fu_62_p1" latency="0" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="D:\MyWorkSpace\ZYNQ\HLS"><\/item>
+<item  id="18" filename="led_state/led_state.cpp" linenumber="8" name="tmp" contextFuncName="led_state" moduleName="led_state" rtlName="tmp_fu_66_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="12" fileDirectory="D:\MyWorkSpace\ZYNQ\HLS"><\/item>
+<item  id="19" filename="led_state/led_state.cpp" linenumber="8" name="i_1" contextFuncName="led_state" moduleName="led_state" rtlName="i_1_fu_71_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="31" fileDirectory="D:\MyWorkSpace\ZYNQ\HLS"><\/item>
+<item  id="22" filename="led_state/led_state.cpp" linenumber="9" name="tmp_1" contextFuncName="led_state" moduleName="led_state" rtlName="led_V" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="12" fileDirectory="D:\MyWorkSpace\ZYNQ\HLS"><\/item>
+<\/annotationInfo>
+</annotationInfo>

@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include "platform.h"
+#include "xil_printf.h"
+#include "xparameters.h"
+
+#define LED_IP_DEVICE_ID	XPAR_LED_STATE_0_DEVICE_ID
+
+XLed_state LED;
+XLed_state_Config *LEDConfig;
+
+
+int main()
+{
+    init_platform();
+
+    print("Hello World\n\r");
+
+    LEDConfig = XLed_state_LookupConfig(LED_IP_DEVICE_ID);
+    XLed_state_CfgInitialize(&LED, LEDConfig);
+
+    cleanup_platform();
+    return 0;
+}
