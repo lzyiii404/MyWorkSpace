@@ -39,6 +39,7 @@
 
 //WIFI
 #define WIFI_CONNECT 'G'
+#define WX_SET_SSID_PW    '{'
 
 /*********************************************************
  *      输入wifi：huang       指令：Ahuang
@@ -629,8 +630,37 @@ void change_Mode()
   EEPROM.write(EEPROM_MODE_STATE_ADDR, (EEPROM.read(EEPROM_MODE_STATE_ADDR) == WIFI_MODE ? BLE_MODE : WIFI_MODE));
   EEPROM.commit();
   SerialDebug.println(EEPROM.read(EEPROM_MODE_STATE_ADDR));
-  delay(0xff);
+  delay(0xfff);
   ESP.restart();
+}
+
+void Process_Rxdata(std::string rxValue){
+  std::string get_ssid, get_pw;
+  int pos = 0;
+  
+  pos = rxValue.find(':') + 2;
+  get_ssid.push_back('A');
+  get_pw.push_back('C');
+  
+  while (rxValue[pos] != '\"')
+    get_ssid.push_back(rxValue[pos++]);
+  
+  pos = rxValue.find(':', pos) + 2;
+  while (rxValue[pos] != '\"')
+    get_pw.push_back(rxValue[pos++]);
+
+  Serial.println(get_ssid.c_str());
+  Serial.println(get_pw.c_str());
+
+  write_EEPROM(EEPROM_WIFI_ADDR, EEPROM_WIFI_ADDR_WIDTH, get_ssid);
+  delay(50);
+  SerialDebug.println("EEPROM ssid set!");
+
+  write_EEPROM(EEPROM_PW_ADDR, EEPROM_PW_ADDR_WIDTH, get_pw);
+  delay(50);
+  SerialDebug.println("EEPROM pw set!");
+
+  change_Mode();
 }
 
 int get_Mode_state()
@@ -669,6 +699,10 @@ void Operate(char op, std::string rxValue)
   case WIFI_CONNECT:
     // WIFI_Init();
     change_Mode();
+    break;
+
+  case WX_SET_SSID_PW:
+    Process_Rxdata(rxValue);
     break;
 
     // case HTTP_ALLOW_POST:
@@ -836,13 +870,18 @@ void WIFI_Init()
 
   while (WiFi.status() != WL_CONNECTED)
   {
-    if (cnt_fail++ >= 60){
+    if (cnt_fail++ >= 20){
       SerialDebug.println("Unable to connect to WIFI");
       SerialDebug.println("Please re enter the SSID / PW!");
       delay(0xff);
+      digitalWrite(LED_PIN, LOW);
       change_Mode();
     }
-    delay(500);
+    
+    digitalWrite(LED_PIN, LOW);
+    delay(250);
+    digitalWrite(LED_PIN, HIGH);
+    delay(250);
     SerialDebug.print(".");
   }
 
@@ -881,6 +920,17 @@ void Radar_process(){
   }
 }
 
+void LED_Sparkle(){
+  digitalWrite(LED_PIN, LOW);
+  delay(50);
+  digitalWrite(LED_PIN, HIGH);
+  delay(50);
+  digitalWrite(LED_PIN, LOW);
+  delay(50);
+  digitalWrite(LED_PIN, HIGH);
+  delay(50);
+}
+
 void WIFI_process()
 {
     // if ((millis() - lastTime) > timerDelay) {
@@ -913,6 +963,7 @@ void WIFI_process()
         
       // Free resources
       http.end();
+      LED_Sparkle();
     }
     else {
       SerialDebug.println("WiFi Disconnected");
