@@ -1086,6 +1086,8 @@ void WIFI_process()
     }
     else {
       SerialDebug.println("WiFi Disconnected");
+      digitalWrite(LED_PIN, LOW);
+      lcd.clear();
       change_Mode();
     }
     // lastTime = millis();
