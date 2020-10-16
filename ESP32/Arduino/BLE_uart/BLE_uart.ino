@@ -65,6 +65,8 @@ void Process_Rxdata(std::string rxValue){
 
   Serial.println(get_ssid.c_str());
   Serial.println(get_pw.c_str());
+  
+  getRxdata = true;
 }
 class MyCallbacks: public BLECharacteristicCallbacks {
     void onWrite(BLECharacteristic *pCharacteristic) {
@@ -127,8 +129,9 @@ void loop() {
 
     if (deviceConnected) {
       if (getRxdata){
-        pTxCharacteristic->setValue("got it!");
+        pTxCharacteristic->setValue(&txValue, 1);
         pTxCharacteristic->notify();
+        txValue++;
       }
 		delay(50); // bluetooth stack will go into congestion, if too many packets are sent
 	}

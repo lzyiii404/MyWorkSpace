@@ -15,6 +15,10 @@
 #include <WiFi.h>
 #include <HTTPClient.h>
 
+#include "time.h"
+
+#include "LiquidCrystal_I2C.h"
+
 //EEPROM 存储 WIFI 及密码
 //EEPROM 操作
 #define EEPROM_WRITE_WIFI_NAME 'A'
@@ -52,7 +56,9 @@ BLEServer *pServer = NULL;
 BLECharacteristic *pTxCharacteristic;
 bool deviceConnected = false;
 bool oldDeviceConnected = false;
-uint8_t txValue = 0;
+std::string txValue = "got it!";
+bool getRxdata = false;
+uint32_t mode_cnt = 0;
 
 char serverName[64] = {'\0'};
 unsigned long lastTime = 0;
@@ -65,6 +71,8 @@ unsigned long timerDelay = 5000;
 // https://www.uuidgenerator.net/
 
 #define SERVICE_UUID "6E400001-B5A3-F393-E0A9-E50E24DCCA9E" // UART service UUID
+#define CHARACTERISTIC_UUID_RX "6E400002-B5A3-F393-E0A9-E50E24DCCA9E"
+#define CHARACTERISTIC_UUID_TX "6E400003-B5A3-F393-E0A9-E50E24DCCA9E"
 
 
 // #define HTTP_ALLOW_POST 'H'
@@ -73,6 +81,16 @@ unsigned long timerDelay = 5000;
 
 // #define POST_DENY 0
 // #define POST_ADMINT 1
+
+const char* ntpServer = "pool.ntp.org";
+const long  gmtOffset_sec = 3600 * 4;
+const int   daylightOffset_sec = 3600 * 4;
+const int   mday[13] = {0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366};
+
+int lcdColumns = 16;
+int lcdRows = 2;
+LiquidCrystal_I2C lcd(0x3F, lcdColumns, lcdRows);  
+
 
 uint8_t Mode_state = NULL;
 
@@ -333,8 +351,11 @@ void disable_output_message(uint32_t message)
 void wait_for_ready_message()
 {
     SerialDebug.println("Waiting for XTS_SPRS_READY...");
+    // int cnt = 0;
     while (true)
     {
+        // if (cnt++ > 10000){}
+        //     change_Mode();
         if (receive_data() < 1)
             continue;
         if (recv_buf[1] != XTS_SPR_SYSTEM)
@@ -348,6 +369,7 @@ void wait_for_ready_message()
         }
         else if (response_code == XTS_SPRS_BOOTING)
             SerialDebug.println("Radar is booting...");
+        // SerialDebug.println(cnt);
     }
 }
 // This method checks if an ACK was received from the radar
@@ -514,9 +536,11 @@ void clear_json_data(){
   json_data.clear();
 }
 void creat_json_head(){
-  json_data.append("{\"sensor-Id\":\"");
+  json_data.append("{\"sensorID\":\"");
   json_data.append(SERVICE_UUID);
-  json_data.append("\",\"num\":\"60\",\"pack\":[");
+  json_data.append("\",\"userID\":\"");
+  json_data.append("1q123qw");
+  json_data.append("\",\"num\":\"30\",\"pack\":[");
 }
 
 void float2string(float num){
@@ -526,30 +550,71 @@ void float2string(float num){
   json_data.append(tmp);
 }
 
+void date2string(int year, int month, int day, int hour, int min, int sec){
+  int2string(year);
+  json_data.append("-");
+  int2string(month);
+  json_data.append("-");
+  int2string(day);
+  json_data.append("  ");
+  int2string(hour);
+  json_data.append(":");
+  int2string(min);
+  json_data.append(":");
+  int2string(sec);
+}
+
 void int2string(int num){
-  char tmp[3];
+  char tmp[4];
   sprintf(tmp, "%d", num);
   json_data.append(tmp);
 }
 
 void add_data2json(RespirationMessage* msg){
-  json_data.append("{\"state\":\"");
+  struct tm timeinfo;
+  getLocalTime(&timeinfo);
+  int year, month, day;
+  year = timeinfo.tm_year + 1900;
+  for (int i = 0; i < 13; i++){
+    if (mday[i] > timeinfo.tm_yday){
+      month = i;
+      day = timeinfo.tm_yday - mday[i - 1] + 1;
+      break;
+    }
+  }
+
+  
+  Serial.print(year);
+  Serial.print("-");
+  Serial.print(month);
+  Serial.print("-");
+  Serial.print(day);
+  Serial.print(" ");
+  Serial.print(timeinfo.tm_hour);
+  Serial.print(":");
+  Serial.print(timeinfo.tm_min);
+  Serial.print(":");
+  Serial.println(timeinfo.tm_sec);
+
+  json_data.append("{\"date_time\":\"");
+  date2string(year, month, day, timeinfo.tm_hour, timeinfo.tm_min, timeinfo.tm_sec);
+  json_data.append("\",\"state\":\"");
   json_data.append(states[msg->state_code]);
   // SerialDebug.println("add states");
   json_data.append("\",\"RPM\":\"");
   // json_data.append(to_string(msg->rpm));
   float2string(msg->rpm);
   // SerialDebug.println("add rpm");
-  json_data.append("\",\"Distance\":\"");
+  json_data.append("\",\"distance\":\"");
   // json_data.append(to_string(msg->distance));
   float2string(msg->distance);
-  json_data.append("\",\"Signal_Quality\":\"");
+  json_data.append("\",\"signal_quality\":\"");
   // json_data.append(msg->signal_quality);
   int2string(msg->signal_quality);
-  json_data.append("\",\"Movement_Fast\":\"");
+  json_data.append("\",\"movement_fast\":\"");
   // json_data.append(to_string(msg->movement_fast));
   float2string(msg->movement_fast);
-  json_data.append("\",\"Movement_Slow\":\"");
+  json_data.append("\",\"movement_slow\":\"");
   // json_data.append(to_string(msg->movement_slow));
   float2string(msg->movement_slow);
   json_data.append("\"},");
@@ -637,7 +702,7 @@ void change_Mode()
 void Process_Rxdata(std::string rxValue){
   std::string get_ssid, get_pw;
   int pos = 0;
-  
+  int i = 60;
   pos = rxValue.find(':') + 2;
   get_ssid.push_back('A');
   get_pw.push_back('C');
@@ -660,7 +725,16 @@ void Process_Rxdata(std::string rxValue){
   delay(50);
   SerialDebug.println("EEPROM pw set!");
 
-  change_Mode();
+  // while (1){
+  //   pTxCharacteristic->setValue(&txValue, 1);
+  //   pTxCharacteristic->notify();
+  //   SerialDebug.println("send!");
+  //   delay(50);
+  // }
+
+  getRxdata = true;
+
+  // change_Mode();
 }
 
 int get_Mode_state()
@@ -755,9 +829,12 @@ void check_BLE_Connected()
 {
   if (deviceConnected)
   {
-    pTxCharacteristic->setValue(&txValue, 1);
-    pTxCharacteristic->notify();
-    txValue++;
+      if (getRxdata){
+        pTxCharacteristic->setValue(txValue);
+        pTxCharacteristic->notify();
+        SerialDebug.println(txValue.c_str());
+        change_Mode();
+      }
     delay(10); // bluetooth stack will go into congestion, if too many packets are sent
   }
 
@@ -791,14 +868,16 @@ void BLE_Init()
 
   // Create a BLE Characteristic
   pTxCharacteristic = pService->createCharacteristic(
-      SERVICE_UUID,
-      BLECharacteristic::PROPERTY_NOTIFY);
-
+										CHARACTERISTIC_UUID_TX,
+										BLECharacteristic::PROPERTY_NOTIFY
+									);
+                      
   pTxCharacteristic->addDescriptor(new BLE2902());
 
-  BLECharacteristic *pRxCharacteristic = pService->createCharacteristic(
-      SERVICE_UUID,
-      BLECharacteristic::PROPERTY_WRITE);
+  BLECharacteristic * pRxCharacteristic = pService->createCharacteristic(
+											 CHARACTERISTIC_UUID_RX,
+											BLECharacteristic::PROPERTY_WRITE
+										);
 
   pRxCharacteristic->setCallbacks(new MyCallbacks());
 
@@ -807,7 +886,7 @@ void BLE_Init()
 
   // Start advertising
   pServer->getAdvertising()->start();
-  SerialDebug.println("Waiting");
+  Serial.println("Waiting a client connection to notify...");
 }
 
 void Init_radar(){
@@ -841,6 +920,26 @@ void Init_radar(){
     disable_output_message(XTS_ID_RESPIRATION_DETECTIONLIST);
     // Run profile - after this the radar will start sending the sleep message we enabled above
     run_profile();
+}
+
+void Time_Init(){
+  configTime(gmtOffset_sec, daylightOffset_sec, ntpServer);
+
+  int cnt_err = 0;
+
+  struct tm timeinfo;
+  while (!getLocalTime(&timeinfo))
+  {
+    if (cnt_err++ > 5)
+      ESP.restart();
+  }
+  
+}
+
+void LCD_Init(){
+    lcd.init();
+    lcd.backlight();
+    lcd.clear();
 }
 
 void WIFI_Init()
@@ -893,6 +992,10 @@ void WIFI_Init()
   SerialDebug.println("Got HTTP Server.");
   SerialDebug.println(serverName);
 
+  Time_Init();
+
+  LCD_Init();
+
   Init_radar();
 }
 
@@ -908,9 +1011,11 @@ void Radar_process(){
     }
     add_data2json(&msg);
     SerialDebug.println("finish add date2json");
+    
+    LCD_display(&msg);
     get_Msg_Times++;
     SerialDebug.println(get_Msg_Times);
-    if (get_Msg_Times >= 60){
+    if (get_Msg_Times >= 30){
       add_json_tail();
       // SerialDebug.println("Show the json and Post it!");
       WIFI_process();
@@ -929,6 +1034,19 @@ void LED_Sparkle(){
   delay(50);
   digitalWrite(LED_PIN, HIGH);
   delay(50);
+}
+
+void LCD_display(RespirationMessage* msg){
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print("state:");
+  lcd.setCursor(6, 0);
+  lcd.print(states[msg->state_code]);
+  
+  lcd.setCursor(0, 1);
+  lcd.print("rpm:");
+  lcd.setCursor(4, 1);
+  lcd.print(msg->rpm);
 }
 
 void WIFI_process()
@@ -952,11 +1070,12 @@ void WIFI_process()
       // If you need an HTTP request with a content type: application/json, use the following:
       http.addHeader("Content-Type", "application/json");
       int httpResponseCode = http.POST(json_data.c_str());
+
       
       // If you need an HTTP request with a content type: text/plain
       //http.addHeader("Content-Type", "text/plain");
       //int httpResponseCode = http.POST("Hello, World!");
-     
+
       SerialDebug.print("HTTP Response code: ");
       SerialDebug.println(httpResponseCode);
       // SerialDebug.print(http.GET());
