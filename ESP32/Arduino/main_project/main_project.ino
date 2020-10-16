@@ -887,6 +887,10 @@ void BLE_Init()
   // Start advertising
   pServer->getAdvertising()->start();
   Serial.println("Waiting a client connection to notify...");
+
+  LCD_Init();
+  lcd.setCursor(0, 0);
+  lcd.print("BLE MODE");
 }
 
 void Init_radar(){
@@ -995,6 +999,8 @@ void WIFI_Init()
   Time_Init();
 
   LCD_Init();
+  lcd.setCursor(0, 0);
+  lcd.print("WIFI MODE");
 
   Init_radar();
 }
