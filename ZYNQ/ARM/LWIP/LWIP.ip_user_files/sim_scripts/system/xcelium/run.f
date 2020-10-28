@@ -9,6 +9,9 @@
   "D:/Xilinx/Vivado/2018.3/data/xilinx_vip/hdl/clk_vip_if.sv" \
   "D:/Xilinx/Vivado/2018.3/data/xilinx_vip/hdl/rst_vip_if.sv" \
 -endlib
+-makelib xcelium_lib/xil_defaultlib \
+  "../../../bd/system/sim/system.v" \
+-endlib
 -makelib xcelium_lib/axi_infrastructure_v1_1_0 \
   "../../../../LWIP.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v" \
 -endlib
@@ -19,8 +22,7 @@
   "../../../../LWIP.srcs/sources_1/bd/system/ipshared/70cf/hdl/processing_system7_vip_v1_0_vl_rfs.sv" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
-  "../../../bd/system/ip/system_processing_system7_0_0/sim/system_processing_system7_0_0.v" \
-  "../../../bd/system/sim/system.v" \
+  "../../../bd/system/ip/system_processing_system7_0_1/sim/system_processing_system7_0_1.v" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   glbl.v

@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Thu Sep 20 17:20:50 2018
+# Process ID: 9680
+# Current directory: D:/ax7020/17_an5642_lwip_double/an5642_lwip.runs/system_alinx_ov5640_RGB565_0_1_synth_1
+# Command line: vivado.exe -log system_alinx_ov5640_RGB565_0_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_alinx_ov5640_RGB565_0_1.tcl
+# Log file: D:/ax7020/17_an5642_lwip_double/an5642_lwip.runs/system_alinx_ov5640_RGB565_0_1_synth_1/system_alinx_ov5640_RGB565_0_1.vds
+# Journal file: D:/ax7020/17_an5642_lwip_double/an5642_lwip.runs/system_alinx_ov5640_RGB565_0_1_synth_1\vivado.jou
+#-----------------------------------------------------------
+source system_alinx_ov5640_RGB565_0_1.tcl -notrace
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP system_alinx_ov5640_RGB565_0_1, cache-ID = 4cd7af9954751e01.
+INFO: [Common 17-206] Exiting Vivado at Thu Sep 20 17:21:00 2018...
