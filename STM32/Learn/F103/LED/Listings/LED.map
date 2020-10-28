@@ -763,41 +763,41 @@ Memory Map of the image
 
   Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00000374, Max: 0x00080000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x00000374, Max: 0x00080000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00000374, Max: 0x00080000, ABSOLUTE)
 
-    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x08000000   0x00000130   Data   RO           73    RESET               startup_stm32f10x_hd.o
-    0x08000130   0x00000000   Code   RO         3115  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x08000130   0x00000004   Code   RO         3118    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x08000134   0x00000004   Code   RO         3121    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x08000138   0x00000000   Code   RO         3123    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x08000138   0x00000000   Code   RO         3125    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x08000138   0x00000008   Code   RO         3126    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x08000140   0x00000000   Code   RO         3128    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
-    0x08000140   0x00000000   Code   RO         3130    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
-    0x08000140   0x00000004   Code   RO         3119    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
-    0x08000144   0x00000024   Code   RO           74    .text               startup_stm32f10x_hd.o
-    0x08000168   0x00000024   Code   RO         3132    .text               mc_w.l(init.o)
-    0x0800018c   0x00000116   Code   RO         1266    i.GPIO_Init         stm32f10x_gpio.o
-    0x080002a2   0x00000012   Code   RO         1270    i.GPIO_ReadInputDataBit  stm32f10x_gpio.o
-    0x080002b4   0x00000004   Code   RO         1273    i.GPIO_ResetBits    stm32f10x_gpio.o
-    0x080002b8   0x00000004   Code   RO         1274    i.GPIO_SetBits      stm32f10x_gpio.o
-    0x080002bc   0x00000040   Code   RO            1    i.LED_GPIO_Config   led.o
-    0x080002fc   0x00000020   Code   RO         1696    i.RCC_APB2PeriphClockCmd  stm32f10x_rcc.o
-    0x0800031c   0x00000002   Code   RO           48    i.SystemInit        main.o
-    0x0800031e   0x0000000e   Code   RO         3136    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x0800032c   0x00000002   Code   RO         3137    i.__scatterload_null  mc_w.l(handlers.o)
-    0x0800032e   0x0000000e   Code   RO         3138    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x0800033c   0x00000028   Code   RO           49    i.main              main.o
-    0x08000364   0x00000010   Data   RO         3134    Region$$Table       anon$$obj.o
+    0x08000000   0x08000000   0x00000130   Data   RO           73    RESET               startup_stm32f10x_hd.o
+    0x08000130   0x08000130   0x00000000   Code   RO         3115  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x08000130   0x08000130   0x00000004   Code   RO         3118    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x08000134   0x08000134   0x00000004   Code   RO         3121    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x08000138   0x08000138   0x00000000   Code   RO         3123    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x08000138   0x08000138   0x00000000   Code   RO         3125    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x08000138   0x08000138   0x00000008   Code   RO         3126    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x08000140   0x08000140   0x00000000   Code   RO         3128    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x08000140   0x08000140   0x00000000   Code   RO         3130    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x08000140   0x08000140   0x00000004   Code   RO         3119    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x08000144   0x08000144   0x00000024   Code   RO           74    .text               startup_stm32f10x_hd.o
+    0x08000168   0x08000168   0x00000024   Code   RO         3132    .text               mc_w.l(init.o)
+    0x0800018c   0x0800018c   0x00000116   Code   RO         1266    i.GPIO_Init         stm32f10x_gpio.o
+    0x080002a2   0x080002a2   0x00000012   Code   RO         1270    i.GPIO_ReadInputDataBit  stm32f10x_gpio.o
+    0x080002b4   0x080002b4   0x00000004   Code   RO         1273    i.GPIO_ResetBits    stm32f10x_gpio.o
+    0x080002b8   0x080002b8   0x00000004   Code   RO         1274    i.GPIO_SetBits      stm32f10x_gpio.o
+    0x080002bc   0x080002bc   0x00000040   Code   RO            1    i.LED_GPIO_Config   led.o
+    0x080002fc   0x080002fc   0x00000020   Code   RO         1696    i.RCC_APB2PeriphClockCmd  stm32f10x_rcc.o
+    0x0800031c   0x0800031c   0x00000002   Code   RO           48    i.SystemInit        main.o
+    0x0800031e   0x0800031e   0x0000000e   Code   RO         3136    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x0800032c   0x0800032c   0x00000002   Code   RO         3137    i.__scatterload_null  mc_w.l(handlers.o)
+    0x0800032e   0x0800032e   0x0000000e   Code   RO         3138    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x0800033c   0x0800033c   0x00000028   Code   RO           49    i.main              main.o
+    0x08000364   0x08000364   0x00000010   Data   RO         3134    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x00000400, Max: 0x00010000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08000374, Size: 0x00000400, Max: 0x00010000, ABSOLUTE)
 
-    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x00000400   Zero   RW           71    STACK               startup_stm32f10x_hd.o
+    0x20000000        -       0x00000400   Zero   RW           71    STACK               startup_stm32f10x_hd.o
 
 
 ==============================================================================
