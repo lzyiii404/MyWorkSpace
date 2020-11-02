@@ -17,18 +17,18 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 24324 
+INFO: Helper process launched with PID 21036 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 402.730 ; gain = 102.895
+Starting RTL Elaboration : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 404.586 ; gain = 103.035
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'system_axi_vdma_1_0' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ip/system_axi_vdma_1_0/synth/system_axi_vdma_1_0.vhd:108]
+INFO: [Synth 8-638] synthesizing module 'system_axi_vdma_1_0' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ip/system_axi_vdma_1_0/synth/system_axi_vdma_1_0.vhd:109]
 	Parameter C_S_AXI_LITE_ADDR_WIDTH bound to: 9 - type: integer 
 	Parameter C_S_AXI_LITE_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_DLYTMR_RESOLUTION bound to: 125 - type: integer 
 	Parameter C_PRMRY_IS_ACLK_ASYNC bound to: 1 - type: integer 
 	Parameter C_ENABLE_VIDPRMTR_READS bound to: 1 - type: integer 
 	Parameter C_DYNAMIC_RESOLUTION bound to: 1 - type: integer 
-	Parameter C_NUM_FSTORES bound to: 2 - type: integer 
+	Parameter C_NUM_FSTORES bound to: 3 - type: integer 
 	Parameter C_USE_FSYNC bound to: 1 - type: integer 
 	Parameter C_USE_MM2S_FSYNC bound to: 0 - type: integer 
 	Parameter C_USE_S2MM_FSYNC bound to: 2 - type: integer 
@@ -52,7 +52,7 @@ INFO: [Synth 8-638] synthesizing module 'system_axi_vdma_1_0' [d:/MyWorkSpace/ZY
 	Parameter C_M_AXIS_MM2S_TDATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_M_AXIS_MM2S_TUSER_BITS bound to: 1 - type: integer 
 	Parameter C_INCLUDE_S2MM bound to: 1 - type: integer 
-	Parameter C_S2MM_GENLOCK_MODE bound to: 0 - type: integer 
+	Parameter C_S2MM_GENLOCK_MODE bound to: 2 - type: integer 
 	Parameter C_S2MM_GENLOCK_NUM_MASTERS bound to: 1 - type: integer 
 	Parameter C_S2MM_GENLOCK_REPEAT_EN bound to: 1 - type: integer 
 	Parameter C_S2MM_SOF_ENABLE bound to: 1 - type: integer 
@@ -86,7 +86,7 @@ INFO: [Synth 8-638] synthesizing module 'system_axi_vdma_1_0' [d:/MyWorkSpace/ZY
 	Parameter C_SELECT_XPM bound to: 0 - type: integer 
 	Parameter C_ENABLE_VERT_FLIP bound to: 0 - type: integer 
 	Parameter C_FAMILY bound to: zynq - type: string 
-INFO: [Synth 8-3491] module 'axi_vdma' declared at 'd:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:69601' bound to instance 'U0' of component 'axi_vdma' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ip/system_axi_vdma_1_0/synth/system_axi_vdma_1_0.vhd:343]
+INFO: [Synth 8-3491] module 'axi_vdma' declared at 'd:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:69601' bound to instance 'U0' of component 'axi_vdma' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ip/system_axi_vdma_1_0/synth/system_axi_vdma_1_0.vhd:345]
 INFO: [Synth 8-638] synthesizing module 'axi_vdma' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:70040]
 	Parameter C_S_AXI_LITE_ADDR_WIDTH bound to: 9 - type: integer 
 	Parameter C_S_AXI_LITE_DATA_WIDTH bound to: 32 - type: integer 
@@ -94,7 +94,7 @@ INFO: [Synth 8-638] synthesizing module 'axi_vdma' [d:/MyWorkSpace/ZYNQ/ARM/mode
 	Parameter C_PRMRY_IS_ACLK_ASYNC bound to: 1 - type: integer 
 	Parameter C_ENABLE_VIDPRMTR_READS bound to: 1 - type: integer 
 	Parameter C_DYNAMIC_RESOLUTION bound to: 1 - type: integer 
-	Parameter C_NUM_FSTORES bound to: 2 - type: integer 
+	Parameter C_NUM_FSTORES bound to: 3 - type: integer 
 	Parameter C_USE_FSYNC bound to: 1 - type: integer 
 	Parameter C_USE_MM2S_FSYNC bound to: 0 - type: integer 
 	Parameter C_USE_S2MM_FSYNC bound to: 2 - type: integer 
@@ -118,7 +118,7 @@ INFO: [Synth 8-638] synthesizing module 'axi_vdma' [d:/MyWorkSpace/ZYNQ/ARM/mode
 	Parameter C_M_AXIS_MM2S_TDATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_M_AXIS_MM2S_TUSER_BITS bound to: 1 - type: integer 
 	Parameter C_INCLUDE_S2MM bound to: 1 - type: integer 
-	Parameter C_S2MM_GENLOCK_MODE bound to: 0 - type: integer 
+	Parameter C_S2MM_GENLOCK_MODE bound to: 2 - type: integer 
 	Parameter C_S2MM_GENLOCK_NUM_MASTERS bound to: 1 - type: integer 
 	Parameter C_S2MM_GENLOCK_REPEAT_EN bound to: 1 - type: integer 
 	Parameter C_S2MM_SOF_ENABLE bound to: 1 - type: integer 
@@ -770,18 +770,18 @@ INFO: [Synth 8-638] synthesizing module 'axi_vdma_reg_module' [d:/MyWorkSpace/ZY
 	Parameter C_ENABLE_DEBUG_INFO_14 bound to: 1 - type: integer 
 	Parameter C_ENABLE_DEBUG_INFO_15 bound to: 1 - type: integer 
 	Parameter C_ENABLE_VERT_FLIP bound to: 0 - type: integer 
-	Parameter C_NUM_FSTORES bound to: 2 - type: integer 
-	Parameter C_NUM_FSTORES_64 bound to: 2 - type: integer 
+	Parameter C_NUM_FSTORES bound to: 3 - type: integer 
+	Parameter C_NUM_FSTORES_64 bound to: 3 - type: integer 
 	Parameter C_LINEBUFFER_THRESH bound to: 4 - type: integer 
-	Parameter C_GENLOCK_MODE bound to: 0 - type: integer 
+	Parameter C_GENLOCK_MODE bound to: 2 - type: integer 
 	Parameter C_S_AXI_LITE_ADDR_WIDTH bound to: 9 - type: integer 
 	Parameter C_S_AXI_LITE_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_M_AXI_SG_ADDR_WIDTH bound to: 32 - type: integer 
 	Parameter C_M_AXI_ADDR_WIDTH bound to: 32 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'axi_vdma_register' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:18717]
 	Parameter C_NUM_REGISTERS bound to: 8 - type: integer 
-	Parameter C_NUM_FSTORES bound to: 2 - type: integer 
-	Parameter C_NUM_FSTORES_64 bound to: 2 - type: integer 
+	Parameter C_NUM_FSTORES bound to: 3 - type: integer 
+	Parameter C_NUM_FSTORES_64 bound to: 3 - type: integer 
 	Parameter C_CHANNEL_IS_MM2S bound to: 0 - type: integer 
 	Parameter C_LINEBUFFER_THRESH bound to: 4 - type: integer 
 	Parameter C_ENABLE_DEBUG_ALL bound to: 0 - type: integer 
@@ -803,16 +803,16 @@ INFO: [Synth 8-638] synthesizing module 'axi_vdma_register' [d:/MyWorkSpace/ZYNQ
 	Parameter C_ENABLE_DEBUG_INFO_15 bound to: 1 - type: integer 
 	Parameter C_INTERNAL_GENLOCK_ENABLE bound to: 0 - type: integer 
 	Parameter C_INCLUDE_SG bound to: 0 - type: integer 
-	Parameter C_GENLOCK_MODE bound to: 0 - type: integer 
+	Parameter C_GENLOCK_MODE bound to: 2 - type: integer 
 	Parameter C_ENABLE_FLUSH_ON_FSYNC bound to: 1 - type: integer 
 	Parameter C_S_AXI_LITE_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_M_AXI_SG_ADDR_WIDTH bound to: 32 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'axi_vdma_register' (16#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:18717]
 INFO: [Synth 8-638] synthesizing module 'axi_vdma_regdirect' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:20531]
 	Parameter C_NUM_REGISTERS bound to: 19 - type: integer 
-	Parameter C_NUM_FSTORES bound to: 2 - type: integer 
-	Parameter C_NUM_FSTORES_64 bound to: 2 - type: integer 
-	Parameter C_GENLOCK_MODE bound to: 0 - type: integer 
+	Parameter C_NUM_FSTORES bound to: 3 - type: integer 
+	Parameter C_NUM_FSTORES_64 bound to: 3 - type: integer 
+	Parameter C_GENLOCK_MODE bound to: 2 - type: integer 
 	Parameter C_DYNAMIC_RESOLUTION bound to: 1 - type: integer 
 	Parameter C_S_AXI_LITE_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_M_AXI_ADDR_WIDTH bound to: 32 - type: integer 
@@ -821,8 +821,8 @@ INFO: [Synth 8-638] synthesizing module 'axi_vdma_reg_mux' [d:/MyWorkSpace/ZYNQ/
 	Parameter C_TOTAL_NUM_REGISTER bound to: 62 - type: integer 
 	Parameter C_INCLUDE_SG bound to: 0 - type: integer 
 	Parameter C_CHANNEL_IS_MM2S bound to: 0 - type: integer 
-	Parameter C_NUM_FSTORES bound to: 2 - type: integer 
-	Parameter C_NUM_FSTORES_64 bound to: 2 - type: integer 
+	Parameter C_NUM_FSTORES bound to: 3 - type: integer 
+	Parameter C_NUM_FSTORES_64 bound to: 3 - type: integer 
 	Parameter C_ENABLE_VIDPRMTR_READS bound to: 1 - type: integer 
 	Parameter C_S_AXI_LITE_ADDR_WIDTH bound to: 9 - type: integer 
 	Parameter C_S_AXI_LITE_DATA_WIDTH bound to: 32 - type: integer 
@@ -855,8 +855,8 @@ INFO: [Synth 8-638] synthesizing module 'axi_vdma_mngr' [d:/MyWorkSpace/ZYNQ/ARM
 	Parameter C_ENABLE_DEBUG_INFO_15 bound to: 1 - type: integer 
 	Parameter C_ENABLE_VERT_FLIP bound to: 0 - type: integer 
 	Parameter C_ENABLE_FLUSH_ON_FSYNC bound to: 1 - type: integer 
-	Parameter C_NUM_FSTORES bound to: 2 - type: integer 
-	Parameter C_GENLOCK_MODE bound to: 0 - type: integer 
+	Parameter C_NUM_FSTORES bound to: 3 - type: integer 
+	Parameter C_GENLOCK_MODE bound to: 2 - type: integer 
 	Parameter C_GENLOCK_NUM_MASTERS bound to: 1 - type: integer 
 	Parameter C_DYNAMIC_RESOLUTION bound to: 1 - type: integer 
 	Parameter C_INTERNAL_GENLOCK_ENABLE bound to: 0 - type: integer 
@@ -914,32 +914,40 @@ INFO: [Synth 8-638] synthesizing module 'axi_vdma_sts_mngr' [d:/MyWorkSpace/ZYNQ
 INFO: [Synth 8-256] done synthesizing module 'axi_vdma_sts_mngr' (22#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:63748]
 INFO: [Synth 8-638] synthesizing module 'axi_vdma_vidreg_module' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:56203]
 	Parameter C_INCLUDE_SG bound to: 0 - type: integer 
-	Parameter C_NUM_FSTORES bound to: 2 - type: integer 
+	Parameter C_NUM_FSTORES bound to: 3 - type: integer 
 	Parameter C_DYNAMIC_RESOLUTION bound to: 1 - type: integer 
 	Parameter C_ADDR_WIDTH bound to: 32 - type: integer 
 	Parameter C_SELECT_XPM bound to: 0 - type: integer 
 	Parameter C_FAMILY bound to: zynq - type: string 
 INFO: [Synth 8-638] synthesizing module 'axi_vdma_vregister' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:54089]
-	Parameter C_NUM_FSTORES bound to: 2 - type: integer 
+	Parameter C_NUM_FSTORES bound to: 3 - type: integer 
 	Parameter C_ADDR_WIDTH bound to: 32 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'axi_vdma_vregister' (23#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:54089]
 INFO: [Synth 8-638] synthesizing module 'axi_vdma_vaddrreg_mux' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:55680]
-	Parameter C_NUM_FSTORES bound to: 2 - type: integer 
+	Parameter C_NUM_FSTORES bound to: 3 - type: integer 
 	Parameter C_ADDR_WIDTH bound to: 32 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'axi_vdma_vaddrreg_mux' (24#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:55680]
 INFO: [Synth 8-256] done synthesizing module 'axi_vdma_vidreg_module' (25#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:56203]
 INFO: [Synth 8-638] synthesizing module 'axi_vdma_genlock_mngr' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:58746]
-	Parameter C_GENLOCK_MODE bound to: 0 - type: integer 
+	Parameter C_GENLOCK_MODE bound to: 2 - type: integer 
 	Parameter C_GENLOCK_NUM_MASTERS bound to: 1 - type: integer 
 	Parameter C_INTERNAL_GENLOCK_ENABLE bound to: 0 - type: integer 
-	Parameter C_NUM_FSTORES bound to: 2 - type: integer 
+	Parameter C_NUM_FSTORES bound to: 3 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'axi_vdma_genlock_mux' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:57484]
+	Parameter C_GENLOCK_NUM_MASTERS bound to: 1 - type: integer 
+	Parameter C_INTERNAL_GENLOCK_ENABLE bound to: 0 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'axi_vdma_genlock_mux' (26#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:57484]
 INFO: [Synth 8-638] synthesizing module 'axi_vdma_greycoder' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:58459]
+	Parameter C_DWIDTH bound to: 2 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'axi_vdma_greycoder' (27#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:58459]
+INFO: [Synth 8-638] synthesizing module 'axi_vdma_greycoder__parameterized0' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:58459]
 	Parameter C_DWIDTH bound to: 5 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'axi_vdma_greycoder' (26#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:58459]
-INFO: [Synth 8-256] done synthesizing module 'axi_vdma_genlock_mngr' (27#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:58746]
+INFO: [Synth 8-256] done synthesizing module 'axi_vdma_greycoder__parameterized0' (27#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:58459]
+INFO: [Synth 8-3936] Found unconnected internal register 'DYNAMIC_GENLOCK_FOR_MASTER.grey_frmstr_adjusted_reg' and it is trimmed from '6' to '2' bits. [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:59994]
+INFO: [Synth 8-256] done synthesizing module 'axi_vdma_genlock_mngr' (28#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:58746]
 WARNING: [Synth 8-6014] Unused sequential element GEN_FRMSTORE_EXTFSYNC.all_idle_d1_reg was removed.  [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:64550]
 WARNING: [Synth 8-6014] Unused sequential element GEN_FRMSTORE_EXTFSYNC.late_idle_reg was removed.  [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:64566]
-INFO: [Synth 8-256] done synthesizing module 'axi_vdma_mngr' (28#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:64364]
+INFO: [Synth 8-256] done synthesizing module 'axi_vdma_mngr' (29#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:64364]
 INFO: [Synth 8-638] synthesizing module 'axi_vdma_fsync_gen' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:53218]
 	Parameter C_USE_FSYNC bound to: 1 - type: integer 
 	Parameter ENABLE_FLUSH_ON_MM2S_FSYNC bound to: 0 - type: integer 
@@ -947,7 +955,7 @@ INFO: [Synth 8-638] synthesizing module 'axi_vdma_fsync_gen' [d:/MyWorkSpace/ZYN
 	Parameter C_INCLUDE_S2MM bound to: 1 - type: integer 
 	Parameter C_INCLUDE_MM2S bound to: 0 - type: integer 
 	Parameter C_SOF_ENABLE bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'axi_vdma_fsync_gen' (29#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:53218]
+INFO: [Synth 8-256] done synthesizing module 'axi_vdma_fsync_gen' (30#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:53218]
 INFO: [Synth 8-638] synthesizing module 'axi_vdma_vid_cdc' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:13254]
 	Parameter C_PRMRY_IS_ACLK_ASYNC bound to: 1 - type: integer 
 	Parameter C_GENLOCK_MSTR_PTR_DWIDTH bound to: 6 - type: integer 
@@ -959,9 +967,9 @@ INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [d:/MyWorkSpace
 INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:13280]
 INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:13282]
 INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:13283]
-INFO: [Synth 8-256] done synthesizing module 'axi_vdma_vid_cdc' (30#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:13254]
+INFO: [Synth 8-256] done synthesizing module 'axi_vdma_vid_cdc' (31#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:13254]
 INFO: [Synth 8-638] synthesizing module 'axi_vdma_sof_gen' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:41251]
-INFO: [Synth 8-256] done synthesizing module 'axi_vdma_sof_gen' (31#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:41251]
+INFO: [Synth 8-256] done synthesizing module 'axi_vdma_sof_gen' (32#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:41251]
 INFO: [Synth 8-638] synthesizing module 'axi_vdma_s2mm_linebuf' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:49400]
 	Parameter C_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_INCLUDE_S2MM_DRE bound to: 1 - type: integer 
@@ -1007,8 +1015,8 @@ INFO: [Synth 8-638] synthesizing module 'axi_vdma_afifo_builtin' [d:/MyWorkSpace
 	Parameter PL_DATA_WIDTH bound to: 37 - type: integer 
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter PL_FIFO_DEPTH bound to: 4096 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'axi_vdma_afifo_builtin' (42#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:43593]
-INFO: [Synth 8-256] done synthesizing module 'axi_vdma_s2mm_linebuf' (43#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:49400]
+INFO: [Synth 8-256] done synthesizing module 'axi_vdma_afifo_builtin' (43#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:43593]
+INFO: [Synth 8-256] done synthesizing module 'axi_vdma_s2mm_linebuf' (44#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:49400]
 INFO: [Synth 8-638] synthesizing module 'axi_datamover' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:55436]
 	Parameter C_INCLUDE_MM2S bound to: 0 - type: integer 
 	Parameter C_M_AXI_MM2S_ARID bound to: 0 - type: integer 
@@ -1067,7 +1075,7 @@ INFO: [Synth 8-638] synthesizing module 'axi_datamover_mm2s_omit_wrap' [d:/MyWor
 	Parameter C_ENABLE_CACHE_USER bound to: 0 - type: integer 
 	Parameter C_MCDMA bound to: 0 - type: integer 
 	Parameter C_FAMILY bound to: zynq - type: string 
-INFO: [Synth 8-256] done synthesizing module 'axi_datamover_mm2s_omit_wrap' (44#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:53209]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_mm2s_omit_wrap' (45#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:53209]
 INFO: [Synth 8-638] synthesizing module 'axi_datamover_s2mm_full_wrap' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:49997]
 	Parameter C_INCLUDE_S2MM bound to: 1 - type: integer 
 	Parameter C_S2MM_AWID bound to: 1 - type: integer 
@@ -1098,7 +1106,7 @@ INFO: [Synth 8-4471] merging register 'sig_stream_rst_reg_n_reg' into 'sig_cmd_s
 WARNING: [Synth 8-6014] Unused sequential element sig_cmd_stat_rst_int_reg_n_reg was removed.  [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:191]
 WARNING: [Synth 8-6014] Unused sequential element sig_mmap_rst_reg_n_reg was removed.  [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:194]
 WARNING: [Synth 8-6014] Unused sequential element sig_stream_rst_reg_n_reg was removed.  [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:197]
-INFO: [Synth 8-256] done synthesizing module 'axi_datamover_reset' (45#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:153]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_reset' (46#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:153]
 INFO: [Synth 8-638] synthesizing module 'axi_datamover_cmd_status' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:2698]
 	Parameter C_ADDR_WIDTH bound to: 32 - type: integer 
 	Parameter C_INCLUDE_STSFIFO bound to: 1 - type: integer 
@@ -1125,15 +1133,15 @@ INFO: [Synth 8-638] synthesizing module 'srl_fifo_rbu_f' [d:/MyWorkSpace/ZYNQ/AR
 INFO: [Synth 8-638] synthesizing module 'cntr_incr_decr_addn_f' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:143]
 	Parameter C_SIZE bound to: 3 - type: integer 
 	Parameter C_FAMILY bound to: zynq - type: string 
-INFO: [Synth 8-256] done synthesizing module 'cntr_incr_decr_addn_f' (46#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:143]
+INFO: [Synth 8-256] done synthesizing module 'cntr_incr_decr_addn_f' (47#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:143]
 INFO: [Synth 8-638] synthesizing module 'dynshreg_f' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
 	Parameter C_DEPTH bound to: 4 - type: integer 
 	Parameter C_DWIDTH bound to: 68 - type: integer 
 	Parameter C_FAMILY bound to: zynq - type: string 
-INFO: [Synth 8-256] done synthesizing module 'dynshreg_f' (47#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
-INFO: [Synth 8-256] done synthesizing module 'srl_fifo_rbu_f' (48#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
-INFO: [Synth 8-256] done synthesizing module 'srl_fifo_f' (49#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
-INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo' (50#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
+INFO: [Synth 8-256] done synthesizing module 'dynshreg_f' (48#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_rbu_f' (49#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_f' (50#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo' (51#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
 INFO: [Synth 8-638] synthesizing module 'axi_datamover_fifo__parameterized0' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
 	Parameter C_DWIDTH bound to: 32 - type: integer 
 	Parameter C_DEPTH bound to: 4 - type: integer 
@@ -1152,11 +1160,11 @@ INFO: [Synth 8-638] synthesizing module 'dynshreg_f__parameterized0' [d:/MyWorkS
 	Parameter C_DEPTH bound to: 4 - type: integer 
 	Parameter C_DWIDTH bound to: 32 - type: integer 
 	Parameter C_FAMILY bound to: zynq - type: string 
-INFO: [Synth 8-256] done synthesizing module 'dynshreg_f__parameterized0' (50#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
-INFO: [Synth 8-256] done synthesizing module 'srl_fifo_rbu_f__parameterized0' (50#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
-INFO: [Synth 8-256] done synthesizing module 'srl_fifo_f__parameterized0' (50#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
-INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo__parameterized0' (50#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
-INFO: [Synth 8-256] done synthesizing module 'axi_datamover_cmd_status' (51#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:2698]
+INFO: [Synth 8-256] done synthesizing module 'dynshreg_f__parameterized0' (51#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_rbu_f__parameterized0' (51#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_f__parameterized0' (51#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo__parameterized0' (51#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_cmd_status' (52#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:2698]
 INFO: [Synth 8-638] synthesizing module 'axi_datamover_wr_status_cntl' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:17704]
 	Parameter C_ENABLE_INDET_BTT bound to: 1 - type: integer 
 	Parameter C_SF_BYTES_RCVD_WIDTH bound to: 16 - type: integer 
@@ -1182,15 +1190,15 @@ INFO: [Synth 8-638] synthesizing module 'srl_fifo_rbu_f__parameterized1' [d:/MyW
 INFO: [Synth 8-638] synthesizing module 'cntr_incr_decr_addn_f__parameterized0' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:143]
 	Parameter C_SIZE bound to: 4 - type: integer 
 	Parameter C_FAMILY bound to: zynq - type: string 
-INFO: [Synth 8-256] done synthesizing module 'cntr_incr_decr_addn_f__parameterized0' (51#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:143]
+INFO: [Synth 8-256] done synthesizing module 'cntr_incr_decr_addn_f__parameterized0' (52#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:143]
 INFO: [Synth 8-638] synthesizing module 'dynshreg_f__parameterized1' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
 	Parameter C_DEPTH bound to: 6 - type: integer 
 	Parameter C_DWIDTH bound to: 2 - type: integer 
 	Parameter C_FAMILY bound to: zynq - type: string 
-INFO: [Synth 8-256] done synthesizing module 'dynshreg_f__parameterized1' (51#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
-INFO: [Synth 8-256] done synthesizing module 'srl_fifo_rbu_f__parameterized1' (51#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
-INFO: [Synth 8-256] done synthesizing module 'srl_fifo_f__parameterized1' (51#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
-INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo__parameterized1' (51#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
+INFO: [Synth 8-256] done synthesizing module 'dynshreg_f__parameterized1' (52#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_rbu_f__parameterized1' (52#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_f__parameterized1' (52#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo__parameterized1' (52#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
 INFO: [Synth 8-638] synthesizing module 'axi_datamover_fifo__parameterized2' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
 	Parameter C_DWIDTH bound to: 23 - type: integer 
 	Parameter C_DEPTH bound to: 6 - type: integer 
@@ -1209,11 +1217,11 @@ INFO: [Synth 8-638] synthesizing module 'dynshreg_f__parameterized2' [d:/MyWorkS
 	Parameter C_DEPTH bound to: 6 - type: integer 
 	Parameter C_DWIDTH bound to: 23 - type: integer 
 	Parameter C_FAMILY bound to: zynq - type: string 
-INFO: [Synth 8-256] done synthesizing module 'dynshreg_f__parameterized2' (51#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
-INFO: [Synth 8-256] done synthesizing module 'srl_fifo_rbu_f__parameterized2' (51#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
-INFO: [Synth 8-256] done synthesizing module 'srl_fifo_f__parameterized2' (51#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
-INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo__parameterized2' (51#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
-INFO: [Synth 8-256] done synthesizing module 'axi_datamover_wr_status_cntl' (52#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:17704]
+INFO: [Synth 8-256] done synthesizing module 'dynshreg_f__parameterized2' (52#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_rbu_f__parameterized2' (52#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_f__parameterized2' (52#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo__parameterized2' (52#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_wr_status_cntl' (53#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:17704]
 INFO: [Synth 8-638] synthesizing module 'axi_datamover_ibttcc' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:25731]
 	Parameter C_SF_XFER_BYTES_WIDTH bound to: 11 - type: integer 
 	Parameter C_DRE_ALIGN_WIDTH bound to: 2 - type: integer 
@@ -1236,7 +1244,7 @@ WARNING: [Synth 8-6014] Unused sequential element sig_first_child_xfer_reg was r
 WARNING: [Synth 8-6014] Unused sequential element sig_xfer_is_seq_reg was removed.  [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:28078]
 WARNING: [Synth 8-6014] Unused sequential element sig_xfer_reg_empty_reg was removed.  [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:28171]
 WARNING: [Synth 8-6014] Unused sequential element sig_xfer_reg_full_reg was removed.  [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:28172]
-INFO: [Synth 8-256] done synthesizing module 'axi_datamover_ibttcc' (53#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:25731]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_ibttcc' (54#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:25731]
 INFO: [Synth 8-638] synthesizing module 'axi_datamover_s2mm_realign' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:47011]
 	Parameter C_ENABLE_INDET_BTT bound to: 1 - type: integer 
 	Parameter C_INCLUDE_DRE bound to: 1 - type: integer 
@@ -1267,10 +1275,10 @@ INFO: [Synth 8-638] synthesizing module 'dynshreg_f__parameterized3' [d:/MyWorkS
 	Parameter C_DEPTH bound to: 4 - type: integer 
 	Parameter C_DWIDTH bound to: 29 - type: integer 
 	Parameter C_FAMILY bound to: zynq - type: string 
-INFO: [Synth 8-256] done synthesizing module 'dynshreg_f__parameterized3' (53#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
-INFO: [Synth 8-256] done synthesizing module 'srl_fifo_rbu_f__parameterized3' (53#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
-INFO: [Synth 8-256] done synthesizing module 'srl_fifo_f__parameterized3' (53#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
-INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo__parameterized3' (53#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
+INFO: [Synth 8-256] done synthesizing module 'dynshreg_f__parameterized3' (54#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_rbu_f__parameterized3' (54#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_f__parameterized3' (54#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo__parameterized3' (54#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
 INFO: [Synth 8-638] synthesizing module 'axi_datamover_s2mm_dre' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:36563]
 	Parameter C_DWIDTH bound to: 32 - type: integer 
 	Parameter C_ALIGN_WIDTH bound to: 2 - type: integer 
@@ -1278,17 +1286,17 @@ INFO: [Synth 8-226] default block is never used [d:/MyWorkSpace/ZYNQ/ARM/model_o
 INFO: [Synth 8-638] synthesizing module 'axi_datamover_dre_mux2_1_x_n' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:29950]
 	Parameter C_WIDTH bound to: 10 - type: integer 
 INFO: [Synth 8-226] default block is never used [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:29966]
-INFO: [Synth 8-256] done synthesizing module 'axi_datamover_dre_mux2_1_x_n' (54#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:29950]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_dre_mux2_1_x_n' (55#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:29950]
 INFO: [Synth 8-638] synthesizing module 'axi_datamover_dre_mux4_1_x_n' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:30097]
 	Parameter C_WIDTH bound to: 10 - type: integer 
 INFO: [Synth 8-226] default block is never used [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:30113]
-INFO: [Synth 8-256] done synthesizing module 'axi_datamover_dre_mux4_1_x_n' (55#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:30097]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_dre_mux4_1_x_n' (56#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:30097]
 INFO: [Synth 8-226] default block is never used [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:42049]
 INFO: [Synth 8-226] default block is never used [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:42096]
 INFO: [Synth 8-226] default block is never used [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:42143]
 WARNING: [Synth 8-6014] Unused sequential element sig_flush_reg_reg was removed.  [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:37078]
 WARNING: [Synth 8-6014] Unused sequential element GEN_DELAY_REG[3].sig_delay_data_reg_reg[3] was removed.  [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:37395]
-INFO: [Synth 8-256] done synthesizing module 'axi_datamover_s2mm_dre' (56#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:36563]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_s2mm_dre' (57#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:36563]
 INFO: [Synth 8-638] synthesizing module 'axi_datamover_s2mm_scatter' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:45117]
 	Parameter C_ENABLE_INDET_BTT bound to: 1 - type: integer 
 	Parameter C_DRE_ALIGN_WIDTH bound to: 2 - type: integer 
@@ -1310,17 +1318,17 @@ INFO: [Synth 8-5534] Detected attribute (* keep = "TRUE" *) [d:/MyWorkSpace/ZYNQ
 INFO: [Synth 8-638] synthesizing module 'axi_datamover_ms_strb_set' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:42603]
 	Parameter C_STRB_WIDTH bound to: 4 - type: integer 
 	Parameter C_INDEX_WIDTH bound to: 2 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'axi_datamover_ms_strb_set' (57#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:42603]
-INFO: [Synth 8-256] done synthesizing module 'axi_datamover_mssai_skid_buf' (58#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:44167]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_ms_strb_set' (58#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:42603]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_mssai_skid_buf' (59#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:44167]
 INFO: [Synth 8-638] synthesizing module 'axi_datamover_strb_gen2' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:4342]
 	Parameter C_OP_MODE bound to: 0 - type: integer 
 	Parameter C_STRB_WIDTH bound to: 4 - type: integer 
 	Parameter C_OFFSET_WIDTH bound to: 2 - type: integer 
 	Parameter C_NUM_BYTES_WIDTH bound to: 3 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'axi_datamover_strb_gen2' (59#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:4342]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_strb_gen2' (60#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:4342]
 INFO: [Synth 8-638] synthesizing module 'axi_datamover_slice' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:44856]
 	Parameter C_DATA_WIDTH bound to: 9 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'axi_datamover_slice' (60#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:44856]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_slice' (61#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:44856]
 INFO: [Synth 8-638] synthesizing module 'axi_datamover_fifo__parameterized4' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
 	Parameter C_DWIDTH bound to: 9 - type: integer 
 	Parameter C_DEPTH bound to: 16 - type: integer 
@@ -1338,21 +1346,21 @@ INFO: [Synth 8-638] synthesizing module 'srl_fifo_rbu_f__parameterized4' [d:/MyW
 INFO: [Synth 8-638] synthesizing module 'cntr_incr_decr_addn_f__parameterized1' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:143]
 	Parameter C_SIZE bound to: 5 - type: integer 
 	Parameter C_FAMILY bound to: zynq - type: string 
-INFO: [Synth 8-256] done synthesizing module 'cntr_incr_decr_addn_f__parameterized1' (60#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:143]
+INFO: [Synth 8-256] done synthesizing module 'cntr_incr_decr_addn_f__parameterized1' (61#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:143]
 INFO: [Synth 8-638] synthesizing module 'dynshreg_f__parameterized4' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
 	Parameter C_DEPTH bound to: 16 - type: integer 
 	Parameter C_DWIDTH bound to: 9 - type: integer 
 	Parameter C_FAMILY bound to: zynq - type: string 
-INFO: [Synth 8-256] done synthesizing module 'dynshreg_f__parameterized4' (60#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
-INFO: [Synth 8-256] done synthesizing module 'srl_fifo_rbu_f__parameterized4' (60#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
-INFO: [Synth 8-256] done synthesizing module 'srl_fifo_f__parameterized4' (60#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
-INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo__parameterized4' (60#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
-INFO: [Synth 8-256] done synthesizing module 'axi_datamover_s2mm_scatter' (61#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:45117]
+INFO: [Synth 8-256] done synthesizing module 'dynshreg_f__parameterized4' (61#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_rbu_f__parameterized4' (61#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_f__parameterized4' (61#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo__parameterized4' (61#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_s2mm_scatter' (62#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:45117]
 WARNING: [Synth 8-6014] Unused sequential element GEN_INCLUDE_DRE.lsig_pushreg_empty_reg was removed.  [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:47765]
 WARNING: [Synth 8-6014] Unused sequential element GEN_INCLUDE_DRE.lsig_pullreg_full_reg was removed.  [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:47821]
 INFO: [Synth 8-4471] merging register 'sig_sm_ld_scatter_cmd_reg' into 'sig_sm_ld_dre_cmd_reg' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:47510]
 WARNING: [Synth 8-6014] Unused sequential element sig_sm_ld_scatter_cmd_reg was removed.  [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:47510]
-INFO: [Synth 8-256] done synthesizing module 'axi_datamover_s2mm_realign' (62#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:47011]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_s2mm_realign' (63#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:47011]
 INFO: [Synth 8-638] synthesizing module 'axi_datamover_indet_btt' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:28430]
 	Parameter C_SF_FIFO_DEPTH bound to: 1024 - type: integer 
 	Parameter C_IBTT_XFER_BYTES_WIDTH bound to: 11 - type: integer 
@@ -1366,7 +1374,7 @@ INFO: [Synth 8-638] synthesizing module 'axi_datamover_indet_btt' [d:/MyWorkSpac
 	Parameter C_FAMILY bound to: zynq - type: string 
 INFO: [Synth 8-638] synthesizing module 'axi_datamover_stbs_set' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:23410]
 	Parameter C_STROBE_WIDTH bound to: 4 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'axi_datamover_stbs_set' (63#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:23410]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_stbs_set' (64#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:23410]
 INFO: [Synth 8-638] synthesizing module 'axi_datamover_sfifo_autord' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:1295]
 	Parameter C_DWIDTH bound to: 13 - type: integer 
 	Parameter C_DEPTH bound to: 16 - type: integer 
@@ -1535,11 +1543,11 @@ WARNING: [Synth 8-6104] Input port 'value' has an internal driver [D:/Xilinx/Viv
 INFO: [Synth 8-6157] synthesizing module 'xpm_counter_updn' [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1733]
 	Parameter COUNTER_WIDTH bound to: 4 - type: integer 
 	Parameter RESET_VALUE bound to: 3 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xpm_counter_updn' (64#1) [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1733]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_counter_updn' (65#1) [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1733]
 INFO: [Synth 8-6157] synthesizing module 'xpm_counter_updn__parameterized0' [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1733]
 	Parameter COUNTER_WIDTH bound to: 4 - type: integer 
 	Parameter RESET_VALUE bound to: 2 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xpm_counter_updn__parameterized0' (64#1) [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1733]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_counter_updn__parameterized0' (65#1) [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1733]
 INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base' [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:57]
 	Parameter MEMORY_TYPE bound to: 1 - type: integer 
 	Parameter MEMORY_SIZE bound to: 208 - type: integer 
@@ -1605,30 +1613,30 @@ INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base' [D:/Xilinx/Vivado/201
 INFO: [Synth 8-6059] Synth Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value.   [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:518]
 WARNING: [Synth 8-6014] Unused sequential element gen_rd_b.gen_doutb_pipe.enb_pipe_reg[0] was removed.  [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:2935]
 INFO: [Synth 8-5772] Detected attribute (* ram_ecc = "no_ecc" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
-INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_base' (65#1) [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:57]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_base' (66#1) [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:57]
 INFO: [Synth 8-6157] synthesizing module 'xpm_fifo_reg_bit' [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1781]
 	Parameter RST_VALUE bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xpm_fifo_reg_bit' (66#1) [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1781]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_fifo_reg_bit' (67#1) [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1781]
 INFO: [Synth 8-226] default block is never used [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1187]
 INFO: [Synth 8-226] default block is never used [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1233]
 INFO: [Synth 8-226] default block is never used [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1244]
 INFO: [Synth 8-6157] synthesizing module 'xpm_counter_updn__parameterized1' [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1733]
 	Parameter COUNTER_WIDTH bound to: 2 - type: integer 
 	Parameter RESET_VALUE bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xpm_counter_updn__parameterized1' (66#1) [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1733]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_counter_updn__parameterized1' (67#1) [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1733]
 INFO: [Synth 8-6157] synthesizing module 'xpm_fifo_rst' [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1504]
 	Parameter COMMON_CLOCK bound to: 1 - type: integer 
 	Parameter CDC_DEST_SYNC_FF bound to: 2 - type: integer 
 	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xpm_fifo_rst' (67#1) [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1504]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_fifo_rst' (68#1) [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1504]
 INFO: [Synth 8-6157] synthesizing module 'xpm_counter_updn__parameterized2' [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1733]
 	Parameter COUNTER_WIDTH bound to: 5 - type: integer 
 	Parameter RESET_VALUE bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xpm_counter_updn__parameterized2' (67#1) [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1733]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_counter_updn__parameterized2' (68#1) [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1733]
 INFO: [Synth 8-6157] synthesizing module 'xpm_counter_updn__parameterized3' [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1733]
 	Parameter COUNTER_WIDTH bound to: 4 - type: integer 
 	Parameter RESET_VALUE bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xpm_counter_updn__parameterized3' (67#1) [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1733]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_counter_updn__parameterized3' (68#1) [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1733]
 WARNING: [Synth 8-6104] Input port 'value' has an internal driver [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:124]
 WARNING: [Synth 8-6104] Input port 'value' has an internal driver [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:126]
 WARNING: [Synth 8-6104] Input port 'value' has an internal driver [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:126]
@@ -1664,14 +1672,14 @@ WARNING: [Synth 8-6014] Unused sequential element gen_pntr_flags_cc.gae_cc_std.r
 INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
 INFO: [Synth 8-4471] merging register 'gen_fwft.empty_fwft_fb_reg' into 'gen_fwft.empty_fwft_i_reg' [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1292]
 WARNING: [Synth 8-6014] Unused sequential element gen_fwft.empty_fwft_fb_reg was removed.  [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1292]
-INFO: [Synth 8-6155] done synthesizing module 'xpm_fifo_base' (68#1) [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:56]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_fifo_base' (69#1) [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:56]
 INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
-INFO: [Synth 8-6155] done synthesizing module 'xpm_fifo_sync' (69#1) [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1826]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_fifo_sync' (70#1) [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1826]
 INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
-INFO: [Synth 8-256] done synthesizing module 'sync_fifo_fg' (70#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/544a/hdl/lib_fifo_v1_0_rfs.vhd:2250]
+INFO: [Synth 8-256] done synthesizing module 'sync_fifo_fg' (71#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/544a/hdl/lib_fifo_v1_0_rfs.vhd:2250]
 WARNING: [Synth 8-6014] Unused sequential element hold_ff_q_reg was removed.  [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:1513]
 INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
-INFO: [Synth 8-256] done synthesizing module 'axi_datamover_sfifo_autord' (71#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:1295]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_sfifo_autord' (72#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:1295]
 INFO: [Synth 8-638] synthesizing module 'axi_datamover_sfifo_autord__parameterized0' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:1295]
 	Parameter C_DWIDTH bound to: 74 - type: integer 
 	Parameter C_DEPTH bound to: 1024 - type: integer 
@@ -1841,11 +1849,11 @@ INFO: [Common 17-14] Message 'Synth 8-6104' appears 100 times and further instan
 INFO: [Synth 8-6157] synthesizing module 'xpm_counter_updn__parameterized4' [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1733]
 	Parameter COUNTER_WIDTH bound to: 10 - type: integer 
 	Parameter RESET_VALUE bound to: 3 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xpm_counter_updn__parameterized4' (71#1) [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1733]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_counter_updn__parameterized4' (72#1) [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1733]
 INFO: [Synth 8-6157] synthesizing module 'xpm_counter_updn__parameterized5' [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1733]
 	Parameter COUNTER_WIDTH bound to: 10 - type: integer 
 	Parameter RESET_VALUE bound to: 2 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xpm_counter_updn__parameterized5' (71#1) [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1733]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_counter_updn__parameterized5' (72#1) [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1733]
 INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base__parameterized0' [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:57]
 	Parameter MEMORY_TYPE bound to: 1 - type: integer 
 	Parameter MEMORY_SIZE bound to: 75776 - type: integer 
@@ -1911,45 +1919,45 @@ INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base__parameterized0' [D:/X
 WARNING: [Synth 8-6014] Unused sequential element gen_rd_b.gen_doutb_pipe.enb_pipe_reg[0] was removed.  [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:2935]
 INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "no" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
 INFO: [Synth 8-5772] Detected attribute (* ram_ecc = "no_ecc" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
-INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_base__parameterized0' (71#1) [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:57]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_base__parameterized0' (72#1) [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:57]
 INFO: [Synth 8-226] default block is never used [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1187]
 INFO: [Synth 8-226] default block is never used [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1233]
 INFO: [Synth 8-226] default block is never used [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1244]
 INFO: [Synth 8-6157] synthesizing module 'xpm_counter_updn__parameterized6' [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1733]
 	Parameter COUNTER_WIDTH bound to: 11 - type: integer 
 	Parameter RESET_VALUE bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xpm_counter_updn__parameterized6' (71#1) [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1733]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_counter_updn__parameterized6' (72#1) [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1733]
 INFO: [Synth 8-6157] synthesizing module 'xpm_counter_updn__parameterized7' [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1733]
 	Parameter COUNTER_WIDTH bound to: 10 - type: integer 
 	Parameter RESET_VALUE bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xpm_counter_updn__parameterized7' (71#1) [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1733]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_counter_updn__parameterized7' (72#1) [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1733]
 WARNING: [Synth 8-6014] Unused sequential element gdvld.data_valid_std_reg was removed.  [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:523]
 WARNING: [Synth 8-6014] Unused sequential element gen_pntr_flags_cc.gae_cc_std.ram_aempty_i_reg was removed.  [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:951]
 INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "no" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
 INFO: [Synth 8-4471] merging register 'gen_fwft.empty_fwft_fb_reg' into 'gen_fwft.empty_fwft_i_reg' [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1292]
 WARNING: [Synth 8-6014] Unused sequential element gen_fwft.empty_fwft_fb_reg was removed.  [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1292]
-INFO: [Synth 8-6155] done synthesizing module 'xpm_fifo_base__parameterized0' (71#1) [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:56]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_fifo_base__parameterized0' (72#1) [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:56]
 INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "no" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
-INFO: [Synth 8-6155] done synthesizing module 'xpm_fifo_sync__parameterized1' (71#1) [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1826]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_fifo_sync__parameterized1' (72#1) [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1826]
 INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "no" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
-INFO: [Synth 8-256] done synthesizing module 'sync_fifo_fg__parameterized0' (71#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/544a/hdl/lib_fifo_v1_0_rfs.vhd:2250]
+INFO: [Synth 8-256] done synthesizing module 'sync_fifo_fg__parameterized0' (72#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/544a/hdl/lib_fifo_v1_0_rfs.vhd:2250]
 WARNING: [Synth 8-6014] Unused sequential element hold_ff_q_reg was removed.  [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:1513]
 INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "no" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
-INFO: [Synth 8-256] done synthesizing module 'axi_datamover_sfifo_autord__parameterized0' (71#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:1295]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_sfifo_autord__parameterized0' (72#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:1295]
 INFO: [Synth 8-638] synthesizing module 'axi_datamover_stbs_set__parameterized0' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:23410]
 	Parameter C_STROBE_WIDTH bound to: 8 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'axi_datamover_stbs_set__parameterized0' (71#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:23410]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_stbs_set__parameterized0' (72#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:23410]
 INFO: [Synth 8-638] synthesizing module 'axi_datamover_skid_buf' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:19500]
 	Parameter C_WDATA_WIDTH bound to: 72 - type: integer 
 INFO: [Synth 8-5534] Detected attribute (* keep = "TRUE" *) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:19522]
 INFO: [Synth 8-5534] Detected attribute (* keep = "TRUE" *) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:19523]
 INFO: [Synth 8-5534] Detected attribute (* keep = "TRUE" *) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:19525]
 INFO: [Synth 8-5534] Detected attribute (* keep = "TRUE" *) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:19526]
-INFO: [Synth 8-256] done synthesizing module 'axi_datamover_skid_buf' (72#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:19500]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_skid_buf' (73#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:19500]
 WARNING: [Synth 8-6014] Unused sequential element INCLUDE_PACKING.lsig_packer_empty_reg was removed.  [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:29317]
 INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
 INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "no" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
-INFO: [Synth 8-256] done synthesizing module 'axi_datamover_indet_btt' (73#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:28430]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_indet_btt' (74#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:28430]
 INFO: [Synth 8-638] synthesizing module 'axi_datamover_addr_cntl' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:10000]
 	Parameter C_ADDR_FIFO_DEPTH bound to: 4 - type: integer 
 	Parameter C_ADDR_WIDTH bound to: 32 - type: integer 
@@ -1977,13 +1985,13 @@ INFO: [Synth 8-638] synthesizing module 'dynshreg_f__parameterized5' [d:/MyWorkS
 	Parameter C_DEPTH bound to: 4 - type: integer 
 	Parameter C_DWIDTH bound to: 59 - type: integer 
 	Parameter C_FAMILY bound to: zynq - type: string 
-INFO: [Synth 8-256] done synthesizing module 'dynshreg_f__parameterized5' (73#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
-INFO: [Synth 8-256] done synthesizing module 'srl_fifo_rbu_f__parameterized5' (73#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
-INFO: [Synth 8-256] done synthesizing module 'srl_fifo_f__parameterized5' (73#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
-INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo__parameterized5' (73#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
+INFO: [Synth 8-256] done synthesizing module 'dynshreg_f__parameterized5' (74#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_rbu_f__parameterized5' (74#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_f__parameterized5' (74#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo__parameterized5' (74#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
 WARNING: [Synth 8-6014] Unused sequential element sig_next_tag_reg_reg was removed.  [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:10410]
 WARNING: [Synth 8-6014] Unused sequential element sig_next_cmd_cmplt_reg_reg was removed.  [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:10417]
-INFO: [Synth 8-256] done synthesizing module 'axi_datamover_addr_cntl' (74#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:10000]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_addr_cntl' (75#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:10000]
 INFO: [Synth 8-638] synthesizing module 'axi_datamover_wrdata_cntl' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:15674]
 	Parameter C_REALIGNER_INCLUDED bound to: 1 - type: integer 
 	Parameter C_ENABLE_INDET_BTT bound to: 1 - type: integer 
@@ -1999,7 +2007,7 @@ INFO: [Synth 8-638] synthesizing module 'axi_datamover_strb_gen2__parameterized0
 	Parameter C_STRB_WIDTH bound to: 8 - type: integer 
 	Parameter C_OFFSET_WIDTH bound to: 3 - type: integer 
 	Parameter C_NUM_BYTES_WIDTH bound to: 4 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'axi_datamover_strb_gen2__parameterized0' (74#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:4342]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_strb_gen2__parameterized0' (75#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:4342]
 INFO: [Synth 8-638] synthesizing module 'axi_datamover_fifo__parameterized6' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
 	Parameter C_DWIDTH bound to: 36 - type: integer 
 	Parameter C_DEPTH bound to: 4 - type: integer 
@@ -2018,13 +2026,13 @@ INFO: [Synth 8-638] synthesizing module 'dynshreg_f__parameterized6' [d:/MyWorkS
 	Parameter C_DEPTH bound to: 4 - type: integer 
 	Parameter C_DWIDTH bound to: 36 - type: integer 
 	Parameter C_FAMILY bound to: zynq - type: string 
-INFO: [Synth 8-256] done synthesizing module 'dynshreg_f__parameterized6' (74#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
-INFO: [Synth 8-256] done synthesizing module 'srl_fifo_rbu_f__parameterized6' (74#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
-INFO: [Synth 8-256] done synthesizing module 'srl_fifo_f__parameterized6' (74#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
-INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo__parameterized6' (74#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
+INFO: [Synth 8-256] done synthesizing module 'dynshreg_f__parameterized6' (75#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_rbu_f__parameterized6' (75#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_f__parameterized6' (75#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo__parameterized6' (75#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
 WARNING: [Synth 8-6014] Unused sequential element sig_next_last_strb_reg_reg was removed.  [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:16965]
 WARNING: [Synth 8-6014] Unused sequential element sig_next_eof_reg_reg was removed.  [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:16970]
-INFO: [Synth 8-256] done synthesizing module 'axi_datamover_wrdata_cntl' (75#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:15674]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_wrdata_cntl' (76#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:15674]
 INFO: [Synth 8-638] synthesizing module 'axi_datamover_skid2mm_buf' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:18998]
 	Parameter C_MDATA_WIDTH bound to: 64 - type: integer 
 	Parameter C_SDATA_WIDTH bound to: 64 - type: integer 
@@ -2037,14 +2045,14 @@ INFO: [Synth 8-638] synthesizing module 'axi_datamover_wr_demux' [d:/MyWorkSpace
 	Parameter C_SEL_ADDR_WIDTH bound to: 3 - type: integer 
 	Parameter C_MMAP_DWIDTH bound to: 64 - type: integer 
 	Parameter C_STREAM_DWIDTH bound to: 64 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'axi_datamover_wr_demux' (76#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:14117]
-INFO: [Synth 8-256] done synthesizing module 'axi_datamover_skid2mm_buf' (77#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:18998]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_wr_demux' (77#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:14117]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_skid2mm_buf' (78#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:18998]
 INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
 INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "no" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
-INFO: [Synth 8-256] done synthesizing module 'axi_datamover_s2mm_full_wrap' (78#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:49997]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_s2mm_full_wrap' (79#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:49997]
 INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
 INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "no" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
-INFO: [Synth 8-256] done synthesizing module 'axi_datamover' (79#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:55436]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover' (80#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/dfb3/hdl/axi_datamover_v5_1_vh_rfs.vhd:55436]
 WARNING: [Synth 8-6014] Unused sequential element GEN_SPRT_FOR_S2MM.GEN_FLUSH_SOF_TREADY.d_tready_after_fsize_less_err_flag_00_01_reg was removed.  [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:72955]
 WARNING: [Synth 8-6014] Unused sequential element GEN_SPRT_FOR_S2MM.GEN_FLUSH_SOF_TREADY.after_vcount_flag_sel_00_01_reg was removed.  [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:72973]
 WARNING: [Synth 8-6014] Unused sequential element GEN_SPRT_FOR_S2MM.GEN_FLUSH_SOF_TREADY.d_tready_before_fsync_sel_00_01_reg was removed.  [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:72985]
@@ -2052,10 +2060,10 @@ WARNING: [Synth 8-6014] Unused sequential element GEN_SPRT_FOR_S2MM.GEN_FLUSH_SO
 WARNING: [Synth 8-6014] Unused sequential element GEN_SPRT_FOR_S2MM.GEN_FLUSH_SOF_TREADY.s2mm_fsize_less_err_flag_00_01_reg was removed.  [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:73043]
 INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
 INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "no" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
-INFO: [Synth 8-256] done synthesizing module 'axi_vdma' (80#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:70040]
+INFO: [Synth 8-256] done synthesizing module 'axi_vdma' (81#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:70040]
 INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
 INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "no" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
-INFO: [Synth 8-256] done synthesizing module 'system_axi_vdma_1_0' (81#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ip/system_axi_vdma_1_0/synth/system_axi_vdma_1_0.vhd:108]
+INFO: [Synth 8-256] done synthesizing module 'system_axi_vdma_1_0' (82#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ip/system_axi_vdma_1_0/synth/system_axi_vdma_1_0.vhd:109]
 WARNING: [Synth 8-3331] design cdc_sync__parameterized3 has unconnected port prmry_vect_in[31]
 WARNING: [Synth 8-3331] design cdc_sync__parameterized3 has unconnected port prmry_vect_in[30]
 WARNING: [Synth 8-3331] design cdc_sync__parameterized3 has unconnected port prmry_vect_in[29]
@@ -2120,29 +2128,22 @@ WARNING: [Synth 8-3331] design cdc_sync__parameterized1 has unconnected port prm
 WARNING: [Synth 8-3331] design cdc_sync__parameterized1 has unconnected port prmry_vect_in[2]
 WARNING: [Synth 8-3331] design cdc_sync__parameterized1 has unconnected port prmry_vect_in[1]
 WARNING: [Synth 8-3331] design cdc_sync__parameterized1 has unconnected port prmry_vect_in[0]
-WARNING: [Synth 8-3331] design axi_vdma_genlock_mngr has unconnected port mstr_in_control[3]
-WARNING: [Synth 8-3331] design axi_vdma_genlock_mngr has unconnected port mstr_in_control[2]
-WARNING: [Synth 8-3331] design axi_vdma_genlock_mngr has unconnected port mstr_in_control[1]
-WARNING: [Synth 8-3331] design axi_vdma_genlock_mngr has unconnected port mstr_in_control[0]
-WARNING: [Synth 8-3331] design axi_vdma_genlock_mngr has unconnected port genlock_select
-WARNING: [Synth 8-3331] design axi_vdma_genlock_mngr has unconnected port frame_ptr_in[5]
-WARNING: [Synth 8-3331] design axi_vdma_genlock_mngr has unconnected port frame_ptr_in[4]
-WARNING: [Synth 8-3331] design axi_vdma_genlock_mngr has unconnected port frame_ptr_in[3]
-WARNING: [Synth 8-3331] design axi_vdma_genlock_mngr has unconnected port frame_ptr_in[2]
-WARNING: [Synth 8-3331] design axi_vdma_genlock_mngr has unconnected port frame_ptr_in[1]
-WARNING: [Synth 8-3331] design axi_vdma_genlock_mngr has unconnected port frame_ptr_in[0]
-WARNING: [Synth 8-3331] design axi_vdma_genlock_mngr has unconnected port internal_frame_ptr_in[5]
-WARNING: [Synth 8-3331] design axi_vdma_genlock_mngr has unconnected port internal_frame_ptr_in[4]
-WARNING: [Synth 8-3331] design axi_vdma_genlock_mngr has unconnected port internal_frame_ptr_in[3]
-WARNING: [Synth 8-3331] design axi_vdma_genlock_mngr has unconnected port internal_frame_ptr_in[2]
-WARNING: [Synth 8-3331] design axi_vdma_genlock_mngr has unconnected port internal_frame_ptr_in[1]
-WARNING: [Synth 8-3331] design axi_vdma_genlock_mngr has unconnected port internal_frame_ptr_in[0]
+WARNING: [Synth 8-3331] design axi_vdma_genlock_mux has unconnected port mstr_in_control[3]
+WARNING: [Synth 8-3331] design axi_vdma_genlock_mux has unconnected port mstr_in_control[2]
+WARNING: [Synth 8-3331] design axi_vdma_genlock_mux has unconnected port mstr_in_control[1]
+WARNING: [Synth 8-3331] design axi_vdma_genlock_mux has unconnected port mstr_in_control[0]
+WARNING: [Synth 8-3331] design axi_vdma_genlock_mux has unconnected port genlock_select
+WARNING: [Synth 8-3331] design axi_vdma_genlock_mux has unconnected port internal_frame_ptr_in[5]
+WARNING: [Synth 8-3331] design axi_vdma_genlock_mux has unconnected port internal_frame_ptr_in[4]
+WARNING: [Synth 8-3331] design axi_vdma_genlock_mux has unconnected port internal_frame_ptr_in[3]
+WARNING: [Synth 8-3331] design axi_vdma_genlock_mux has unconnected port internal_frame_ptr_in[2]
+WARNING: [Synth 8-3331] design axi_vdma_genlock_mux has unconnected port internal_frame_ptr_in[1]
+WARNING: [Synth 8-3331] design axi_vdma_genlock_mux has unconnected port internal_frame_ptr_in[0]
 WARNING: [Synth 8-3331] design axi_vdma_vaddrreg_mux has unconnected port prmry_aclk
 WARNING: [Synth 8-3331] design axi_vdma_vaddrreg_mux has unconnected port prmry_resetn
 WARNING: [Synth 8-3331] design axi_vdma_vaddrreg_mux has unconnected port frame_number[4]
 WARNING: [Synth 8-3331] design axi_vdma_vaddrreg_mux has unconnected port frame_number[3]
 WARNING: [Synth 8-3331] design axi_vdma_vaddrreg_mux has unconnected port frame_number[2]
-WARNING: [Synth 8-3331] design axi_vdma_vaddrreg_mux has unconnected port frame_number[1]
 WARNING: [Synth 8-3331] design axi_vdma_vidreg_module has unconnected port run_stop
 WARNING: [Synth 8-3331] design axi_vdma_vidreg_module has unconnected port ftch_idle
 WARNING: [Synth 8-3331] design axi_vdma_vidreg_module has unconnected port tailpntr_updated
@@ -2156,9 +2157,16 @@ WARNING: [Synth 8-3331] design axi_vdma_vidreg_module has unconnected port desc_
 WARNING: [Synth 8-3331] design axi_vdma_vidreg_module has unconnected port desc_strtaddress[30]
 WARNING: [Synth 8-3331] design axi_vdma_vidreg_module has unconnected port desc_strtaddress[29]
 WARNING: [Synth 8-3331] design axi_vdma_vidreg_module has unconnected port desc_strtaddress[28]
+WARNING: [Synth 8-3331] design axi_vdma_vidreg_module has unconnected port desc_strtaddress[27]
+WARNING: [Synth 8-3331] design axi_vdma_vidreg_module has unconnected port desc_strtaddress[26]
+WARNING: [Synth 8-3331] design axi_vdma_vidreg_module has unconnected port desc_strtaddress[25]
+WARNING: [Synth 8-3331] design axi_vdma_vidreg_module has unconnected port desc_strtaddress[24]
+WARNING: [Synth 8-3331] design axi_vdma_vidreg_module has unconnected port desc_strtaddress[23]
+WARNING: [Synth 8-3331] design axi_vdma_vidreg_module has unconnected port desc_strtaddress[22]
+WARNING: [Synth 8-3331] design axi_vdma_vidreg_module has unconnected port desc_strtaddress[21]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:04:17 ; elapsed = 00:04:20 . Memory (MB): peak = 645.516 ; gain = 345.680
+Finished RTL Elaboration : Time (s): cpu = 00:07:23 ; elapsed = 00:07:35 . Memory (MB): peak = 648.285 ; gain = 346.734
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -2171,10 +2179,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:04:17 ; elapsed = 00:04:21 . Memory (MB): peak = 645.516 ; gain = 345.680
+Finished Handling Custom Attributes : Time (s): cpu = 00:07:24 ; elapsed = 00:07:36 . Memory (MB): peak = 648.285 ; gain = 346.734
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:04:17 ; elapsed = 00:04:21 . Memory (MB): peak = 645.516 ; gain = 345.680
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:07:24 ; elapsed = 00:07:36 . Memory (MB): peak = 648.285 ; gain = 346.734
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 329 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -2197,27 +2205,27 @@ Sourcing Tcl File [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst
 Finished Sourcing Tcl File [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst'
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_axi_vdma_1_0_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/system_axi_vdma_1_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 891.000 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 894.449 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 892.422 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 895.980 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 324 instances were transformed.
   FDR => FDRE: 324 instances
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 892.422 ; gain = 0.000
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.073 . Memory (MB): peak = 892.422 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 895.980 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.094 . Memory (MB): peak = 895.980 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:04:29 ; elapsed = 00:04:33 . Memory (MB): peak = 892.422 ; gain = 592.586
+Finished Constraint Validation : Time (s): cpu = 00:07:41 ; elapsed = 00:07:54 . Memory (MB): peak = 895.980 ; gain = 594.430
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:04:29 ; elapsed = 00:04:33 . Memory (MB): peak = 892.422 ; gain = 592.586
+Finished Loading Part and Timing Information : Time (s): cpu = 00:07:41 ; elapsed = 00:07:54 . Memory (MB): peak = 895.980 ; gain = 594.430
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -2226,7 +2234,7 @@ Applied set_property DONT_TOUCH = true for U0. (constraint file  D:/MyWorkSpace/
 Applied set_property DONT_TOUCH = true for U0/I_PRMRY_DATAMOVER/\GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER /\GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT /I_XD_FIFO/\NON_BLK_MEM.I_SYNC_FIFOGEN_FIFO /\xpm_fifo_instance.xpm_fifo_sync_inst . (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for U0/I_PRMRY_DATAMOVER/\GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER /\GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT /I_DATA_FIFO/\BLK_MEM.I_SYNC_FIFOGEN_FIFO /\xpm_fifo_instance.xpm_fifo_sync_inst . (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:04:29 ; elapsed = 00:04:33 . Memory (MB): peak = 892.422 ; gain = 592.586
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:07:41 ; elapsed = 00:07:54 . Memory (MB): peak = 895.980 ; gain = 594.430
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "ch2_ioc_irq_set_i" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "ch2_delay_zero" won't be mapped to RAM because it is too sparse
@@ -2322,7 +2330,8 @@ INFO: [Synth 8-5544] ROM "dmacntrl_ns" won't be mapped to Block RAM because addr
 INFO: [Synth 8-5544] ROM "dmacntrl_ns" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-4471] merging register 'cmnd_pending_reg' into 's_axis_cmd_tvalid_reg' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:63313]
 INFO: [Synth 8-5546] ROM "num_fstore_equal_one" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "s_frame_ptr_out" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "num_fstore_equal_one" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "num_fstore_equal_one" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-4471] merging register 'GEN_SPRT_FOR_S2MM.GEN_FLUSH_SOF_TREADY.d_tready_sof_late_reg' into 'GEN_SPRT_FOR_S2MM.GEN_FLUSH_SOF_TREADY.s2mm_sof_late_err_reg' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:72886]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
@@ -2399,7 +2408,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'dmacntrl_cs_reg' using encoding 'sequential' in module 'axi_vdma_sm'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:04:34 ; elapsed = 00:04:38 . Memory (MB): peak = 892.422 ; gain = 592.586
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:07:48 ; elapsed = 00:08:01 . Memory (MB): peak = 895.980 ; gain = 594.430
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2421,9 +2430,9 @@ Detailed RTL Component Info :
 	   3 Input     10 Bit       Adders := 1     
 	   2 Input      8 Bit       Adders := 4     
 	   2 Input      7 Bit       Adders := 2     
-	   3 Input      5 Bit       Adders := 2     
+	   3 Input      5 Bit       Adders := 3     
 	   4 Input      5 Bit       Adders := 4     
-	   2 Input      5 Bit       Adders := 4     
+	   2 Input      5 Bit       Adders := 6     
 	   2 Input      4 Bit       Adders := 6     
 	   3 Input      4 Bit       Adders := 4     
 	   4 Input      4 Bit       Adders := 5     
@@ -2433,13 +2442,13 @@ Detailed RTL Component Info :
 	   4 Input      2 Bit       Adders := 2     
 	   2 Input      1 Bit       Adders := 2     
 +---XORs : 
-	   2 Input      1 Bit         XORs := 38    
+	   2 Input      1 Bit         XORs := 40    
 +---Registers : 
 	               96 Bit    Registers := 1     
 	               74 Bit    Registers := 2     
 	               72 Bit    Registers := 4     
 	               64 Bit    Registers := 2     
-	               32 Bit    Registers := 19    
+	               32 Bit    Registers := 21    
 	               24 Bit    Registers := 7     
 	               16 Bit    Registers := 14    
 	               13 Bit    Registers := 10    
@@ -2449,57 +2458,62 @@ Detailed RTL Component Info :
 	                9 Bit    Registers := 6     
 	                8 Bit    Registers := 10    
 	                7 Bit    Registers := 2     
-	                6 Bit    Registers := 14    
-	                5 Bit    Registers := 23    
+	                6 Bit    Registers := 15    
+	                5 Bit    Registers := 28    
 	                4 Bit    Registers := 41    
 	                3 Bit    Registers := 31    
 	                2 Bit    Registers := 19    
-	                1 Bit    Registers := 418   
+	                1 Bit    Registers := 419   
 +---RAMs : 
 	              74K Bit         RAMs := 1     
 	              208 Bit         RAMs := 1     
 +---Muxes : 
 	   2 Input     72 Bit        Muxes := 3     
 	   2 Input     64 Bit        Muxes := 1     
-	   2 Input     32 Bit        Muxes := 9     
+	   2 Input     32 Bit        Muxes := 8     
+	  13 Input     32 Bit        Muxes := 1     
+	   3 Input     32 Bit        Muxes := 1     
 	   2 Input     24 Bit        Muxes := 1     
 	   3 Input     16 Bit        Muxes := 1     
 	   4 Input     16 Bit        Muxes := 2     
-	   2 Input     16 Bit        Muxes := 6     
+	   2 Input     16 Bit        Muxes := 7     
 	   2 Input     13 Bit        Muxes := 5     
 	   2 Input     11 Bit        Muxes := 5     
 	   3 Input     11 Bit        Muxes := 1     
 	   2 Input     10 Bit        Muxes := 5     
 	   4 Input     10 Bit        Muxes := 3     
 	   2 Input      9 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 12    
+	   2 Input      8 Bit        Muxes := 11    
 	   8 Input      8 Bit        Muxes := 2     
 	   7 Input      7 Bit        Muxes := 1     
 	   2 Input      7 Bit        Muxes := 6     
 	   3 Input      6 Bit        Muxes := 1     
 	   2 Input      6 Bit        Muxes := 1     
-	   2 Input      5 Bit        Muxes := 19    
-	   5 Input      5 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 11    
+	   2 Input      5 Bit        Muxes := 18    
+	   5 Input      5 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 12    
 	   5 Input      4 Bit        Muxes := 1     
 	   4 Input      4 Bit        Muxes := 2     
 	   9 Input      4 Bit        Muxes := 2     
+	  13 Input      4 Bit        Muxes := 1     
 	   6 Input      3 Bit        Muxes := 3     
 	   2 Input      3 Bit        Muxes := 26    
 	   5 Input      3 Bit        Muxes := 1     
 	   3 Input      3 Bit        Muxes := 1     
 	   4 Input      3 Bit        Muxes := 3     
-	   2 Input      2 Bit        Muxes := 75    
+	   2 Input      2 Bit        Muxes := 76    
 	  16 Input      2 Bit        Muxes := 1     
 	   6 Input      2 Bit        Muxes := 1     
 	   4 Input      2 Bit        Muxes := 14    
 	   3 Input      2 Bit        Muxes := 3     
+	   5 Input      2 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 228   
 	   7 Input      1 Bit        Muxes := 3     
 	   6 Input      1 Bit        Muxes := 12    
 	   4 Input      1 Bit        Muxes := 7     
 	   3 Input      1 Bit        Muxes := 2     
-	  12 Input      1 Bit        Muxes := 1     
+	  13 Input      1 Bit        Muxes := 1     
+	   8 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -2988,17 +3002,21 @@ Detailed RTL Component Info :
 	                5 Bit    Registers := 1     
 	                1 Bit    Registers := 17    
 +---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
 	   2 Input     11 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 4     
+	   2 Input      8 Bit        Muxes := 3     
+	   2 Input      4 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 2     
 Module axi_vdma_reg_mux 
 Detailed RTL Component Info : 
 +---Muxes : 
-	  12 Input      1 Bit        Muxes := 1     
+	  13 Input     32 Bit        Muxes := 1     
+	  13 Input      4 Bit        Muxes := 1     
+	  13 Input      1 Bit        Muxes := 1     
 Module axi_vdma_regdirect 
 Detailed RTL Component Info : 
 +---Registers : 
-	               32 Bit    Registers := 2     
+	               32 Bit    Registers := 3     
 	               16 Bit    Registers := 2     
 	               13 Bit    Registers := 1     
 	                1 Bit    Registers := 3     
@@ -3147,47 +3165,59 @@ Detailed RTL Component Info :
 Module axi_vdma_vregister 
 Detailed RTL Component Info : 
 +---Registers : 
-	               32 Bit    Registers := 2     
+	               32 Bit    Registers := 3     
 	               16 Bit    Registers := 2     
 	               13 Bit    Registers := 1     
 	                5 Bit    Registers := 1     
 Module axi_vdma_vaddrreg_mux 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 1     
+	   3 Input     32 Bit        Muxes := 1     
 Module axi_vdma_vidreg_module 
 Detailed RTL Component Info : 
 +---Registers : 
 	                1 Bit    Registers := 3     
 +---Muxes : 
 	   2 Input      1 Bit        Muxes := 1     
+Module axi_vdma_genlock_mux 
+Detailed RTL Component Info : 
++---Registers : 
+	                6 Bit    Registers := 1     
 Module axi_vdma_greycoder 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 2     
+Module axi_vdma_greycoder__parameterized0 
 Detailed RTL Component Info : 
 +---XORs : 
 	   2 Input      1 Bit         XORs := 8     
 Module axi_vdma_genlock_mngr 
 Detailed RTL Component Info : 
 +---Adders : 
-	   3 Input      5 Bit       Adders := 1     
+	   3 Input      5 Bit       Adders := 2     
 +---Registers : 
 	                6 Bit    Registers := 1     
-	                5 Bit    Registers := 2     
-	                1 Bit    Registers := 7     
+	                5 Bit    Registers := 4     
+	                1 Bit    Registers := 8     
 +---Muxes : 
 	   3 Input      6 Bit        Muxes := 1     
 	   2 Input      6 Bit        Muxes := 1     
-	   2 Input      5 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 1     
+	   5 Input      5 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 4     
+	   5 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
 Module axi_vdma_mngr 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input      5 Bit       Adders := 2     
+	   2 Input      5 Bit       Adders := 4     
 +---Registers : 
-	                5 Bit    Registers := 6     
+	                5 Bit    Registers := 9     
 	                1 Bit    Registers := 12    
 +---Muxes : 
-	   2 Input      5 Bit        Muxes := 4     
-	   2 Input      1 Bit        Muxes := 5     
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+	   8 Input      1 Bit        Muxes := 1     
 Module axi_vdma 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -3230,9 +3260,9 @@ INFO: [Synth 8-5546] ROM "DIFF_WIDTH_OR_DRE.I_IBTTCC_STBS_SET/lvar_num_set" won'
 INFO: [Synth 8-5546] ROM "DIFF_WIDTH_OR_DRE_WDC.I_WDC_STBS_SET/lvar_num_set" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "sig_dbc_max" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "I_DMA_REGISTER/threshold_is_zero" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-4471] merging register 'MASTER_MODE_FRAME_CNT.valid_frame_sync_reg' into 'VIDEO_GENLOCK_I/GENLOCK_FOR_MASTER.mstrfrm_tstsync_d1_reg' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:65591]
-INFO: [Synth 8-4471] merging register 'MASTER_MODE_FRAME_CNT.tstvect_fsync_d1_reg' into 'I_SM/frame_sync_d1_reg' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:65650]
-INFO: [Synth 8-4471] merging register 'MASTER_MODE_FRAME_CNT.tstvect_fsync_d2_reg' into 'I_SM/frame_sync_d2_reg' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:65651]
+INFO: [Synth 8-4471] merging register 'DYNAMIC_MASTER_MODE_FRAME_CNT.valid_frame_sync_reg' into 'VIDEO_GENLOCK_I/DYNAMIC_GENLOCK_FOR_MASTER.mstrfrm_tstsync_d1_reg' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:65220]
+INFO: [Synth 8-4471] merging register 'DYNAMIC_MASTER_MODE_FRAME_CNT.tstvect_fsync_d1_reg' into 'I_SM/frame_sync_d1_reg' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:65253]
+INFO: [Synth 8-4471] merging register 'DYNAMIC_MASTER_MODE_FRAME_CNT.tstvect_fsync_d2_reg' into 'I_SM/frame_sync_d2_reg' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/58e2/hdl/axi_vdma_v6_3_rfs.vhd:65254]
 INFO: [Synth 8-5546] ROM "VIDEO_GENLOCK_I/num_fstore_equal_one" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
@@ -3249,23 +3279,21 @@ INFO: [Synth 8-3886] merging instance 'U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM
 INFO: [Synth 8-3886] merging instance 'U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_skid_reg_reg[70]' (FDRE) to 'U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_skid_reg_reg[71]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER /\GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_skid_reg_reg[71] )
 INFO: [Synth 8-3886] merging instance 'U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_sstrb_stop_mask_reg[8]' (FDRE) to 'U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_sstrb_stop_mask_reg[0]'
-INFO: [Synth 8-3886] merging instance 'U0/GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/VIDEO_GENLOCK_I/GENLOCK_FOR_MASTER.frame_ptr_out_reg[2]' (FDR) to 'U0/GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/VIDEO_GENLOCK_I/GENLOCK_FOR_MASTER.frame_ptr_out_reg[5]'
-INFO: [Synth 8-3886] merging instance 'U0/GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/VIDEO_GENLOCK_I/GENLOCK_FOR_MASTER.frame_ptr_out_reg[3]' (FDR) to 'U0/GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/VIDEO_GENLOCK_I/GENLOCK_FOR_MASTER.frame_ptr_out_reg[5]'
-INFO: [Synth 8-3886] merging instance 'U0/GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/VIDEO_GENLOCK_I/GENLOCK_FOR_MASTER.frame_ptr_out_reg[4]' (FDR) to 'U0/GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/VIDEO_GENLOCK_I/GENLOCK_FOR_MASTER.frame_ptr_out_reg[5]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR /\VIDEO_GENLOCK_I/GENLOCK_FOR_MASTER.frame_ptr_out_reg[5] )
+INFO: [Synth 8-3886] merging instance 'U0/GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/VIDEO_GENLOCK_I/DYNAMIC_GENLOCK_FOR_MASTER.frame_ptr_out_reg[3]' (FDR) to 'U0/GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/VIDEO_GENLOCK_I/DYNAMIC_GENLOCK_FOR_MASTER.frame_ptr_out_reg[4]'
+INFO: [Synth 8-3886] merging instance 'U0/GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/VIDEO_GENLOCK_I/DYNAMIC_GENLOCK_FOR_MASTER.frame_ptr_out_reg[4]' (FDR) to 'U0/GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/VIDEO_GENLOCK_I/DYNAMIC_GENLOCK_FOR_MASTER.frame_ptr_out_reg[5]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR /\VIDEO_GENLOCK_I/DYNAMIC_GENLOCK_FOR_MASTER.frame_ptr_out_reg[5] )
+INFO: [Synth 8-3886] merging instance 'U0/GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/VIDEO_GENLOCK_I/DYNAMIC_GENLOCK_FOR_MASTER.dm_binary_frame_ptr_reg[3]' (FDR) to 'U0/GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/VIDEO_GENLOCK_I/DYNAMIC_GENLOCK_FOR_MASTER.dm_binary_frame_ptr_reg[2]'
+INFO: [Synth 8-3886] merging instance 'U0/GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/VIDEO_GENLOCK_I/DYNAMIC_GENLOCK_FOR_MASTER.dm_binary_frame_ptr_reg[4]' (FDR) to 'U0/GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/VIDEO_GENLOCK_I/DYNAMIC_GENLOCK_FOR_MASTER.dm_binary_frame_ptr_reg[2]'
+INFO: [Synth 8-3886] merging instance 'U0/GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/VIDEO_GENLOCK_I/DYNAMIC_GENLOCK_FOR_MASTER.dm_binary_frame_ptr_reg[2]' (FDR) to 'U0/GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/num_fstore_minus1_reg[0]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\GEN_SPRT_FOR_S2MM.S2MM_REGISTER_MODULE_I /\I_DMA_REGISTER/DMA_IRQ_MASK_GEN.dma_irq_mask_i_reg[4] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\GEN_SPRT_FOR_S2MM.S2MM_REGISTER_MODULE_I /\I_DMA_REGISTER/DMA_IRQ_MASK_GEN.dma_irq_mask_i_reg[5] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\GEN_SPRT_FOR_S2MM.S2MM_REGISTER_MODULE_I /\I_DMA_REGISTER/DMA_IRQ_MASK_GEN.dma_irq_mask_i_reg[6] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\GEN_SPRT_FOR_S2MM.S2MM_REGISTER_MODULE_I /\I_DMA_REGISTER/DMA_IRQ_MASK_GEN.dma_irq_mask_i_reg[7] )
-INFO: [Synth 8-3886] merging instance 'U0/GEN_SPRT_FOR_S2MM.S2MM_REGISTER_MODULE_I/I_DMA_REGISTER/M_GEN_DMACR_REGISTER.dmacr_i_reg[7]' (FDRE) to 'U0/GEN_SPRT_FOR_S2MM.S2MM_REGISTER_MODULE_I/I_DMA_REGISTER/M_GEN_DMACR_REGISTER.dmacr_i_reg[8]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\GEN_SPRT_FOR_S2MM.S2MM_REGISTER_MODULE_I /\I_DMA_REGISTER/GEN_NO_INTERNAL_GENLOCK.DM_GEN_DMACR_REGISTER.dmacr_i_reg[7] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\GEN_SPRT_FOR_S2MM.S2MM_REGISTER_MODULE_I /\I_DMA_REGISTER/DMA_IRQ_MASK_GEN.dma_irq_mask_i_reg[8] )
-INFO: [Synth 8-3886] merging instance 'U0/GEN_SPRT_FOR_S2MM.S2MM_REGISTER_MODULE_I/I_DMA_REGISTER/M_GEN_DMACR_REGISTER.dmacr_i_reg[8]' (FDRE) to 'U0/GEN_SPRT_FOR_S2MM.S2MM_REGISTER_MODULE_I/I_DMA_REGISTER/M_GEN_DMACR_REGISTER.dmacr_i_reg[9]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\GEN_SPRT_FOR_S2MM.S2MM_REGISTER_MODULE_I /\I_DMA_REGISTER/DMA_IRQ_MASK_GEN.dma_irq_mask_i_reg[9] )
-INFO: [Synth 8-3886] merging instance 'U0/GEN_SPRT_FOR_S2MM.S2MM_REGISTER_MODULE_I/I_DMA_REGISTER/M_GEN_DMACR_REGISTER.dmacr_i_reg[9]' (FDRE) to 'U0/GEN_SPRT_FOR_S2MM.S2MM_REGISTER_MODULE_I/I_DMA_REGISTER/M_GEN_DMACR_REGISTER.dmacr_i_reg[10]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\GEN_SPRT_FOR_S2MM.S2MM_REGISTER_MODULE_I /\I_DMA_REGISTER/DMA_IRQ_MASK_GEN.dma_irq_mask_i_reg[10] )
-INFO: [Synth 8-3886] merging instance 'U0/GEN_SPRT_FOR_S2MM.S2MM_REGISTER_MODULE_I/I_DMA_REGISTER/M_GEN_DMACR_REGISTER.dmacr_i_reg[10]' (FDRE) to 'U0/GEN_SPRT_FOR_S2MM.S2MM_REGISTER_MODULE_I/I_DMA_REGISTER/M_GEN_DMACR_REGISTER.dmacr_i_reg[11]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\GEN_SPRT_FOR_S2MM.S2MM_REGISTER_MODULE_I /\I_DMA_REGISTER/DMA_IRQ_MASK_GEN.dma_irq_mask_i_reg[11] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\GEN_SPRT_FOR_S2MM.S2MM_REGISTER_MODULE_I /\I_DMA_REGISTER/M_GEN_DMACR_REGISTER.dmacr_i_reg[11] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\GEN_SPRT_FOR_S2MM.S2MM_REGISTER_MODULE_I /\I_DMA_REGISTER/DMA_IRQ_MASK_GEN.dma_irq_mask_i_reg[12] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\GEN_SPRT_FOR_S2MM.S2MM_REGISTER_MODULE_I /\I_DMA_REGISTER/DMA_IRQ_MASK_GEN.dma_irq_mask_i_reg[13] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\GEN_SPRT_FOR_S2MM.S2MM_REGISTER_MODULE_I /\I_DMA_REGISTER/DMA_IRQ_MASK_GEN.dma_irq_mask_i_reg[14] )
@@ -3290,11 +3318,11 @@ INFO: [Synth 8-3886] merging instance 'U0/GEN_SPRT_FOR_S2MM.GEN_S2MM_DRE_ON_SKID
 INFO: [Synth 8-3886] merging instance 'U0/GEN_SPRT_FOR_S2MM.GEN_S2MM_DRE_ON_SKID.I_S2MM_SKID_FLUSH_SOF/sig_sstrb_stop_mask_reg[1]' (FDRE) to 'U0/GEN_SPRT_FOR_S2MM.GEN_S2MM_DRE_ON_SKID.I_S2MM_SKID_FLUSH_SOF/sig_stop_request_reg__0'
 INFO: [Synth 8-3886] merging instance 'U0/GEN_SPRT_FOR_S2MM.GEN_S2MM_DRE_ON_SKID.I_S2MM_SKID_FLUSH_SOF/sig_sstrb_stop_mask_reg[2]' (FDRE) to 'U0/GEN_SPRT_FOR_S2MM.GEN_S2MM_DRE_ON_SKID.I_S2MM_SKID_FLUSH_SOF/sig_stop_request_reg__0'
 INFO: [Synth 8-3886] merging instance 'U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_INCLUDE_REALIGNER.I_S2MM_REALIGNER/I_DRE_CNTL_FIFO/sig_init_reg_reg' (FD) to 'U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_reset_reg_reg'
-INFO: [Synth 8-3886] merging instance 'U0/GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/num_fstore_minus1_reg[3]' (FDR) to 'U0/GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/num_fstore_minus1_reg[1]'
-INFO: [Synth 8-3886] merging instance 'U0/GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/num_fstore_minus1_reg[4]' (FDR) to 'U0/GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/num_fstore_minus1_reg[1]'
-INFO: [Synth 8-3886] merging instance 'U0/GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/I_STS_MNGR/ftch_idle_d1_reg' (FDR) to 'U0/GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/num_fstore_minus1_reg[0]'
-INFO: [Synth 8-3886] merging instance 'U0/GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/num_fstore_minus1_reg[1]' (FDR) to 'U0/GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/num_fstore_minus1_reg[2]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR /\num_fstore_minus1_reg[2] )
+INFO: [Synth 8-3886] merging instance 'U0/GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/num_fstore_minus1_reg[3]' (FDR) to 'U0/GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/num_fstore_minus1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U0/GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/num_fstore_minus1_reg[4]' (FDR) to 'U0/GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/num_fstore_minus1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U0/GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/num_fstore_minus1_reg[2]' (FDR) to 'U0/GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/num_fstore_minus1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U0/GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/I_STS_MNGR/ftch_idle_d1_reg' (FDR) to 'U0/GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/num_fstore_minus1_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR /\num_fstore_minus1_reg[0] )
 INFO: [Synth 8-3886] merging instance 'U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_INCLUDE_REALIGNER.I_S2MM_REALIGNER/GEN_INCLUDE_SCATTER.I_S2MM_SCATTER/sig_max_first_increment_reg[3]' (FDRE) to 'U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_INCLUDE_REALIGNER.I_S2MM_REALIGNER/GEN_INCLUDE_SCATTER.I_S2MM_SCATTER/sig_max_first_increment_reg[4]'
 INFO: [Synth 8-3886] merging instance 'U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_INCLUDE_REALIGNER.I_S2MM_REALIGNER/GEN_INCLUDE_SCATTER.I_S2MM_SCATTER/sig_max_first_increment_reg[4]' (FDRE) to 'U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_INCLUDE_REALIGNER.I_S2MM_REALIGNER/GEN_INCLUDE_SCATTER.I_S2MM_SCATTER/sig_max_first_increment_reg[5]'
 INFO: [Synth 8-3886] merging instance 'U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_INCLUDE_REALIGNER.I_S2MM_REALIGNER/GEN_INCLUDE_SCATTER.I_S2MM_SCATTER/sig_max_first_increment_reg[5]' (FDRE) to 'U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_INCLUDE_REALIGNER.I_S2MM_REALIGNER/GEN_INCLUDE_SCATTER.I_S2MM_SCATTER/sig_max_first_increment_reg[6]'
@@ -3337,6 +3365,8 @@ INFO: [Synth 8-3886] merging instance 'U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER /\GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_sstrb_stop_mask_reg[7] )
 INFO: [Synth 8-3886] merging instance 'U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/I_WR_DATA_CNTL/sig_halt_reg_reg' (FDRE) to 'U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/I_WR_STATUS_CNTLR/sig_halt_reg_reg'
 INFO: [Synth 8-3886] merging instance 'U0/GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/I_CMDSTS/s_axis_cmd_tdata_reg[30]' (FDRE) to 'U0/GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/I_CMDSTS/s_axis_cmd_tdata_reg[23]'
+INFO: [Synth 8-3886] merging instance 'U0/GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/VIDEO_GENLOCK_I/DYNAMIC_GENLOCK_FOR_MASTER.slv_frame_ref_out_reg[3]' (FDR) to 'U0/GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/VIDEO_GENLOCK_I/DYNAMIC_GENLOCK_FOR_MASTER.slv_frame_ref_out_reg[4]'
+INFO: [Synth 8-3886] merging instance 'U0/GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/VIDEO_GENLOCK_I/DYNAMIC_GENLOCK_FOR_MASTER.slv_frame_ref_out_reg[4]' (FDR) to 'U0/GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/VIDEO_GENLOCK_I/DYNAMIC_GENLOCK_FOR_MASTER.slv_frame_ref_out_reg[2]'
 INFO: [Synth 8-3886] merging instance 'U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/I_WR_STATUS_CNTLR/sig_halt_reg_dly1_reg' (FDR) to 'U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/I_WR_DATA_CNTL/sig_halt_reg_dly1_reg'
 INFO: [Synth 8-3886] merging instance 'U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/I_WR_STATUS_CNTLR/sig_halt_reg_dly2_reg' (FDR) to 'U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/I_WR_DATA_CNTL/sig_halt_reg_dly2_reg'
 INFO: [Synth 8-3886] merging instance 'U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/I_WR_STATUS_CNTLR/sig_halt_reg_dly3_reg' (FDR) to 'U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/I_WR_DATA_CNTL/sig_halt_reg_dly3_reg'
@@ -3445,7 +3475,7 @@ INFO: [Synth 8-3886] merging instance 'U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM
 INFO: [Synth 8-3886] merging instance 'U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_INCLUDE_IBTTCC.I_S2MM_MSTR_IBTTCC/FSM_onehot_sig_csm_state_reg[6]' (FDR) to 'U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_INCLUDE_IBTTCC.I_S2MM_MSTR_IBTTCC/sig_csm_pop_sf_fifo_reg'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER /\I_ADDR_CNTL/sig_next_size_reg_reg[2] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:04:46 ; elapsed = 00:04:51 . Memory (MB): peak = 892.422 ; gain = 592.586
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:08:06 ; elapsed = 00:08:21 . Memory (MB): peak = 895.980 ; gain = 594.430
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
 ---------------------------------------------------------------------------------
@@ -3482,14 +3512,14 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:04:55 ; elapsed = 00:05:01 . Memory (MB): peak = 892.422 ; gain = 592.586
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:08:19 ; elapsed = 00:08:34 . Memory (MB): peak = 895.980 ; gain = 594.430
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:05:00 ; elapsed = 00:05:05 . Memory (MB): peak = 933.586 ; gain = 633.750
+Finished Timing Optimization : Time (s): cpu = 00:08:25 ; elapsed = 00:08:40 . Memory (MB): peak = 937.938 ; gain = 636.387
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -3533,7 +3563,7 @@ INFO: [Synth 8-139] cannot merge instances U0/\GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2
 INFO: [Synth 8-139] cannot merge instances U0/\GEN_SPRT_FOR_S2MM.S2MM_LINEBUFFER_I/GEN_S2MM_FLUSH_SOF_LOGIC.GEN_FOR_ASYNC_FLUSH_SOF.RUNSTOP_AXIS_0_CDC_I_FLUSH_SOF/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.INPUT_FLOP.REG_PLEVEL_IN_cdc_from  and U0/\GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/I_STS_MNGR/halted_clr_reg  because of non-equivalent assertions
 INFO: [Synth 8-139] cannot merge instances U0/\GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/I_STS_MNGR/halted_clr_reg  and U0/\GEN_SPRT_FOR_S2MM.S2MM_LINEBUFFER_I/GEN_S2MM_FLUSH_SOF_LOGIC.GEN_FOR_ASYNC_FLUSH_SOF.RUNSTOP_AXIS_0_CDC_I_FLUSH_SOF/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.INPUT_FLOP.REG_PLEVEL_IN_cdc_from  because of non-equivalent assertions
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:05:03 ; elapsed = 00:05:08 . Memory (MB): peak = 934.594 ; gain = 634.758
+Finished Technology Mapping : Time (s): cpu = 00:08:29 ; elapsed = 00:08:44 . Memory (MB): peak = 938.949 ; gain = 637.398
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -3553,12 +3583,12 @@ Finished Flattening Before IO Insertion
 ---------------------------------------------------------------------------------
 Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5365] Flop GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/VIDEO_GENLOCK_I/GENLOCK_FOR_MASTER.GEN_FSTORES_GRTR_ONE.reg_raw_frame_ptr_reg[0] is being inverted and renamed to GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/VIDEO_GENLOCK_I/GENLOCK_FOR_MASTER.GEN_FSTORES_GRTR_ONE.reg_raw_frame_ptr_reg[0]_inv.
+INFO: [Synth 8-5365] Flop GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/VIDEO_GENLOCK_I/DYNAMIC_GENLOCK_FOR_MASTER.GEN_FSTORES_GRTR_ONE.reg_raw_frame_ptr_reg[1] is being inverted and renamed to GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR/VIDEO_GENLOCK_I/DYNAMIC_GENLOCK_FOR_MASTER.GEN_FSTORES_GRTR_ONE.reg_raw_frame_ptr_reg[1]_inv.
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:05:04 ; elapsed = 00:05:10 . Memory (MB): peak = 934.594 ; gain = 634.758
+Finished IO Insertion : Time (s): cpu = 00:08:31 ; elapsed = 00:08:45 . Memory (MB): peak = 938.949 ; gain = 637.398
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -3571,7 +3601,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:05:04 ; elapsed = 00:05:10 . Memory (MB): peak = 934.594 ; gain = 634.758
+Finished Renaming Generated Instances : Time (s): cpu = 00:08:31 ; elapsed = 00:08:46 . Memory (MB): peak = 938.949 ; gain = 637.398
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -3583,25 +3613,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:05:05 ; elapsed = 00:05:10 . Memory (MB): peak = 934.594 ; gain = 634.758
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:08:32 ; elapsed = 00:08:47 . Memory (MB): peak = 938.949 ; gain = 637.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:05:05 ; elapsed = 00:05:10 . Memory (MB): peak = 934.594 ; gain = 634.758
+Finished Renaming Generated Ports : Time (s): cpu = 00:08:32 ; elapsed = 00:08:47 . Memory (MB): peak = 938.949 ; gain = 637.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:05:05 ; elapsed = 00:05:11 . Memory (MB): peak = 934.594 ; gain = 634.758
+Finished Handling Custom Attributes : Time (s): cpu = 00:08:32 ; elapsed = 00:08:47 . Memory (MB): peak = 938.949 ; gain = 637.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:05:05 ; elapsed = 00:05:11 . Memory (MB): peak = 934.594 ; gain = 634.758
+Finished Renaming Generated Nets : Time (s): cpu = 00:08:32 ; elapsed = 00:08:47 . Memory (MB): peak = 938.949 ; gain = 637.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -3650,31 +3680,31 @@ Report Cell Usage:
 +------+-----------+------+
 |1     |CARRY4     |    77|
 |2     |FIFO36E1   |     5|
-|3     |LUT1       |   238|
-|4     |LUT2       |   269|
-|5     |LUT3       |   399|
-|6     |LUT4       |   336|
-|7     |LUT5       |   416|
-|8     |LUT6       |   437|
+|3     |LUT1       |   235|
+|4     |LUT2       |   274|
+|5     |LUT3       |   420|
+|6     |LUT4       |   352|
+|7     |LUT5       |   428|
+|8     |LUT6       |   465|
 |9     |RAM32M     |     3|
 |10    |RAMB18E1_1 |     1|
 |11    |RAMB36E1_1 |     2|
 |12    |SRL16E     |   183|
 |13    |FDPE       |     5|
 |14    |FDR        |   191|
-|15    |FDRE       |  2543|
-|16    |FDSE       |    78|
+|15    |FDRE       |  2636|
+|16    |FDSE       |    79|
 +------+-----------+------+
 
 Report Instance Areas: 
 +------+-----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+------+
 |      |Instance                                                                                                         |Module                                                           |Cells |
 +------+-----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+------+
-|1     |top                                                                                                              |                                                                 |  5183|
-|2     |  U0                                                                                                             |axi_vdma                                                         |  5183|
-|3     |    AXI_LITE_REG_INTERFACE_I                                                                                     |axi_vdma_reg_if                                                  |   512|
-|4     |      \GEN_AXI_LITE_IF.AXI_LITE_IF_I                                                                             |axi_vdma_lite_if                                                 |   434|
-|5     |        \GEN_LITE_IS_ASYNC.GEN_S2MM_ONLY_ASYNC_LITE_ACCESS.LITE_WVALID_S2MM_CDC_I                                |cdc_sync__parameterized1_37                                      |    37|
+|1     |top                                                                                                              |                                                                 |  5356|
+|2     |  U0                                                                                                             |axi_vdma                                                         |  5356|
+|3     |    AXI_LITE_REG_INTERFACE_I                                                                                     |axi_vdma_reg_if                                                  |   549|
+|4     |      \GEN_AXI_LITE_IF.AXI_LITE_IF_I                                                                             |axi_vdma_lite_if                                                 |   476|
+|5     |        \GEN_LITE_IS_ASYNC.GEN_S2MM_ONLY_ASYNC_LITE_ACCESS.LITE_WVALID_S2MM_CDC_I                                |cdc_sync__parameterized1_37                                      |    49|
 |6     |      \GEN_S2MM_LITE_CROSSINGS.GEN_S2MM_CROSSINGS_ASYNC.S2MM_INTRPT_CROSSING_I                                   |cdc_sync__parameterized2                                         |     4|
 |7     |    \GEN_SPRT_FOR_S2MM.GEN_AXIS_S2MM_DWIDTH_CONV.AXIS_S2MM_DWIDTH_CONVERTER_I                                    |axi_vdma_s2mm_axis_dwidth_converter                              |   475|
 |8     |      \GEN_DWIDTH_FLUSH_SOF.S2MM_AXIS_DWIDTH_CONVERTER_I                                                         |axi_vdma_v6_3_6_axis_dwidth_converter_v1_0_axis_dwidth_converter |   426|
@@ -3684,168 +3714,170 @@ Report Instance Areas:
 |12    |    \GEN_SPRT_FOR_S2MM.GEN_FLUSH_SOF_TREADY.GEN_FOR_ASYNC_FLUSH_SOF.S2MM_PRM_UPDT_CDC_I                          |cdc_sync__parameterized1                                         |    15|
 |13    |    \GEN_SPRT_FOR_S2MM.GEN_FLUSH_SOF_TREADY.GEN_FOR_ASYNC_FLUSH_SOF.SOF_LATE_CDC_I                               |cdc_sync__parameterized3_0                                       |     5|
 |14    |    \GEN_SPRT_FOR_S2MM.GEN_S2MM_DRE_ON_SKID.I_S2MM_SKID_FLUSH_SOF                                                |axi_vdma_skid_buf                                                |   103|
-|15    |    \GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR                                                                |axi_vdma_mngr                                                    |   561|
-|16    |      I_CMDSTS                                                                                                   |axi_vdma_cmdsts_if                                               |    62|
-|17    |      I_SM                                                                                                       |axi_vdma_sm                                                      |   260|
-|18    |        \GEN_FSIZE_MISMATCH.GEN_S2MM_MISMATCH_FLUSH_SOF.GEN_FOR_ASYNC.FSIZE_MISMATCH_CDC_I_FLUSH_SOF             |cdc_sync__parameterized1_36                                      |    56|
+|15    |    \GEN_SPRT_FOR_S2MM.S2MMADDR32.I_S2MM_DMA_MNGR                                                                |axi_vdma_mngr                                                    |   703|
+|16    |      I_CMDSTS                                                                                                   |axi_vdma_cmdsts_if                                               |    64|
+|17    |      I_SM                                                                                                       |axi_vdma_sm                                                      |   301|
+|18    |        \GEN_FSIZE_MISMATCH.GEN_S2MM_MISMATCH_FLUSH_SOF.GEN_FOR_ASYNC.FSIZE_MISMATCH_CDC_I_FLUSH_SOF             |cdc_sync__parameterized1_36                                      |    93|
 |19    |      I_STS_MNGR                                                                                                 |axi_vdma_sts_mngr                                                |     4|
-|20    |      VIDEO_GENLOCK_I                                                                                            |axi_vdma_genlock_mngr                                            |    16|
-|21    |      VIDEO_REG_I                                                                                                |axi_vdma_vidreg_module                                           |   180|
-|22    |        \GEN_REGISTER_DIRECT.GEN_REGDIRECT_DRES.VIDREGISTER_I                                                    |axi_vdma_vregister                                               |   175|
-|23    |    \GEN_SPRT_FOR_S2MM.S2MM_FSYNC_I                                                                              |axi_vdma_fsync_gen                                               |     5|
-|24    |    \GEN_SPRT_FOR_S2MM.S2MM_LINEBUFFER_I                                                                         |axi_vdma_s2mm_linebuf                                            |   211|
-|25    |      \GEN_S2MM_FLUSH_SOF_LOGIC.GEN_FOR_ASYNC_FLUSH_SOF.FSYNC_OUT_CDC_I_FLUSH_SOF                                |cdc_sync__parameterized1_24                                      |    15|
-|26    |      \GEN_S2MM_FLUSH_SOF_LOGIC.GEN_FOR_ASYNC_FLUSH_SOF.MMAP_NOT_FINISHED_CDC_I_FLUSH_SOF                        |cdc_sync__parameterized3_25                                      |     6|
-|27    |      \GEN_S2MM_FLUSH_SOF_LOGIC.GEN_FOR_ASYNC_FLUSH_SOF.RUNSTOP_AXIS_0_CDC_I_FLUSH_SOF                           |cdc_sync__parameterized3_26                                      |    10|
-|28    |      \GEN_S2MM_FLUSH_SOF_LOGIC.GEN_FOR_ASYNC_FLUSH_SOF.STRM_WR_HALT_CDC_I                                       |cdc_sync__parameterized3_27                                      |    10|
-|29    |      \GEN_S2MM_FLUSH_SOF_LOGIC.GEN_LINEBUFFER_FLUSH_SOF.GEN_ASYNC_FIFO_FLUSH_SOF.LB_BUILT_IN.I_LINEBUFFER_FIFO  |axi_vdma_afifo_builtin                                           |    66|
-|30    |        fg_builtin_fifo_inst                                                                                     |fifo_generator_v13_2_3                                           |    66|
-|31    |          inst_fifo_gen                                                                                          |fifo_generator_v13_2_3_synth                                     |    66|
-|32    |            \gconvfifo.rf                                                                                        |fifo_generator_top                                               |    66|
-|33    |              \gbi.bi                                                                                            |fifo_generator_v13_2_3_builtin                                   |    66|
-|34    |                \g7ser_birst.rstbt                                                                               |reset_builtin                                                    |    21|
-|35    |                \v7_bi_fifo.fblk                                                                                 |builtin_top_v6                                                   |    45|
-|36    |                  \gextw[1].gnll_fifo.inst_extd                                                                  |builtin_extdepth_v6                                              |     6|
-|37    |                    \gonep.inst_prim                                                                             |builtin_prim_v6_35                                               |     2|
-|38    |                  \gextw[2].gnll_fifo.inst_extd                                                                  |builtin_extdepth_v6_28                                           |     5|
-|39    |                    \gonep.inst_prim                                                                             |builtin_prim_v6_34                                               |     1|
-|40    |                  \gextw[3].gnll_fifo.inst_extd                                                                  |builtin_extdepth_v6_29                                           |    19|
-|41    |                    \gonep.inst_prim                                                                             |builtin_prim_v6_33                                               |    15|
-|42    |                  \gextw[4].gnll_fifo.inst_extd                                                                  |builtin_extdepth_v6_30                                           |     8|
-|43    |                    \gonep.inst_prim                                                                             |builtin_prim_v6_32                                               |     4|
-|44    |                  \gextw[5].gnll_fifo.inst_extd                                                                  |builtin_extdepth_v6_31                                           |     7|
-|45    |                    \gonep.inst_prim                                                                             |builtin_prim_v6                                                  |     3|
-|46    |    \GEN_SPRT_FOR_S2MM.S2MM_REGISTER_MODULE_I                                                                    |axi_vdma_reg_module                                              |   217|
-|47    |      \GEN_REG_DIRECT_MODE.REGDIRECT_I                                                                           |axi_vdma_regdirect                                               |   123|
-|48    |      I_DMA_REGISTER                                                                                             |axi_vdma_register                                                |    89|
-|49    |      LITE_READ_MUX_I                                                                                            |axi_vdma_reg_mux                                                 |     0|
-|50    |    \GEN_SPRT_FOR_S2MM.S2MM_SOF_I                                                                                |axi_vdma_sof_gen                                                 |     5|
-|51    |    \GEN_SPRT_FOR_S2MM.S2MM_VID_CDC_I                                                                            |axi_vdma_vid_cdc                                                 |    91|
-|52    |      \GEN_CDC_FOR_ASYNC.FSYNC_IN_CDC_I                                                                          |cdc_sync__parameterized1_21                                      |    15|
-|53    |      \GEN_CDC_FOR_ASYNC.FSYNC_OUT_CDC_I                                                                         |cdc_sync__parameterized1_22                                      |    15|
-|54    |      \GEN_CDC_FOR_ASYNC.SOF_CDC_I                                                                               |cdc_sync__parameterized1_23                                      |    13|
-|55    |    I_AXI_DMA_INTRPT                                                                                             |axi_vdma_intrpt                                                  |    71|
-|56    |    I_PRMRY_DATAMOVER                                                                                            |axi_datamover                                                    |  2749|
-|57    |      \GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER                                                                         |axi_datamover_s2mm_full_wrap                                     |  2720|
-|58    |        \GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT                                                                     |axi_datamover_indet_btt                                          |   943|
-|59    |          \ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF                                                                 |axi_datamover_skid_buf                                           |   249|
-|60    |          I_DATA_FIFO                                                                                            |axi_datamover_sfifo_autord__parameterized0                       |   381|
-|61    |            \BLK_MEM.I_SYNC_FIFOGEN_FIFO                                                                         |sync_fifo_fg__parameterized0                                     |   381|
-|62    |              \xpm_fifo_instance.xpm_fifo_sync_inst                                                              |xpm_fifo_sync__parameterized1                                    |   269|
-|63    |                xpm_fifo_base_inst                                                                               |xpm_fifo_base__parameterized0                                    |   269|
-|64    |                  \gen_sdpram.xpm_memory_base_inst                                                               |xpm_memory_base__parameterized0                                  |     3|
-|65    |                  \gen_fwft.rdpp1_inst                                                                           |xpm_counter_updn__parameterized1_16                              |     6|
-|66    |                  rdp_inst                                                                                       |xpm_counter_updn__parameterized6                                 |    66|
-|67    |                  rdpp1_inst                                                                                     |xpm_counter_updn__parameterized7                                 |    24|
-|68    |                  rst_d1_inst                                                                                    |xpm_fifo_reg_bit_17                                              |     8|
-|69    |                  wrp_inst                                                                                       |xpm_counter_updn__parameterized6_18                              |    22|
-|70    |                  wrpp1_inst                                                                                     |xpm_counter_updn__parameterized7_19                              |    41|
-|71    |                  wrpp2_inst                                                                                     |xpm_counter_updn__parameterized5                                 |    23|
-|72    |                  xpm_fifo_rst_inst                                                                              |xpm_fifo_rst_20                                                  |    14|
-|73    |          I_XD_FIFO                                                                                              |axi_datamover_sfifo_autord                                       |   202|
-|74    |            \NON_BLK_MEM.I_SYNC_FIFOGEN_FIFO                                                                     |sync_fifo_fg                                                     |   202|
-|75    |              \xpm_fifo_instance.xpm_fifo_sync_inst                                                              |xpm_fifo_sync                                                    |   175|
-|76    |                xpm_fifo_base_inst                                                                               |xpm_fifo_base                                                    |   175|
-|77    |                  \gen_sdpram.xpm_memory_base_inst                                                               |xpm_memory_base                                                  |    29|
-|78    |                  \gen_fwft.rdpp1_inst                                                                           |xpm_counter_updn__parameterized1                                 |     9|
-|79    |                  rdp_inst                                                                                       |xpm_counter_updn__parameterized2                                 |    17|
-|80    |                  rdpp1_inst                                                                                     |xpm_counter_updn__parameterized3                                 |    10|
-|81    |                  rst_d1_inst                                                                                    |xpm_fifo_reg_bit                                                 |    13|
-|82    |                  wrp_inst                                                                                       |xpm_counter_updn__parameterized2_14                              |    22|
-|83    |                  wrpp1_inst                                                                                     |xpm_counter_updn__parameterized3_15                              |    12|
-|84    |                  wrpp2_inst                                                                                     |xpm_counter_updn__parameterized0                                 |    11|
-|85    |                  xpm_fifo_rst_inst                                                                              |xpm_fifo_rst                                                     |    10|
-|86    |        \GEN_INCLUDE_IBTTCC.I_S2MM_MSTR_IBTTCC                                                                   |axi_datamover_ibttcc                                             |   454|
-|87    |        \GEN_INCLUDE_REALIGNER.I_S2MM_REALIGNER                                                                  |axi_datamover_s2mm_realign                                       |   595|
-|88    |          \GEN_INCLUDE_DRE.I_S2MM_DRE_BLOCK                                                                      |axi_datamover_s2mm_dre                                           |   210|
-|89    |          \GEN_INCLUDE_SCATTER.I_S2MM_SCATTER                                                                    |axi_datamover_s2mm_scatter                                       |   328|
-|90    |            I_MSSAI_SKID_BUF                                                                                     |axi_datamover_mssai_skid_buf                                     |   147|
-|91    |            I_TSTRB_FIFO                                                                                         |axi_datamover_fifo__parameterized4                               |    37|
-|92    |              \USE_SRL_FIFO.I_SYNC_FIFO                                                                          |srl_fifo_f__parameterized4                                       |    31|
-|93    |                I_SRL_FIFO_RBU_F                                                                                 |srl_fifo_rbu_f__parameterized4                                   |    31|
-|94    |                  CNTR_INCR_DECR_ADDN_F_I                                                                        |cntr_incr_decr_addn_f__parameterized1                            |    17|
-|95    |                  DYNSHREG_F_I                                                                                   |dynshreg_f__parameterized4                                       |    13|
-|96    |            SLICE_INSERTION                                                                                      |axi_datamover_slice                                              |    39|
-|97    |          I_DRE_CNTL_FIFO                                                                                        |axi_datamover_fifo__parameterized3                               |    45|
-|98    |            \USE_SRL_FIFO.I_SYNC_FIFO                                                                            |srl_fifo_f__parameterized3                                       |    40|
-|99    |              I_SRL_FIFO_RBU_F                                                                                   |srl_fifo_rbu_f__parameterized3                                   |    40|
-|100   |                CNTR_INCR_DECR_ADDN_F_I                                                                          |cntr_incr_decr_addn_f_13                                         |    10|
-|101   |                DYNSHREG_F_I                                                                                     |dynshreg_f__parameterized3                                       |    29|
-|102   |        I_ADDR_CNTL                                                                                              |axi_datamover_addr_cntl                                          |   108|
-|103   |          \GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO                                                                        |axi_datamover_fifo__parameterized5                               |    58|
-|104   |            \USE_SRL_FIFO.I_SYNC_FIFO                                                                            |srl_fifo_f__parameterized5                                       |    55|
-|105   |              I_SRL_FIFO_RBU_F                                                                                   |srl_fifo_rbu_f__parameterized5                                   |    55|
-|106   |                CNTR_INCR_DECR_ADDN_F_I                                                                          |cntr_incr_decr_addn_f_12                                         |     8|
-|107   |                DYNSHREG_F_I                                                                                     |dynshreg_f__parameterized5                                       |    45|
-|108   |        I_CMD_STATUS                                                                                             |axi_datamover_cmd_status                                         |   117|
-|109   |          \GEN_INCLUDE_STATUS_FIFO.I_STS_FIFO                                                                    |axi_datamover_fifo__parameterized0                               |    54|
-|110   |            \USE_SRL_FIFO.I_SYNC_FIFO                                                                            |srl_fifo_f__parameterized0                                       |    51|
-|111   |              I_SRL_FIFO_RBU_F                                                                                   |srl_fifo_rbu_f__parameterized0                                   |    51|
-|112   |                CNTR_INCR_DECR_ADDN_F_I                                                                          |cntr_incr_decr_addn_f_11                                         |     8|
-|113   |                DYNSHREG_F_I                                                                                     |dynshreg_f__parameterized0                                       |    40|
-|114   |          I_CMD_FIFO                                                                                             |axi_datamover_fifo                                               |    63|
-|115   |            \USE_SRL_FIFO.I_SYNC_FIFO                                                                            |srl_fifo_f                                                       |    60|
-|116   |              I_SRL_FIFO_RBU_F                                                                                   |srl_fifo_rbu_f                                                   |    60|
-|117   |                CNTR_INCR_DECR_ADDN_F_I                                                                          |cntr_incr_decr_addn_f_10                                         |     7|
-|118   |                DYNSHREG_F_I                                                                                     |dynshreg_f                                                       |    51|
-|119   |        I_RESET                                                                                                  |axi_datamover_reset                                              |     8|
-|120   |        I_S2MM_MMAP_SKID_BUF                                                                                     |axi_datamover_skid2mm_buf                                        |   226|
-|121   |        I_WR_DATA_CNTL                                                                                           |axi_datamover_wrdata_cntl                                        |   159|
-|122   |          \GEN_INDET_BTT.I_STRT_STRB_GEN                                                                         |axi_datamover_strb_gen2__parameterized0                          |     5|
-|123   |          \GEN_DATA_CNTL_FIFO.I_DATA_CNTL_FIFO                                                                   |axi_datamover_fifo__parameterized6                               |    49|
-|124   |            \USE_SRL_FIFO.I_SYNC_FIFO                                                                            |srl_fifo_f__parameterized6                                       |    46|
-|125   |              I_SRL_FIFO_RBU_F                                                                                   |srl_fifo_rbu_f__parameterized6                                   |    46|
-|126   |                CNTR_INCR_DECR_ADDN_F_I                                                                          |cntr_incr_decr_addn_f                                            |    17|
-|127   |                DYNSHREG_F_I                                                                                     |dynshreg_f__parameterized6                                       |    27|
-|128   |        I_WR_STATUS_CNTLR                                                                                        |axi_datamover_wr_status_cntl                                     |   110|
-|129   |          \GEN_ENABLE_INDET_BTT.I_SF_DATA_CNTL_STATUS_FIFO                                                       |axi_datamover_fifo__parameterized2                               |    41|
-|130   |            \USE_SRL_FIFO.I_SYNC_FIFO                                                                            |srl_fifo_f__parameterized2                                       |    38|
-|131   |              I_SRL_FIFO_RBU_F                                                                                   |srl_fifo_rbu_f__parameterized2                                   |    38|
-|132   |                CNTR_INCR_DECR_ADDN_F_I                                                                          |cntr_incr_decr_addn_f__parameterized0_9                          |    10|
-|133   |                DYNSHREG_F_I                                                                                     |dynshreg_f__parameterized2                                       |    27|
-|134   |          I_WRESP_STATUS_FIFO                                                                                    |axi_datamover_fifo__parameterized1                               |    33|
-|135   |            \USE_SRL_FIFO.I_SYNC_FIFO                                                                            |srl_fifo_f__parameterized1                                       |    21|
-|136   |              I_SRL_FIFO_RBU_F                                                                                   |srl_fifo_rbu_f__parameterized1                                   |    21|
-|137   |                CNTR_INCR_DECR_ADDN_F_I                                                                          |cntr_incr_decr_addn_f__parameterized0                            |    10|
-|138   |                DYNSHREG_F_I                                                                                     |dynshreg_f__parameterized1                                       |     4|
-|139   |    I_RST_MODULE                                                                                                 |axi_vdma_rst_module                                              |   152|
-|140   |      \GEN_RESET_FOR_S2MM.RESET_I                                                                                |axi_vdma_reset                                                   |   147|
-|141   |        \GEN_MIN_FOR_ASYNC.AXIS_CLR_CDC_I                                                                        |cdc_sync                                                         |    15|
-|142   |        \GEN_MIN_FOR_ASYNC.AXIS_IDLE_CDC_I                                                                       |cdc_sync__parameterized0                                         |     5|
-|143   |        \GEN_MIN_FOR_ASYNC.AXIS_MIN_CDC_I                                                                        |cdc_sync__parameterized0_1                                       |     8|
-|144   |        \GEN_MIN_FOR_ASYNC.AXIS_RESET_CDC_I                                                                      |cdc_sync_2                                                       |    15|
-|145   |        \GEN_MIN_FOR_ASYNC.LITE_CLR_CDC_I                                                                        |cdc_sync_3                                                       |    15|
-|146   |        \GEN_MIN_FOR_ASYNC.LITE_IDLE_CDC_I                                                                       |cdc_sync__parameterized0_4                                       |     5|
-|147   |        \GEN_MIN_FOR_ASYNC.LITE_MIN_CDC_I                                                                        |cdc_sync__parameterized0_5                                       |     5|
-|148   |        \GEN_MIN_FOR_ASYNC.LITE_RESET_CDC_I                                                                      |cdc_sync_6                                                       |    15|
-|149   |        \GEN_RESET_FOR_ASYNC.AXIS_RESET_CDC_I                                                                    |cdc_sync__parameterized0_7                                       |     5|
-|150   |        \GEN_RESET_FOR_ASYNC.HARD_RESET_CDC_I                                                                    |cdc_sync__parameterized0_8                                       |    12|
+|20    |      VIDEO_GENLOCK_I                                                                                            |axi_vdma_genlock_mngr                                            |    63|
+|21    |        \DYNAMIC_GENLOCK_FOR_MASTER.GENLOCK_MUX_I                                                                |axi_vdma_genlock_mux                                             |     6|
+|22    |        \DYNAMIC_GENLOCK_FOR_MASTER.GEN_FSTORES_GRTR_ONE.GREY_CODER_I                                            |axi_vdma_greycoder__parameterized0                               |     2|
+|23    |      VIDEO_REG_I                                                                                                |axi_vdma_vidreg_module                                           |   216|
+|24    |        \GEN_REGISTER_DIRECT.GEN_REGDIRECT_DRES.VIDREGISTER_I                                                    |axi_vdma_vregister                                               |   211|
+|25    |    \GEN_SPRT_FOR_S2MM.S2MM_FSYNC_I                                                                              |axi_vdma_fsync_gen                                               |     5|
+|26    |    \GEN_SPRT_FOR_S2MM.S2MM_LINEBUFFER_I                                                                         |axi_vdma_s2mm_linebuf                                            |   211|
+|27    |      \GEN_S2MM_FLUSH_SOF_LOGIC.GEN_FOR_ASYNC_FLUSH_SOF.FSYNC_OUT_CDC_I_FLUSH_SOF                                |cdc_sync__parameterized1_24                                      |    15|
+|28    |      \GEN_S2MM_FLUSH_SOF_LOGIC.GEN_FOR_ASYNC_FLUSH_SOF.MMAP_NOT_FINISHED_CDC_I_FLUSH_SOF                        |cdc_sync__parameterized3_25                                      |     6|
+|29    |      \GEN_S2MM_FLUSH_SOF_LOGIC.GEN_FOR_ASYNC_FLUSH_SOF.RUNSTOP_AXIS_0_CDC_I_FLUSH_SOF                           |cdc_sync__parameterized3_26                                      |    10|
+|30    |      \GEN_S2MM_FLUSH_SOF_LOGIC.GEN_FOR_ASYNC_FLUSH_SOF.STRM_WR_HALT_CDC_I                                       |cdc_sync__parameterized3_27                                      |    10|
+|31    |      \GEN_S2MM_FLUSH_SOF_LOGIC.GEN_LINEBUFFER_FLUSH_SOF.GEN_ASYNC_FIFO_FLUSH_SOF.LB_BUILT_IN.I_LINEBUFFER_FIFO  |axi_vdma_afifo_builtin                                           |    66|
+|32    |        fg_builtin_fifo_inst                                                                                     |fifo_generator_v13_2_3                                           |    66|
+|33    |          inst_fifo_gen                                                                                          |fifo_generator_v13_2_3_synth                                     |    66|
+|34    |            \gconvfifo.rf                                                                                        |fifo_generator_top                                               |    66|
+|35    |              \gbi.bi                                                                                            |fifo_generator_v13_2_3_builtin                                   |    66|
+|36    |                \g7ser_birst.rstbt                                                                               |reset_builtin                                                    |    21|
+|37    |                \v7_bi_fifo.fblk                                                                                 |builtin_top_v6                                                   |    45|
+|38    |                  \gextw[1].gnll_fifo.inst_extd                                                                  |builtin_extdepth_v6                                              |     6|
+|39    |                    \gonep.inst_prim                                                                             |builtin_prim_v6_35                                               |     2|
+|40    |                  \gextw[2].gnll_fifo.inst_extd                                                                  |builtin_extdepth_v6_28                                           |     5|
+|41    |                    \gonep.inst_prim                                                                             |builtin_prim_v6_34                                               |     1|
+|42    |                  \gextw[3].gnll_fifo.inst_extd                                                                  |builtin_extdepth_v6_29                                           |    19|
+|43    |                    \gonep.inst_prim                                                                             |builtin_prim_v6_33                                               |    15|
+|44    |                  \gextw[4].gnll_fifo.inst_extd                                                                  |builtin_extdepth_v6_30                                           |     8|
+|45    |                    \gonep.inst_prim                                                                             |builtin_prim_v6_32                                               |     4|
+|46    |                  \gextw[5].gnll_fifo.inst_extd                                                                  |builtin_extdepth_v6_31                                           |     7|
+|47    |                    \gonep.inst_prim                                                                             |builtin_prim_v6                                                  |     3|
+|48    |    \GEN_SPRT_FOR_S2MM.S2MM_REGISTER_MODULE_I                                                                    |axi_vdma_reg_module                                              |   225|
+|49    |      \GEN_REG_DIRECT_MODE.REGDIRECT_I                                                                           |axi_vdma_regdirect                                               |   142|
+|50    |      I_DMA_REGISTER                                                                                             |axi_vdma_register                                                |    78|
+|51    |      LITE_READ_MUX_I                                                                                            |axi_vdma_reg_mux                                                 |     0|
+|52    |    \GEN_SPRT_FOR_S2MM.S2MM_SOF_I                                                                                |axi_vdma_sof_gen                                                 |     5|
+|53    |    \GEN_SPRT_FOR_S2MM.S2MM_VID_CDC_I                                                                            |axi_vdma_vid_cdc                                                 |    92|
+|54    |      \GEN_CDC_FOR_ASYNC.FSYNC_IN_CDC_I                                                                          |cdc_sync__parameterized1_21                                      |    14|
+|55    |      \GEN_CDC_FOR_ASYNC.FSYNC_OUT_CDC_I                                                                         |cdc_sync__parameterized1_22                                      |    15|
+|56    |      \GEN_CDC_FOR_ASYNC.SOF_CDC_I                                                                               |cdc_sync__parameterized1_23                                      |    13|
+|57    |    I_AXI_DMA_INTRPT                                                                                             |axi_vdma_intrpt                                                  |    71|
+|58    |    I_PRMRY_DATAMOVER                                                                                            |axi_datamover                                                    |  2736|
+|59    |      \GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER                                                                         |axi_datamover_s2mm_full_wrap                                     |  2707|
+|60    |        \GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT                                                                     |axi_datamover_indet_btt                                          |   943|
+|61    |          \ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF                                                                 |axi_datamover_skid_buf                                           |   249|
+|62    |          I_DATA_FIFO                                                                                            |axi_datamover_sfifo_autord__parameterized0                       |   381|
+|63    |            \BLK_MEM.I_SYNC_FIFOGEN_FIFO                                                                         |sync_fifo_fg__parameterized0                                     |   381|
+|64    |              \xpm_fifo_instance.xpm_fifo_sync_inst                                                              |xpm_fifo_sync__parameterized1                                    |   269|
+|65    |                xpm_fifo_base_inst                                                                               |xpm_fifo_base__parameterized0                                    |   269|
+|66    |                  \gen_sdpram.xpm_memory_base_inst                                                               |xpm_memory_base__parameterized0                                  |     3|
+|67    |                  \gen_fwft.rdpp1_inst                                                                           |xpm_counter_updn__parameterized1_16                              |     6|
+|68    |                  rdp_inst                                                                                       |xpm_counter_updn__parameterized6                                 |    66|
+|69    |                  rdpp1_inst                                                                                     |xpm_counter_updn__parameterized7                                 |    24|
+|70    |                  rst_d1_inst                                                                                    |xpm_fifo_reg_bit_17                                              |     8|
+|71    |                  wrp_inst                                                                                       |xpm_counter_updn__parameterized6_18                              |    22|
+|72    |                  wrpp1_inst                                                                                     |xpm_counter_updn__parameterized7_19                              |    41|
+|73    |                  wrpp2_inst                                                                                     |xpm_counter_updn__parameterized5                                 |    23|
+|74    |                  xpm_fifo_rst_inst                                                                              |xpm_fifo_rst_20                                                  |    14|
+|75    |          I_XD_FIFO                                                                                              |axi_datamover_sfifo_autord                                       |   202|
+|76    |            \NON_BLK_MEM.I_SYNC_FIFOGEN_FIFO                                                                     |sync_fifo_fg                                                     |   202|
+|77    |              \xpm_fifo_instance.xpm_fifo_sync_inst                                                              |xpm_fifo_sync                                                    |   175|
+|78    |                xpm_fifo_base_inst                                                                               |xpm_fifo_base                                                    |   175|
+|79    |                  \gen_sdpram.xpm_memory_base_inst                                                               |xpm_memory_base                                                  |    29|
+|80    |                  \gen_fwft.rdpp1_inst                                                                           |xpm_counter_updn__parameterized1                                 |     9|
+|81    |                  rdp_inst                                                                                       |xpm_counter_updn__parameterized2                                 |    17|
+|82    |                  rdpp1_inst                                                                                     |xpm_counter_updn__parameterized3                                 |    10|
+|83    |                  rst_d1_inst                                                                                    |xpm_fifo_reg_bit                                                 |    13|
+|84    |                  wrp_inst                                                                                       |xpm_counter_updn__parameterized2_14                              |    22|
+|85    |                  wrpp1_inst                                                                                     |xpm_counter_updn__parameterized3_15                              |    12|
+|86    |                  wrpp2_inst                                                                                     |xpm_counter_updn__parameterized0                                 |    11|
+|87    |                  xpm_fifo_rst_inst                                                                              |xpm_fifo_rst                                                     |    10|
+|88    |        \GEN_INCLUDE_IBTTCC.I_S2MM_MSTR_IBTTCC                                                                   |axi_datamover_ibttcc                                             |   454|
+|89    |        \GEN_INCLUDE_REALIGNER.I_S2MM_REALIGNER                                                                  |axi_datamover_s2mm_realign                                       |   595|
+|90    |          \GEN_INCLUDE_DRE.I_S2MM_DRE_BLOCK                                                                      |axi_datamover_s2mm_dre                                           |   210|
+|91    |          \GEN_INCLUDE_SCATTER.I_S2MM_SCATTER                                                                    |axi_datamover_s2mm_scatter                                       |   328|
+|92    |            I_MSSAI_SKID_BUF                                                                                     |axi_datamover_mssai_skid_buf                                     |   147|
+|93    |            I_TSTRB_FIFO                                                                                         |axi_datamover_fifo__parameterized4                               |    37|
+|94    |              \USE_SRL_FIFO.I_SYNC_FIFO                                                                          |srl_fifo_f__parameterized4                                       |    31|
+|95    |                I_SRL_FIFO_RBU_F                                                                                 |srl_fifo_rbu_f__parameterized4                                   |    31|
+|96    |                  CNTR_INCR_DECR_ADDN_F_I                                                                        |cntr_incr_decr_addn_f__parameterized1                            |    17|
+|97    |                  DYNSHREG_F_I                                                                                   |dynshreg_f__parameterized4                                       |    13|
+|98    |            SLICE_INSERTION                                                                                      |axi_datamover_slice                                              |    39|
+|99    |          I_DRE_CNTL_FIFO                                                                                        |axi_datamover_fifo__parameterized3                               |    45|
+|100   |            \USE_SRL_FIFO.I_SYNC_FIFO                                                                            |srl_fifo_f__parameterized3                                       |    40|
+|101   |              I_SRL_FIFO_RBU_F                                                                                   |srl_fifo_rbu_f__parameterized3                                   |    40|
+|102   |                CNTR_INCR_DECR_ADDN_F_I                                                                          |cntr_incr_decr_addn_f_13                                         |    10|
+|103   |                DYNSHREG_F_I                                                                                     |dynshreg_f__parameterized3                                       |    29|
+|104   |        I_ADDR_CNTL                                                                                              |axi_datamover_addr_cntl                                          |   108|
+|105   |          \GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO                                                                        |axi_datamover_fifo__parameterized5                               |    58|
+|106   |            \USE_SRL_FIFO.I_SYNC_FIFO                                                                            |srl_fifo_f__parameterized5                                       |    55|
+|107   |              I_SRL_FIFO_RBU_F                                                                                   |srl_fifo_rbu_f__parameterized5                                   |    55|
+|108   |                CNTR_INCR_DECR_ADDN_F_I                                                                          |cntr_incr_decr_addn_f_12                                         |     8|
+|109   |                DYNSHREG_F_I                                                                                     |dynshreg_f__parameterized5                                       |    45|
+|110   |        I_CMD_STATUS                                                                                             |axi_datamover_cmd_status                                         |   104|
+|111   |          \GEN_INCLUDE_STATUS_FIFO.I_STS_FIFO                                                                    |axi_datamover_fifo__parameterized0                               |    41|
+|112   |            \USE_SRL_FIFO.I_SYNC_FIFO                                                                            |srl_fifo_f__parameterized0                                       |    38|
+|113   |              I_SRL_FIFO_RBU_F                                                                                   |srl_fifo_rbu_f__parameterized0                                   |    38|
+|114   |                CNTR_INCR_DECR_ADDN_F_I                                                                          |cntr_incr_decr_addn_f_11                                         |     8|
+|115   |                DYNSHREG_F_I                                                                                     |dynshreg_f__parameterized0                                       |    27|
+|116   |          I_CMD_FIFO                                                                                             |axi_datamover_fifo                                               |    63|
+|117   |            \USE_SRL_FIFO.I_SYNC_FIFO                                                                            |srl_fifo_f                                                       |    60|
+|118   |              I_SRL_FIFO_RBU_F                                                                                   |srl_fifo_rbu_f                                                   |    60|
+|119   |                CNTR_INCR_DECR_ADDN_F_I                                                                          |cntr_incr_decr_addn_f_10                                         |     7|
+|120   |                DYNSHREG_F_I                                                                                     |dynshreg_f                                                       |    51|
+|121   |        I_RESET                                                                                                  |axi_datamover_reset                                              |     8|
+|122   |        I_S2MM_MMAP_SKID_BUF                                                                                     |axi_datamover_skid2mm_buf                                        |   226|
+|123   |        I_WR_DATA_CNTL                                                                                           |axi_datamover_wrdata_cntl                                        |   159|
+|124   |          \GEN_INDET_BTT.I_STRT_STRB_GEN                                                                         |axi_datamover_strb_gen2__parameterized0                          |     5|
+|125   |          \GEN_DATA_CNTL_FIFO.I_DATA_CNTL_FIFO                                                                   |axi_datamover_fifo__parameterized6                               |    49|
+|126   |            \USE_SRL_FIFO.I_SYNC_FIFO                                                                            |srl_fifo_f__parameterized6                                       |    46|
+|127   |              I_SRL_FIFO_RBU_F                                                                                   |srl_fifo_rbu_f__parameterized6                                   |    46|
+|128   |                CNTR_INCR_DECR_ADDN_F_I                                                                          |cntr_incr_decr_addn_f                                            |    17|
+|129   |                DYNSHREG_F_I                                                                                     |dynshreg_f__parameterized6                                       |    27|
+|130   |        I_WR_STATUS_CNTLR                                                                                        |axi_datamover_wr_status_cntl                                     |   110|
+|131   |          \GEN_ENABLE_INDET_BTT.I_SF_DATA_CNTL_STATUS_FIFO                                                       |axi_datamover_fifo__parameterized2                               |    41|
+|132   |            \USE_SRL_FIFO.I_SYNC_FIFO                                                                            |srl_fifo_f__parameterized2                                       |    38|
+|133   |              I_SRL_FIFO_RBU_F                                                                                   |srl_fifo_rbu_f__parameterized2                                   |    38|
+|134   |                CNTR_INCR_DECR_ADDN_F_I                                                                          |cntr_incr_decr_addn_f__parameterized0_9                          |    10|
+|135   |                DYNSHREG_F_I                                                                                     |dynshreg_f__parameterized2                                       |    27|
+|136   |          I_WRESP_STATUS_FIFO                                                                                    |axi_datamover_fifo__parameterized1                               |    33|
+|137   |            \USE_SRL_FIFO.I_SYNC_FIFO                                                                            |srl_fifo_f__parameterized1                                       |    21|
+|138   |              I_SRL_FIFO_RBU_F                                                                                   |srl_fifo_rbu_f__parameterized1                                   |    21|
+|139   |                CNTR_INCR_DECR_ADDN_F_I                                                                          |cntr_incr_decr_addn_f__parameterized0                            |    10|
+|140   |                DYNSHREG_F_I                                                                                     |dynshreg_f__parameterized1                                       |     4|
+|141   |    I_RST_MODULE                                                                                                 |axi_vdma_rst_module                                              |   150|
+|142   |      \GEN_RESET_FOR_S2MM.RESET_I                                                                                |axi_vdma_reset                                                   |   145|
+|143   |        \GEN_MIN_FOR_ASYNC.AXIS_CLR_CDC_I                                                                        |cdc_sync                                                         |    15|
+|144   |        \GEN_MIN_FOR_ASYNC.AXIS_IDLE_CDC_I                                                                       |cdc_sync__parameterized0                                         |     5|
+|145   |        \GEN_MIN_FOR_ASYNC.AXIS_MIN_CDC_I                                                                        |cdc_sync__parameterized0_1                                       |     8|
+|146   |        \GEN_MIN_FOR_ASYNC.AXIS_RESET_CDC_I                                                                      |cdc_sync_2                                                       |    15|
+|147   |        \GEN_MIN_FOR_ASYNC.LITE_CLR_CDC_I                                                                        |cdc_sync_3                                                       |    15|
+|148   |        \GEN_MIN_FOR_ASYNC.LITE_IDLE_CDC_I                                                                       |cdc_sync__parameterized0_4                                       |     5|
+|149   |        \GEN_MIN_FOR_ASYNC.LITE_MIN_CDC_I                                                                        |cdc_sync__parameterized0_5                                       |     5|
+|150   |        \GEN_MIN_FOR_ASYNC.LITE_RESET_CDC_I                                                                      |cdc_sync_6                                                       |    15|
+|151   |        \GEN_RESET_FOR_ASYNC.AXIS_RESET_CDC_I                                                                    |cdc_sync__parameterized0_7                                       |     5|
+|152   |        \GEN_RESET_FOR_ASYNC.HARD_RESET_CDC_I                                                                    |cdc_sync__parameterized0_8                                       |    12|
 +------+-----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:05:05 ; elapsed = 00:05:11 . Memory (MB): peak = 934.594 ; gain = 634.758
+Finished Writing Synthesis Report : Time (s): cpu = 00:08:32 ; elapsed = 00:08:47 . Memory (MB): peak = 938.949 ; gain = 637.398
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 527 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:39 ; elapsed = 00:05:02 . Memory (MB): peak = 934.594 ; gain = 387.852
-Synthesis Optimization Complete : Time (s): cpu = 00:05:05 ; elapsed = 00:05:11 . Memory (MB): peak = 934.594 ; gain = 634.758
+Synthesis finished with 0 errors, 0 critical warnings and 519 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:55 ; elapsed = 00:08:34 . Memory (MB): peak = 938.949 ; gain = 389.703
+Synthesis Optimization Complete : Time (s): cpu = 00:08:32 ; elapsed = 00:08:47 . Memory (MB): peak = 938.949 ; gain = 637.398
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 279 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 934.594 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 938.949 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 194 instances were transformed.
   FDR => FDRE: 191 instances
   RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 3 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-775 Infos, 238 Warnings, 0 Critical Warnings and 0 Errors encountered.
+781 Infos, 238 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:05:09 ; elapsed = 00:05:15 . Memory (MB): peak = 934.594 ; gain = 643.215
-INFO: [Coretcl 2-1174] Renamed 149 cell refs.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 934.594 ; gain = 0.000
+synth_design: Time (s): cpu = 00:08:36 ; elapsed = 00:08:52 . Memory (MB): peak = 938.949 ; gain = 646.551
+INFO: [Coretcl 2-1174] Renamed 151 cell refs.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 938.949 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/system_axi_vdma_1_0_synth_1/system_axi_vdma_1_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file system_axi_vdma_1_0_utilization_synth.rpt -pb system_axi_vdma_1_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Oct  8 16:24:16 2020...
+INFO: [Common 17-206] Exiting Vivado at Fri Oct 30 12:02:20 2020...

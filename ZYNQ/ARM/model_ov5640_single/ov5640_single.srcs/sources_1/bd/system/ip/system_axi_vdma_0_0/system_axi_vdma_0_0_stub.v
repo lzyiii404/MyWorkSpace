@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Thu Oct  8 16:24:08 2020
+// Date        : Fri Oct 30 12:02:11 2020
 // Host        : Huang running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
 //               D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ip/system_axi_vdma_0_0/system_axi_vdma_0_0_stub.v
@@ -19,13 +19,13 @@ module system_axi_vdma_0_0(s_axi_lite_aclk, m_axi_mm2s_aclk,
   s_axi_lite_wvalid, s_axi_lite_wready, s_axi_lite_wdata, s_axi_lite_bresp, 
   s_axi_lite_bvalid, s_axi_lite_bready, s_axi_lite_arvalid, s_axi_lite_arready, 
   s_axi_lite_araddr, s_axi_lite_rvalid, s_axi_lite_rready, s_axi_lite_rdata, 
-  s_axi_lite_rresp, mm2s_frame_ptr_out, m_axi_mm2s_araddr, m_axi_mm2s_arlen, 
-  m_axi_mm2s_arsize, m_axi_mm2s_arburst, m_axi_mm2s_arprot, m_axi_mm2s_arcache, 
-  m_axi_mm2s_arvalid, m_axi_mm2s_arready, m_axi_mm2s_rdata, m_axi_mm2s_rresp, 
-  m_axi_mm2s_rlast, m_axi_mm2s_rvalid, m_axi_mm2s_rready, m_axis_mm2s_tdata, 
-  m_axis_mm2s_tkeep, m_axis_mm2s_tuser, m_axis_mm2s_tvalid, m_axis_mm2s_tready, 
-  m_axis_mm2s_tlast, mm2s_introut)
-/* synthesis syn_black_box black_box_pad_pin="s_axi_lite_aclk,m_axi_mm2s_aclk,m_axis_mm2s_aclk,axi_resetn,s_axi_lite_awvalid,s_axi_lite_awready,s_axi_lite_awaddr[8:0],s_axi_lite_wvalid,s_axi_lite_wready,s_axi_lite_wdata[31:0],s_axi_lite_bresp[1:0],s_axi_lite_bvalid,s_axi_lite_bready,s_axi_lite_arvalid,s_axi_lite_arready,s_axi_lite_araddr[8:0],s_axi_lite_rvalid,s_axi_lite_rready,s_axi_lite_rdata[31:0],s_axi_lite_rresp[1:0],mm2s_frame_ptr_out[5:0],m_axi_mm2s_araddr[31:0],m_axi_mm2s_arlen[7:0],m_axi_mm2s_arsize[2:0],m_axi_mm2s_arburst[1:0],m_axi_mm2s_arprot[2:0],m_axi_mm2s_arcache[3:0],m_axi_mm2s_arvalid,m_axi_mm2s_arready,m_axi_mm2s_rdata[63:0],m_axi_mm2s_rresp[1:0],m_axi_mm2s_rlast,m_axi_mm2s_rvalid,m_axi_mm2s_rready,m_axis_mm2s_tdata[23:0],m_axis_mm2s_tkeep[2:0],m_axis_mm2s_tuser[0:0],m_axis_mm2s_tvalid,m_axis_mm2s_tready,m_axis_mm2s_tlast,mm2s_introut" */;
+  s_axi_lite_rresp, mm2s_frame_ptr_in, mm2s_frame_ptr_out, m_axi_mm2s_araddr, 
+  m_axi_mm2s_arlen, m_axi_mm2s_arsize, m_axi_mm2s_arburst, m_axi_mm2s_arprot, 
+  m_axi_mm2s_arcache, m_axi_mm2s_arvalid, m_axi_mm2s_arready, m_axi_mm2s_rdata, 
+  m_axi_mm2s_rresp, m_axi_mm2s_rlast, m_axi_mm2s_rvalid, m_axi_mm2s_rready, 
+  m_axis_mm2s_tdata, m_axis_mm2s_tkeep, m_axis_mm2s_tuser, m_axis_mm2s_tvalid, 
+  m_axis_mm2s_tready, m_axis_mm2s_tlast, mm2s_introut)
+/* synthesis syn_black_box black_box_pad_pin="s_axi_lite_aclk,m_axi_mm2s_aclk,m_axis_mm2s_aclk,axi_resetn,s_axi_lite_awvalid,s_axi_lite_awready,s_axi_lite_awaddr[8:0],s_axi_lite_wvalid,s_axi_lite_wready,s_axi_lite_wdata[31:0],s_axi_lite_bresp[1:0],s_axi_lite_bvalid,s_axi_lite_bready,s_axi_lite_arvalid,s_axi_lite_arready,s_axi_lite_araddr[8:0],s_axi_lite_rvalid,s_axi_lite_rready,s_axi_lite_rdata[31:0],s_axi_lite_rresp[1:0],mm2s_frame_ptr_in[5:0],mm2s_frame_ptr_out[5:0],m_axi_mm2s_araddr[31:0],m_axi_mm2s_arlen[7:0],m_axi_mm2s_arsize[2:0],m_axi_mm2s_arburst[1:0],m_axi_mm2s_arprot[2:0],m_axi_mm2s_arcache[3:0],m_axi_mm2s_arvalid,m_axi_mm2s_arready,m_axi_mm2s_rdata[63:0],m_axi_mm2s_rresp[1:0],m_axi_mm2s_rlast,m_axi_mm2s_rvalid,m_axi_mm2s_rready,m_axis_mm2s_tdata[23:0],m_axis_mm2s_tkeep[2:0],m_axis_mm2s_tuser[0:0],m_axis_mm2s_tvalid,m_axis_mm2s_tready,m_axis_mm2s_tlast,mm2s_introut" */;
   input s_axi_lite_aclk;
   input m_axi_mm2s_aclk;
   input m_axis_mm2s_aclk;
@@ -46,6 +46,7 @@ module system_axi_vdma_0_0(s_axi_lite_aclk, m_axi_mm2s_aclk,
   input s_axi_lite_rready;
   output [31:0]s_axi_lite_rdata;
   output [1:0]s_axi_lite_rresp;
+  input [5:0]mm2s_frame_ptr_in;
   output [5:0]mm2s_frame_ptr_out;
   output [31:0]m_axi_mm2s_araddr;
   output [7:0]m_axi_mm2s_arlen;

@@ -12,14 +12,15 @@ source system_wrapper.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/repo'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2018.3/data/ip'.
+add_files: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 388.066 ; gain = 107.918
 Command: synth_design -top system_wrapper -part xc7z020clg400-2
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 18500 
+INFO: Helper process launched with PID 22772 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 444.777 ; gain = 106.277
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 484.387 ; gain = 96.320
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'system_wrapper' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/hdl/system_wrapper.v:12]
 INFO: [Synth 8-6157] synthesizing module 'IOBUF' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:23615]
@@ -29,42 +30,42 @@ INFO: [Synth 8-6157] synthesizing module 'IOBUF' [D:/Xilinx/Vivado/2018.3/script
 	Parameter SLEW bound to: SLOW - type: string 
 INFO: [Synth 8-6155] done synthesizing module 'IOBUF' (1#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:23615]
 INFO: [Synth 8-6157] synthesizing module 'system' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:1612]
-INFO: [Synth 8-6157] synthesizing module 'system_alinx_ov5640_0_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-19388-Huang/realtime/system_alinx_ov5640_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_alinx_ov5640_0_0' (2#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-19388-Huang/realtime/system_alinx_ov5640_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_axi_dynclk_0_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-19388-Huang/realtime/system_axi_dynclk_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_axi_dynclk_0_0' (3#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-19388-Huang/realtime/system_axi_dynclk_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_axi_mem_intercon_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:2549]
+INFO: [Synth 8-6157] synthesizing module 'system_alinx_ov5640_0_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-21740-Huang/realtime/system_alinx_ov5640_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_alinx_ov5640_0_0' (2#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-21740-Huang/realtime/system_alinx_ov5640_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_axi_dynclk_0_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-21740-Huang/realtime/system_axi_dynclk_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_axi_dynclk_0_0' (3#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-21740-Huang/realtime/system_axi_dynclk_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_axi_mem_intercon_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:2560]
 INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_1TEAG88' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:12]
-INFO: [Synth 8-6157] synthesizing module 'system_auto_pc_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-19388-Huang/realtime/system_auto_pc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_auto_pc_0' (4#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-19388-Huang/realtime/system_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_auto_pc_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-21740-Huang/realtime/system_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_auto_pc_0' (4#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-21740-Huang/realtime/system_auto_pc_0_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_1TEAG88' (5#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:12]
 INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_1P403ZT' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:1077]
 INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_1P403ZT' (6#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:1077]
 INFO: [Synth 8-6157] synthesizing module 's01_couplers_imp_VQ497S' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:1486]
 INFO: [Synth 8-6155] done synthesizing module 's01_couplers_imp_VQ497S' (7#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:1486]
-INFO: [Synth 8-6157] synthesizing module 'system_xbar_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-19388-Huang/realtime/system_xbar_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_xbar_0' (8#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-19388-Huang/realtime/system_xbar_0_stub.v:6]
-WARNING: [Synth 8-689] width (1) of port connection 's_axi_arready' does not match port width (2) of module 'system_xbar_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:3124]
-WARNING: [Synth 8-689] width (64) of port connection 's_axi_rdata' does not match port width (128) of module 'system_xbar_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:3141]
-WARNING: [Synth 8-689] width (1) of port connection 's_axi_rlast' does not match port width (2) of module 'system_xbar_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:3142]
-WARNING: [Synth 8-689] width (2) of port connection 's_axi_rresp' does not match port width (4) of module 'system_xbar_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:3144]
-WARNING: [Synth 8-689] width (1) of port connection 's_axi_rvalid' does not match port width (2) of module 'system_xbar_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:3145]
-WARNING: [Synth 8-350] instance 'xbar' of module 'system_xbar_0' requires 78 connections, but only 76 given [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:3074]
-INFO: [Synth 8-6155] done synthesizing module 'system_axi_mem_intercon_0' (9#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:2549]
-INFO: [Synth 8-6157] synthesizing module 'system_axi_vdma_0_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-19388-Huang/realtime/system_axi_vdma_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_axi_vdma_0_0' (10#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-19388-Huang/realtime/system_axi_vdma_0_0_stub.v:6]
-WARNING: [Synth 8-350] instance 'axi_vdma_0' of module 'system_axi_vdma_0_0' requires 41 connections, but only 39 given [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:2087]
-INFO: [Synth 8-6157] synthesizing module 'system_axi_vdma_1_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-19388-Huang/realtime/system_axi_vdma_1_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_axi_vdma_1_0' (11#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-19388-Huang/realtime/system_axi_vdma_1_0_stub.v:6]
-WARNING: [Synth 8-350] instance 'axi_vdma_1' of module 'system_axi_vdma_1_0' requires 44 connections, but only 42 given [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:2127]
-INFO: [Synth 8-6157] synthesizing module 'system_axis_subset_converter_0_1' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-19388-Huang/realtime/system_axis_subset_converter_0_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_axis_subset_converter_0_1' (12#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-19388-Huang/realtime/system_axis_subset_converter_0_1_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_axi_gpio_0_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-19388-Huang/realtime/system_axi_gpio_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_axi_gpio_0_0' (13#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-19388-Huang/realtime/system_axi_gpio_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_processing_system7_0_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-19388-Huang/realtime/system_processing_system7_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_processing_system7_0_0' (14#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-19388-Huang/realtime/system_processing_system7_0_0_stub.v:6]
-WARNING: [Synth 8-350] instance 'processing_system7_0' of module 'system_processing_system7_0_0' requires 118 connections, but only 112 given [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:2206]
-INFO: [Synth 8-6157] synthesizing module 'system_processing_system7_0_axi_periph_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:3153]
+INFO: [Synth 8-6157] synthesizing module 'system_xbar_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-21740-Huang/realtime/system_xbar_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_xbar_0' (8#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-21740-Huang/realtime/system_xbar_0_stub.v:6]
+WARNING: [Synth 8-689] width (1) of port connection 's_axi_arready' does not match port width (2) of module 'system_xbar_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:3135]
+WARNING: [Synth 8-689] width (64) of port connection 's_axi_rdata' does not match port width (128) of module 'system_xbar_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:3152]
+WARNING: [Synth 8-689] width (1) of port connection 's_axi_rlast' does not match port width (2) of module 'system_xbar_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:3153]
+WARNING: [Synth 8-689] width (2) of port connection 's_axi_rresp' does not match port width (4) of module 'system_xbar_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:3155]
+WARNING: [Synth 8-689] width (1) of port connection 's_axi_rvalid' does not match port width (2) of module 'system_xbar_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:3156]
+WARNING: [Synth 8-350] instance 'xbar' of module 'system_xbar_0' requires 78 connections, but only 76 given [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:3085]
+INFO: [Synth 8-6155] done synthesizing module 'system_axi_mem_intercon_0' (9#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:2560]
+INFO: [Synth 8-6157] synthesizing module 'system_axi_vdma_0_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-21740-Huang/realtime/system_axi_vdma_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_axi_vdma_0_0' (10#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-21740-Huang/realtime/system_axi_vdma_0_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'axi_vdma_0' of module 'system_axi_vdma_0_0' requires 42 connections, but only 40 given [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:2087]
+INFO: [Synth 8-6157] synthesizing module 'system_axi_vdma_1_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-21740-Huang/realtime/system_axi_vdma_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_axi_vdma_1_0' (11#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-21740-Huang/realtime/system_axi_vdma_1_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'axi_vdma_1' of module 'system_axi_vdma_1_0' requires 45 connections, but only 43 given [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:2128]
+INFO: [Synth 8-6157] synthesizing module 'system_axis_subset_converter_0_1' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-21740-Huang/realtime/system_axis_subset_converter_0_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_axis_subset_converter_0_1' (12#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-21740-Huang/realtime/system_axis_subset_converter_0_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_axi_gpio_0_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-21740-Huang/realtime/system_axi_gpio_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_axi_gpio_0_0' (13#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-21740-Huang/realtime/system_axi_gpio_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_processing_system7_0_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-21740-Huang/realtime/system_processing_system7_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_processing_system7_0_0' (14#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-21740-Huang/realtime/system_processing_system7_0_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'processing_system7_0' of module 'system_processing_system7_0_0' requires 118 connections, but only 112 given [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:2208]
+INFO: [Synth 8-6157] synthesizing module 'system_processing_system7_0_axi_periph_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:3164]
 INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_WKXF3L' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:417]
 INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_WKXF3L' (15#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:417]
 INFO: [Synth 8-6157] synthesizing module 'm01_couplers_imp_1ORP4PS' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:542]
@@ -76,28 +77,31 @@ INFO: [Synth 8-6155] done synthesizing module 'm03_couplers_imp_PPDLC3' (18#1) [
 INFO: [Synth 8-6157] synthesizing module 'm04_couplers_imp_18RU2BA' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:945]
 INFO: [Synth 8-6155] done synthesizing module 'm04_couplers_imp_18RU2BA' (19#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:945]
 INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_IK3G2O' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:1181]
-INFO: [Synth 8-6157] synthesizing module 'system_auto_pc_1' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-19388-Huang/realtime/system_auto_pc_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_auto_pc_1' (20#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-19388-Huang/realtime/system_auto_pc_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_auto_pc_1' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-21740-Huang/realtime/system_auto_pc_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_auto_pc_1' (20#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-21740-Huang/realtime/system_auto_pc_1_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_IK3G2O' (21#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:1181]
-INFO: [Synth 8-6157] synthesizing module 'system_xbar_1' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-19388-Huang/realtime/system_xbar_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_xbar_1' (22#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-19388-Huang/realtime/system_xbar_1_stub.v:6]
-WARNING: [Synth 8-689] width (9) of port connection 'm_axi_arprot' does not match port width (15) of module 'system_xbar_1' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:4072]
-WARNING: [Synth 8-689] width (9) of port connection 'm_axi_awprot' does not match port width (15) of module 'system_xbar_1' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:4076]
-INFO: [Synth 8-6155] done synthesizing module 'system_processing_system7_0_axi_periph_0' (23#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:3153]
-INFO: [Synth 8-6157] synthesizing module 'system_rgb2dvi_0_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-19388-Huang/realtime/system_rgb2dvi_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_rgb2dvi_0_0' (24#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-19388-Huang/realtime/system_rgb2dvi_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'system_rst_processing_system7_0_100M_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-19388-Huang/realtime/system_rst_processing_system7_0_100M_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_rst_processing_system7_0_100M_0' (25#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-19388-Huang/realtime/system_rst_processing_system7_0_100M_0_stub.v:6]
-WARNING: [Synth 8-350] instance 'rst_processing_system7_0_100M' of module 'system_rst_processing_system7_0_100M_0' requires 10 connections, but only 7 given [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:2470]
-INFO: [Synth 8-6157] synthesizing module 'system_rst_processing_system7_0_150M_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-19388-Huang/realtime/system_rst_processing_system7_0_150M_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_rst_processing_system7_0_150M_0' (26#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-19388-Huang/realtime/system_rst_processing_system7_0_150M_0_stub.v:6]
-WARNING: [Synth 8-350] instance 'rst_processing_system7_0_150M' of module 'system_rst_processing_system7_0_150M_0' requires 10 connections, but only 7 given [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:2478]
-INFO: [Synth 8-6157] synthesizing module 'system_v_axi4s_vid_out_0_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-19388-Huang/realtime/system_v_axi4s_vid_out_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_v_axi4s_vid_out_0_0' (27#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-19388-Huang/realtime/system_v_axi4s_vid_out_0_0_stub.v:6]
-WARNING: [Synth 8-350] instance 'v_axi4s_vid_out_0' of module 'system_v_axi4s_vid_out_0_0' requires 31 connections, but only 22 given [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:2486]
-INFO: [Synth 8-6157] synthesizing module 'system_v_tc_0_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-19388-Huang/realtime/system_v_tc_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_v_tc_0_0' (28#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-19388-Huang/realtime/system_v_tc_0_0_stub.v:6]
-WARNING: [Synth 8-350] instance 'v_tc_0' of module 'system_v_tc_0_0' requires 32 connections, but only 31 given [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:2509]
+INFO: [Synth 8-6157] synthesizing module 'system_xbar_1' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-21740-Huang/realtime/system_xbar_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_xbar_1' (22#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-21740-Huang/realtime/system_xbar_1_stub.v:6]
+WARNING: [Synth 8-689] width (9) of port connection 'm_axi_arprot' does not match port width (15) of module 'system_xbar_1' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:4083]
+WARNING: [Synth 8-689] width (9) of port connection 'm_axi_awprot' does not match port width (15) of module 'system_xbar_1' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:4087]
+INFO: [Synth 8-6155] done synthesizing module 'system_processing_system7_0_axi_periph_0' (23#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:3164]
+INFO: [Synth 8-6157] synthesizing module 'system_rgb2dvi_0_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-21740-Huang/realtime/system_rgb2dvi_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_rgb2dvi_0_0' (24#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-21740-Huang/realtime/system_rgb2dvi_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_rst_processing_system7_0_100M_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-21740-Huang/realtime/system_rst_processing_system7_0_100M_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_rst_processing_system7_0_100M_0' (25#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-21740-Huang/realtime/system_rst_processing_system7_0_100M_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'rst_processing_system7_0_100M' of module 'system_rst_processing_system7_0_100M_0' requires 10 connections, but only 7 given [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:2472]
+INFO: [Synth 8-6157] synthesizing module 'system_rst_processing_system7_0_150M_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-21740-Huang/realtime/system_rst_processing_system7_0_150M_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_rst_processing_system7_0_150M_0' (26#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-21740-Huang/realtime/system_rst_processing_system7_0_150M_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'rst_processing_system7_0_150M' of module 'system_rst_processing_system7_0_150M_0' requires 10 connections, but only 7 given [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:2480]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:2488]
+INFO: [Synth 8-6157] synthesizing module 'system_system_ila_0_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-21740-Huang/realtime/system_system_ila_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_system_ila_0_0' (27#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-21740-Huang/realtime/system_system_ila_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_v_axi4s_vid_out_0_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-21740-Huang/realtime/system_v_axi4s_vid_out_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_v_axi4s_vid_out_0_0' (28#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-21740-Huang/realtime/system_v_axi4s_vid_out_0_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'v_axi4s_vid_out_0' of module 'system_v_axi4s_vid_out_0_0' requires 31 connections, but only 22 given [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:2497]
+INFO: [Synth 8-6157] synthesizing module 'system_v_tc_0_0' [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-21740-Huang/realtime/system_v_tc_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_v_tc_0_0' (29#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/.Xil/Vivado-21740-Huang/realtime/system_v_tc_0_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'v_tc_0' of module 'system_v_tc_0_0' requires 32 connections, but only 31 given [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:2520]
 INFO: [Synth 8-6157] synthesizing module 'system_xlconcat_0_0' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ip/system_xlconcat_0_0/synth/system_xlconcat_0_0.v:58]
 INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_1_xlconcat' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/2f66/hdl/xlconcat_v2_1_vl_rfs.v:14]
 	Parameter IN0_WIDTH bound to: 1 - type: integer 
@@ -134,16 +138,19 @@ INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_1_xlconcat' [d:/MyWorkSp
 	Parameter IN31_WIDTH bound to: 1 - type: integer 
 	Parameter dout_width bound to: 2 - type: integer 
 	Parameter NUM_PORTS bound to: 2 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_1_xlconcat' (29#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/2f66/hdl/xlconcat_v2_1_vl_rfs.v:14]
-INFO: [Synth 8-6155] done synthesizing module 'system_xlconcat_0_0' (30#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ip/system_xlconcat_0_0/synth/system_xlconcat_0_0.v:58]
+INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_1_xlconcat' (30#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/2f66/hdl/xlconcat_v2_1_vl_rfs.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'system_xlconcat_0_0' (31#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ip/system_xlconcat_0_0/synth/system_xlconcat_0_0.v:58]
 INFO: [Synth 8-6157] synthesizing module 'system_xlconstant_1_0' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ip/system_xlconstant_1_0/synth/system_xlconstant_1_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_5_xlconstant' [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/4649/hdl/xlconstant_v1_1_vl_rfs.v:23]
 	Parameter CONST_VAL bound to: 1 - type: integer 
 	Parameter CONST_WIDTH bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_5_xlconstant' (31#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/4649/hdl/xlconstant_v1_1_vl_rfs.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'system_xlconstant_1_0' (32#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ip/system_xlconstant_1_0/synth/system_xlconstant_1_0.v:57]
-INFO: [Synth 8-6155] done synthesizing module 'system' (33#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:1612]
-INFO: [Synth 8-6155] done synthesizing module 'system_wrapper' (34#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/hdl/system_wrapper.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_5_xlconstant' (32#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ipshared/4649/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'system_xlconstant_1_0' (33#1) [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ip/system_xlconstant_1_0/synth/system_xlconstant_1_0.v:57]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'alinx_ov5640_0'. This will prevent further optimization [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:1972]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'system_ila_0'. This will prevent further optimization [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:2488]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'axis_subset_converter_0'. This will prevent further optimization [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:2172]
+INFO: [Synth 8-6155] done synthesizing module 'system' (34#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/synth/system.v:1612]
+INFO: [Synth 8-6155] done synthesizing module 'system_wrapper' (35#1) [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/hdl/system_wrapper.v:12]
 WARNING: [Synth 8-3331] design xlconcat_v2_1_1_xlconcat has unconnected port In2[0]
 WARNING: [Synth 8-3331] design xlconcat_v2_1_1_xlconcat has unconnected port In3[0]
 WARNING: [Synth 8-3331] design xlconcat_v2_1_1_xlconcat has unconnected port In4[0]
@@ -217,7 +224,7 @@ WARNING: [Synth 8-3331] design m00_couplers_imp_1TEAG88 has unconnected port M_A
 WARNING: [Synth 8-3331] design m00_couplers_imp_1TEAG88 has unconnected port M_AXI_rid[2]
 WARNING: [Synth 8-3331] design m00_couplers_imp_1TEAG88 has unconnected port M_AXI_rid[1]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 501.023 ; gain = 162.523
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 541.125 ; gain = 153.059
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -230,10 +237,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 501.023 ; gain = 162.523
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 541.125 ; gain = 153.059
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 501.023 ; gain = 162.523
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 541.125 ; gain = 153.059
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -270,6 +277,8 @@ Parsing XDC File [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs
 Finished Parsing XDC File [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ip/system_xbar_0/system_xbar_0/system_xbar_0_in_context.xdc] for cell 'system_i/axi_mem_intercon/xbar'
 Parsing XDC File [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ip/system_xbar_1/system_xbar_1/system_xbar_1_in_context.xdc] for cell 'system_i/processing_system7_0_axi_periph/xbar'
 Finished Parsing XDC File [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ip/system_xbar_1/system_xbar_1/system_xbar_1_in_context.xdc] for cell 'system_i/processing_system7_0_axi_periph/xbar'
+Parsing XDC File [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ip/system_system_ila_0_0/system_system_ila_0_0/system_system_ila_0_0_in_context.xdc] for cell 'system_i/system_ila_0'
+Finished Parsing XDC File [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ip/system_system_ila_0_0/system_system_ila_0_0/system_system_ila_0_0_in_context.xdc] for cell 'system_i/system_ila_0'
 Parsing XDC File [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0/system_auto_pc_0_in_context.xdc] for cell 'system_i/axi_mem_intercon/m00_couplers/auto_pc'
 Finished Parsing XDC File [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0/system_auto_pc_0_in_context.xdc] for cell 'system_i/axi_mem_intercon/m00_couplers/auto_pc'
 Parsing XDC File [d:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.srcs/sources_1/bd/system/ip/system_auto_pc_1/system_auto_pc_1/system_auto_pc_1_in_context.xdc] for cell 'system_i/processing_system7_0_axi_periph/s00_couplers/auto_pc'
@@ -288,29 +297,29 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/system_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Parsing XDC File [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/dont_touch.xdc]
 Finished Parsing XDC File [D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/dont_touch.xdc]
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 822.441 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 861.430 ; gain = 0.000
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 822.441 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 861.430 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 2 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 2 instances
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 822.441 ; gain = 0.000
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 822.441 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 861.430 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 861.430 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'system_i/axi_vdma_0' at clock pin 'm_axi_mm2s_aclk' is different from the actual clock period '7.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'system_i/axi_vdma_1' at clock pin 'm_axi_s2mm_aclk' is different from the actual clock period '7.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'system_i/v_axi4s_vid_out_0' at clock pin 'vid_io_out_clk' is different from the actual clock period '7.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'system_i/v_tc_0' at clock pin 'clk' is different from the actual clock period '7.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 822.441 ; gain = 483.941
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 861.430 ; gain = 473.363
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 822.441 ; gain = 483.941
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 861.430 ; gain = 473.363
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -610,13 +619,14 @@ Applied set_property DONT_TOUCH = true for system_i/rgb2dvi_0. (constraint file 
 Applied set_property DONT_TOUCH = true for system_i/cmos_rst. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/axi_mem_intercon/xbar. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/processing_system7_0_axi_periph/xbar. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/system_ila_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/axi_mem_intercon/m00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/processing_system7_0_axi_periph/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 822.441 ; gain = 483.941
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 861.430 ; gain = 473.363
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 822.441 ; gain = 483.941
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 861.430 ; gain = 473.363
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -678,7 +688,7 @@ WARNING: [Synth 8-3331] design system_axi_mem_intercon_0 has unconnected port S0
 WARNING: [Synth 8-3331] design system_axi_mem_intercon_0 has unconnected port S01_ACLK
 WARNING: [Synth 8-3331] design system_axi_mem_intercon_0 has unconnected port S01_ARESETN
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 822.441 ; gain = 483.941
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 861.430 ; gain = 473.363
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -695,13 +705,13 @@ INFO: [Synth 8-5578] Moved timing constraint from pin 'system_i/rgb2dvi_0/Serial
 INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'system_i/rgb2dvi_0/PixelClk' to 'system_i/axi_dynclk_0/bbstub_PXL_CLK_O/O'
 INFO: [Synth 8-5819] Moved 4 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 843.578 ; gain = 505.078
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 882.168 ; gain = 494.102
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 844.211 ; gain = 505.711
+Finished Timing Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 882.539 ; gain = 494.473
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -713,7 +723,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 854.977 ; gain = 516.477
+Finished Technology Mapping : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 892.742 ; gain = 504.676
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -737,7 +747,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 854.977 ; gain = 516.477
+Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 892.742 ; gain = 504.676
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -750,7 +760,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 854.977 ; gain = 516.477
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 892.742 ; gain = 504.676
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -762,25 +772,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 854.977 ; gain = 516.477
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 892.742 ; gain = 504.676
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 854.977 ; gain = 516.477
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 892.742 ; gain = 504.676
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 854.977 ; gain = 516.477
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 892.742 ; gain = 504.676
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 854.977 ; gain = 516.477
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 892.742 ; gain = 504.676
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -804,8 +814,9 @@ Report BlackBoxes:
 |12    |system_rgb2dvi_0_0                     |         1|
 |13    |system_rst_processing_system7_0_100M_0 |         1|
 |14    |system_rst_processing_system7_0_150M_0 |         1|
-|15    |system_v_axi4s_vid_out_0_0             |         1|
-|16    |system_v_tc_0_0                        |         1|
+|15    |system_system_ila_0_0                  |         1|
+|16    |system_v_axi4s_vid_out_0_0             |         1|
+|17    |system_v_tc_0_0                        |         1|
 +------+---------------------------------------+----------+
 
 Report Cell Usage: 
@@ -824,13 +835,14 @@ Report Cell Usage:
 |10    |system_rgb2dvi_0_0                     |     1|
 |11    |system_rst_processing_system7_0_100M_0 |     1|
 |12    |system_rst_processing_system7_0_150M_0 |     1|
-|13    |system_v_axi4s_vid_out_0_0             |     1|
-|14    |system_v_tc_0_0                        |     1|
-|15    |system_xbar_0                          |     1|
-|16    |system_xbar_1                          |     1|
-|17    |IBUF                                   |    13|
-|18    |IOBUF                                  |     2|
-|19    |OBUF                                   |     2|
+|13    |system_system_ila_0_0                  |     1|
+|14    |system_v_axi4s_vid_out_0_0             |     1|
+|15    |system_v_tc_0_0                        |     1|
+|16    |system_xbar_0                          |     1|
+|17    |system_xbar_1                          |     1|
+|18    |IBUF                                   |    13|
+|19    |IOBUF                                  |     2|
+|20    |OBUF                                   |     2|
 +------+---------------------------------------+------+
 
 Report Instance Areas: 
@@ -847,28 +859,28 @@ Report Instance Areas:
 |8     |    xlconstant_1                    |system_xlconstant_1_0                    |     0|
 +------+------------------------------------+-----------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 854.977 ; gain = 516.477
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 892.742 ; gain = 504.676
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 26 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 854.977 ; gain = 195.059
-Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 854.977 ; gain = 516.477
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:28 . Memory (MB): peak = 892.742 ; gain = 184.371
+Synthesis Optimization Complete : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 892.742 ; gain = 504.676
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 872.102 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 908.094 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 2 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 2 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-91 Infos, 119 Warnings, 0 Critical Warnings and 0 Errors encountered.
+96 Infos, 120 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 872.168 ; gain = 540.559
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 872.168 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 908.102 ; gain = 520.035
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 908.102 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'D:/MyWorkSpace/ZYNQ/ARM/model_ov5640_single/ov5640_single.runs/synth_1/system_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file system_wrapper_utilization_synth.rpt -pb system_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Oct  8 16:24:55 2020...
+INFO: [Common 17-206] Exiting Vivado at Fri Oct 30 12:48:36 2020...

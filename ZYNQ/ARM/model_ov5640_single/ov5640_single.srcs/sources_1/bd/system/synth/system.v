@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Thu Oct  8 16:18:43 2020
+//Date        : Fri Oct 30 11:52:45 2020
 //Host        : Huang running 64-bit major release  (build 9200)
 //Command     : generate_target system.bd
 //Design      : system
@@ -1608,7 +1608,7 @@ module s01_couplers_imp_VQ497S
   assign s01_couplers_to_s01_couplers_WVALID = S_AXI_wvalid;
 endmodule
 
-(* CORE_GENERATION_INFO = "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=29,numReposBlks=18,numNonXlnxBlks=3,numHierBlks=11,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=3,da_board_cnt=2,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "system.hwdef" *) 
+(* CORE_GENERATION_INFO = "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=30,numReposBlks=19,numNonXlnxBlks=3,numHierBlks=11,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=3,da_board_cnt=2,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "system.hwdef" *) 
 module system
    (DDR_addr,
     DDR_ba,
@@ -1685,12 +1685,12 @@ module system
   (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 cmos_rstn TRI_O" *) output [0:0]cmos_rstn_tri_o;
   output hdmi_oen;
 
-  wire [15:0]alinx_ov5640_0_m_axis_video_TDATA;
-  wire [1:0]alinx_ov5640_0_m_axis_video_TKEEP;
-  wire alinx_ov5640_0_m_axis_video_TLAST;
-  wire alinx_ov5640_0_m_axis_video_TREADY;
-  wire alinx_ov5640_0_m_axis_video_TUSER;
-  wire alinx_ov5640_0_m_axis_video_TVALID;
+  (* CONN_BUS_INFO = "alinx_ov5640_0_m_axis_video xilinx.com:interface:axis:1.0 None TDATA" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire [15:0]alinx_ov5640_0_m_axis_video_TDATA;
+  (* CONN_BUS_INFO = "alinx_ov5640_0_m_axis_video xilinx.com:interface:axis:1.0 None TKEEP" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire [1:0]alinx_ov5640_0_m_axis_video_TKEEP;
+  (* CONN_BUS_INFO = "alinx_ov5640_0_m_axis_video xilinx.com:interface:axis:1.0 None TLAST" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire alinx_ov5640_0_m_axis_video_TLAST;
+  (* CONN_BUS_INFO = "alinx_ov5640_0_m_axis_video xilinx.com:interface:axis:1.0 None TREADY" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire alinx_ov5640_0_m_axis_video_TREADY;
+  (* CONN_BUS_INFO = "alinx_ov5640_0_m_axis_video xilinx.com:interface:axis:1.0 None TUSER" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire alinx_ov5640_0_m_axis_video_TUSER;
+  (* CONN_BUS_INFO = "alinx_ov5640_0_m_axis_video xilinx.com:interface:axis:1.0 None TVALID" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire alinx_ov5640_0_m_axis_video_TVALID;
   wire axi_dynclk_0_LOCKED_O;
   wire axi_dynclk_0_PXL_CLK_5X_O;
   wire axi_dynclk_0_PXL_CLK_O;
@@ -2106,6 +2106,7 @@ module system
         .m_axis_mm2s_tready(axi_vdma_0_M_AXIS_MM2S_TREADY),
         .m_axis_mm2s_tuser(axi_vdma_0_M_AXIS_MM2S_TUSER),
         .m_axis_mm2s_tvalid(axi_vdma_0_M_AXIS_MM2S_TVALID),
+        .mm2s_frame_ptr_in({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .mm2s_introut(axi_vdma_0_mm2s_introut),
         .s_axi_lite_aclk(processing_system7_0_FCLK_CLK0),
         .s_axi_lite_araddr(processing_system7_0_axi_periph_M00_AXI_ARADDR[8:0]),
@@ -2143,6 +2144,7 @@ module system
         .m_axi_s2mm_wready(axi_vdma_1_M_AXI_S2MM_WREADY),
         .m_axi_s2mm_wstrb(axi_vdma_1_M_AXI_S2MM_WSTRB),
         .m_axi_s2mm_wvalid(axi_vdma_1_M_AXI_S2MM_WVALID),
+        .s2mm_frame_ptr_in({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .s_axi_lite_aclk(processing_system7_0_FCLK_CLK0),
         .s_axi_lite_araddr(processing_system7_0_axi_periph_M03_AXI_ARADDR[8:0]),
         .s_axi_lite_arready(processing_system7_0_axi_periph_M03_AXI_ARREADY),
@@ -2483,6 +2485,15 @@ module system
         .mb_debug_sys_rst(1'b0),
         .peripheral_aresetn(rst_processing_system7_0_140M_peripheral_aresetn),
         .slowest_sync_clk(processing_system7_0_FCLK_CLK1));
+  system_system_ila_0_0 system_ila_0
+       (.SLOT_0_AXIS_tdata(alinx_ov5640_0_m_axis_video_TDATA),
+        .SLOT_0_AXIS_tkeep(alinx_ov5640_0_m_axis_video_TKEEP),
+        .SLOT_0_AXIS_tlast(alinx_ov5640_0_m_axis_video_TLAST),
+        .SLOT_0_AXIS_tready(alinx_ov5640_0_m_axis_video_TREADY),
+        .SLOT_0_AXIS_tuser(alinx_ov5640_0_m_axis_video_TUSER),
+        .SLOT_0_AXIS_tvalid(alinx_ov5640_0_m_axis_video_TVALID),
+        .clk(processing_system7_0_FCLK_CLK1),
+        .resetn(rst_processing_system7_0_140M_peripheral_aresetn));
   system_v_axi4s_vid_out_0_0 v_axi4s_vid_out_0
        (.aclk(processing_system7_0_FCLK_CLK1),
         .aclken(1'b1),
