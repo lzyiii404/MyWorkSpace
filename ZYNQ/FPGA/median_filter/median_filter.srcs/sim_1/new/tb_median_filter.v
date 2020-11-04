@@ -62,8 +62,10 @@ begin
     rst_n = 0;
     #10;
     rst_n = 1;
-    #10
+    #5
     i_data_sig = 1;
+    #10
+    i_data_sig = 0;
     #1000;
     $finish;
 end
