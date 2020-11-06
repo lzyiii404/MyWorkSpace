@@ -62,11 +62,11 @@ begin
     rst_n = 0;
     #10;
     rst_n = 1;
-    #5
-    i_data_sig = 1;
-    #10
-    i_data_sig = 0;
-    #1000;
+    repeat(10) begin
+        #5 i_data_sig = 1;
+        #10 i_data_sig = 0;
+        #100;
+    end
     $finish;
 end
 
