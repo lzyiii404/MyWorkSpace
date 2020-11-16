@@ -128,116 +128,60 @@ module median_filter(
         if (!rst_n) begin
             sort_1_done_sig <= 1'b0;
             sort_2_done_sig <= 1'b0;
+            o_done_sig <= 1'b0;
         end
         else begin
             sort_1_done_sig <= 1'b0;
             sort_2_done_sig <= 1'b0;
+            o_done_sig <= 1'b0;
         end
     end
-
-    reg [1:0] current_state;
-    reg [1:0] next_state;
-
-    parameter
-        IDLE    =   2'b00,
-        SORT_1  =   2'b01,
-        SORT_2  =   2'b11,
-        STOP    =   2'b10;
 
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
-            current_state <= IDLE;
-            next_state <= IDLE;
-        end
-        else
-            current_state <= next_state;
-    end
-
-    always @(posedge clk) begin
-        case (current_state)
-            IDLE: begin
-                if (i_data_sig)
-                    next_state <= SORT_1;
-                else
-                    next_state <= IDLE;
-            end
-
-            SORT_1: begin
-                if (sort_1_done_sig)
-                    next_state <= SORT_2;
-                else
-                    next_state <= SORT_1;
-            end
-
-            SORT_2: begin
-                if (sort_2_done_sig)
-                    next_state <= STOP;
-                else
-                    next_state <= SORT_2;
-            end
-
-            STOP: begin
-                if (o_done_sig)
-                    next_state <= IDLE;
-                else
-                    next_state <= STOP;
-            end
-
-            default: 
-                next_state <= next_state;
-        endcase
-    end
-
-    always @(*) begin
-        if (current_state == SORT_1) begin
-            sort1_data_11 = max(tmp_data_11, tmp_data_12, tmp_data_13);
-            sort1_data_12 = med(tmp_data_11, tmp_data_12, tmp_data_13);
-            sort1_data_13 = min(tmp_data_11, tmp_data_12, tmp_data_13);
-            sort1_data_21 = max(tmp_data_21, tmp_data_22, tmp_data_23);
-            sort1_data_22 = med(tmp_data_21, tmp_data_22, tmp_data_23);
-            sort1_data_23 = min(tmp_data_21, tmp_data_22, tmp_data_23);
-            sort1_data_31 = max(tmp_data_31, tmp_data_32, tmp_data_33);
-            sort1_data_32 = med(tmp_data_31, tmp_data_32, tmp_data_33);
-            sort1_data_33 = min(tmp_data_31, tmp_data_32, tmp_data_33);
-            sort_1_done_sig <= 1'b1;
+            sort1_data_11 <= 8'b0;
+            sort1_data_12 <= 8'b0;
+            sort1_data_13 <= 8'b0;
+            sort1_data_21 <= 8'b0;
+            sort1_data_22 <= 8'b0;
+            sort1_data_23 <= 8'b0;
+            sort1_data_31 <= 8'b0;
+            sort1_data_32 <= 8'b0;
+            sort1_data_33 <= 8'b0;
         end
         else begin
-            sort1_data_11 = sort1_data_11;
-            sort1_data_12 = sort1_data_12;
-            sort1_data_13 = sort1_data_13;
-            sort1_data_21 = sort1_data_21;
-            sort1_data_22 = sort1_data_22;
-            sort1_data_23 = sort1_data_23;
-            sort1_data_31 = sort1_data_31;
-            sort1_data_32 = sort1_data_32;
-            sort1_data_33 = sort1_data_33;
-            sort_1_done_sig <= 1'b0;
+            sort1_data_11 <= max(tmp_data_11, tmp_data_12, tmp_data_13);
+            sort1_data_12 <= med(tmp_data_11, tmp_data_12, tmp_data_13);
+            sort1_data_13 <= min(tmp_data_11, tmp_data_12, tmp_data_13);
+            sort1_data_21 <= max(tmp_data_21, tmp_data_22, tmp_data_23);
+            sort1_data_22 <= med(tmp_data_21, tmp_data_22, tmp_data_23);
+            sort1_data_23 <= min(tmp_data_21, tmp_data_22, tmp_data_23);
+            sort1_data_31 <= max(tmp_data_31, tmp_data_32, tmp_data_33);
+            sort1_data_32 <= med(tmp_data_31, tmp_data_32, tmp_data_33);
+            sort1_data_33 <= min(tmp_data_31, tmp_data_32, tmp_data_33);
         end
     end
 
-    always @(*) begin
-        if (current_state == SORT_2) begin
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            sort2_data_max = 8'b0;
+            sort2_data_med = 8'b0;
+            sort2_data_min = 8'b0;
+        end
+        else begin
             sort2_data_max = min(sort1_data_11, sort1_data_21, sort1_data_31);
             sort2_data_med = med(sort1_data_12, sort1_data_22, sort1_data_32);
             sort2_data_min = max(sort1_data_13, sort1_data_23, sort1_data_33);
-            sort_2_done_sig <= 1'b1;
-        end
-        else begin
-            sort2_data_max <= sort2_data_max;
-            sort2_data_med <= sort2_data_med;
-            sort2_data_min <= sort2_data_min;
-            sort_2_done_sig <= 1'b0;
         end
     end
 
-    always @(*) begin
-        if (current_state == STOP) begin
-            o_data <= med(sort2_data_max, sort2_data_min, sort2_data_med);
-            o_done_sig <= 1'b1;
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            o_data <= 8'b0;
         end
         else begin
-            o_data <= o_data;
-            o_done_sig <= 1'b0;
+            o_data <= med(sort2_data_max, sort2_data_min, sort2_data_med);
+            o_done_sig <= 1'b1;
         end
     end
 

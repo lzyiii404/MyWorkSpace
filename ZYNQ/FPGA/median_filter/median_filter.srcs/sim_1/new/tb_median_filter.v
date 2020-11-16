@@ -4,8 +4,7 @@
 module tb_median_filter;   
 
 // median_filter Parameters
-parameter PERIOD = 10   ;  
-parameter IDLE  = 2'b00;   
+parameter PERIOD = 10   ;
 
 
 // median_filter Inputs
@@ -37,8 +36,7 @@ begin
     #(PERIOD*2) rst_n  =  1;
 end
 
-median_filter #(
-    .IDLE ( IDLE ))
+median_filter #()
  u_median_filter (
     .clk                     ( clk               ),
     .rst_n                   ( rst_n             ),
@@ -60,14 +58,32 @@ median_filter #(
 initial
 begin
     rst_n = 0;
-    #10;
+    #5;
     rst_n = 1;
+    #3;
     repeat(10) begin
         #5 i_data_sig = 1;
-        #10 i_data_sig = 0;
-        #100;
+        #5 i_data_sig = 0;
+        creat_random_num();
+        
     end
+    #40;
     $finish;
 end
 
+task creat_random_num;
+begin
+    i_data_11 <= {$random}%256;
+    i_data_12 <= {$random}%256;
+    i_data_13 <= {$random}%256;
+    i_data_21 <= {$random}%256;
+    i_data_22 <= {$random}%256;
+    i_data_23 <= {$random}%256;
+    i_data_31 <= {$random}%256;
+    i_data_32 <= {$random}%256;
+    i_data_33 <= {$random}%256;  
+end
+endtask
+
 endmodule
+

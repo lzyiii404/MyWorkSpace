@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Mon Nov 16 19:51:04 2020
+# Process ID: 36692
+# Current directory: D:/MyWorkSpace/ZYNQ/FPGA/median_filter
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent21508 D:\MyWorkSpace\ZYNQ\FPGA\median_filter\median_filter.xpr
+# Log file: D:/MyWorkSpace/ZYNQ/FPGA/median_filter/vivado.log
+# Journal file: D:/MyWorkSpace/ZYNQ/FPGA/median_filter\vivado.jou
+#-----------------------------------------------------------
+start_gui
