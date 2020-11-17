@@ -4,7 +4,7 @@
 module tb_median_filter;   
 
 // median_filter Parameters
-parameter PERIOD = 10   ;
+parameter PERIOD = 4   ;
 
 
 // median_filter Inputs
@@ -22,7 +22,7 @@ reg   [7:0]  i_data_32                     = 7 ;
 reg   [7:0]  i_data_33                     = 8 ;
 
 // median_filter Outputs
-wire  [7:0] o_data                               ;
+wire  [7:0] o_data                         ;
 wire  o_done_sig                           ;
 
 
@@ -60,10 +60,10 @@ begin
     rst_n = 0;
     #5;
     rst_n = 1;
-    #3;
-    repeat(10) begin
-        #5 i_data_sig = 1;
-        #5 i_data_sig = 0;
+    #2;
+    repeat(480000) begin
+        #2 i_data_sig = 1;
+        #2 i_data_sig = 0;
         creat_random_num();
         
     end

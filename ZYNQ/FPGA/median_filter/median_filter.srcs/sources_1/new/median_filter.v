@@ -60,8 +60,8 @@ module median_filter(
             o_done_sig <= 1'b0;
     end
 
-    reg sort_1_done_sig;
-    reg sort_2_done_sig;
+    // reg sort_1_done_sig;
+    // reg sort_2_done_sig;
 
     reg [7:0] tmp_data_11;           //temp data
     reg [7:0] tmp_data_12;
@@ -126,13 +126,13 @@ module median_filter(
 
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
-            sort_1_done_sig <= 1'b0;
-            sort_2_done_sig <= 1'b0;
+            // sort_1_done_sig <= 1'b0;
+            // sort_2_done_sig <= 1'b0;
             o_done_sig <= 1'b0;
         end
         else begin
-            sort_1_done_sig <= 1'b0;
-            sort_2_done_sig <= 1'b0;
+            // sort_1_done_sig <= 1'b0;
+            // sort_2_done_sig <= 1'b0;
             o_done_sig <= 1'b0;
         end
     end
