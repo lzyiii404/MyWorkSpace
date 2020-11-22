@@ -556,7 +556,7 @@ void date2string(int year, int month, int day, int hour, int min, int sec){
   int2string(month);
   json_data.append("-");
   int2string(day);
-  json_data.append("  ");
+  json_data.append(" ");
   int2string(hour);
   json_data.append(":");
   int2string(min);
