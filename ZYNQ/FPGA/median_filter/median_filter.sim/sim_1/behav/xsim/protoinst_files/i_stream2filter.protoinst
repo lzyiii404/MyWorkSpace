@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"i_stream2filter": {
+			"proto_instances": {
+			}
+		}
+	}
+}

@@ -40,17 +40,19 @@ module median_filter(
 
     input i_data_sig;
 
-    input [7:0] i_data_11;            //array data input
-    input [7:0] i_data_12;
-    input [7:0] i_data_13;
-    input [7:0] i_data_21;
-    input [7:0] i_data_22;
-    input [7:0] i_data_23;
-    input [7:0] i_data_31;
-    input [7:0] i_data_32;
-    input [7:0] i_data_33;
+    localparam N = 16;
 
-    output reg [7:0] o_data;          //data after filter
+    input [N-1:0] i_data_11;            //array data input
+    input [N-1:0] i_data_12;
+    input [N-1:0] i_data_13;
+    input [N-1:0] i_data_21;
+    input [N-1:0] i_data_22;
+    input [N-1:0] i_data_23;
+    input [N-1:0] i_data_31;
+    input [N-1:0] i_data_32;
+    input [N-1:0] i_data_33;
+
+    output reg [N-1:0] o_data;          //data after filter
     output reg o_done_sig;
 
     always @(posedge clk or negedge rst_n) begin
@@ -63,41 +65,41 @@ module median_filter(
     // reg sort_1_done_sig;
     // reg sort_2_done_sig;
 
-    reg [7:0] tmp_data_11;           //temp data
-    reg [7:0] tmp_data_12;
-    reg [7:0] tmp_data_13;
-    reg [7:0] tmp_data_21;
-    reg [7:0] tmp_data_22;
-    reg [7:0] tmp_data_23;
-    reg [7:0] tmp_data_31;
-    reg [7:0] tmp_data_32;
-    reg [7:0] tmp_data_33;
+    reg [N-1:0] tmp_data_11;           //temp data
+    reg [N-1:0] tmp_data_12;
+    reg [N-1:0] tmp_data_13;
+    reg [N-1:0] tmp_data_21;
+    reg [N-1:0] tmp_data_22;
+    reg [N-1:0] tmp_data_23;
+    reg [N-1:0] tmp_data_31;
+    reg [N-1:0] tmp_data_32;
+    reg [N-1:0] tmp_data_33;
 
-    reg [7:0] sort1_data_11;
-    reg [7:0] sort1_data_12;
-    reg [7:0] sort1_data_13;
-    reg [7:0] sort1_data_21;
-    reg [7:0] sort1_data_22;
-    reg [7:0] sort1_data_23;
-    reg [7:0] sort1_data_31;
-    reg [7:0] sort1_data_32;
-    reg [7:0] sort1_data_33;
+    reg [N-1:0] sort1_data_11;
+    reg [N-1:0] sort1_data_12;
+    reg [N-1:0] sort1_data_13;
+    reg [N-1:0] sort1_data_21;
+    reg [N-1:0] sort1_data_22;
+    reg [N-1:0] sort1_data_23;
+    reg [N-1:0] sort1_data_31;
+    reg [N-1:0] sort1_data_32;
+    reg [N-1:0] sort1_data_33;
 
-    reg [7:0] sort2_data_max;
-    reg [7:0] sort2_data_med;
-    reg [7:0] sort2_data_min;
+    reg [N-1:0] sort2_data_max;
+    reg [N-1:0] sort2_data_med;
+    reg [N-1:0] sort2_data_min;
 
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
-            tmp_data_11 <= 8'b0;
-            tmp_data_12 <= 8'b0;
-            tmp_data_13 <= 8'b0;
-            tmp_data_21 <= 8'b0;
-            tmp_data_22 <= 8'b0;
-            tmp_data_23 <= 8'b0;
-            tmp_data_31 <= 8'b0;
-            tmp_data_32 <= 8'b0;
-            tmp_data_33 <= 8'b0;
+            tmp_data_11 <= {N{1'b0}};
+            tmp_data_12 <= {N{1'b0}};
+            tmp_data_13 <= {N{1'b0}};
+            tmp_data_21 <= {N{1'b0}};
+            tmp_data_22 <= {N{1'b0}};
+            tmp_data_23 <= {N{1'b0}};
+            tmp_data_31 <= {N{1'b0}};
+            tmp_data_32 <= {N{1'b0}};
+            tmp_data_33 <= {N{1'b0}};
         end
         else if (i_data_sig) begin
             tmp_data_11 <= i_data_11;
@@ -139,15 +141,15 @@ module median_filter(
 
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
-            sort1_data_11 <= 8'b0;
-            sort1_data_12 <= 8'b0;
-            sort1_data_13 <= 8'b0;
-            sort1_data_21 <= 8'b0;
-            sort1_data_22 <= 8'b0;
-            sort1_data_23 <= 8'b0;
-            sort1_data_31 <= 8'b0;
-            sort1_data_32 <= 8'b0;
-            sort1_data_33 <= 8'b0;
+            sort1_data_11 <= {N{1'b0}};
+            sort1_data_12 <= {N{1'b0}};
+            sort1_data_13 <= {N{1'b0}};
+            sort1_data_21 <= {N{1'b0}};
+            sort1_data_22 <= {N{1'b0}};
+            sort1_data_23 <= {N{1'b0}};
+            sort1_data_31 <= {N{1'b0}};
+            sort1_data_32 <= {N{1'b0}};
+            sort1_data_33 <= {N{1'b0}};
         end
         else begin
             sort1_data_11 <= max(tmp_data_11, tmp_data_12, tmp_data_13);
@@ -164,9 +166,9 @@ module median_filter(
 
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
-            sort2_data_max = 8'b0;
-            sort2_data_med = 8'b0;
-            sort2_data_min = 8'b0;
+            sort2_data_max = {N{1'b0}};
+            sort2_data_med = {N{1'b0}};
+            sort2_data_min = {N{1'b0}};
         end
         else begin
             sort2_data_max = min(sort1_data_11, sort1_data_21, sort1_data_31);
@@ -177,7 +179,7 @@ module median_filter(
 
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
-            o_data <= 8'b0;
+            o_data <= {N{1'b0}};
         end
         else begin
             o_data <= med(sort2_data_max, sort2_data_min, sort2_data_med);
@@ -185,22 +187,22 @@ module median_filter(
         end
     end
 
-function [7:0] max;
-    input [7:0] a, b, c;
+function [N-1:0] max;
+    input [N-1:0] a, b, c;
     begin
         max = ((((a >= b) ? a : b) >= c) ? ((a >= b) ? a : b) : c);
     end
 endfunction
 
-function [7:0] min;
-    input [7:0] a, b, c;
+function [N-1:0] min;
+    input [N-1:0] a, b, c;
     begin
         min = ((((a <= b) ? a : b) <= c) ? ((a <= b) ? a : b) : c);
     end
 endfunction
 
-function [7:0] med;
-    input [7:0] a, b, c;
+function [N-1:0] med;
+    input [N-1:0] a, b, c;
     begin
         med = ((a < b) ? ((b < c) ? b : ((a < c) ? c : a)) : ((a < c) ? a : ((b < c) ? c : b)));
     end

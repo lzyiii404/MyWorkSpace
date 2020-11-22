@@ -26,23 +26,25 @@ module Serial2Parallel(
     input clk;
     input rst_n;
 
-    input [7:0] i_data;
+    parameter N = 16;
 
-    output wire [7:0] o_data_1;
-    output wire [7:0] o_data_2;
-    output wire [7:0] o_data_3;
+    input [N-1:0] i_data;
+
+    output wire [N-1:0] o_data_1;
+    output wire [N-1:0] o_data_2;
+    output wire [N-1:0] o_data_3;
 
     output reg o_data_sig;
 
-    reg [7:0] tmp_data_1;
-    reg [7:0] tmp_data_2;
-    reg [7:0] tmp_data_3;
+    reg [N-1:0] tmp_data_1;
+    reg [N-1:0] tmp_data_2;
+    reg [N-1:0] tmp_data_3;
 
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
-            tmp_data_1 <= 8'b0;
-            tmp_data_2 <= 8'b0;
-            tmp_data_3 <= 8'b0;
+            tmp_data_1 <= {N{1'b0}};
+            tmp_data_2 <= {N{1'b0}};
+            tmp_data_3 <= {N{1'b0}};
             o_data_sig <= 1'b0;
         end
         else begin

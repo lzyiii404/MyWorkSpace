@@ -1,0 +1,11 @@
+verilog xil_defaultlib  \
+"../../../bd/i_stream2filter/ip/i_stream2filter_Serial2Parallel_0_0/sim/i_stream2filter_Serial2Parallel_0_0.v" \
+"../../../bd/i_stream2filter/ip/i_stream2filter_Serial2Parallel_0_1/sim/i_stream2filter_Serial2Parallel_0_1.v" \
+"../../../bd/i_stream2filter/ip/i_stream2filter_Serial2Parallel_0_2/sim/i_stream2filter_Serial2Parallel_0_2.v" \
+"../../../bd/i_stream2filter/ip/i_stream2filter_xlconstant_0_0/sim/i_stream2filter_xlconstant_0_0.v" \
+"../../../bd/i_stream2filter/ip/i_stream2filter_median_filter_0_1/sim/i_stream2filter_median_filter_0_1.v" \
+"../../../bd/i_stream2filter/sim/i_stream2filter.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

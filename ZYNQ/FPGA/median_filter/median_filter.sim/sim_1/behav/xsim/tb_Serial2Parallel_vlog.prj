@@ -1,0 +1,10 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../median_filter.srcs/sources_1/new/Serial2Parallel.v" \
+"../../../../median_filter.srcs/sim_1/new/tb_Serial2Parallel.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
