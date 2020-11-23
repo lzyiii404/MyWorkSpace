@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_i_stream2filter_wrapper_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_i_stream2filter_wrapper" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="159000000fs"></ZoomStartTime>
+      <ZoomEndTime time="282500001fs"></ZoomEndTime>
+      <Cursor1Time time="193292000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="131"></NameColumnWidth>
+      <ValueColumnWidth column_width="128"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="14" />
+   <wvobject fp_name="/tb_i_stream2filter_wrapper/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i_stream2filter_wrapper/u_i_stream2filter_wrapper/i_stream2filter_i/c_shift_ram_0/Q" type="array">
+      <obj_property name="ElementShortName">Q[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Q[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i_stream2filter_wrapper/u_i_stream2filter_wrapper/i_stream2filter_i/c_shift_ram_1/Q" type="array">
+      <obj_property name="ElementShortName">Q[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Q[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i_stream2filter_wrapper/D" type="array">
+      <obj_property name="ElementShortName">D[15:0]</obj_property>
+      <obj_property name="ObjectShortName">D[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i_stream2filter_wrapper/u_i_stream2filter_wrapper/i_stream2filter_i/median_filter_0/inst/i_data_11" type="array">
+      <obj_property name="ElementShortName">i_data_11[15:0]</obj_property>
+      <obj_property name="ObjectShortName">i_data_11[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i_stream2filter_wrapper/u_i_stream2filter_wrapper/i_stream2filter_i/median_filter_0/inst/i_data_12" type="array">
+      <obj_property name="ElementShortName">i_data_12[15:0]</obj_property>
+      <obj_property name="ObjectShortName">i_data_12[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i_stream2filter_wrapper/u_i_stream2filter_wrapper/i_stream2filter_i/median_filter_0/inst/i_data_13" type="array">
+      <obj_property name="ElementShortName">i_data_13[15:0]</obj_property>
+      <obj_property name="ObjectShortName">i_data_13[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i_stream2filter_wrapper/u_i_stream2filter_wrapper/i_stream2filter_i/median_filter_0/inst/i_data_21" type="array">
+      <obj_property name="ElementShortName">i_data_21[15:0]</obj_property>
+      <obj_property name="ObjectShortName">i_data_21[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i_stream2filter_wrapper/u_i_stream2filter_wrapper/i_stream2filter_i/median_filter_0/inst/i_data_22" type="array">
+      <obj_property name="ElementShortName">i_data_22[15:0]</obj_property>
+      <obj_property name="ObjectShortName">i_data_22[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i_stream2filter_wrapper/u_i_stream2filter_wrapper/i_stream2filter_i/median_filter_0/inst/i_data_23" type="array">
+      <obj_property name="ElementShortName">i_data_23[15:0]</obj_property>
+      <obj_property name="ObjectShortName">i_data_23[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i_stream2filter_wrapper/u_i_stream2filter_wrapper/i_stream2filter_i/median_filter_0/inst/i_data_31" type="array">
+      <obj_property name="ElementShortName">i_data_31[15:0]</obj_property>
+      <obj_property name="ObjectShortName">i_data_31[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i_stream2filter_wrapper/u_i_stream2filter_wrapper/i_stream2filter_i/median_filter_0/inst/i_data_32" type="array">
+      <obj_property name="ElementShortName">i_data_32[15:0]</obj_property>
+      <obj_property name="ObjectShortName">i_data_32[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i_stream2filter_wrapper/u_i_stream2filter_wrapper/i_stream2filter_i/median_filter_0/inst/i_data_33" type="array">
+      <obj_property name="ElementShortName">i_data_33[15:0]</obj_property>
+      <obj_property name="ObjectShortName">i_data_33[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_i_stream2filter_wrapper/o_data" type="array">
+      <obj_property name="ElementShortName">o_data[15:0]</obj_property>
+      <obj_property name="ObjectShortName">o_data[15:0]</obj_property>
+   </wvobject>
+</wave_config>
