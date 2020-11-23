@@ -1009,18 +1009,22 @@ void Radar_process(){
   RespirationMessage msg;
   if (get_respiration_data(&msg)){
     if (get_Msg_Times == 0){
-      SerialDebug.println("receive data");
+      // SerialDebug.println("receive data");
       clear_json_data();
-      SerialDebug.println("clear jsondata");
+      // SerialDebug.println("clear jsondata");
       creat_json_head();
-      SerialDebug.println("creat json head");
+      // SerialDebug.println("creat json head");
     }
     add_data2json(&msg);
-    SerialDebug.println("finish add date2json");
+    // SerialDebug.println("finish add date2json");
     
     LCD_display(&msg);
     get_Msg_Times++;
-    SerialDebug.println(get_Msg_Times);
+    SerialDebug.print("distance:");
+    SerialDebug.print(msg.distance);
+    SerialDebug.println("m");
+    SerialDebug.println(states[msg.state_code]);
+    // SerialDebug.println(get_Msg_Times);
     if (get_Msg_Times >= 30){
       add_json_tail();
       // SerialDebug.println("Show the json and Post it!");
