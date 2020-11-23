@@ -31,20 +31,20 @@
     <Option Name="EnableBDX" Val="FALSE"/>
     <Option Name="DSAVendor" Val="xilinx"/>
     <Option Name="DSANumComputeUnits" Val="60"/>
-    <Option Name="WTXSimLaunchSim" Val="102"/>
+    <Option Name="WTXSimLaunchSim" Val="175"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="5"/>
-    <Option Name="WTModelSimExportSim" Val="5"/>
-    <Option Name="WTQuestaExportSim" Val="5"/>
-    <Option Name="WTIesExportSim" Val="5"/>
-    <Option Name="WTVcsExportSim" Val="5"/>
-    <Option Name="WTRivieraExportSim" Val="5"/>
-    <Option Name="WTActivehdlExportSim" Val="5"/>
+    <Option Name="WTXSimExportSim" Val="16"/>
+    <Option Name="WTModelSimExportSim" Val="16"/>
+    <Option Name="WTQuestaExportSim" Val="16"/>
+    <Option Name="WTIesExportSim" Val="16"/>
+    <Option Name="WTVcsExportSim" Val="16"/>
+    <Option Name="WTRivieraExportSim" Val="16"/>
+    <Option Name="WTActivehdlExportSim" Val="16"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -59,16 +59,8 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PSRCDIR/sources_1/new/valid_counter.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/new/Serial2Parallel.v">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -76,7 +68,13 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/median_filter.v">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/valid_counter.v">
+        <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -84,33 +82,37 @@
       </File>
       <File Path="$PSRCDIR/sources_1/bd/i_stream2filter/i_stream2filter.bd">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
+        <CompFileExtendedInfo CompFileName="i_stream2filter.bd" FileRelPathName="ip/i_stream2filter_c_shift_ram_0_3/i_stream2filter_c_shift_ram_0_3.xci">
+          <Proxy FileSetName="i_stream2filter_c_shift_ram_0_3"/>
+        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="i_stream2filter.bd" FileRelPathName="ip/i_stream2filter_Serial2Parallel_0_2/i_stream2filter_Serial2Parallel_0_2.xci">
           <Proxy FileSetName="i_stream2filter_Serial2Parallel_0_2"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="i_stream2filter.bd" FileRelPathName="ip/i_stream2filter_c_shift_ram_0_1/i_stream2filter_c_shift_ram_0_1.xci">
-          <Proxy FileSetName="i_stream2filter_c_shift_ram_0_1"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="i_stream2filter.bd" FileRelPathName="ip/i_stream2filter_c_shift_ram_0_0/i_stream2filter_c_shift_ram_0_0.xci">
-          <Proxy FileSetName="i_stream2filter_c_shift_ram_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="i_stream2filter.bd" FileRelPathName="ip/i_stream2filter_Serial2Parallel_0_1/i_stream2filter_Serial2Parallel_0_1.xci">
-          <Proxy FileSetName="i_stream2filter_Serial2Parallel_0_1"/>
+        <CompFileExtendedInfo CompFileName="i_stream2filter.bd" FileRelPathName="ip/i_stream2filter_median_filter_0_0/i_stream2filter_median_filter_0_0.xci">
+          <Proxy FileSetName="i_stream2filter_median_filter_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="i_stream2filter.bd" FileRelPathName="ip/i_stream2filter_Serial2Parallel_0_0/i_stream2filter_Serial2Parallel_0_0.xci">
           <Proxy FileSetName="i_stream2filter_Serial2Parallel_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="i_stream2filter.bd" FileRelPathName="ip/i_stream2filter_median_filter_0_1/i_stream2filter_median_filter_0_1.xci">
-          <Proxy FileSetName="i_stream2filter_median_filter_0_1"/>
+        <CompFileExtendedInfo CompFileName="i_stream2filter.bd" FileRelPathName="ip/i_stream2filter_Serial2Parallel_0_1/i_stream2filter_Serial2Parallel_0_1.xci">
+          <Proxy FileSetName="i_stream2filter_Serial2Parallel_0_1"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="i_stream2filter.bd" FileRelPathName="ip/i_stream2filter_c_shift_ram_0_5/i_stream2filter_c_shift_ram_0_5.xci">
+          <Proxy FileSetName="i_stream2filter_c_shift_ram_0_5"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="i_stream2filter.bd" FileRelPathName="ip/i_stream2filter_c_shift_ram_0_4/i_stream2filter_c_shift_ram_0_4.xci">
+          <Proxy FileSetName="i_stream2filter_c_shift_ram_0_4"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="i_stream2filter.bd" FileRelPathName="ip/i_stream2filter_c_shift_ram_0_1/i_stream2filter_c_shift_ram_0_1.xci">
+          <Proxy FileSetName="i_stream2filter_c_shift_ram_0_1"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/bd/i_stream2filter/hdl/i_stream2filter_wrapper.v">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -118,7 +120,7 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="valid_counter"/>
+        <Option Name="TopModule" Val="i_stream2filter_wrapper"/>
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
@@ -129,14 +131,14 @@
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
       <Filter Type="Srcs"/>
-      <File Path="$PSRCDIR/sim_1/new/tb_valid_counter.v">
+      <File Path="$PSRCDIR/sim_1/new/tb_i_stream2filter_wrapper.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sim_1/new/tb_i_stream2filter_wrapper.v">
+      <File Path="$PSRCDIR/sim_1/new/tb_valid_counter.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -168,38 +170,21 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/tb_i_stream2filter_wrapper_behav.wcfg">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="tb_valid_counter"/>
+        <Option Name="TopModule" Val="tb_i_stream2filter_wrapper"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
         <Option Name="SrcSet" Val="sources_1"/>
         <Option Name="XSimWcfgFile" Val="$PPRDIR/tb_i_stream2filter_wrapper_behav.wcfg"/>
-        <Option Name="xsim.simulate.runtime" Val="1ms"/>
+        <Option Name="xsim.simulate.runtime" Val="50ms"/>
       </Config>
     </FileSet>
     <FileSet Name="utils_1" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
       <Filter Type="Utils"/>
       <Config>
         <Option Name="TopAutoSet" Val="TRUE"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="i_stream2filter_c_shift_ram_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/i_stream2filter_c_shift_ram_0_0">
-      <Config>
-        <Option Name="TopModule" Val="i_stream2filter_c_shift_ram_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="i_stream2filter_c_shift_ram_0_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/i_stream2filter_c_shift_ram_0_1">
-      <Config>
-        <Option Name="TopModule" Val="i_stream2filter_c_shift_ram_0_1"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
     <FileSet Name="i_stream2filter_Serial2Parallel_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/i_stream2filter_Serial2Parallel_0_0">
@@ -220,9 +205,33 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="i_stream2filter_median_filter_0_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/i_stream2filter_median_filter_0_1">
+    <FileSet Name="i_stream2filter_median_filter_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/i_stream2filter_median_filter_0_0">
       <Config>
-        <Option Name="TopModule" Val="i_stream2filter_median_filter_0_1"/>
+        <Option Name="TopModule" Val="i_stream2filter_median_filter_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="i_stream2filter_c_shift_ram_0_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/i_stream2filter_c_shift_ram_0_1">
+      <Config>
+        <Option Name="TopModule" Val="i_stream2filter_c_shift_ram_0_1"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="i_stream2filter_c_shift_ram_0_3" Type="BlockSrcs" RelSrcDir="$PSRCDIR/i_stream2filter_c_shift_ram_0_3">
+      <Config>
+        <Option Name="TopModule" Val="i_stream2filter_c_shift_ram_0_3"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="i_stream2filter_c_shift_ram_0_4" Type="BlockSrcs" RelSrcDir="$PSRCDIR/i_stream2filter_c_shift_ram_0_4">
+      <Config>
+        <Option Name="TopModule" Val="i_stream2filter_c_shift_ram_0_4"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="i_stream2filter_c_shift_ram_0_5" Type="BlockSrcs" RelSrcDir="$PSRCDIR/i_stream2filter_c_shift_ram_0_5">
+      <Config>
+        <Option Name="TopModule" Val="i_stream2filter_c_shift_ram_0_5"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -256,27 +265,11 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="i_stream2filter_c_shift_ram_0_0_synth_1" Type="Ft3:Synth" SrcSet="i_stream2filter_c_shift_ram_0_0" Part="xc7z020clg400-2" ConstrsSet="i_stream2filter_c_shift_ram_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/i_stream2filter_c_shift_ram_0_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="i_stream2filter_c_shift_ram_0_1_synth_1" Type="Ft3:Synth" SrcSet="i_stream2filter_c_shift_ram_0_1" Part="xc7z020clg400-2" ConstrsSet="i_stream2filter_c_shift_ram_0_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/i_stream2filter_c_shift_ram_0_1_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
     <Run Id="i_stream2filter_Serial2Parallel_0_0_synth_1" Type="Ft3:Synth" SrcSet="i_stream2filter_Serial2Parallel_0_0" Part="xc7z020clg400-2" ConstrsSet="i_stream2filter_Serial2Parallel_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/i_stream2filter_Serial2Parallel_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -285,7 +278,9 @@
     </Run>
     <Run Id="i_stream2filter_Serial2Parallel_0_1_synth_1" Type="Ft3:Synth" SrcSet="i_stream2filter_Serial2Parallel_0_1" Part="xc7z020clg400-2" ConstrsSet="i_stream2filter_Serial2Parallel_0_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/i_stream2filter_Serial2Parallel_0_1_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -294,16 +289,64 @@
     </Run>
     <Run Id="i_stream2filter_Serial2Parallel_0_2_synth_1" Type="Ft3:Synth" SrcSet="i_stream2filter_Serial2Parallel_0_2" Part="xc7z020clg400-2" ConstrsSet="i_stream2filter_Serial2Parallel_0_2" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/i_stream2filter_Serial2Parallel_0_2_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="i_stream2filter_median_filter_0_1_synth_1" Type="Ft3:Synth" SrcSet="i_stream2filter_median_filter_0_1" Part="xc7z020clg400-2" ConstrsSet="i_stream2filter_median_filter_0_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/i_stream2filter_median_filter_0_1_synth_1" IncludeInArchive="true">
+    <Run Id="i_stream2filter_median_filter_0_0_synth_1" Type="Ft3:Synth" SrcSet="i_stream2filter_median_filter_0_0" Part="xc7z020clg400-2" ConstrsSet="i_stream2filter_median_filter_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/i_stream2filter_median_filter_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="i_stream2filter_c_shift_ram_0_1_synth_1" Type="Ft3:Synth" SrcSet="i_stream2filter_c_shift_ram_0_1" Part="xc7z020clg400-2" ConstrsSet="i_stream2filter_c_shift_ram_0_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/i_stream2filter_c_shift_ram_0_1_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="i_stream2filter_c_shift_ram_0_3_synth_1" Type="Ft3:Synth" SrcSet="i_stream2filter_c_shift_ram_0_3" Part="xc7z020clg400-2" ConstrsSet="i_stream2filter_c_shift_ram_0_3" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/i_stream2filter_c_shift_ram_0_3_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="i_stream2filter_c_shift_ram_0_4_synth_1" Type="Ft3:Synth" SrcSet="i_stream2filter_c_shift_ram_0_4" Part="xc7z020clg400-2" ConstrsSet="i_stream2filter_c_shift_ram_0_4" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/i_stream2filter_c_shift_ram_0_4_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="i_stream2filter_c_shift_ram_0_5_synth_1" Type="Ft3:Synth" SrcSet="i_stream2filter_c_shift_ram_0_5" Part="xc7z020clg400-2" ConstrsSet="i_stream2filter_c_shift_ram_0_5" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/i_stream2filter_c_shift_ram_0_5_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -328,41 +371,11 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="i_stream2filter_c_shift_ram_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="i_stream2filter_c_shift_ram_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="i_stream2filter_c_shift_ram_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="i_stream2filter_c_shift_ram_0_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="i_stream2filter_c_shift_ram_0_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="i_stream2filter_c_shift_ram_0_1_synth_1" IncludeInArchive="false" GenFullBitstream="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
     <Run Id="i_stream2filter_Serial2Parallel_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="i_stream2filter_Serial2Parallel_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="i_stream2filter_Serial2Parallel_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -378,7 +391,9 @@
     </Run>
     <Run Id="i_stream2filter_Serial2Parallel_0_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="i_stream2filter_Serial2Parallel_0_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="i_stream2filter_Serial2Parallel_0_1_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -394,7 +409,9 @@
     </Run>
     <Run Id="i_stream2filter_Serial2Parallel_0_2_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="i_stream2filter_Serial2Parallel_0_2" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="i_stream2filter_Serial2Parallel_0_2_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -408,9 +425,83 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="i_stream2filter_median_filter_0_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="i_stream2filter_median_filter_0_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="i_stream2filter_median_filter_0_1_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+    <Run Id="i_stream2filter_median_filter_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="i_stream2filter_median_filter_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="i_stream2filter_median_filter_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="i_stream2filter_c_shift_ram_0_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="i_stream2filter_c_shift_ram_0_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="i_stream2filter_c_shift_ram_0_1_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="i_stream2filter_c_shift_ram_0_3_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="i_stream2filter_c_shift_ram_0_3" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="i_stream2filter_c_shift_ram_0_3_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="i_stream2filter_c_shift_ram_0_4_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="i_stream2filter_c_shift_ram_0_4" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="i_stream2filter_c_shift_ram_0_4_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="i_stream2filter_c_shift_ram_0_5_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="i_stream2filter_c_shift_ram_0_5" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="i_stream2filter_c_shift_ram_0_5_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>

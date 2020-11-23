@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# Serial2Parallel, Serial2Parallel, Serial2Parallel, median_filter
+# Serial2Parallel, Serial2Parallel, Serial2Parallel, median_filter, valid_counter
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -164,13 +164,14 @@ proc create_root_design { parentCell } {
   # Create interface ports
 
   # Create ports
-  set D [ create_bd_port -dir I -from 15 -to 0 -type data D ]
   set clk [ create_bd_port -dir I -type clk clk ]
   set_property -dict [ list \
-   CONFIG.CLK_DOMAIN {i_stream2filter_CLK} \
    CONFIG.FREQ_HZ {100000000} \
  ] $clk
+  set i_stream [ create_bd_port -dir I -from 15 -to 0 -type data i_stream ]
   set o_data [ create_bd_port -dir O -from 15 -to 0 o_data ]
+  set o_done_sig [ create_bd_port -dir O o_done_sig ]
+  set o_valid [ create_bd_port -dir O o_valid ]
   set rst_n [ create_bd_port -dir I -type rst rst_n ]
 
   # Create instance: Serial2Parallel_0, and set properties
@@ -209,26 +210,26 @@ proc create_root_design { parentCell } {
   # Create instance: c_shift_ram_0, and set properties
   set c_shift_ram_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:c_shift_ram:12.0 c_shift_ram_0 ]
   set_property -dict [ list \
-   CONFIG.CE {false} \
-   CONFIG.DefaultData {0000000000000000} \
-   CONFIG.DefaultDataRadix {2} \
-   CONFIG.Depth {9} \
-   CONFIG.SCLR {false} \
-   CONFIG.SSET {false} \
-   CONFIG.ShiftRegType {Fixed_Length} \
+   CONFIG.Depth {640} \
  ] $c_shift_ram_0
 
   # Create instance: c_shift_ram_1, and set properties
   set c_shift_ram_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:c_shift_ram:12.0 c_shift_ram_1 ]
   set_property -dict [ list \
-   CONFIG.CE {false} \
-   CONFIG.DefaultData {0000000000000000} \
-   CONFIG.DefaultDataRadix {2} \
-   CONFIG.Depth {9} \
-   CONFIG.SCLR {false} \
-   CONFIG.SSET {false} \
-   CONFIG.ShiftRegType {Fixed_Length} \
+   CONFIG.Depth {640} \
  ] $c_shift_ram_1
+
+  # Create instance: c_shift_ram_2, and set properties
+  set c_shift_ram_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:c_shift_ram:12.0 c_shift_ram_2 ]
+  set_property -dict [ list \
+   CONFIG.Depth {640} \
+ ] $c_shift_ram_2
+
+  # Create instance: c_shift_ram_3, and set properties
+  set c_shift_ram_3 [ create_bd_cell -type ip -vlnv xilinx.com:ip:c_shift_ram:12.0 c_shift_ram_3 ]
+  set_property -dict [ list \
+   CONFIG.Depth {640} \
+ ] $c_shift_ram_3
 
   # Create instance: median_filter_0, and set properties
   set block_name median_filter
@@ -241,11 +242,22 @@ proc create_root_design { parentCell } {
      return 1
    }
   
-  # Create instance: xlconstant_0, and set properties
-  set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
+  # Create instance: valid_counter_0, and set properties
+  set block_name valid_counter
+  set block_cell_name valid_counter_0
+  if { [catch {set valid_counter_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $valid_counter_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+    set_property -dict [ list \
+   CONFIG.Pixel_high {720} \
+   CONFIG.Pixel_wide {1280} \
+ ] $valid_counter_0
 
   # Create port connections
-  connect_bd_net -net D_1 [get_bd_ports D] [get_bd_pins Serial2Parallel_2/i_data] [get_bd_pins c_shift_ram_1/D]
   connect_bd_net -net Serial2Parallel_0_o_data_1 [get_bd_pins Serial2Parallel_0/o_data_1] [get_bd_pins median_filter_0/i_data_11]
   connect_bd_net -net Serial2Parallel_0_o_data_2 [get_bd_pins Serial2Parallel_0/o_data_2] [get_bd_pins median_filter_0/i_data_12]
   connect_bd_net -net Serial2Parallel_0_o_data_3 [get_bd_pins Serial2Parallel_0/o_data_3] [get_bd_pins median_filter_0/i_data_13]
@@ -256,11 +268,16 @@ proc create_root_design { parentCell } {
   connect_bd_net -net Serial2Parallel_2_o_data_2 [get_bd_pins Serial2Parallel_2/o_data_2] [get_bd_pins median_filter_0/i_data_32]
   connect_bd_net -net Serial2Parallel_2_o_data_3 [get_bd_pins Serial2Parallel_2/o_data_3] [get_bd_pins median_filter_0/i_data_33]
   connect_bd_net -net c_shift_ram_0_Q [get_bd_pins Serial2Parallel_0/i_data] [get_bd_pins c_shift_ram_0/Q]
-  connect_bd_net -net c_shift_ram_1_Q [get_bd_pins Serial2Parallel_1/i_data] [get_bd_pins c_shift_ram_0/D] [get_bd_pins c_shift_ram_1/Q]
-  connect_bd_net -net clk_1 [get_bd_ports clk] [get_bd_pins Serial2Parallel_0/clk] [get_bd_pins Serial2Parallel_1/clk] [get_bd_pins Serial2Parallel_2/clk] [get_bd_pins c_shift_ram_0/CLK] [get_bd_pins c_shift_ram_1/CLK] [get_bd_pins median_filter_0/clk]
+  connect_bd_net -net c_shift_ram_1_Q [get_bd_pins c_shift_ram_0/D] [get_bd_pins c_shift_ram_1/Q]
+  connect_bd_net -net c_shift_ram_2_Q [get_bd_pins Serial2Parallel_1/i_data] [get_bd_pins c_shift_ram_1/D] [get_bd_pins c_shift_ram_2/Q]
+  connect_bd_net -net c_shift_ram_3_Q [get_bd_pins c_shift_ram_2/D] [get_bd_pins c_shift_ram_3/Q]
+  connect_bd_net -net clk_1 [get_bd_ports clk] [get_bd_pins Serial2Parallel_0/clk] [get_bd_pins Serial2Parallel_1/clk] [get_bd_pins Serial2Parallel_2/clk] [get_bd_pins c_shift_ram_0/CLK] [get_bd_pins c_shift_ram_1/CLK] [get_bd_pins c_shift_ram_2/CLK] [get_bd_pins c_shift_ram_3/CLK] [get_bd_pins median_filter_0/clk] [get_bd_pins valid_counter_0/clk]
+  connect_bd_net -net i_stream_1 [get_bd_ports i_stream] [get_bd_pins Serial2Parallel_2/i_data] [get_bd_pins c_shift_ram_3/D] [get_bd_pins valid_counter_0/i_stream]
   connect_bd_net -net median_filter_0_o_data [get_bd_ports o_data] [get_bd_pins median_filter_0/o_data]
-  connect_bd_net -net rst_n_1 [get_bd_ports rst_n] [get_bd_pins Serial2Parallel_0/rst_n] [get_bd_pins Serial2Parallel_1/rst_n] [get_bd_pins Serial2Parallel_2/rst_n] [get_bd_pins median_filter_0/rst_n]
-  connect_bd_net -net xlconstant_0_dout [get_bd_pins median_filter_0/i_data_sig] [get_bd_pins xlconstant_0/dout]
+  connect_bd_net -net median_filter_0_o_done_sig [get_bd_ports o_done_sig] [get_bd_pins median_filter_0/o_done_sig]
+  connect_bd_net -net rst_n_1 [get_bd_ports rst_n] [get_bd_pins Serial2Parallel_0/rst_n] [get_bd_pins Serial2Parallel_1/rst_n] [get_bd_pins Serial2Parallel_2/rst_n] [get_bd_pins median_filter_0/rst_n] [get_bd_pins valid_counter_0/rst_n]
+  connect_bd_net -net valid_counter_0_o_data_sig [get_bd_pins median_filter_0/i_data_sig] [get_bd_pins valid_counter_0/o_data_sig]
+  connect_bd_net -net valid_counter_0_o_valid [get_bd_ports o_valid] [get_bd_pins median_filter_0/i_data_valid] [get_bd_pins valid_counter_0/o_valid]
 
   # Create address segments
 

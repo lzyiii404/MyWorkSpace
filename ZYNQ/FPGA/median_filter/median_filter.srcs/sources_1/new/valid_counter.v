@@ -21,7 +21,7 @@
 
 
 module valid_counter(
-    clk, rst_n, i_stream, o_valid
+    clk, rst_n, i_stream, o_valid, o_data_sig
     );
     input clk;
     input rst_n;
@@ -29,9 +29,10 @@ module valid_counter(
     input [15:0] i_stream;
 
     output reg o_valid;
+    output reg o_data_sig;
 
-    parameter RAW = 1280;
-    parameter COL = 720;
+    parameter Pixel_wide = 1280;
+    parameter Pixel_high = 720;
 
     localparam  IDLE    = 4'b0000,
                 START   = 4'b0001,
@@ -43,7 +44,7 @@ module valid_counter(
     reg [3:0] current_state;
 
     reg [11:0] start_cnt;
-    reg [9:0]  valid_cnt;
+    reg [10:0]  valid_cnt;
     reg [1:0]  wait_cnt;
     reg [10:0] raw_cnt;
 
@@ -56,82 +57,106 @@ module valid_counter(
             current_state <= next_state;
     end
 
-    always @(posedge clk) begin
+    always @(*) begin
         case (current_state)
             IDLE: begin
                 if (i_stream != 16'b0)
-                    next_state <= START;
+                    next_state = START;
                 else
-                    next_state <= IDLE;
+                    next_state = IDLE;
             end 
 
             START: begin
                 if (start_cnt <= 12'b0)
                     next_state = VALID;
                 else
-                    next_state <= START;
+                    next_state = START;
             end
 
             VALID: begin
-                if (valid_cnt <= 10'b0)
-                    next_state <= WAIT;
+                if (valid_cnt <= 11'b0)
+                    next_state = WAIT;
                 else
-                    next_state <= VALID;
+                    next_state = VALID;
             end
 
             WAIT: begin
                 if (wait_cnt <= 2'b0)
                     if (raw_cnt <= 11'b0)
-                        next_state <= STOP;
+                        next_state = STOP;
                     else
-                        next_state <= VALID;
+                        next_state = VALID;
                 else
-                    next_state <= WAIT;
+                    next_state = WAIT;
             end
 
-            default: next_state <= IDLE;
+            default: next_state = IDLE;
         endcase
     end
 
-    always @(*) begin
+    always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
-            start_cnt = 2 * COL + 3 + 2;
-            valid_cnt = COL - 2;
-            wait_cnt = 2'd2;
-            raw_cnt = RAW - 2;
+            start_cnt = 2 * Pixel_wide + 3 + 2 - 2;
+            valid_cnt = Pixel_wide - 2 - 1;
+            wait_cnt = 2'd2 - 1;
+            raw_cnt = Pixel_high - 2;
+        end
+    end
+
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n)
+            o_data_sig <= 1'b0;
+        else
+            o_data_sig <= 1'b0;
+    end
+
+    always @(posedge clk) begin
+        if (current_state == IDLE) begin
+            start_cnt <= 2 * Pixel_wide + 3 + 2 - 2;
+            valid_cnt <= Pixel_wide - 2 - 1;
+            wait_cnt <= 2'd2 - 1;
+            raw_cnt <= Pixel_high - 2;
+            o_data_sig <= 1'b0;
         end
     end
 
     always @(posedge clk) begin
-        if (current_state == START)
+        if (current_state == START) begin
             start_cnt <= start_cnt - 1'b1;
+            o_data_sig <= 1'b1;
+        end
         else
-            start_cnt <= 2 * COL + 3 + 2;;
+            start_cnt <= 2 * Pixel_wide + 3 + 2 - 2;
     end
 
     always @(posedge clk) begin
         if (current_state == VALID) begin
-            valid_cnt <= valid_cnt - 1'b1;
-            o_valid <= 1'b1;
+            valid_cnt = valid_cnt - 1'b1;
+            o_valid = 1'b1;
+            o_data_sig <= 1'b1;
         end
         else begin
-            valid_cnt <= 2 * COL + 3 + 2;
-            o_valid <= 1'b0;
+            valid_cnt = Pixel_wide - 2 - 1;
+            o_valid = 1'b0;
         end
     end
 
     always @(posedge clk) begin
-        if (current_state == WAIT)
-            wait_cnt <= wait_cnt - 1;
+        if (current_state == WAIT) begin
+            o_data_sig <= 1'b1;
+            wait_cnt = wait_cnt - 1;
+        end
         else
-            wait_cnt <= 2'd2;
+            wait_cnt = 2'd2 - 1;
     end
 
     always @(posedge clk) begin
-        if (wait_cnt == 2'd0)
-            raw_cnt <= raw_cnt - 1'b1;
+        if (wait_cnt == 2'd0) begin
+            o_data_sig <= 1'b1;
+            raw_cnt = raw_cnt - 1'b1;
+        end
         else
-            raw_cnt <= raw_cnt;
+            raw_cnt = raw_cnt;
     end
 
 

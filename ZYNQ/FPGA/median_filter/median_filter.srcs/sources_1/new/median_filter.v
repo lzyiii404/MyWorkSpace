@@ -23,6 +23,7 @@
 module median_filter(
     clk, rst_n,
     i_data_sig,
+    i_data_valid,
     i_data_11, 
     i_data_12, 
     i_data_13, 
@@ -39,8 +40,9 @@ module median_filter(
     input rst_n;
 
     input i_data_sig;
+    input i_data_valid;
 
-    localparam N = 16;
+    parameter N = 16;
 
     input [N-1:0] i_data_11;            //array data input
     input [N-1:0] i_data_12;
@@ -177,13 +179,17 @@ module median_filter(
         end
     end
 
-    always @(posedge clk or negedge rst_n) begin
+    always @(posedge clk or negedge rst_n or posedge i_data_valid or negedge i_data_valid) begin
         if (!rst_n) begin
             o_data <= {N{1'b0}};
         end
-        else begin
+        else if (i_data_valid == 1'b1) begin
             o_data <= med(sort2_data_max, sort2_data_min, sort2_data_med);
             o_done_sig <= 1'b1;
+        end
+        else begin
+            o_data <= {N{1'b0}};
+            o_done_sig <= 1'b0;
         end
     end
 

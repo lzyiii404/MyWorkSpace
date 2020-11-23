@@ -8,12 +8,14 @@ parameter PERIOD  = 10;
 
 
 // i_stream2filter_wrapper Inputs
-reg   [15:0]  D                            = 0 ;
 reg   clk                                  = 1 ;
-reg   rst_n                                = 1 ;
+reg   [15:0]  i_stream                     = 0 ;
+reg   rst_n                                = 0 ;
 
 // i_stream2filter_wrapper Outputs
 wire  [15:0]  o_data                       ;
+wire  o_done_sig                           ;
+wire  o_valid                              ;
 
 
 initial
@@ -27,19 +29,25 @@ begin
 end
 
 i_stream2filter_wrapper  u_i_stream2filter_wrapper (
-    .D                       ( D       [15:0] ),
-    .clk                     ( clk            ),
-    .rst_n                   ( rst_n          ),
+    .clk                     ( clk                ),
+    .i_stream                ( i_stream    [15:0] ),
+    .rst_n                   ( rst_n              ),
 
-    .o_data                  ( o_data  [15:0] )
+    .o_data                  ( o_data      [15:0] ),
+    .o_done_sig              ( o_done_sig         ),
+    .o_valid                 ( o_valid            )
 );
 
 initial
 begin
-    repeat(100) begin
-        D = {$random}%65535;
+    rst_n = 0;
+    #10;
+    rst_n = 1;
+    repeat (921600) begin
+        i_stream = i_stream + 1;
         #10;
     end
+    i_stream = 0;
     #1000;
     $finish;
 end

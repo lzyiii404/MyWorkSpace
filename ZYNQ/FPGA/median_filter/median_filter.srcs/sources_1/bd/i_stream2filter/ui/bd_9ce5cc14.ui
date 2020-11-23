@@ -1,35 +1,43 @@
 {
    "ExpandedHierarchyInLayout":"",
-   "guistr":"# # String gsaved with Nlview 6.8.11  2018-08-07 bk=1.4403 VDI=40 GEI=35 GUI=JA:9.0 non-TLS-threadsafe
+   "guistr":"# # String gsaved with Nlview 6.8.11  2018-08-07 bk=1.4403 VDI=40 GEI=35 GUI=JA:9.0 non-TLS
 #  -string -flagsOSRD
-preplace port clk -pg 1 -y 280 -defaultsOSRD
-preplace port rst_n -pg 1 -y 260 -defaultsOSRD
-preplace portBus D -pg 1 -y 510 -defaultsOSRD
-preplace portBus o_data -pg 1 -y 280 -defaultsOSRD
-preplace inst xlconstant_0 -pg 1 -lvl 3 -y 60 -defaultsOSRD
-preplace inst median_filter_0 -pg 1 -lvl 3 -y 290 -defaultsOSRD
-preplace inst Serial2Parallel_0 -pg 1 -lvl 2 -y 170 -defaultsOSRD
-preplace inst c_shift_ram_0 -pg 1 -lvl 1 -y 190 -defaultsOSRD
-preplace inst Serial2Parallel_1 -pg 1 -lvl 2 -y 330 -defaultsOSRD
-preplace inst c_shift_ram_1 -pg 1 -lvl 1 -y 580 -defaultsOSRD
-preplace inst Serial2Parallel_2 -pg 1 -lvl 2 -y 490 -defaultsOSRD
-preplace netloc Serial2Parallel_1_o_data_2 1 2 1 N
-preplace netloc Serial2Parallel_1_o_data_3 1 2 1 N
-preplace netloc Serial2Parallel_0_o_data_1 1 2 1 560
-preplace netloc c_shift_ram_1_Q 1 0 2 40J 280 240J
-preplace netloc Serial2Parallel_0_o_data_2 1 2 1 550
-preplace netloc Serial2Parallel_0_o_data_3 1 2 1 540
-preplace netloc rst_n_1 1 0 3 NJ 260 260 80 570
-preplace netloc xlconstant_0_dout 1 2 2 590 120 870
-preplace netloc clk_1 1 0 3 30 270 250 70 580
-preplace netloc Serial2Parallel_2_o_data_1 1 2 1 550
-preplace netloc Serial2Parallel_2_o_data_2 1 2 1 570
-preplace netloc median_filter_0_o_data 1 3 1 N
-preplace netloc Serial2Parallel_2_o_data_3 1 2 1 590
-preplace netloc c_shift_ram_0_Q 1 1 1 N
-preplace netloc D_1 1 0 2 20 510 NJ
-preplace netloc Serial2Parallel_1_o_data_1 1 2 1 N
-levelinfo -pg 1 0 140 400 730 890 -top 0 -bot 650
+preplace port o_valid -pg 1 -y 250 -defaultsOSRD
+preplace port o_done_sig -pg 1 -y 230 -defaultsOSRD
+preplace port clk -pg 1 -y 250 -defaultsOSRD
+preplace port rst_n -pg 1 -y 340 -defaultsOSRD
+preplace portBus o_data -pg 1 -y 210 -defaultsOSRD
+preplace portBus i_stream -pg 1 -y 230 -defaultsOSRD
+preplace inst c_shift_ram_0 -pg 1 -lvl 2 -y 130 -defaultsOSRD
+preplace inst median_filter_0 -pg 1 -lvl 4 -y 220 -defaultsOSRD
+preplace inst Serial2Parallel_0 -pg 1 -lvl 3 -y 110 -defaultsOSRD
+preplace inst valid_counter_0 -pg 1 -lvl 3 -y 580 -defaultsOSRD
+preplace inst c_shift_ram_1 -pg 1 -lvl 1 -y 120 -defaultsOSRD
+preplace inst Serial2Parallel_1 -pg 1 -lvl 3 -y 270 -defaultsOSRD
+preplace inst c_shift_ram_2 -pg 1 -lvl 2 -y 250 -defaultsOSRD
+preplace inst Serial2Parallel_2 -pg 1 -lvl 3 -y 430 -defaultsOSRD
+preplace inst c_shift_ram_3 -pg 1 -lvl 1 -y 240 -defaultsOSRD
+preplace netloc Serial2Parallel_1_o_data_2 1 3 1 N
+preplace netloc c_shift_ram_1_Q 1 1 1 N
+preplace netloc Serial2Parallel_0_o_data_1 1 3 1 770
+preplace netloc Serial2Parallel_1_o_data_3 1 3 1 N
+preplace netloc Serial2Parallel_0_o_data_2 1 3 1 750
+preplace netloc Serial2Parallel_0_o_data_3 1 3 1 740
+preplace netloc valid_counter_0_o_data_sig 1 3 1 780
+preplace netloc c_shift_ram_2_Q 1 0 3 40 40 NJ 40 440
+preplace netloc c_shift_ram_3_Q 1 1 1 N
+preplace netloc rst_n_1 1 0 4 NJ 340 NJ 340 460 20 780
+preplace netloc valid_counter_0_o_valid 1 3 4 760 40 N 40 NJ 40 1170J
+preplace netloc clk_1 1 0 4 30J 50 240 50 450 10 790
+preplace netloc Serial2Parallel_2_o_data_1 1 3 1 750
+preplace netloc Serial2Parallel_2_o_data_2 1 3 1 770
+preplace netloc median_filter_0_o_data 1 4 3 N 210 NJ 210 NJ
+preplace netloc Serial2Parallel_2_o_data_3 1 3 1 790
+preplace netloc c_shift_ram_0_Q 1 2 1 N
+preplace netloc i_stream_1 1 0 3 20J 320 NJ 320 440J
+preplace netloc median_filter_0_o_done_sig 1 4 3 N 230 NJ 230 NJ
+preplace netloc Serial2Parallel_1_o_data_1 1 3 1 N
+levelinfo -pg 1 0 140 340 600 930 1100 1150 1190 -top 0 -bot 660
 "
 }
-0
+

@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Sat Nov 21 20:03:56 2020
+| Date         : Mon Nov 23 11:27:26 2020
 | Host         : Huang running 64-bit major release  (build 9200)
 | Command      : report_utilization -file i_stream2filter_Serial2Parallel_0_1_utilization_synth.rpt -pb i_stream2filter_Serial2Parallel_0_1_utilization_synth.pb
 | Design       : i_stream2filter_Serial2Parallel_0_1

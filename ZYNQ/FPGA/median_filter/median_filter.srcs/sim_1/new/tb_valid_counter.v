@@ -1,5 +1,5 @@
-//~ `New testbench
-`timescale  1ns / 1ps      
+//~ `New testbench   
+`timescale  1ns / 1ps
 
 module tb_valid_counter;   
 
@@ -15,6 +15,7 @@ reg   [15:0]  i_stream                     = 0 ;
 
 // valid_counter Outputs
 wire  o_valid                              ;
+wire  o_data_sig                           ;
 
 
 initial
@@ -31,11 +32,12 @@ valid_counter #(
     .RAW ( RAW ),
     .COL ( COL ))
  u_valid_counter (
-    .clk                     ( clk        ),
-    .rst_n                   ( rst_n      ),
-    .i_stream                ( i_stream   ),
+    .clk                     ( clk                ),
+    .rst_n                   ( rst_n              ),
+    .i_stream                ( i_stream    [15:0] ),
 
-    .o_valid                 ( o_valid    )
+    .o_valid                 ( o_valid            ),
+    .o_data_sig              ( o_data_sig         )
 );
 
 initial
@@ -47,7 +49,8 @@ begin
         i_stream = i_stream + 1;
         #10;
     end
-    #100;
+    i_stream = 0;
+    #2000;
     $finish;
 end
 
