@@ -1,12 +1,12 @@
 #include <WiFi.h>
 #include "time.h"
 
-const char* ssid       = "Huang";
+const char* ssid       = "jy_Huang";
 const char* password   = "huang123";
 
 const char* ntpServer = "pool.ntp.org";
-const long  gmtOffset_sec = 3600 * 4;
-const int   daylightOffset_sec = 3600 * 4;
+const long  gmtOffset_sec = 3600 * 8;
+const int   daylightOffset_sec = 3600 * 8;
 const int mday[13] = {0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366};
 
 std::string json_data;

@@ -71,47 +71,56 @@ WiFiServer server(80);
 //LED
 #define LED_PIN     2
 
-void get_WIFI_SSID_PW(char* WIFI_SSID, char* WIFI_PW){
+void get_WIFI_SSID_PW(char *WIFI_SSID, char *WIFI_PW)
+{
   char tmp_ch;
   EEPROM.begin(EEPROM_MAX_WIDTH);
-  for(int i = EEPROM_WIFI_ADDR; i < EEPROM_WIFI_ADDR + EEPROM_WIFI_ADDR_WIDTH; i++){
+  for (int i = EEPROM_WIFI_ADDR; i < EEPROM_WIFI_ADDR + EEPROM_WIFI_ADDR_WIDTH; i++)
+  {
     tmp_ch = EEPROM.read(i);
-    if(tmp_ch == '\0')
+    if (tmp_ch == '\0')
       break;
     else
       WIFI_SSID[i] = tmp_ch;
   }
-  for(int i = EEPROM_PW_ADDR; i < EEPROM_PW_ADDR + EEPROM_PW_ADDR_WIDTH; i++){
+  for (int i = EEPROM_PW_ADDR; i < EEPROM_PW_ADDR + EEPROM_PW_ADDR_WIDTH; i++)
+  {
     tmp_ch = EEPROM.read(i);
-    if(tmp_ch == '\0')
+    if (tmp_ch == '\0')
       break;
     else
       WIFI_PW[i - EEPROM_PW_ADDR] = tmp_ch;
   }
 }
 
-void write_EEPROM(int start_addr, int addr_width, std::string rxValue){
+void write_EEPROM(int start_addr, int addr_width, std::string rxValue)
+{
   EEPROM.begin(EEPROM_MAX_WIDTH);
   //初始化地址
-  for(int i = start_addr; i < start_addr + addr_width; i++){
+  for (int i = start_addr; i < start_addr + addr_width; i++)
+  {
     EEPROM.write(i, 0);
   }
   //写入EEPROM
-  for(int i = start_addr; i < start_addr + rxValue.length(); i++){
+  for (int i = start_addr; i < start_addr + rxValue.length(); i++)
+  {
     EEPROM.write(i, rxValue[i + 1 - start_addr]);
   }
   EEPROM.commit();
 }
 
-void read_EEPROM(int start_addr, int addr_width){
+void read_EEPROM(int start_addr, int addr_width)
+{
   char tmp_ch;
   EEPROM.begin(EEPROM_MAX_WIDTH);
   //初始化写入地址
-  for(int i = start_addr; i < start_addr + addr_width; i++){
+  for (int i = start_addr; i < start_addr + addr_width; i++)
+  {
     tmp_ch = EEPROM.read(i);
     Serial.print(tmp_ch);
   }
 }
+
 
 void Process_Rxdata(std::string rxValue){
   std::string get_ssid, get_pw;
@@ -264,8 +273,8 @@ void BLE_Init(){
 }
 
 void WIFI_Init(){
-  char WIFI_SSID[64];
-  char WIFI_PW[64];
+  char WIFI_SSID[32] = {'\0'};
+  char WIFI_PW[32] = {'\0'};
   pinMode(LED_PIN, OUTPUT);      // set the LED pin mode
 
   digitalWrite(LED_PIN, HIGH);
@@ -276,6 +285,8 @@ void WIFI_Init(){
   Serial.println("Get wifi_ssid_pw");
   get_WIFI_SSID_PW(WIFI_SSID, WIFI_PW);
   Serial.println("get it!");
+  Serial.println(WIFI_SSID);
+  Serial.println(WIFI_PW);
 
   Serial.println();
   Serial.println();
@@ -328,28 +339,51 @@ void WIFI_process(){
 void setup() {
   Serial.begin(115200);
   EEPROM.begin(EEPROM_MAX_WIDTH);
-  switch (EEPROM.read(EEPROM_MODE_ADDR))
-  {
-    case BLE_MODE:
-      BLE_Init();
-      break;
-    
-    case WIFI_MODE:
-      WIFI_Init();
-      break;
-  }
+
+  WIFI_Init();
+  delay(0xff);
+
+  BLE_Init();
+
+  Serial.println("BLE init success");
+
 }
 
 void loop() {
-  switch (EEPROM.read(EEPROM_MODE_ADDR))
-  {
-  case BLE_MODE:
+
     check_BLE_Connected();
-    break;
-  
-  case WIFI_MODE:
+
     WIFI_process();
-    break;
-  }
+
 
 }
+
+
+// void setup() {
+//   Serial.begin(115200);
+//   EEPROM.begin(EEPROM_MAX_WIDTH);
+//   switch (EEPROM.read(EEPROM_MODE_ADDR))
+//   {
+//     case BLE_MODE:
+//       BLE_Init();
+//       break;
+    
+//     case WIFI_MODE:
+//       WIFI_Init();
+//       break;
+//   }
+// }
+
+// void loop() {
+//   switch (EEPROM.read(EEPROM_MODE_ADDR))
+//   {
+//   case BLE_MODE:
+//     check_BLE_Connected();
+//     break;
+  
+//   case WIFI_MODE:
+//     WIFI_process();
+//     break;
+//   }
+
+// }
