@@ -2,7 +2,7 @@
  * @Author: jy.Huang 
  * @Date: 2020-09-20 15:43:53 
  * @Last Modified by: jy.Huang
- * @Last Modified time: 2020-11-29 21:18:41
+ * @Last Modified time: 2020-11-30 11:10:55
  */
 
 #include <BLEDevice.h>
@@ -18,6 +18,13 @@
 #include "time.h"
 
 #include "LiquidCrystal_I2C.h"
+
+
+
+#define LCD_ON 0
+
+#define DATA_SIZE 30
+
 
 //EEPROM 存储 WIFI 及密码
 //EEPROM 操作
@@ -87,10 +94,13 @@ const long  gmtOffset_sec = 3600 * 8;
 const int   daylightOffset_sec = 3600 * 8;
 const int   mday[13] = {0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366};
 
+#if LCD_ON
+
 int lcdColumns = 16;
 int lcdRows = 2;
 LiquidCrystal_I2C lcd(0x3F, lcdColumns, lcdRows);  
 
+#endif
 
 uint8_t Mode_state = NULL;
 
@@ -540,7 +550,16 @@ void creat_json_head(){
   json_data.append(SERVICE_UUID);
   json_data.append("\",\"userID\":\"");
   json_data.append("1q123qw");
-  json_data.append("\",\"num\":\"30\",\"pack\":[");
+  // json_data.append("\",\"num\":\"30\",\"pack\":[");
+  
+  json_data.append("\",\"num\":\"");
+  
+  int2string(DATA_SIZE);
+  
+  json_data.append("\",\"pack\":[");
+
+
+
 }
 
 void float2string(float num){
@@ -888,9 +907,13 @@ void BLE_Init()
   pServer->getAdvertising()->start();
   Serial.println("Waiting a client connection to notify...");
 
+#if LCD_ON
+
   LCD_Init();
   lcd.setCursor(0, 0);
   lcd.print("BLE MODE");
+
+#endif
 }
 
 void Init_radar(){
@@ -940,11 +963,15 @@ void Time_Init(){
   
 }
 
+#if LCD_ON
+
 void LCD_Init(){
     lcd.init();
     lcd.backlight();
     lcd.clear();
 }
+
+#endif
 
 void WIFI_Init()
 {
@@ -998,9 +1025,14 @@ void WIFI_Init()
 
   Time_Init();
 
+#if LCD_ON
+
   LCD_Init();
+
   lcd.setCursor(0, 0);
   lcd.print("WIFI MODE");
+
+#endif
 
   Init_radar();
 }
@@ -1017,15 +1049,20 @@ void Radar_process(){
     }
     add_data2json(&msg);
     // SerialDebug.println("finish add date2json");
-    
+
+#if LCD_ON
+
     LCD_display(&msg);
+
+#endif
+
     get_Msg_Times++;
     SerialDebug.print("distance:");
     SerialDebug.print(msg.distance);
     SerialDebug.println("m");
     SerialDebug.println(states[msg.state_code]);
     // SerialDebug.println(get_Msg_Times);
-    if (get_Msg_Times >= 30){
+    if (get_Msg_Times >= DATA_SIZE){
       add_json_tail();
       // SerialDebug.println("Show the json and Post it!");
       WIFI_process();
@@ -1046,6 +1083,8 @@ void LED_Sparkle(){
   delay(50);
 }
 
+#if LCD_ON
+
 void LCD_display(RespirationMessage* msg){
   lcd.clear();
   lcd.setCursor(0, 0);
@@ -1058,6 +1097,8 @@ void LCD_display(RespirationMessage* msg){
   lcd.setCursor(4, 1);
   lcd.print(msg->rpm);
 }
+
+#endif
 
 void WIFI_process()
 {
@@ -1097,7 +1138,13 @@ void WIFI_process()
     else {
       SerialDebug.println("WiFi Disconnected");
       digitalWrite(LED_PIN, LOW);
+
+#if LCD_ON
+
       lcd.clear();
+
+#endif
+
       change_Mode();
     }
     // lastTime = millis();
@@ -1110,40 +1157,52 @@ void setup()
   EEPROM.begin(EEPROM_MAX_WIDTH);
 
   Mode_state = get_Mode_state();
+  SerialDebug.println(Mode_state);
+  BLE_Init();
+  SerialDebug.println("BLE init successful");
+  delay(0xff);
+  WIFI_Init();
+  SerialDebug.println("WIFI init successful");
 
-  switch (Mode_state)
-  {
-  case BLE_MODE:
-    BLE_Init();
-    break;
+  // switch (Mode_state)
+  // {
+  // case BLE_MODE:
+  //   BLE_Init();
+  //   SerialDebug.println("BLE init successful");
+  //   break;
   
-  case WIFI_MODE:
-    WIFI_Init();
-    break;
+  // case WIFI_MODE:
+  //   WIFI_Init();
+  //   SerialDebug.println("WIFI init successful");
+  //   break;
 
-  default:
-    ESP.restart();
-    break;
-  }
+  // default:
+  //   SerialDebug.println("restart");
+  //   ESP.restart();
+  //   break;
+  // }
 
 }
 
 void loop()
 {
-  switch (Mode_state)
-  {
-  case BLE_MODE:
-    check_BLE_Connected();
-    break;
-  
-  case WIFI_MODE:
-    // WIFI_process();
-    Radar_process();
-    break;
+  check_BLE_Connected();
+  Radar_process();
 
-  default:
-    ESP.restart();
-    break;
-  } 
+  // switch (Mode_state)
+  // {
+  // case BLE_MODE:
+  //   check_BLE_Connected();
+  //   break;
+  
+  // case WIFI_MODE:
+  //   // WIFI_process();
+  //   Radar_process();
+  //   break;
+
+  // default:
+  //   ESP.restart();
+  //   break;
+  // } 
 }
 
