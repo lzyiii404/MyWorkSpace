@@ -2,8 +2,8 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Mon Nov 23 11:26:45 2020
-# Process ID: 21204
+# Start of session at: Mon Nov 30 21:57:20 2020
+# Process ID: 27940
 # Current directory: D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.runs/i_stream2filter_Serial2Parallel_0_0_synth_1
 # Command line: vivado.exe -log i_stream2filter_Serial2Parallel_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source i_stream2filter_Serial2Parallel_0_0.tcl
 # Log file: D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.runs/i_stream2filter_Serial2Parallel_0_0_synth_1/i_stream2filter_Serial2Parallel_0_0.vds
@@ -15,31 +15,31 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 11856 
+INFO: Helper process launched with PID 26644 
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 395.359 ; gain = 102.695
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 396.172 ; gain = 102.902
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'i_stream2filter_Serial2Parallel_0_0' [d:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.srcs/sources_1/bd/i_stream2filter/ip/i_stream2filter_Serial2Parallel_0_0/synth/i_stream2filter_Serial2Parallel_0_0.v:58]
 INFO: [Synth 8-6157] synthesizing module 'Serial2Parallel' [D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.srcs/sources_1/new/Serial2Parallel.v:23]
-	Parameter N bound to: 16 - type: integer 
+	Parameter N bound to: 8 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'Serial2Parallel' (1#1) [D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.srcs/sources_1/new/Serial2Parallel.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'i_stream2filter_Serial2Parallel_0_0' (2#1) [d:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.srcs/sources_1/bd/i_stream2filter/ip/i_stream2filter_Serial2Parallel_0_0/synth/i_stream2filter_Serial2Parallel_0_0.v:58]
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 451.141 ; gain = 158.477
+Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 452.102 ; gain = 158.832
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 451.141 ; gain = 158.477
+Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 452.102 ; gain = 158.832
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 451.141 ; gain = 158.477
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 452.102 ; gain = 158.832
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z020clg400-2
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 451.141 ; gain = 158.477
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 452.102 ; gain = 158.832
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -53,7 +53,7 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Registers : 
-	               16 Bit    Registers := 3     
+	                8 Bit    Registers := 3     
 	                1 Bit    Registers := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -65,7 +65,7 @@ Hierarchical RTL Component report
 Module Serial2Parallel 
 Detailed RTL Component Info : 
 +---Registers : 
-	               16 Bit    Registers := 3     
+	                8 Bit    Registers := 3     
 	                1 Bit    Registers := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
@@ -86,7 +86,7 @@ Start Cross Boundary and Area Optimization
 Warning: Parallel synthesis criteria is not met 
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/o_data_sig_reg )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 579.785 ; gain = 287.121
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 578.082 ; gain = 284.813
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -99,7 +99,7 @@ No constraint files found.
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 579.785 ; gain = 287.121
+Finished Timing Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 578.082 ; gain = 284.813
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -111,7 +111,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 588.461 ; gain = 295.797
+Finished Technology Mapping : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 586.754 ; gain = 293.484
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -135,7 +135,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 588.461 ; gain = 295.797
+Finished IO Insertion : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 586.754 ; gain = 293.484
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -148,7 +148,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 588.461 ; gain = 295.797
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 586.754 ; gain = 293.484
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -160,25 +160,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 588.461 ; gain = 295.797
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 586.754 ; gain = 293.484
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 588.461 ; gain = 295.797
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 586.754 ; gain = 293.484
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 588.461 ; gain = 295.797
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 586.754 ; gain = 293.484
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 588.461 ; gain = 295.797
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 586.754 ; gain = 293.484
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -195,42 +195,42 @@ Report Cell Usage:
 |      |Cell |Count |
 +------+-----+------+
 |1     |LUT1 |     1|
-|2     |FDCE |    48|
+|2     |FDCE |    24|
 +------+-----+------+
 
 Report Instance Areas: 
 +------+---------+----------------+------+
 |      |Instance |Module          |Cells |
 +------+---------+----------------+------+
-|1     |top      |                |    49|
-|2     |  inst   |Serial2Parallel |    49|
+|1     |top      |                |    25|
+|2     |  inst   |Serial2Parallel |    25|
 +------+---------+----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 588.461 ; gain = 295.797
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 586.754 ; gain = 293.484
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 588.461 ; gain = 295.797
-Synthesis Optimization Complete : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 588.461 ; gain = 295.797
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 586.754 ; gain = 293.484
+Synthesis Optimization Complete : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 586.754 ; gain = 293.484
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 701.004 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 701.266 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
 12 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 701.004 ; gain = 421.234
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 701.004 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 701.266 ; gain = 421.293
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 701.266 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [Common 17-1381] The checkpoint 'D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.runs/i_stream2filter_Serial2Parallel_0_0_synth_1/i_stream2filter_Serial2Parallel_0_0.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1200.500 ; gain = 499.496
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1200.500 ; gain = 0.000
+write_checkpoint: Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1196.121 ; gain = 494.855
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1196.121 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.runs/i_stream2filter_Serial2Parallel_0_0_synth_1/i_stream2filter_Serial2Parallel_0_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file i_stream2filter_Serial2Parallel_0_0_utilization_synth.rpt -pb i_stream2filter_Serial2Parallel_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Nov 23 11:27:26 2020...
+INFO: [Common 17-206] Exiting Vivado at Mon Nov 30 21:58:07 2020...

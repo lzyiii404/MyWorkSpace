@@ -168,8 +168,8 @@ proc create_root_design { parentCell } {
   set_property -dict [ list \
    CONFIG.FREQ_HZ {100000000} \
  ] $clk
-  set i_stream [ create_bd_port -dir I -from 15 -to 0 -type data i_stream ]
-  set o_data [ create_bd_port -dir O -from 15 -to 0 o_data ]
+  set i_stream [ create_bd_port -dir I -from 7 -to 0 i_stream ]
+  set o_data [ create_bd_port -dir O -from 7 -to 0 o_data ]
   set o_done_sig [ create_bd_port -dir O o_done_sig ]
   set o_valid [ create_bd_port -dir O o_valid ]
   set rst_n [ create_bd_port -dir I -type rst rst_n ]
@@ -184,7 +184,10 @@ proc create_root_design { parentCell } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
-  
+    set_property -dict [ list \
+   CONFIG.N {8} \
+ ] $Serial2Parallel_0
+
   # Create instance: Serial2Parallel_1, and set properties
   set block_name Serial2Parallel
   set block_cell_name Serial2Parallel_1
@@ -195,7 +198,10 @@ proc create_root_design { parentCell } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
-  
+    set_property -dict [ list \
+   CONFIG.N {8} \
+ ] $Serial2Parallel_1
+
   # Create instance: Serial2Parallel_2, and set properties
   set block_name Serial2Parallel
   set block_cell_name Serial2Parallel_2
@@ -206,29 +212,48 @@ proc create_root_design { parentCell } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
-  
+    set_property -dict [ list \
+   CONFIG.N {8} \
+ ] $Serial2Parallel_2
+
   # Create instance: c_shift_ram_0, and set properties
   set c_shift_ram_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:c_shift_ram:12.0 c_shift_ram_0 ]
   set_property -dict [ list \
+   CONFIG.AsyncInitVal {00000000} \
+   CONFIG.DefaultData {00000000} \
    CONFIG.Depth {640} \
+   CONFIG.SyncInitVal {00000000} \
+   CONFIG.Width {8} \
  ] $c_shift_ram_0
 
   # Create instance: c_shift_ram_1, and set properties
   set c_shift_ram_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:c_shift_ram:12.0 c_shift_ram_1 ]
   set_property -dict [ list \
+   CONFIG.AsyncInitVal {00000000} \
+   CONFIG.DefaultData {00000000} \
    CONFIG.Depth {640} \
+   CONFIG.SyncInitVal {00000000} \
+   CONFIG.Width {8} \
  ] $c_shift_ram_1
 
   # Create instance: c_shift_ram_2, and set properties
   set c_shift_ram_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:c_shift_ram:12.0 c_shift_ram_2 ]
   set_property -dict [ list \
+   CONFIG.AsyncInitVal {00000000} \
+   CONFIG.DefaultData {00000000} \
    CONFIG.Depth {640} \
+   CONFIG.SyncInitVal {00000000} \
+   CONFIG.Width {8} \
  ] $c_shift_ram_2
 
   # Create instance: c_shift_ram_3, and set properties
   set c_shift_ram_3 [ create_bd_cell -type ip -vlnv xilinx.com:ip:c_shift_ram:12.0 c_shift_ram_3 ]
   set_property -dict [ list \
+   CONFIG.AsyncInitVal {00000000} \
+   CONFIG.DefaultData {00000000} \
    CONFIG.Depth {640} \
+   CONFIG.SyncInitVal {00000000} \
+   CONFIG.Width {8} \
  ] $c_shift_ram_3
 
   # Create instance: median_filter_0, and set properties
@@ -241,7 +266,10 @@ proc create_root_design { parentCell } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
-  
+    set_property -dict [ list \
+   CONFIG.N {8} \
+ ] $median_filter_0
+
   # Create instance: valid_counter_0, and set properties
   set block_name valid_counter
   set block_cell_name valid_counter_0
@@ -253,8 +281,9 @@ proc create_root_design { parentCell } {
      return 1
    }
     set_property -dict [ list \
+   CONFIG.N {8} \
    CONFIG.Pixel_high {720} \
-   CONFIG.Pixel_wide {1280} \
+   CONFIG.Pixel_wide {1080} \
  ] $valid_counter_0
 
   # Create port connections

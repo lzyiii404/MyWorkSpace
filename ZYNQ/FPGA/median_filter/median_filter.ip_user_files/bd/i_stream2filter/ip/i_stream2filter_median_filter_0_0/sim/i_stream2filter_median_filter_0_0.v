@@ -80,20 +80,20 @@ input wire clk;
 input wire rst_n;
 input wire i_data_sig;
 input wire i_data_valid;
-input wire [15 : 0] i_data_11;
-input wire [15 : 0] i_data_12;
-input wire [15 : 0] i_data_13;
-input wire [15 : 0] i_data_21;
-input wire [15 : 0] i_data_22;
-input wire [15 : 0] i_data_23;
-input wire [15 : 0] i_data_31;
-input wire [15 : 0] i_data_32;
-input wire [15 : 0] i_data_33;
-output wire [15 : 0] o_data;
+input wire [7 : 0] i_data_11;
+input wire [7 : 0] i_data_12;
+input wire [7 : 0] i_data_13;
+input wire [7 : 0] i_data_21;
+input wire [7 : 0] i_data_22;
+input wire [7 : 0] i_data_23;
+input wire [7 : 0] i_data_31;
+input wire [7 : 0] i_data_32;
+input wire [7 : 0] i_data_33;
+output wire [7 : 0] o_data;
 output wire o_done_sig;
 
   median_filter #(
-    .N(16)
+    .N(8)
   ) inst (
     .clk(clk),
     .rst_n(rst_n),

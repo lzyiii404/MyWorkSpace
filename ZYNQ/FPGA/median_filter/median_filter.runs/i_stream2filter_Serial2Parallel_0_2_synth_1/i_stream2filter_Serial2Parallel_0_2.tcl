@@ -32,7 +32,7 @@ set_property target_language Verilog [current_project]
 set_property ip_output_repo d:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.srcs/sources_1/new/Serial2Parallel.v
-read_ip -quiet d:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.srcs/sources_1/bd/i_stream2filter/ip/i_stream2filter_Serial2Parallel_0_2/i_stream2filter_Serial2Parallel_0_2.xci
+read_ip -quiet D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.srcs/sources_1/bd/i_stream2filter/ip/i_stream2filter_Serial2Parallel_0_2/i_stream2filter_Serial2Parallel_0_2.xci
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -85,32 +85,32 @@ write_checkpoint -force -noxdef i_stream2filter_Serial2Parallel_0_2.dcp
 create_report "i_stream2filter_Serial2Parallel_0_2_synth_1_synth_report_utilization_0" "report_utilization -file i_stream2filter_Serial2Parallel_0_2_utilization_synth.rpt -pb i_stream2filter_Serial2Parallel_0_2_utilization_synth.pb"
 
 if { [catch {
-  file copy -force D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.runs/i_stream2filter_Serial2Parallel_0_2_synth_1/i_stream2filter_Serial2Parallel_0_2.dcp d:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.srcs/sources_1/bd/i_stream2filter/ip/i_stream2filter_Serial2Parallel_0_2/i_stream2filter_Serial2Parallel_0_2.dcp
+  file copy -force D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.runs/i_stream2filter_Serial2Parallel_0_2_synth_1/i_stream2filter_Serial2Parallel_0_2.dcp D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.srcs/sources_1/bd/i_stream2filter/ip/i_stream2filter_Serial2Parallel_0_2/i_stream2filter_Serial2Parallel_0_2.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  write_verilog -force -mode synth_stub d:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.srcs/sources_1/bd/i_stream2filter/ip/i_stream2filter_Serial2Parallel_0_2/i_stream2filter_Serial2Parallel_0_2_stub.v
+  write_verilog -force -mode synth_stub D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.srcs/sources_1/bd/i_stream2filter/ip/i_stream2filter_Serial2Parallel_0_2/i_stream2filter_Serial2Parallel_0_2_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode synth_stub d:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.srcs/sources_1/bd/i_stream2filter/ip/i_stream2filter_Serial2Parallel_0_2/i_stream2filter_Serial2Parallel_0_2_stub.vhdl
+  write_vhdl -force -mode synth_stub D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.srcs/sources_1/bd/i_stream2filter/ip/i_stream2filter_Serial2Parallel_0_2/i_stream2filter_Serial2Parallel_0_2_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_verilog -force -mode funcsim d:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.srcs/sources_1/bd/i_stream2filter/ip/i_stream2filter_Serial2Parallel_0_2/i_stream2filter_Serial2Parallel_0_2_sim_netlist.v
+  write_verilog -force -mode funcsim D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.srcs/sources_1/bd/i_stream2filter/ip/i_stream2filter_Serial2Parallel_0_2/i_stream2filter_Serial2Parallel_0_2_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode funcsim d:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.srcs/sources_1/bd/i_stream2filter/ip/i_stream2filter_Serial2Parallel_0_2/i_stream2filter_Serial2Parallel_0_2_sim_netlist.vhdl
+  write_vhdl -force -mode funcsim D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.srcs/sources_1/bd/i_stream2filter/ip/i_stream2filter_Serial2Parallel_0_2/i_stream2filter_Serial2Parallel_0_2_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -120,32 +120,32 @@ if { [catch {
 
 
 if { [catch {
-  file copy -force D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.runs/i_stream2filter_Serial2Parallel_0_2_synth_1/i_stream2filter_Serial2Parallel_0_2.dcp d:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.srcs/sources_1/bd/i_stream2filter/ip/i_stream2filter_Serial2Parallel_0_2/i_stream2filter_Serial2Parallel_0_2.dcp
+  file copy -force D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.runs/i_stream2filter_Serial2Parallel_0_2_synth_1/i_stream2filter_Serial2Parallel_0_2.dcp D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.srcs/sources_1/bd/i_stream2filter/ip/i_stream2filter_Serial2Parallel_0_2/i_stream2filter_Serial2Parallel_0_2.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  file rename -force D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.runs/i_stream2filter_Serial2Parallel_0_2_synth_1/i_stream2filter_Serial2Parallel_0_2_stub.v d:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.srcs/sources_1/bd/i_stream2filter/ip/i_stream2filter_Serial2Parallel_0_2/i_stream2filter_Serial2Parallel_0_2_stub.v
+  file rename -force D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.runs/i_stream2filter_Serial2Parallel_0_2_synth_1/i_stream2filter_Serial2Parallel_0_2_stub.v D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.srcs/sources_1/bd/i_stream2filter/ip/i_stream2filter_Serial2Parallel_0_2/i_stream2filter_Serial2Parallel_0_2_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.runs/i_stream2filter_Serial2Parallel_0_2_synth_1/i_stream2filter_Serial2Parallel_0_2_stub.vhdl d:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.srcs/sources_1/bd/i_stream2filter/ip/i_stream2filter_Serial2Parallel_0_2/i_stream2filter_Serial2Parallel_0_2_stub.vhdl
+  file rename -force D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.runs/i_stream2filter_Serial2Parallel_0_2_synth_1/i_stream2filter_Serial2Parallel_0_2_stub.vhdl D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.srcs/sources_1/bd/i_stream2filter/ip/i_stream2filter_Serial2Parallel_0_2/i_stream2filter_Serial2Parallel_0_2_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.runs/i_stream2filter_Serial2Parallel_0_2_synth_1/i_stream2filter_Serial2Parallel_0_2_sim_netlist.v d:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.srcs/sources_1/bd/i_stream2filter/ip/i_stream2filter_Serial2Parallel_0_2/i_stream2filter_Serial2Parallel_0_2_sim_netlist.v
+  file rename -force D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.runs/i_stream2filter_Serial2Parallel_0_2_synth_1/i_stream2filter_Serial2Parallel_0_2_sim_netlist.v D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.srcs/sources_1/bd/i_stream2filter/ip/i_stream2filter_Serial2Parallel_0_2/i_stream2filter_Serial2Parallel_0_2_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.runs/i_stream2filter_Serial2Parallel_0_2_synth_1/i_stream2filter_Serial2Parallel_0_2_sim_netlist.vhdl d:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.srcs/sources_1/bd/i_stream2filter/ip/i_stream2filter_Serial2Parallel_0_2/i_stream2filter_Serial2Parallel_0_2_sim_netlist.vhdl
+  file rename -force D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.runs/i_stream2filter_Serial2Parallel_0_2_synth_1/i_stream2filter_Serial2Parallel_0_2_sim_netlist.vhdl D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.srcs/sources_1/bd/i_stream2filter/ip/i_stream2filter_Serial2Parallel_0_2/i_stream2filter_Serial2Parallel_0_2_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -154,13 +154,13 @@ if { [catch {
 
 if {[file isdir D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.ip_user_files/ip/i_stream2filter_Serial2Parallel_0_2]} {
   catch { 
-    file copy -force d:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.srcs/sources_1/bd/i_stream2filter/ip/i_stream2filter_Serial2Parallel_0_2/i_stream2filter_Serial2Parallel_0_2_stub.v D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.ip_user_files/ip/i_stream2filter_Serial2Parallel_0_2
+    file copy -force D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.srcs/sources_1/bd/i_stream2filter/ip/i_stream2filter_Serial2Parallel_0_2/i_stream2filter_Serial2Parallel_0_2_stub.v D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.ip_user_files/ip/i_stream2filter_Serial2Parallel_0_2
   }
 }
 
 if {[file isdir D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.ip_user_files/ip/i_stream2filter_Serial2Parallel_0_2]} {
   catch { 
-    file copy -force d:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.srcs/sources_1/bd/i_stream2filter/ip/i_stream2filter_Serial2Parallel_0_2/i_stream2filter_Serial2Parallel_0_2_stub.vhdl D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.ip_user_files/ip/i_stream2filter_Serial2Parallel_0_2
+    file copy -force D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.srcs/sources_1/bd/i_stream2filter/ip/i_stream2filter_Serial2Parallel_0_2/i_stream2filter_Serial2Parallel_0_2_stub.vhdl D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.ip_user_files/ip/i_stream2filter_Serial2Parallel_0_2
   }
 }
 file delete __synthesis_is_running__

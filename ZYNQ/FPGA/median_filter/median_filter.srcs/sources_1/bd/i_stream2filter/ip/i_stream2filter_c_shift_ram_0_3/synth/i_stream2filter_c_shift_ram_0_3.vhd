@@ -58,9 +58,9 @@ USE c_shift_ram_v12_0_12.c_shift_ram_v12_0_12;
 
 ENTITY i_stream2filter_c_shift_ram_0_3 IS
   PORT (
-    D : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+    D : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
     CLK : IN STD_LOGIC;
-    Q : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+    Q : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
   );
 END i_stream2filter_c_shift_ram_0_3;
 
@@ -94,13 +94,13 @@ ARCHITECTURE i_stream2filter_c_shift_ram_0_3_arch OF i_stream2filter_c_shift_ram
     );
     PORT (
       A : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-      D : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+      D : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
       CLK : IN STD_LOGIC;
       CE : IN STD_LOGIC;
       SCLR : IN STD_LOGIC;
       SSET : IN STD_LOGIC;
       SINIT : IN STD_LOGIC;
-      Q : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+      Q : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
     );
   END COMPONENT c_shift_ram_v12_0_12;
   ATTRIBUTE X_CORE_INFO : STRING;
@@ -108,29 +108,29 @@ ARCHITECTURE i_stream2filter_c_shift_ram_0_3_arch OF i_stream2filter_c_shift_ram
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF i_stream2filter_c_shift_ram_0_3_arch : ARCHITECTURE IS "i_stream2filter_c_shift_ram_0_3,c_shift_ram_v12_0_12,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF i_stream2filter_c_shift_ram_0_3_arch: ARCHITECTURE IS "i_stream2filter_c_shift_ram_0_3,c_shift_ram_v12_0_12,{x_ipProduct=Vivado 2018.3,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=c_shift_ram,x_ipVersion=12.0,x_ipCoreRevision=12,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_XDEVICEFAMILY=zynq,C_VERBOSITY=0,C_WIDTH=16,C_DEPTH=640,C_ADDR_WIDTH=4,C_SHIFT_TYPE=0,C_OPT_GOAL=0,C_AINIT_VAL=0000000000000000,C_SINIT_VAL=0000000000000000,C_DEFAULT_DATA=0000000000000000,C_HAS_A=0,C_HAS_CE=0,C_REG_LAST_BIT=1,C_SYNC_PRIORITY=1,C_SYNC_ENABLE=0,C_HAS_SCLR=0,C_HAS_" & 
-"SSET=0,C_HAS_SINIT=0,C_MEM_INIT_FILE=no_coe_file_loaded,C_ELABORATION_DIR=./,C_READ_MIF=0,C_PARSER_TYPE=0}";
+  ATTRIBUTE CORE_GENERATION_INFO OF i_stream2filter_c_shift_ram_0_3_arch: ARCHITECTURE IS "i_stream2filter_c_shift_ram_0_3,c_shift_ram_v12_0_12,{x_ipProduct=Vivado 2018.3,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=c_shift_ram,x_ipVersion=12.0,x_ipCoreRevision=12,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_XDEVICEFAMILY=zynq,C_VERBOSITY=0,C_WIDTH=8,C_DEPTH=640,C_ADDR_WIDTH=4,C_SHIFT_TYPE=0,C_OPT_GOAL=0,C_AINIT_VAL=00000000,C_SINIT_VAL=00000000,C_DEFAULT_DATA=00000000,C_HAS_A=0,C_HAS_CE=0,C_REG_LAST_BIT=1,C_SYNC_PRIORITY=1,C_SYNC_ENABLE=0,C_HAS_SCLR=0,C_HAS_SSET=0,C_HAS_SINIT=0,C_ME" & 
+"M_INIT_FILE=no_coe_file_loaded,C_ELABORATION_DIR=./,C_READ_MIF=0,C_PARSER_TYPE=0}";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
-  ATTRIBUTE X_INTERFACE_PARAMETER OF Q: SIGNAL IS "XIL_INTERFACENAME q_intf, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value data} bitwidth {attribs {resolve_type generated dependency data_bitwidth format long minimum {} maximum {}} value 16} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} DATA_WIDTH 16}";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF Q: SIGNAL IS "XIL_INTERFACENAME q_intf, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value data} bitwidth {attribs {resolve_type generated dependency data_bitwidth format long minimum {} maximum {}} value 8} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} DATA_WIDTH 8}";
   ATTRIBUTE X_INTERFACE_INFO OF Q: SIGNAL IS "xilinx.com:signal:data:1.0 q_intf DATA";
   ATTRIBUTE X_INTERFACE_PARAMETER OF CLK: SIGNAL IS "XIL_INTERFACENAME clk_intf, ASSOCIATED_BUSIF q_intf:sinit_intf:sset_intf:d_intf:a_intf, ASSOCIATED_RESET SCLR, ASSOCIATED_CLKEN CE, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN i_stream2filter_clk, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF CLK: SIGNAL IS "xilinx.com:signal:clock:1.0 clk_intf CLK";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF D: SIGNAL IS "XIL_INTERFACENAME d_intf, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value data} bitwidth {attribs {resolve_type generated dependency data_bitwidth format long minimum {} maximum {}} value 16} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} DATA_WIDTH 16}";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF D: SIGNAL IS "XIL_INTERFACENAME d_intf, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value data} bitwidth {attribs {resolve_type generated dependency data_bitwidth format long minimum {} maximum {}} value 8} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} DATA_WIDTH 8}";
   ATTRIBUTE X_INTERFACE_INFO OF D: SIGNAL IS "xilinx.com:signal:data:1.0 d_intf DATA";
 BEGIN
   U0 : c_shift_ram_v12_0_12
     GENERIC MAP (
       C_XDEVICEFAMILY => "zynq",
       C_VERBOSITY => 0,
-      C_WIDTH => 16,
+      C_WIDTH => 8,
       C_DEPTH => 640,
       C_ADDR_WIDTH => 4,
       C_SHIFT_TYPE => 0,
       C_OPT_GOAL => 0,
-      C_AINIT_VAL => "0000000000000000",
-      C_SINIT_VAL => "0000000000000000",
-      C_DEFAULT_DATA => "0000000000000000",
+      C_AINIT_VAL => "00000000",
+      C_SINIT_VAL => "00000000",
+      C_DEFAULT_DATA => "00000000",
       C_HAS_A => 0,
       C_HAS_CE => 0,
       C_REG_LAST_BIT => 1,

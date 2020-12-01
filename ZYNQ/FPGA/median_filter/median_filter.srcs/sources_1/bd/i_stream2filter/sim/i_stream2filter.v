@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Mon Nov 23 20:06:04 2020
+//Date        : Mon Nov 30 23:17:00 2020
 //Host        : Huang running 64-bit major release  (build 9200)
 //Command     : generate_target i_stream2filter.bd
 //Design      : i_stream2filter
@@ -18,36 +18,36 @@ module i_stream2filter
     o_valid,
     rst_n);
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK, CLK_DOMAIN i_stream2filter_clk, FREQ_HZ 100000000, INSERT_VIP 0, PHASE 0.000" *) input clk;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 DATA.I_STREAM DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DATA.I_STREAM, LAYERED_METADATA undef" *) input [15:0]i_stream;
-  output [15:0]o_data;
+  input [7:0]i_stream;
+  output [7:0]o_data;
   output o_done_sig;
   output o_valid;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.RST_N RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.RST_N, INSERT_VIP 0, POLARITY ACTIVE_LOW" *) input rst_n;
 
-  wire [15:0]Serial2Parallel_0_o_data_1;
-  wire [15:0]Serial2Parallel_0_o_data_2;
-  wire [15:0]Serial2Parallel_0_o_data_3;
-  wire [15:0]Serial2Parallel_1_o_data_1;
-  wire [15:0]Serial2Parallel_1_o_data_2;
-  wire [15:0]Serial2Parallel_1_o_data_3;
-  wire [15:0]Serial2Parallel_2_o_data_1;
-  wire [15:0]Serial2Parallel_2_o_data_2;
-  wire [15:0]Serial2Parallel_2_o_data_3;
-  wire [15:0]c_shift_ram_0_Q;
-  wire [15:0]c_shift_ram_1_Q;
-  wire [15:0]c_shift_ram_2_Q;
-  wire [15:0]c_shift_ram_3_Q;
+  wire [7:0]Serial2Parallel_0_o_data_1;
+  wire [7:0]Serial2Parallel_0_o_data_2;
+  wire [7:0]Serial2Parallel_0_o_data_3;
+  wire [7:0]Serial2Parallel_1_o_data_1;
+  wire [7:0]Serial2Parallel_1_o_data_2;
+  wire [7:0]Serial2Parallel_1_o_data_3;
+  wire [7:0]Serial2Parallel_2_o_data_1;
+  wire [7:0]Serial2Parallel_2_o_data_2;
+  wire [7:0]Serial2Parallel_2_o_data_3;
+  wire [7:0]c_shift_ram_0_Q;
+  wire [7:0]c_shift_ram_1_Q;
+  wire [7:0]c_shift_ram_2_Q;
+  wire [7:0]c_shift_ram_3_Q;
   wire clk_1;
-  wire [15:0]i_stream_1;
-  wire [15:0]median_filter_0_o_data;
+  wire [7:0]i_stream_1;
+  wire [7:0]median_filter_0_o_data;
   wire median_filter_0_o_done_sig;
   wire rst_n_1;
   wire valid_counter_0_o_data_sig;
   wire valid_counter_0_o_valid;
 
   assign clk_1 = clk;
-  assign i_stream_1 = i_stream[15:0];
-  assign o_data[15:0] = median_filter_0_o_data;
+  assign i_stream_1 = i_stream[7:0];
+  assign o_data[7:0] = median_filter_0_o_data;
   assign o_done_sig = median_filter_0_o_done_sig;
   assign o_valid = valid_counter_0_o_valid;
   assign rst_n_1 = rst_n;

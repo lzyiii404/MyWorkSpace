@@ -26,7 +26,9 @@ module valid_counter(
     input clk;
     input rst_n;
 
-    input [15:0] i_stream;
+    parameter N = 16;
+
+    input [N-1:0] i_stream;
 
     output reg o_valid;
     output reg o_data_sig;
@@ -60,7 +62,7 @@ module valid_counter(
     always @(*) begin
         case (current_state)
             IDLE: begin
-                if (i_stream != 16'b0)
+                if (i_stream != {N{1'b0}})
                     next_state = START;
                 else
                     next_state = IDLE;

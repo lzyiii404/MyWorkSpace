@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Mon Nov 23 20:10:19 2020
+// Date        : Mon Nov 30 21:59:00 2020
 // Host        : Huang running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub -rename_top i_stream2filter_c_shift_ram_0_4 -prefix
 //               i_stream2filter_c_shift_ram_0_4_ i_stream2filter_c_shift_ram_0_1_stub.v
@@ -15,8 +15,8 @@
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
 (* x_core_info = "c_shift_ram_v12_0_12,Vivado 2018.3" *)
 module i_stream2filter_c_shift_ram_0_4(D, CLK, Q)
-/* synthesis syn_black_box black_box_pad_pin="D[15:0],CLK,Q[15:0]" */;
-  input [15:0]D;
+/* synthesis syn_black_box black_box_pad_pin="D[7:0],CLK,Q[7:0]" */;
+  input [7:0]D;
   input CLK;
-  output [15:0]Q;
+  output [7:0]Q;
 endmodule

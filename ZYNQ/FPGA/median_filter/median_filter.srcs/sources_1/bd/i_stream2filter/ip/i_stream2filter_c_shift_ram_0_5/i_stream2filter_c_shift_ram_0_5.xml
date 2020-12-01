@@ -251,7 +251,7 @@
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>LAYERED_METADATA</spirit:name>
-          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.Q_INTF.LAYERED_METADATA">xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value data} bitwidth {attribs {resolve_type generated dependency data_bitwidth format long minimum {} maximum {}} value 16} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} DATA_WIDTH 16}</spirit:value>
+          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.Q_INTF.LAYERED_METADATA">xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value data} bitwidth {attribs {resolve_type generated dependency data_bitwidth format long minimum {} maximum {}} value 8} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} DATA_WIDTH 8}</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -288,7 +288,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:9130a52d</spirit:value>
+            <spirit:value>9:0368163f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -302,11 +302,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Nov 23 12:06:06 UTC 2020</spirit:value>
+            <spirit:value>Mon Nov 30 13:57:05 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:9130a52d</spirit:value>
+            <spirit:value>9:0368163f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -322,11 +322,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Nov 23 12:06:06 UTC 2020</spirit:value>
+            <spirit:value>Mon Nov 30 13:57:05 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:9130a52d</spirit:value>
+            <spirit:value>9:0368163f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -355,7 +355,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:bf32b4e9</spirit:value>
+            <spirit:value>9:d454f61c</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -371,11 +371,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Nov 23 12:06:06 UTC 2020</spirit:value>
+            <spirit:value>Mon Nov 30 13:57:06 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:bf32b4e9</spirit:value>
+            <spirit:value>9:d454f61c</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -389,11 +389,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Nov 23 12:10:32 UTC 2020</spirit:value>
+            <spirit:value>Mon Nov 30 13:59:12 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:9130a52d</spirit:value>
+            <spirit:value>9:0368163f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -431,7 +431,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_WIDTH&apos;)) - 1)">15</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_WIDTH&apos;)) - 1)">7</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -559,7 +559,7 @@
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_WIDTH&apos;)) - 1)">15</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_WIDTH&apos;)) - 1)">7</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -586,7 +586,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_WIDTH</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_WIDTH">16</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_WIDTH">8</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_DEPTH</spirit:name>
@@ -606,15 +606,15 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="string">
         <spirit:name>C_AINIT_VAL</spirit:name>
-        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_AINIT_VAL">0000000000000000</spirit:value>
+        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_AINIT_VAL">00000000</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="string">
         <spirit:name>C_SINIT_VAL</spirit:name>
-        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_SINIT_VAL">0000000000000000</spirit:value>
+        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_SINIT_VAL">00000000</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="string">
         <spirit:name>C_DEFAULT_DATA</spirit:name>
-        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_DEFAULT_DATA">0000000000000000</spirit:value>
+        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_DEFAULT_DATA">00000000</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_HAS_A</spirit:name>
@@ -918,7 +918,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Width</spirit:name>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.Width" spirit:order="6" spirit:minimum="1" spirit:maximum="256" spirit:rangeType="long">16</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.Width" spirit:order="6" spirit:minimum="1" spirit:maximum="256" spirit:rangeType="long">8</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -951,7 +951,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>DefaultData</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.DefaultData" spirit:order="9">0000000000000000</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.DefaultData" spirit:order="9">00000000</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -995,7 +995,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>AsyncInitVal</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.AsyncInitVal" spirit:order="13">0000000000000000</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.AsyncInitVal" spirit:order="13">00000000</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -1050,7 +1050,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SyncInitVal</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.SyncInitVal" spirit:order="18">0000000000000000</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.SyncInitVal" spirit:order="18">00000000</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -1090,8 +1090,11 @@
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.CLK_INTF.CLK_DOMAIN" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.CLK_INTF.FREQ_HZ" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.Q_INTF.LAYERED_METADATA" xilinx:valueSource="propagated" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.AsyncInitVal" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.DefaultData" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Depth" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Width" xilinx:valueSource="propagated"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SyncInitVal" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Width" xilinx:valueSource="user" xilinx:valuePermission="bd_and_user"/>
       </xilinx:configElementInfos>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>

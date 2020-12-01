@@ -52,7 +52,7 @@
 
 (* X_CORE_INFO = "median_filter,Vivado 2018.3" *)
 (* CHECK_LICENSE_TYPE = "i_stream2filter_median_filter_0_0,median_filter,{}" *)
-(* CORE_GENERATION_INFO = "i_stream2filter_median_filter_0_0,median_filter,{x_ipProduct=Vivado 2018.3,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=median_filter,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,N=16}" *)
+(* CORE_GENERATION_INFO = "i_stream2filter_median_filter_0_0,median_filter,{x_ipProduct=Vivado 2018.3,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=median_filter,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,N=8}" *)
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module i_stream2filter_median_filter_0_0 (
@@ -81,20 +81,20 @@ input wire clk;
 input wire rst_n;
 input wire i_data_sig;
 input wire i_data_valid;
-input wire [15 : 0] i_data_11;
-input wire [15 : 0] i_data_12;
-input wire [15 : 0] i_data_13;
-input wire [15 : 0] i_data_21;
-input wire [15 : 0] i_data_22;
-input wire [15 : 0] i_data_23;
-input wire [15 : 0] i_data_31;
-input wire [15 : 0] i_data_32;
-input wire [15 : 0] i_data_33;
-output wire [15 : 0] o_data;
+input wire [7 : 0] i_data_11;
+input wire [7 : 0] i_data_12;
+input wire [7 : 0] i_data_13;
+input wire [7 : 0] i_data_21;
+input wire [7 : 0] i_data_22;
+input wire [7 : 0] i_data_23;
+input wire [7 : 0] i_data_31;
+input wire [7 : 0] i_data_32;
+input wire [7 : 0] i_data_33;
+output wire [7 : 0] o_data;
 output wire o_done_sig;
 
   median_filter #(
-    .N(16)
+    .N(8)
   ) inst (
     .clk(clk),
     .rst_n(rst_n),
