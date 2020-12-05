@@ -70,14 +70,14 @@ input wire clk;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst_n, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rst_n RST" *)
 input wire rst_n;
-input wire [7 : 0] i_data;
-output wire [7 : 0] o_data_1;
-output wire [7 : 0] o_data_2;
-output wire [7 : 0] o_data_3;
+input wire [23 : 0] i_data;
+output wire [23 : 0] o_data_1;
+output wire [23 : 0] o_data_2;
+output wire [23 : 0] o_data_3;
 output wire o_data_sig;
 
   Serial2Parallel #(
-    .N(8)
+    .N(24)
   ) inst (
     .clk(clk),
     .rst_n(rst_n),

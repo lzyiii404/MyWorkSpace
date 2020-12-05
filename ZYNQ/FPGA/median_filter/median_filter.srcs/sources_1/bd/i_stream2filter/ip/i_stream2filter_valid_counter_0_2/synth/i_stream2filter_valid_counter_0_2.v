@@ -52,7 +52,7 @@
 
 (* X_CORE_INFO = "valid_counter,Vivado 2018.3" *)
 (* CHECK_LICENSE_TYPE = "i_stream2filter_valid_counter_0_2,valid_counter,{}" *)
-(* CORE_GENERATION_INFO = "i_stream2filter_valid_counter_0_2,valid_counter,{x_ipProduct=Vivado 2018.3,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=valid_counter,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,N=8,Pixel_wide=1080,Pixel_high=720}" *)
+(* CORE_GENERATION_INFO = "i_stream2filter_valid_counter_0_2,valid_counter,{x_ipProduct=Vivado 2018.3,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=valid_counter,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,N=24,Pixel_wide=1080,Pixel_high=720}" *)
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module i_stream2filter_valid_counter_0_2 (
@@ -69,12 +69,12 @@ input wire clk;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst_n, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rst_n RST" *)
 input wire rst_n;
-input wire [7 : 0] i_stream;
+input wire [23 : 0] i_stream;
 output wire o_valid;
 output wire o_data_sig;
 
   valid_counter #(
-    .N(8),
+    .N(24),
     .Pixel_wide(1080),
     .Pixel_high(720)
   ) inst (

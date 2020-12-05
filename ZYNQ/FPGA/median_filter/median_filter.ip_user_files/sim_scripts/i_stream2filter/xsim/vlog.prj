@@ -5,6 +5,12 @@ verilog xil_defaultlib  \
 "../../../bd/i_stream2filter/ip/i_stream2filter_median_filter_0_0/sim/i_stream2filter_median_filter_0_0.v" \
 "../../../bd/i_stream2filter/ip/i_stream2filter_valid_counter_0_2/sim/i_stream2filter_valid_counter_0_2.v" \
 "../../../bd/i_stream2filter/sim/i_stream2filter.v" \
+"../../../bd/i_stream2filter/ip/i_stream2filter_median_filter_0_1/sim/i_stream2filter_median_filter_0_1.v" \
+"../../../bd/i_stream2filter/ip/i_stream2filter_median_filter_0_2/sim/i_stream2filter_median_filter_0_2.v" \
+"../../../bd/i_stream2filter/ip/i_stream2filter_mul_bits_fragment_0_0/sim/i_stream2filter_mul_bits_fragment_0_0.v" \
+"../../../bd/i_stream2filter/ip/i_stream2filter_mul_bits_fragment_0_1/sim/i_stream2filter_mul_bits_fragment_0_1.v" \
+"../../../bd/i_stream2filter/ip/i_stream2filter_mul_bits_fragment_1_0/sim/i_stream2filter_mul_bits_fragment_1_0.v" \
+"../../../bd/i_stream2filter/ip/i_stream2filter_bits_combine_0_0/sim/i_stream2filter_bits_combine_0_0.v" \
 
 verilog xil_defaultlib "glbl.v"
 

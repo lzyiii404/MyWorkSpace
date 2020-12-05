@@ -2,8 +2,8 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Mon Nov 30 21:57:20 2020
-# Process ID: 21912
+# Start of session at: Wed Dec  2 16:55:25 2020
+# Process ID: 19680
 # Current directory: D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.runs/i_stream2filter_Serial2Parallel_0_2_synth_1
 # Command line: vivado.exe -log i_stream2filter_Serial2Parallel_0_2.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source i_stream2filter_Serial2Parallel_0_2.tcl
 # Log file: D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.runs/i_stream2filter_Serial2Parallel_0_2_synth_1/i_stream2filter_Serial2Parallel_0_2.vds

@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Mon Nov 30 21:58:08 2020
+// Date        : Wed Dec  2 16:56:16 2020
 // Host        : Huang running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               D:/MyWorkSpace/ZYNQ/FPGA/median_filter/median_filter.srcs/sources_1/bd/i_stream2filter/ip/i_stream2filter_valid_counter_0_2/i_stream2filter_valid_counter_0_2_sim_netlist.v
@@ -23,7 +23,7 @@ module i_stream2filter_valid_counter_0_2
     o_data_sig);
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN i_stream2filter_clk, INSERT_VIP 0" *) input clk;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rst_n RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst_n, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input rst_n;
-  input [7:0]i_stream;
+  input [23:0]i_stream;
   output o_valid;
   output o_data_sig;
 

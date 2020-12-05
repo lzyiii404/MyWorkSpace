@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Mon Nov 30 23:17:40 2020
+// Date        : Wed Dec  2 16:56:16 2020
 // Host        : Huang running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ i_stream2filter_valid_counter_0_2_stub.v
@@ -15,10 +15,10 @@
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
 (* X_CORE_INFO = "valid_counter,Vivado 2018.3" *)
 module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix(clk, rst_n, i_stream, o_valid, o_data_sig)
-/* synthesis syn_black_box black_box_pad_pin="clk,rst_n,i_stream[7:0],o_valid,o_data_sig" */;
+/* synthesis syn_black_box black_box_pad_pin="clk,rst_n,i_stream[23:0],o_valid,o_data_sig" */;
   input clk;
   input rst_n;
-  input [7:0]i_stream;
+  input [23:0]i_stream;
   output o_valid;
   output o_data_sig;
 endmodule

@@ -68,12 +68,12 @@ input wire clk;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst_n, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rst_n RST" *)
 input wire rst_n;
-input wire [7 : 0] i_stream;
+input wire [23 : 0] i_stream;
 output wire o_valid;
 output wire o_data_sig;
 
   valid_counter #(
-    .N(8),
+    .N(24),
     .Pixel_wide(1080),
     .Pixel_high(720)
   ) inst (

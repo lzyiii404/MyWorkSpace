@@ -58,9 +58,9 @@ USE c_shift_ram_v12_0_12.c_shift_ram_v12_0_12;
 
 ENTITY i_stream2filter_c_shift_ram_0_3 IS
   PORT (
-    D : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+    D : IN STD_LOGIC_VECTOR(23 DOWNTO 0);
     CLK : IN STD_LOGIC;
-    Q : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+    Q : OUT STD_LOGIC_VECTOR(23 DOWNTO 0)
   );
 END i_stream2filter_c_shift_ram_0_3;
 
@@ -94,36 +94,36 @@ ARCHITECTURE i_stream2filter_c_shift_ram_0_3_arch OF i_stream2filter_c_shift_ram
     );
     PORT (
       A : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-      D : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+      D : IN STD_LOGIC_VECTOR(23 DOWNTO 0);
       CLK : IN STD_LOGIC;
       CE : IN STD_LOGIC;
       SCLR : IN STD_LOGIC;
       SSET : IN STD_LOGIC;
       SINIT : IN STD_LOGIC;
-      Q : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+      Q : OUT STD_LOGIC_VECTOR(23 DOWNTO 0)
     );
   END COMPONENT c_shift_ram_v12_0_12;
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
-  ATTRIBUTE X_INTERFACE_PARAMETER OF Q: SIGNAL IS "XIL_INTERFACENAME q_intf, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value data} bitwidth {attribs {resolve_type generated dependency data_bitwidth format long minimum {} maximum {}} value 8} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} DATA_WIDTH 8}";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF Q: SIGNAL IS "XIL_INTERFACENAME q_intf, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value data} bitwidth {attribs {resolve_type generated dependency data_bitwidth format long minimum {} maximum {}} value 24} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} DATA_WIDTH 24}";
   ATTRIBUTE X_INTERFACE_INFO OF Q: SIGNAL IS "xilinx.com:signal:data:1.0 q_intf DATA";
   ATTRIBUTE X_INTERFACE_PARAMETER OF CLK: SIGNAL IS "XIL_INTERFACENAME clk_intf, ASSOCIATED_BUSIF q_intf:sinit_intf:sset_intf:d_intf:a_intf, ASSOCIATED_RESET SCLR, ASSOCIATED_CLKEN CE, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN i_stream2filter_clk, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF CLK: SIGNAL IS "xilinx.com:signal:clock:1.0 clk_intf CLK";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF D: SIGNAL IS "XIL_INTERFACENAME d_intf, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value data} bitwidth {attribs {resolve_type generated dependency data_bitwidth format long minimum {} maximum {}} value 8} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} DATA_WIDTH 8}";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF D: SIGNAL IS "XIL_INTERFACENAME d_intf, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value data} bitwidth {attribs {resolve_type generated dependency data_bitwidth format long minimum {} maximum {}} value 24} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} DATA_WIDTH 24}";
   ATTRIBUTE X_INTERFACE_INFO OF D: SIGNAL IS "xilinx.com:signal:data:1.0 d_intf DATA";
 BEGIN
   U0 : c_shift_ram_v12_0_12
     GENERIC MAP (
       C_XDEVICEFAMILY => "zynq",
       C_VERBOSITY => 0,
-      C_WIDTH => 8,
-      C_DEPTH => 640,
+      C_WIDTH => 24,
+      C_DEPTH => 1080,
       C_ADDR_WIDTH => 4,
       C_SHIFT_TYPE => 0,
       C_OPT_GOAL => 0,
-      C_AINIT_VAL => "00000000",
-      C_SINIT_VAL => "00000000",
-      C_DEFAULT_DATA => "00000000",
+      C_AINIT_VAL => "000000000000000000000000",
+      C_SINIT_VAL => "000000000000000000000000",
+      C_DEFAULT_DATA => "000000000000000000000000",
       C_HAS_A => 0,
       C_HAS_CE => 0,
       C_REG_LAST_BIT => 1,

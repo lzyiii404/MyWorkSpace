@@ -16,11 +16,11 @@ parameter PERIOD  = 10;
 
 // i_stream2filter_wrapper Inputs    
 reg   clk                                  = 1 ;
-reg   [7:0]  i_stream                      = 0 ;
+reg   [23:0]  i_stream                     = 0 ;
 reg   rst_n                                = 0 ;
 
 // i_stream2filter_wrapper Outputs
-wire  [7:0]  o_data                        ;
+wire  [23:0]  o_data                       ;
 wire  o_done_sig                           ;
 wire  o_valid                              ;
 
@@ -36,19 +36,20 @@ begin
 end
 
 i_stream2filter_wrapper  u_i_stream2filter_wrapper (
-    .clk                     ( clk               ),
-    .i_stream                ( i_stream    [7:0] ),
-    .rst_n                   ( rst_n             ),
+    .clk                     ( clk                ),
+    .i_stream                ( i_stream    [23:0] ),
+    .rst_n                   ( rst_n              ),
 
-    .o_data                  ( o_data      [7:0] ),
-    .o_done_sig              ( o_done_sig        ),
-    .o_valid                 ( o_valid           )
+    .o_data                  ( o_data      [23:0] ),
+    .o_done_sig              ( o_done_sig         ),
+    .o_valid                 ( o_valid            )
 );
 
 parameter DEPTH = 777600;
 
 integer i;
-reg [7:0] tmp_reg[DEPTH - 1:0];
+
+reg [23:0] tmp_reg[0 : DEPTH-1];
 
 integer file_out;
 
@@ -64,13 +65,15 @@ begin
         #10;
     end
     i_stream = 0;
-    #1500000;
+    #500000;
+    $fclose(file_out);
+
     $finish;
 end
 
 always @(posedge clk) begin
     if (o_valid) begin
-        $fdisplay(file_out, "%02x", o_data);
+        $fdisplay(file_out, "%06x", o_data);
     end
 end
 

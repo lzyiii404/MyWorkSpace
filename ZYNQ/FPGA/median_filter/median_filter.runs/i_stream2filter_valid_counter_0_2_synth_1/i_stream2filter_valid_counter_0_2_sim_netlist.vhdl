@@ -1,7 +1,7 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Mon Nov 30 23:17:40 2020
+-- Date        : Wed Dec  2 16:56:16 2020
 -- Host        : Huang running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 --               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ i_stream2filter_valid_counter_0_2_sim_netlist.vhdl
@@ -18,7 +18,7 @@ entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
   port (
     clk : in STD_LOGIC;
     rst_n : in STD_LOGIC;
-    i_stream : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    i_stream : in STD_LOGIC_VECTOR ( 23 downto 0 );
     o_valid : out STD_LOGIC;
     o_data_sig : out STD_LOGIC
   );

@@ -36,8 +36,14 @@ vcom -work c_shift_ram_v12_0_12 -64 -93 \
 vcom -work xil_defaultlib -64 -93 \
 "../../../bd/i_stream2filter/ip/i_stream2filter_c_shift_ram_0_1/sim/i_stream2filter_c_shift_ram_0_1.vhd" \
 "../../../bd/i_stream2filter/ip/i_stream2filter_c_shift_ram_0_3/sim/i_stream2filter_c_shift_ram_0_3.vhd" \
-"../../../bd/i_stream2filter/ip/i_stream2filter_c_shift_ram_0_4/sim/i_stream2filter_c_shift_ram_0_4.vhd" \
-"../../../bd/i_stream2filter/ip/i_stream2filter_c_shift_ram_0_5/sim/i_stream2filter_c_shift_ram_0_5.vhd" \
+
+vlog -work xil_defaultlib -64 \
+"../../../bd/i_stream2filter/ip/i_stream2filter_median_filter_0_1/sim/i_stream2filter_median_filter_0_1.v" \
+"../../../bd/i_stream2filter/ip/i_stream2filter_median_filter_0_2/sim/i_stream2filter_median_filter_0_2.v" \
+"../../../bd/i_stream2filter/ip/i_stream2filter_mul_bits_fragment_0_0/sim/i_stream2filter_mul_bits_fragment_0_0.v" \
+"../../../bd/i_stream2filter/ip/i_stream2filter_mul_bits_fragment_0_1/sim/i_stream2filter_mul_bits_fragment_0_1.v" \
+"../../../bd/i_stream2filter/ip/i_stream2filter_mul_bits_fragment_1_0/sim/i_stream2filter_mul_bits_fragment_1_0.v" \
+"../../../bd/i_stream2filter/ip/i_stream2filter_bits_combine_0_0/sim/i_stream2filter_bits_combine_0_0.v" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

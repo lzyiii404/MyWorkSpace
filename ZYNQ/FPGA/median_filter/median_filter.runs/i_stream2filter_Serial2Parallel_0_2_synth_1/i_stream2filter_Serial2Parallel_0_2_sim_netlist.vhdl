@@ -1,7 +1,7 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Mon Nov 30 21:58:08 2020
+-- Date        : Wed Dec  2 16:56:15 2020
 -- Host        : Huang running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 --               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ i_stream2filter_Serial2Parallel_0_2_sim_netlist.vhdl
@@ -16,51 +16,163 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_Serial2Parallel is
   port (
-    o_data_3 : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    o_data_2 : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    o_data_1 : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    i_data : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    o_data_3 : out STD_LOGIC_VECTOR ( 23 downto 0 );
+    o_data_2 : out STD_LOGIC_VECTOR ( 23 downto 0 );
+    o_data_1 : out STD_LOGIC_VECTOR ( 23 downto 0 );
+    i_data : in STD_LOGIC_VECTOR ( 23 downto 0 );
     clk : in STD_LOGIC;
     rst_n : in STD_LOGIC
   );
 end decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_Serial2Parallel;
 
 architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_Serial2Parallel is
-  signal \^o_data_2\ : STD_LOGIC_VECTOR ( 7 downto 0 );
-  signal \^o_data_3\ : STD_LOGIC_VECTOR ( 7 downto 0 );
-  signal \tmp_data_1[7]_i_1_n_0\ : STD_LOGIC;
+  signal \^o_data_2\ : STD_LOGIC_VECTOR ( 23 downto 0 );
+  signal \^o_data_3\ : STD_LOGIC_VECTOR ( 23 downto 0 );
+  signal \tmp_data_1[23]_i_1_n_0\ : STD_LOGIC;
 begin
-  o_data_2(7 downto 0) <= \^o_data_2\(7 downto 0);
-  o_data_3(7 downto 0) <= \^o_data_3\(7 downto 0);
-\tmp_data_1[7]_i_1\: unisim.vcomponents.LUT1
+  o_data_2(23 downto 0) <= \^o_data_2\(23 downto 0);
+  o_data_3(23 downto 0) <= \^o_data_3\(23 downto 0);
+\tmp_data_1[23]_i_1\: unisim.vcomponents.LUT1
     generic map(
       INIT => X"1"
     )
         port map (
       I0 => rst_n,
-      O => \tmp_data_1[7]_i_1_n_0\
+      O => \tmp_data_1[23]_i_1_n_0\
     );
 \tmp_data_1_reg[0]\: unisim.vcomponents.FDCE
      port map (
       C => clk,
       CE => '1',
-      CLR => \tmp_data_1[7]_i_1_n_0\,
+      CLR => \tmp_data_1[23]_i_1_n_0\,
       D => \^o_data_2\(0),
       Q => o_data_1(0)
+    );
+\tmp_data_1_reg[10]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => \^o_data_2\(10),
+      Q => o_data_1(10)
+    );
+\tmp_data_1_reg[11]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => \^o_data_2\(11),
+      Q => o_data_1(11)
+    );
+\tmp_data_1_reg[12]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => \^o_data_2\(12),
+      Q => o_data_1(12)
+    );
+\tmp_data_1_reg[13]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => \^o_data_2\(13),
+      Q => o_data_1(13)
+    );
+\tmp_data_1_reg[14]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => \^o_data_2\(14),
+      Q => o_data_1(14)
+    );
+\tmp_data_1_reg[15]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => \^o_data_2\(15),
+      Q => o_data_1(15)
+    );
+\tmp_data_1_reg[16]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => \^o_data_2\(16),
+      Q => o_data_1(16)
+    );
+\tmp_data_1_reg[17]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => \^o_data_2\(17),
+      Q => o_data_1(17)
+    );
+\tmp_data_1_reg[18]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => \^o_data_2\(18),
+      Q => o_data_1(18)
+    );
+\tmp_data_1_reg[19]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => \^o_data_2\(19),
+      Q => o_data_1(19)
     );
 \tmp_data_1_reg[1]\: unisim.vcomponents.FDCE
      port map (
       C => clk,
       CE => '1',
-      CLR => \tmp_data_1[7]_i_1_n_0\,
+      CLR => \tmp_data_1[23]_i_1_n_0\,
       D => \^o_data_2\(1),
       Q => o_data_1(1)
+    );
+\tmp_data_1_reg[20]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => \^o_data_2\(20),
+      Q => o_data_1(20)
+    );
+\tmp_data_1_reg[21]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => \^o_data_2\(21),
+      Q => o_data_1(21)
+    );
+\tmp_data_1_reg[22]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => \^o_data_2\(22),
+      Q => o_data_1(22)
+    );
+\tmp_data_1_reg[23]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => \^o_data_2\(23),
+      Q => o_data_1(23)
     );
 \tmp_data_1_reg[2]\: unisim.vcomponents.FDCE
      port map (
       C => clk,
       CE => '1',
-      CLR => \tmp_data_1[7]_i_1_n_0\,
+      CLR => \tmp_data_1[23]_i_1_n_0\,
       D => \^o_data_2\(2),
       Q => o_data_1(2)
     );
@@ -68,7 +180,7 @@ begin
      port map (
       C => clk,
       CE => '1',
-      CLR => \tmp_data_1[7]_i_1_n_0\,
+      CLR => \tmp_data_1[23]_i_1_n_0\,
       D => \^o_data_2\(3),
       Q => o_data_1(3)
     );
@@ -76,7 +188,7 @@ begin
      port map (
       C => clk,
       CE => '1',
-      CLR => \tmp_data_1[7]_i_1_n_0\,
+      CLR => \tmp_data_1[23]_i_1_n_0\,
       D => \^o_data_2\(4),
       Q => o_data_1(4)
     );
@@ -84,7 +196,7 @@ begin
      port map (
       C => clk,
       CE => '1',
-      CLR => \tmp_data_1[7]_i_1_n_0\,
+      CLR => \tmp_data_1[23]_i_1_n_0\,
       D => \^o_data_2\(5),
       Q => o_data_1(5)
     );
@@ -92,7 +204,7 @@ begin
      port map (
       C => clk,
       CE => '1',
-      CLR => \tmp_data_1[7]_i_1_n_0\,
+      CLR => \tmp_data_1[23]_i_1_n_0\,
       D => \^o_data_2\(6),
       Q => o_data_1(6)
     );
@@ -100,31 +212,159 @@ begin
      port map (
       C => clk,
       CE => '1',
-      CLR => \tmp_data_1[7]_i_1_n_0\,
+      CLR => \tmp_data_1[23]_i_1_n_0\,
       D => \^o_data_2\(7),
       Q => o_data_1(7)
+    );
+\tmp_data_1_reg[8]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => \^o_data_2\(8),
+      Q => o_data_1(8)
+    );
+\tmp_data_1_reg[9]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => \^o_data_2\(9),
+      Q => o_data_1(9)
     );
 \tmp_data_2_reg[0]\: unisim.vcomponents.FDCE
      port map (
       C => clk,
       CE => '1',
-      CLR => \tmp_data_1[7]_i_1_n_0\,
+      CLR => \tmp_data_1[23]_i_1_n_0\,
       D => \^o_data_3\(0),
       Q => \^o_data_2\(0)
+    );
+\tmp_data_2_reg[10]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => \^o_data_3\(10),
+      Q => \^o_data_2\(10)
+    );
+\tmp_data_2_reg[11]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => \^o_data_3\(11),
+      Q => \^o_data_2\(11)
+    );
+\tmp_data_2_reg[12]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => \^o_data_3\(12),
+      Q => \^o_data_2\(12)
+    );
+\tmp_data_2_reg[13]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => \^o_data_3\(13),
+      Q => \^o_data_2\(13)
+    );
+\tmp_data_2_reg[14]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => \^o_data_3\(14),
+      Q => \^o_data_2\(14)
+    );
+\tmp_data_2_reg[15]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => \^o_data_3\(15),
+      Q => \^o_data_2\(15)
+    );
+\tmp_data_2_reg[16]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => \^o_data_3\(16),
+      Q => \^o_data_2\(16)
+    );
+\tmp_data_2_reg[17]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => \^o_data_3\(17),
+      Q => \^o_data_2\(17)
+    );
+\tmp_data_2_reg[18]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => \^o_data_3\(18),
+      Q => \^o_data_2\(18)
+    );
+\tmp_data_2_reg[19]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => \^o_data_3\(19),
+      Q => \^o_data_2\(19)
     );
 \tmp_data_2_reg[1]\: unisim.vcomponents.FDCE
      port map (
       C => clk,
       CE => '1',
-      CLR => \tmp_data_1[7]_i_1_n_0\,
+      CLR => \tmp_data_1[23]_i_1_n_0\,
       D => \^o_data_3\(1),
       Q => \^o_data_2\(1)
+    );
+\tmp_data_2_reg[20]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => \^o_data_3\(20),
+      Q => \^o_data_2\(20)
+    );
+\tmp_data_2_reg[21]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => \^o_data_3\(21),
+      Q => \^o_data_2\(21)
+    );
+\tmp_data_2_reg[22]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => \^o_data_3\(22),
+      Q => \^o_data_2\(22)
+    );
+\tmp_data_2_reg[23]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => \^o_data_3\(23),
+      Q => \^o_data_2\(23)
     );
 \tmp_data_2_reg[2]\: unisim.vcomponents.FDCE
      port map (
       C => clk,
       CE => '1',
-      CLR => \tmp_data_1[7]_i_1_n_0\,
+      CLR => \tmp_data_1[23]_i_1_n_0\,
       D => \^o_data_3\(2),
       Q => \^o_data_2\(2)
     );
@@ -132,7 +372,7 @@ begin
      port map (
       C => clk,
       CE => '1',
-      CLR => \tmp_data_1[7]_i_1_n_0\,
+      CLR => \tmp_data_1[23]_i_1_n_0\,
       D => \^o_data_3\(3),
       Q => \^o_data_2\(3)
     );
@@ -140,7 +380,7 @@ begin
      port map (
       C => clk,
       CE => '1',
-      CLR => \tmp_data_1[7]_i_1_n_0\,
+      CLR => \tmp_data_1[23]_i_1_n_0\,
       D => \^o_data_3\(4),
       Q => \^o_data_2\(4)
     );
@@ -148,7 +388,7 @@ begin
      port map (
       C => clk,
       CE => '1',
-      CLR => \tmp_data_1[7]_i_1_n_0\,
+      CLR => \tmp_data_1[23]_i_1_n_0\,
       D => \^o_data_3\(5),
       Q => \^o_data_2\(5)
     );
@@ -156,7 +396,7 @@ begin
      port map (
       C => clk,
       CE => '1',
-      CLR => \tmp_data_1[7]_i_1_n_0\,
+      CLR => \tmp_data_1[23]_i_1_n_0\,
       D => \^o_data_3\(6),
       Q => \^o_data_2\(6)
     );
@@ -164,31 +404,159 @@ begin
      port map (
       C => clk,
       CE => '1',
-      CLR => \tmp_data_1[7]_i_1_n_0\,
+      CLR => \tmp_data_1[23]_i_1_n_0\,
       D => \^o_data_3\(7),
       Q => \^o_data_2\(7)
+    );
+\tmp_data_2_reg[8]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => \^o_data_3\(8),
+      Q => \^o_data_2\(8)
+    );
+\tmp_data_2_reg[9]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => \^o_data_3\(9),
+      Q => \^o_data_2\(9)
     );
 \tmp_data_3_reg[0]\: unisim.vcomponents.FDCE
      port map (
       C => clk,
       CE => '1',
-      CLR => \tmp_data_1[7]_i_1_n_0\,
+      CLR => \tmp_data_1[23]_i_1_n_0\,
       D => i_data(0),
       Q => \^o_data_3\(0)
+    );
+\tmp_data_3_reg[10]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => i_data(10),
+      Q => \^o_data_3\(10)
+    );
+\tmp_data_3_reg[11]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => i_data(11),
+      Q => \^o_data_3\(11)
+    );
+\tmp_data_3_reg[12]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => i_data(12),
+      Q => \^o_data_3\(12)
+    );
+\tmp_data_3_reg[13]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => i_data(13),
+      Q => \^o_data_3\(13)
+    );
+\tmp_data_3_reg[14]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => i_data(14),
+      Q => \^o_data_3\(14)
+    );
+\tmp_data_3_reg[15]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => i_data(15),
+      Q => \^o_data_3\(15)
+    );
+\tmp_data_3_reg[16]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => i_data(16),
+      Q => \^o_data_3\(16)
+    );
+\tmp_data_3_reg[17]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => i_data(17),
+      Q => \^o_data_3\(17)
+    );
+\tmp_data_3_reg[18]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => i_data(18),
+      Q => \^o_data_3\(18)
+    );
+\tmp_data_3_reg[19]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => i_data(19),
+      Q => \^o_data_3\(19)
     );
 \tmp_data_3_reg[1]\: unisim.vcomponents.FDCE
      port map (
       C => clk,
       CE => '1',
-      CLR => \tmp_data_1[7]_i_1_n_0\,
+      CLR => \tmp_data_1[23]_i_1_n_0\,
       D => i_data(1),
       Q => \^o_data_3\(1)
+    );
+\tmp_data_3_reg[20]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => i_data(20),
+      Q => \^o_data_3\(20)
+    );
+\tmp_data_3_reg[21]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => i_data(21),
+      Q => \^o_data_3\(21)
+    );
+\tmp_data_3_reg[22]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => i_data(22),
+      Q => \^o_data_3\(22)
+    );
+\tmp_data_3_reg[23]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => i_data(23),
+      Q => \^o_data_3\(23)
     );
 \tmp_data_3_reg[2]\: unisim.vcomponents.FDCE
      port map (
       C => clk,
       CE => '1',
-      CLR => \tmp_data_1[7]_i_1_n_0\,
+      CLR => \tmp_data_1[23]_i_1_n_0\,
       D => i_data(2),
       Q => \^o_data_3\(2)
     );
@@ -196,7 +564,7 @@ begin
      port map (
       C => clk,
       CE => '1',
-      CLR => \tmp_data_1[7]_i_1_n_0\,
+      CLR => \tmp_data_1[23]_i_1_n_0\,
       D => i_data(3),
       Q => \^o_data_3\(3)
     );
@@ -204,7 +572,7 @@ begin
      port map (
       C => clk,
       CE => '1',
-      CLR => \tmp_data_1[7]_i_1_n_0\,
+      CLR => \tmp_data_1[23]_i_1_n_0\,
       D => i_data(4),
       Q => \^o_data_3\(4)
     );
@@ -212,7 +580,7 @@ begin
      port map (
       C => clk,
       CE => '1',
-      CLR => \tmp_data_1[7]_i_1_n_0\,
+      CLR => \tmp_data_1[23]_i_1_n_0\,
       D => i_data(5),
       Q => \^o_data_3\(5)
     );
@@ -220,7 +588,7 @@ begin
      port map (
       C => clk,
       CE => '1',
-      CLR => \tmp_data_1[7]_i_1_n_0\,
+      CLR => \tmp_data_1[23]_i_1_n_0\,
       D => i_data(6),
       Q => \^o_data_3\(6)
     );
@@ -228,9 +596,25 @@ begin
      port map (
       C => clk,
       CE => '1',
-      CLR => \tmp_data_1[7]_i_1_n_0\,
+      CLR => \tmp_data_1[23]_i_1_n_0\,
       D => i_data(7),
       Q => \^o_data_3\(7)
+    );
+\tmp_data_3_reg[8]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => i_data(8),
+      Q => \^o_data_3\(8)
+    );
+\tmp_data_3_reg[9]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => \tmp_data_1[23]_i_1_n_0\,
+      D => i_data(9),
+      Q => \^o_data_3\(9)
     );
 end STRUCTURE;
 library IEEE;
@@ -241,10 +625,10 @@ entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
   port (
     clk : in STD_LOGIC;
     rst_n : in STD_LOGIC;
-    i_data : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    o_data_1 : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    o_data_2 : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    o_data_3 : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    i_data : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    o_data_1 : out STD_LOGIC_VECTOR ( 23 downto 0 );
+    o_data_2 : out STD_LOGIC_VECTOR ( 23 downto 0 );
+    o_data_3 : out STD_LOGIC_VECTOR ( 23 downto 0 );
     o_data_sig : out STD_LOGIC
   );
   attribute NotValidForBitStream : boolean;
@@ -276,10 +660,10 @@ GND: unisim.vcomponents.GND
 inst: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_Serial2Parallel
      port map (
       clk => clk,
-      i_data(7 downto 0) => i_data(7 downto 0),
-      o_data_1(7 downto 0) => o_data_1(7 downto 0),
-      o_data_2(7 downto 0) => o_data_2(7 downto 0),
-      o_data_3(7 downto 0) => o_data_3(7 downto 0),
+      i_data(23 downto 0) => i_data(23 downto 0),
+      o_data_1(23 downto 0) => o_data_1(23 downto 0),
+      o_data_2(23 downto 0) => o_data_2(23 downto 0),
+      o_data_3(23 downto 0) => o_data_3(23 downto 0),
       rst_n => rst_n
     );
 end STRUCTURE;

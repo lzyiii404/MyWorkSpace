@@ -52,7 +52,7 @@
 
 (* X_CORE_INFO = "Serial2Parallel,Vivado 2018.3" *)
 (* CHECK_LICENSE_TYPE = "i_stream2filter_Serial2Parallel_0_1,Serial2Parallel,{}" *)
-(* CORE_GENERATION_INFO = "i_stream2filter_Serial2Parallel_0_1,Serial2Parallel,{x_ipProduct=Vivado 2018.3,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=Serial2Parallel,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,N=8}" *)
+(* CORE_GENERATION_INFO = "i_stream2filter_Serial2Parallel_0_1,Serial2Parallel,{x_ipProduct=Vivado 2018.3,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=Serial2Parallel,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,N=24}" *)
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module i_stream2filter_Serial2Parallel_0_1 (
@@ -71,14 +71,14 @@ input wire clk;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst_n, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rst_n RST" *)
 input wire rst_n;
-input wire [7 : 0] i_data;
-output wire [7 : 0] o_data_1;
-output wire [7 : 0] o_data_2;
-output wire [7 : 0] o_data_3;
+input wire [23 : 0] i_data;
+output wire [23 : 0] o_data_1;
+output wire [23 : 0] o_data_2;
+output wire [23 : 0] o_data_3;
 output wire o_data_sig;
 
   Serial2Parallel #(
-    .N(8)
+    .N(24)
   ) inst (
     .clk(clk),
     .rst_n(rst_n),

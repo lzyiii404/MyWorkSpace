@@ -21,8 +21,14 @@
 -makelib ies_lib/xil_defaultlib \
   "../../../bd/i_stream2filter/ip/i_stream2filter_c_shift_ram_0_1/sim/i_stream2filter_c_shift_ram_0_1.vhd" \
   "../../../bd/i_stream2filter/ip/i_stream2filter_c_shift_ram_0_3/sim/i_stream2filter_c_shift_ram_0_3.vhd" \
-  "../../../bd/i_stream2filter/ip/i_stream2filter_c_shift_ram_0_4/sim/i_stream2filter_c_shift_ram_0_4.vhd" \
-  "../../../bd/i_stream2filter/ip/i_stream2filter_c_shift_ram_0_5/sim/i_stream2filter_c_shift_ram_0_5.vhd" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/i_stream2filter/ip/i_stream2filter_median_filter_0_1/sim/i_stream2filter_median_filter_0_1.v" \
+  "../../../bd/i_stream2filter/ip/i_stream2filter_median_filter_0_2/sim/i_stream2filter_median_filter_0_2.v" \
+  "../../../bd/i_stream2filter/ip/i_stream2filter_mul_bits_fragment_0_0/sim/i_stream2filter_mul_bits_fragment_0_0.v" \
+  "../../../bd/i_stream2filter/ip/i_stream2filter_mul_bits_fragment_0_1/sim/i_stream2filter_mul_bits_fragment_0_1.v" \
+  "../../../bd/i_stream2filter/ip/i_stream2filter_mul_bits_fragment_1_0/sim/i_stream2filter_mul_bits_fragment_1_0.v" \
+  "../../../bd/i_stream2filter/ip/i_stream2filter_bits_combine_0_0/sim/i_stream2filter_bits_combine_0_0.v" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
   glbl.v
