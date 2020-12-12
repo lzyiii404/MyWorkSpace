@@ -14,7 +14,7 @@ import ast
 import os
 import pymysql
 import time
-import os
+import re
 # path = os.getcwd()
 # a_path = os.path.join(path, "b_file/a.txt")
 # print(a_path)
@@ -22,7 +22,7 @@ import os
 app = Flask(__name__)
 
 # HOST = '172.26.1.146'
-HOST = '192.168.1.174'
+HOST = '192.168.137.1'
 PORT = '5000'
 # DATABASE_NAME = 'Devices'
 # USERNAME = 'root'
@@ -36,17 +36,23 @@ def upload():
     if request.method == 'POST':
         req=request
         # file1 = request.files.get("json")
-        # data = json.loads(request.get_data(as_text=True))
-        data = request.get_data(as_text=True)
+        data = json.loads(request.get_data(as_text=True))
+        # data = request.get_data()
         print(type(data))
-        print(data)
+        print(data['LED'])
+        if data['LED'] == 'off':
+            os.system('./turn_off.exe')
+        if data['LED'] == 'on':
+            os.system('./turn_on.exe')
+        # AT=re.match(r'LED=', data)
+        # print(AT.group())
         # filename = time.strftime('%Y_%m_%d_%H_%M_%S', time.localtime())
         # filePath = os.path.join(path'123.json')
         # print(filePath)
-        filename = time.strftime('%Y_%m_%d_%H_%M_%S', time.localtime())
-        f = open('D:\\MyWorkSpace\\PYTHON\\MyCode\\httpserve\\data\\10_8\\' + filename + '.json', 'w+')
-        # f = open(filePath, 'w+')
-        f.write(data)
+        # filename = time.strftime('%Y_%m_%d_%H_%M_%S', time.localtime())
+        # f = open('D:\\MyWorkSpace\\PYTHON\\MyCode\\httpserve\\data\\10_8\\' + filename + '.json', 'w+')
+        # # f = open(filePath, 'w+')
+        # f.write(data)
         # print(filename)
         # print(request.get_data(as_text=True))
         # data = json.loads(request.get_data(as_text=True))

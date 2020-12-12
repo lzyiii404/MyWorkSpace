@@ -13,12 +13,14 @@ import os
 import pymysql
 import time
 
-url="http://127.0.0.1"
+url="http://192.168.137.47"
 
 data={
-    'filename':'1',
-    'name':'name'
+    "LED":"off"
 }
 
 r=requests.post(url,data=data)
 print(r.text)
+
+# r=requests.get(url)
+# print(r.text)

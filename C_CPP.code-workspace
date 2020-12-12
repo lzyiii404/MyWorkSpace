@@ -64,7 +64,12 @@
       "stdexcept": "cpp",
       "cinttypes": "cpp",
       "typeinfo": "cpp",
-      "BLE.C": "cpp"
+      "BLE.C": "cpp",
+      "forward_list": "cpp",
+      "list": "cpp",
+      "unordered_set": "cpp",
+      "regex": "cpp",
+      "valarray": "cpp"
     },
     "fileheader.LastModifiedBy": "jy.Huang",
     "fileheader.Author": "jy.Huang"

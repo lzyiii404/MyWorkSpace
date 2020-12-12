@@ -17,14 +17,20 @@
 
 #include "time.h"
 
-#include "LiquidCrystal_I2C.h"
-
-
-
 #define LCD_ON 0
 
-#define DATA_SIZE 30
+#if LCD_ON
 
+#include "LiquidCrystal_I2C.h"
+
+#endif
+
+
+
+
+#define DATA_SIZE 5
+
+/********************操作指令****************/
 
 //EEPROM 存储 WIFI 及密码
 //EEPROM 操作
@@ -34,8 +40,20 @@
 #define EEPROM_READ_PW 'D'
 #define EEPROM_WRITE_HTTP 'E'
 #define EEPROM_READ_HTTP 'F'
+//WIFI
+#define WIFI_CONNECT 'G'
+#define WX_SET_SSID_PW    '{'
 
-#define EEPROM_MAX_WIDTH 130
+//test
+#define EEPROM_WRITE_PC_ID 'I'
+#define EEPROM_READ_PC_ID 'J'
+
+#define TURN_OFF_COMMAND  'N'
+#define TURN_ON_COMMAND   'M'
+
+/********************************************/
+
+#define EEPROM_MAX_WIDTH 194
 
 #define EEPROM_WIFI_ADDR 0
 #define EEPROM_WIFI_ADDR_WIDTH 32
@@ -46,11 +64,12 @@
 #define EEPROM_HTTP_ADDR 64
 #define EEPROM_HTTP_ADDR_WIDTH 64
 
-#define EEPROM_MODE_STATE_ADDR 129
+#define EEPROM_PC_ADDR  128
+#define EEPROM_PC_ADDR_WIDTH  64
 
-//WIFI
-#define WIFI_CONNECT 'G'
-#define WX_SET_SSID_PW    '{'
+#define EEPROM_MODE_STATE_ADDR 193
+
+
 
 /*********************************************************
  *      输入wifi：huang       指令：Ahuang
@@ -103,6 +122,8 @@ LiquidCrystal_I2C lcd(0x3F, lcdColumns, lcdRows);
 #endif
 
 uint8_t Mode_state = NULL;
+
+bool people_exist = true;
 
 #define WIFI_MODE 1
 #define BLE_MODE 0
@@ -585,7 +606,13 @@ void date2string(int year, int month, int day, int hour, int min, int sec){
 
 void int2string(int num){
   char tmp[4];
-  sprintf(tmp, "%d", num);
+  sprintf(tmp, "%02d", num);
+  json_data.append(tmp);
+}
+
+void year2string(int num){
+  char tmp[4];
+  sprintf(tmp, "%02d", num);
   json_data.append(tmp);
 }
 
@@ -644,17 +671,17 @@ void add_json_tail(){
   json_data.append("]}");
 }
 
-void get_HTTP_URL()
+void get_URL(int addr, int width)
 {
   char tmp_ch;
   EEPROM.begin(EEPROM_MAX_WIDTH);
-  for (int i = EEPROM_HTTP_ADDR; i < EEPROM_HTTP_ADDR + EEPROM_HTTP_ADDR_WIDTH; i++)
+  for (int i = addr; i < addr + width; i++)
   {
     tmp_ch = EEPROM.read(i);
     if (tmp_ch == '\0')
       break;
     else
-      serverName[i - EEPROM_HTTP_ADDR] = tmp_ch;
+      serverName[i - addr] = tmp_ch;
   }
 }
 
@@ -756,10 +783,43 @@ void Process_Rxdata(std::string rxValue){
   // change_Mode();
 }
 
-int get_Mode_state()
-{
+int get_Mode_state(){
   return EEPROM.read(EEPROM_MODE_STATE_ADDR);
 }
+
+void send_Command2PC(char ch){
+  if(WiFi.status()== WL_CONNECTED){
+      HTTPClient http;
+
+      http.begin("http://192.168.137.1:5000/upload");
+      SerialDebug.print("post to ");
+      SerialDebug.println("PC");
+      http.addHeader("Content-Type", "application/json");
+      switch (ch)
+      {
+      case TURN_OFF_COMMAND:{
+        int httpResponseCode = http.POST("{\"Power\":\"off\"}");
+        SerialDebug.println("OFF");
+        SerialDebug.print("HTTP Response code: ");
+        SerialDebug.println(httpResponseCode);
+        break;
+      }
+        
+
+      case TURN_ON_COMMAND:{
+        int httpResponseCode = http.POST("{\"Power\":\"on\"}");
+        SerialDebug.println("ON");
+        SerialDebug.print("HTTP Response code: ");
+        SerialDebug.println(httpResponseCode);
+        break;
+      }
+      }
+
+      http.end();
+      LED_Sparkle();
+    }
+}
+
 
 void Operate(char op, std::string rxValue)
 {
@@ -796,6 +856,21 @@ void Operate(char op, std::string rxValue)
 
   case WX_SET_SSID_PW:
     Process_Rxdata(rxValue);
+    break;
+
+  case TURN_OFF_COMMAND:
+    send_Command2PC(TURN_OFF_COMMAND);
+      break;
+
+  case TURN_ON_COMMAND:
+    send_Command2PC(TURN_ON_COMMAND);
+
+  case EEPROM_WRITE_PC_ID:
+    write_EEPROM(EEPROM_PC_ADDR, EEPROM_PC_ADDR_WIDTH, rxValue);
+    break;
+
+  case EEPROM_READ_PC_ID:
+    read_EEPROM(EEPROM_PC_ADDR, EEPROM_PC_ADDR_WIDTH);
     break;
 
     // case HTTP_ALLOW_POST:
@@ -925,6 +1000,7 @@ void Init_radar(){
     digitalWrite(RESET_PIN, HIGH);
     // Set up serial communication
     SerialRadar.begin(115200);
+    SerialDebug.println("SerialRadar init ")
     // SerialDebug.begin(115200);
     // After the module resets, the XTS_SPRS_BOOTING message is sent. Then, after the
     // module booting sequence is completed and the module is ready to accept further
@@ -1019,7 +1095,7 @@ void WIFI_Init()
   SerialDebug.println("WiFi connected.");
   SerialDebug.println("IP address: ");
   SerialDebug.println(WiFi.localIP());
-  get_HTTP_URL();
+  get_URL(EEPROM_HTTP_ADDR, EEPROM_HTTP_ADDR_WIDTH);
   SerialDebug.println("Got HTTP Server.");
   SerialDebug.println(serverName);
 
@@ -1037,6 +1113,8 @@ void WIFI_Init()
   Init_radar();
 }
 
+
+
 void Radar_process(){
   RespirationMessage msg;
   if (get_respiration_data(&msg)){
@@ -1049,6 +1127,16 @@ void Radar_process(){
     }
     add_data2json(&msg);
     // SerialDebug.println("finish add date2json");
+
+    if (msg.state_code == 3 && people_exist == true){
+      send_Command2PC(TURN_OFF_COMMAND);
+      people_exist = false;
+    }
+
+    if (people_exist == false && msg.state_code != 3){
+      send_Command2PC(TURN_ON_COMMAND);
+      people_exist = true;
+    }
 
 #if LCD_ON
 
