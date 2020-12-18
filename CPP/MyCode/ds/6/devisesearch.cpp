@@ -26,7 +26,7 @@ void CreatSequence(int *r, int n){
         BinList[i] = r[i];
 }
 
-int BinSearchkey(int key){
+void BinSearchkey(int key){
     BinPos = 0;
     BinSuccess = 0;
     BinCount = 0;
