@@ -1,0 +1,21 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  --include "../../../../axi4stream_vip_0_ex.srcs/sources_1/bd/ex_sim/ipshared/8713/hdl" --include "D:/Xilinx/Vivado/2018.3/data/xilinx_vip/include" \
+"../../../../axi4stream_vip_0_ex.ip_user_files/bd/ex_sim/ip/ex_sim_axi4stream_vip_mst_0/sim/ex_sim_axi4stream_vip_mst_0_pkg.sv" \
+"../../../../axi4stream_vip_0_ex.ip_user_files/bd/ex_sim/ip/ex_sim_axi4stream_vip_mst_0/sim/ex_sim_axi4stream_vip_mst_0.sv" \
+"../../../../axi4stream_vip_0_ex.ip_user_files/bd/ex_sim/ip/ex_sim_axi4stream_vip_passthrough_0/sim/ex_sim_axi4stream_vip_passthrough_0_pkg.sv" \
+"../../../../axi4stream_vip_0_ex.ip_user_files/bd/ex_sim/ip/ex_sim_axi4stream_vip_passthrough_0/sim/ex_sim_axi4stream_vip_passthrough_0.sv" \
+"../../../../axi4stream_vip_0_ex.ip_user_files/bd/ex_sim/ip/ex_sim_axi4stream_vip_slv_0/sim/ex_sim_axi4stream_vip_slv_0_pkg.sv" \
+"../../../../axi4stream_vip_0_ex.ip_user_files/bd/ex_sim/ip/ex_sim_axi4stream_vip_slv_0/sim/ex_sim_axi4stream_vip_slv_0.sv" \
+
+verilog xil_defaultlib  --include "../../../../axi4stream_vip_0_ex.srcs/sources_1/bd/ex_sim/ipshared/8713/hdl" --include "D:/Xilinx/Vivado/2018.3/data/xilinx_vip/include" \
+"../../../../axi4stream_vip_0_ex.ip_user_files/bd/ex_sim/sim/ex_sim.v" \
+
+sv xil_defaultlib  --include "../../../../axi4stream_vip_0_ex.srcs/sources_1/bd/ex_sim/ipshared/8713/hdl" --include "D:/Xilinx/Vivado/2018.3/data/xilinx_vip/include" \
+"../../../../imports/axi4stream_vip_0_chip.sv" \
+"../../../../imports/axi4stream_vip_0_exdes_tb.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

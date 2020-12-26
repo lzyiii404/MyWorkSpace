@@ -1,0 +1,205 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xB5F3F1FEAAE98B02",
+      "device": "xc7z020clg400-2",
+      "name": "test",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2018.3"
+    },
+    "design_tree": {
+      "axi4stream_vip_0": "",
+      "s_axi4_stream_interf_0": ""
+    },
+    "ports": {
+      "clk": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "FREQ_HZ": {
+            "value": "100000000"
+          }
+        }
+      },
+      "rst_n": {
+        "type": "rst",
+        "direction": "I"
+      }
+    },
+    "components": {
+      "axi4stream_vip_0": {
+        "vlnv": "xilinx.com:ip:axi4stream_vip:1.1",
+        "xci_name": "test_axi4stream_vip_0_0",
+        "parameters": {
+          "HAS_TKEEP": {
+            "value": "1"
+          },
+          "HAS_TLAST": {
+            "value": "1"
+          },
+          "HAS_TREADY": {
+            "value": "1"
+          },
+          "HAS_TSTRB": {
+            "value": "0"
+          },
+          "INTERFACE_MODE": {
+            "value": "MASTER"
+          },
+          "TDATA_NUM_BYTES": {
+            "value": "2"
+          },
+          "TDEST_WIDTH": {
+            "value": "0"
+          },
+          "TID_WIDTH": {
+            "value": "0"
+          },
+          "TUSER_WIDTH": {
+            "value": "0"
+          }
+        }
+      },
+      "s_axi4_stream_interf_0": {
+        "vlnv": "xilinx.com:module_ref:s_axi4_stream_interface:1.0",
+        "xci_name": "test_s_axi4_stream_interf_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "s_axi4_stream_interface",
+          "boundary_crc": "0x0"
+        },
+        "interface_ports": {
+          "s_axi4": {
+            "mode": "Slave",
+            "vlnv": "xilinx.com:interface:axis_rtl:1.0",
+            "parameters": {
+              "HAS_TKEEP": {
+                "value": "1",
+                "value_src": "constant"
+              },
+              "HAS_TLAST": {
+                "value": "1",
+                "value_src": "constant"
+              },
+              "HAS_TREADY": {
+                "value": "1",
+                "value_src": "constant"
+              },
+              "HAS_TSTRB": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "TDATA_NUM_BYTES": {
+                "value": "2",
+                "value_src": "constant"
+              },
+              "TDEST_WIDTH": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "TID_WIDTH": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "TUSER_WIDTH": {
+                "value": "1",
+                "value_src": "constant"
+              }
+            },
+            "port_maps": {
+              "TDATA": {
+                "physical_name": "s_axi4_tdata",
+                "direction": "I",
+                "left": "15",
+                "right": "0"
+              },
+              "TKEEP": {
+                "physical_name": "s_axi4_tkeep",
+                "direction": "I",
+                "left": "1",
+                "right": "0"
+              },
+              "TLAST": {
+                "physical_name": "s_axi4_tlast",
+                "direction": "I"
+              },
+              "TUSER": {
+                "physical_name": "s_axi4_tuser",
+                "direction": "I"
+              },
+              "TVALID": {
+                "physical_name": "s_axi4_tvalid",
+                "direction": "I"
+              },
+              "TREADY": {
+                "physical_name": "s_axi4_tready",
+                "direction": "O"
+              }
+            }
+          }
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst_n": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "o_data": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "axi4stream_vip_0_m_axis_tdata": {
+        "ports": [
+          "axi4stream_vip_0/m_axis_tdata",
+          "s_axi4_stream_interf_0/s_axi4_tdata"
+        ]
+      },
+      "axi4stream_vip_0_m_axis_tkeep": {
+        "ports": [
+          "axi4stream_vip_0/m_axis_tkeep",
+          "s_axi4_stream_interf_0/s_axi4_tkeep"
+        ]
+      },
+      "axi4stream_vip_0_m_axis_tlast": {
+        "ports": [
+          "axi4stream_vip_0/m_axis_tlast",
+          "s_axi4_stream_interf_0/s_axi4_tlast"
+        ]
+      },
+      "s_axi4_stream_interf_0_s_axi4_tready": {
+        "ports": [
+          "s_axi4_stream_interf_0/s_axi4_tready",
+          "axi4stream_vip_0/m_axis_tready"
+        ]
+      },
+      "axi4stream_vip_0_m_axis_tvalid": {
+        "ports": [
+          "axi4stream_vip_0/m_axis_tvalid",
+          "s_axi4_stream_interf_0/s_axi4_tvalid"
+        ]
+      },
+      "clk_1": {
+        "ports": [
+          "clk",
+          "axi4stream_vip_0/aclk",
+          "s_axi4_stream_interf_0/clk"
+        ]
+      },
+      "rst_n_1": {
+        "ports": [
+          "rst_n",
+          "axi4stream_vip_0/aresetn",
+          "s_axi4_stream_interf_0/rst_n"
+        ]
+      }
+    }
+  }
+}
