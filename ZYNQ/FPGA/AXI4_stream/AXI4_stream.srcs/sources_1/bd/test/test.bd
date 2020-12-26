@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xB5F3F1FEAAE98B02",
+      "boundary_crc": "0xF47A3F01EC19DDB9",
       "device": "xc7z020clg400-2",
       "name": "test",
       "synth_flow_mode": "Hierarchical",
@@ -24,6 +24,11 @@
       "rst_n": {
         "type": "rst",
         "direction": "I"
+      },
+      "o_data": {
+        "direction": "O",
+        "left": "15",
+        "right": "0"
       }
     },
     "components": {
@@ -73,6 +78,14 @@
             "mode": "Slave",
             "vlnv": "xilinx.com:interface:axis_rtl:1.0",
             "parameters": {
+              "CLK_DOMAIN": {
+                "value": "test_clk",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "user_prop"
+              },
               "HAS_TKEEP": {
                 "value": "1",
                 "value_src": "constant"
@@ -198,6 +211,12 @@
           "rst_n",
           "axi4stream_vip_0/aresetn",
           "s_axi4_stream_interf_0/rst_n"
+        ]
+      },
+      "s_axi4_stream_interf_0_o_data": {
+        "ports": [
+          "s_axi4_stream_interf_0/o_data",
+          "o_data"
         ]
       }
     }
