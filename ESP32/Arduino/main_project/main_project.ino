@@ -28,7 +28,7 @@
 
 
 
-#define DATA_SIZE 5
+#define DATA_SIZE 60
 
 /********************操作指令****************/
 
@@ -1000,7 +1000,7 @@ void Init_radar(){
     digitalWrite(RESET_PIN, HIGH);
     // Set up serial communication
     SerialRadar.begin(115200);
-    SerialDebug.println("SerialRadar init ")
+    SerialDebug.println("SerialRadar init ");
     // SerialDebug.begin(115200);
     // After the module resets, the XTS_SPRS_BOOTING message is sent. Then, after the
     // module booting sequence is completed and the module is ready to accept further
