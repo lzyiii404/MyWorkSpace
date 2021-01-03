@@ -18,6 +18,7 @@
 #include "time.h"
 
 #define LCD_ON 0
+#define LED_CTR 0 
 
 #if LCD_ON
 
@@ -28,7 +29,7 @@
 
 
 
-#define DATA_SIZE 60
+#define DATA_SIZE 120
 
 /********************操作指令****************/
 
@@ -1128,6 +1129,8 @@ void Radar_process(){
     add_data2json(&msg);
     // SerialDebug.println("finish add date2json");
 
+#if LED_CTR
+
     if (msg.state_code == 3 && people_exist == true){
       send_Command2PC(TURN_OFF_COMMAND);
       people_exist = false;
@@ -1138,6 +1141,7 @@ void Radar_process(){
       people_exist = true;
     }
 
+#endif
 #if LCD_ON
 
     LCD_display(&msg);
