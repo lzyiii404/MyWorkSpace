@@ -12,9 +12,16 @@
 #include "F2837xD_Examples.h"
 #include "C28x_BSP.h"
 #include "MPU6500.h"
+
+#ifdef LaunchPad_PinConfig
 #define LSM303_CSH()  GPIO_WritePin(124, 1);
 #define LSM303_CSL()  GPIO_WritePin(124, 0);
-
+#endif
+#ifndef LaunchPad_PinConfig
+#define LSM303_CSH()  GPIO_WritePin(41, 1);
+#define LSM303_CSL()  GPIO_WritePin(41, 0);
+#endif
+extern OffsetInfo OffsetData;
    // register addresses
     enum regAddr
     {
@@ -162,7 +169,7 @@
     };
 
 
-extern int16_t  Mag_maxx,Mag_maxy,Mag_maxz,
+extern  int  Mag_maxx,Mag_maxy,Mag_maxz,
          Mag_minx,Mag_miny,Mag_minz;
 extern unsigned char  Mag_calib;
 extern int16_t lastMx,lastMy,lastMz;

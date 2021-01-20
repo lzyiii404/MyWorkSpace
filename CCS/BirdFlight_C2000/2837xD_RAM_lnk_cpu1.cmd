@@ -69,7 +69,7 @@ SECTIONS
    #if __TI_COMPILER_VERSION__ >= 15009000
     .TI.ramfunc : {} > RAMM0,      PAGE = 0
    #else
-    ramfuncs    : > RAMM0      PAGE = 0   
+    ramfuncs    : > RAMM0      PAGE = 0
    #endif
 #endif
 

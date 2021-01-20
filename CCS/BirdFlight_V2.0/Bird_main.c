@@ -6,25 +6,7 @@
  * 公众号  ：XilunaTech
  * gitlab ：git.xiluna.com
 *****************************************************************************/
-#include "F28x_Project.h"
-#include <app_cfg.h>
-#include <ucos_ii.h>
-#include <cpu_core.h>
-#include <lib_def.h>
-#include <stdbool.h>
-#include "C28x_BSP.h"
-#include "C28x_CPU.h"
-#include "AHRS_Hardware.h"
-#include "PID_Control.h"
-#include "PositionEstimation.h"
-#include "DataToPC.h"
-#include "ProcessPCData.h"
-#include "ProcessVisionData.h"
-#include "ADC_Battery.h"
-#include "SimpleDigitalFiltering.h"
-#include "Position_control.h"
-#include "Attitude_control.h"
-#include "FlashAPI.h"
+#include "task.h"
 
 //全局变量
 DroneRTInfo RT_Info;                                                                     //四旋翼实时数据
@@ -32,25 +14,27 @@ DroneTargetInfo Target_Info;                                                    
 DroneErrangle Errangle_Info;                                                             //四旋翼平地校准数据
 DroneFlightControl FlightControl;                                                        //四旋翼状态变量
 RemoteControl RockerControl;                                                             //四旋翼摇杆变量
+Remote_Control  Flight_Remote_Control;                                                   //遥控器飞行设置
+RemoteSensing   Remote_Sensing;                                                          //外部控制信号设置
+Controller Control_Info;                                                                 //遥控器控制全局变量
 SensorData Sensor_Info;                                                                  //四旋翼定位传感器数据
 FlyMode Fly_Mode;                                                                        //四旋翼飞行模式
 OffsetInfo OffsetData;                                                                   //磁偏量
+Thrust UAVThrust;                                                                        //飞行器扭力计算
+Throttle Throttle_Info;                                                                  //飞行器扭力输出
 //控制参数
 PIDOut OriginalPitch,OriginalRoll,OriginalYaw,OriginalPosX,OriginalPosY,OriginalPosZ,
-                    OriginalPitchRate,OriginalRollRate,OriginalYawRate,OriginalVelX,OriginalVelY,OriginalVelZ;
+                    OriginalPitchRate,OriginalRollRate,OriginalYawRate,OriginalVelX,OriginalVelY,OriginalVelZ,
+                        OriginalFlowX,OriginalFlowY,OriginalFlowVelX,OriginalFlowVelY,OriginalAccZ;
 PIDPara PID_ParaInfo;
 //融合参数
-KalmanFilter XAxis,YAxis,ZAxis;                                                                             //卡尔曼滤波融合参数
-//flash数据
-FlashData flashData;
+KalmanFilter XAxis,YAxis,ZAxis,Barometer;                                                                             //卡尔曼滤波融合参数
 
 /*
 *********************************************************************************************************
 *                                         LOCAL GLOBAL VARIABLES
 *********************************************************************************************************
 */
-/* Start Task's stack.                               */
-CPU_STK_SIZE  App_TaskStartStk[APP_CFG_TASK_STK_SIZE];
 /* IMU Task's stack.                                 */
 CPU_STK_SIZE  App_TaskIMUStk[APP_CFG_TASK_STK_SIZE];
 /* Attitude Task's stack.                            */
@@ -61,16 +45,18 @@ CPU_STK_SIZE  App_TaskPositionStk[APP_CFG_TASK_STK_SIZE];
 CPU_STK_SIZE  App_TaskCombineStk[APP_CFG_TASK_STK_SIZE];
 /* ProcessVisionData Task's stack.                   */
 CPU_STK_SIZE  App_TaskProcessVisionDataStk[APP_CFG_TASK_STK_SIZE];
-/* ProcessReserveData Task's stack.                  */
-CPU_STK_SIZE  App_TaskProcessReserveDataStk[APP_CFG_TASK_STK_SIZE];
 /* ProcessPCData Task's stack.                       */
 CPU_STK_SIZE  App_TaskProcessPCDataStk[APP_CFG_TASK_STK_SIZE];
 /* DataToPC Task's stack.                            */
 CPU_STK_SIZE  App_TaskDataToPCStk[APP_CFG_TASK_STK_SIZE];
 /* Battery Task's stack.                             */
 CPU_STK_SIZE  App_TaskBatteryStk[APP_CFG_TASK_STK_SIZE];
-/* LED Task's stack.                                 */
-CPU_STK_SIZE  App_TaskLEDStk[APP_CFG_TASK_STK_SIZE];
+/* RemoteControl Task's stack.                                 */
+CPU_STK_SIZE  App_TaskRemoteControlStk[APP_CFG_TASK_STK_SIZE];
+/* Oled Task's stack.                                 */
+CPU_STK_SIZE  App_TaskOledStk[APP_CFG_TASK_STK_SIZE];
+/* Flow Task's stack.                                 */
+CPU_STK_SIZE  App_TaskFlowStk[APP_CFG_TASK_STK_SIZE];
 
 
 /*
@@ -78,8 +64,6 @@ CPU_STK_SIZE  App_TaskLEDStk[APP_CFG_TASK_STK_SIZE];
 *                                          FUNCTION PROTOTYPES
 *********************************************************************************************************
 */
-/* Start Task */
-static  void  App_TaskStart(void  *p_arg);
 /* IMU Task */
 static  void  App_TaskIMU(void  *p_arg);
 /* Attitude Task */
@@ -90,18 +74,21 @@ static  void  App_TaskPosition(void  *p_arg);
 static  void  App_TaskCombine(void  *p_arg);
 /* ProcessVisionData Task */
 static  void  App_TaskProcessVisionData(void  *p_arg);
-/* ProcessReserveData Task */
-static  void  App_TaskProcessReserveData(void  *p_arg);
 /* ProcessPCData Task */
 static  void  App_TaskProcessPCData(void  *p_arg);
 /* DataToPC Task */
 static  void  App_TaskDataToPC(void  *p_arg);
 /* ADC Task */
 static  void  App_TaskBattery(void *p_arg);
-/* LED Task */
-static  void  App_TaskLED(void  *p_arg);
+/* RemoteControl Task */
+static  void  App_TaskRemoteControl(void  *p_arg);
+/* Oled Task */
+static  void  App_TaskOled(void  *p_arg);
+/* Flow Task */
+static  void  App_TaskFlow(void  *p_arg);
 
 int main(void){
+    DELAY_US(500*500);
 /* Initialize the CPU and Board.                        */
     C28x_CPU_Init();
 /* Initialize the BSP.                                  */
@@ -109,50 +96,12 @@ int main(void){
 /* Initialize the AHRS_HardWare.                        */
     AHRS_HardWareinit();
 /* Initialize the KalmanFilter Para.                    */
-    KalmanFilter_Init(&XAxis,&YAxis,&ZAxis);
+    KalmanFilter_Init(&XAxis,&YAxis,&ZAxis,&Barometer);
 /* Load Control Para.                                   */
     Load_ParaConfig();
 /* Initialize "uC/OS-II, The Real-Time Kernel".         */
     OSInit();
-/* Create the Start task.                               */
-    OSTaskCreateExt(App_TaskStart,
-                    (void    *)0,
-                    (CPU_STK *)&App_TaskStartStk[0],
-                    (INT8U    )APP_CFG_TASK_START_PRIO,
-                    (INT16U   )APP_CFG_TASK_START_PRIO,
-                    (CPU_STK *)&App_TaskStartStk[APP_CFG_TASK_STK_SIZE - 1u],
-                    (INT32U   )APP_CFG_TASK_STK_SIZE,
-                    (void    *)0,
-                    (INT16U   )(OS_TASK_OPT_STK_CHK | OS_TASK_OPT_STK_CLR));
-/* Start multitasking (i.e. give control to uC/OS-II).  */
-    OSStart();
-/* Should never get here.   */
-    while(DEF_TRUE){
-        ;
-    }
-}
 
-/*
-*********************************************************************************************************
-*                                            App_TaskStart()
-*
-* Description : First task to be scheduled. Creates the application tasks.
-*
-* Argument(s) : p_arg       the argument passed by 'OSTaskCreateExt()'.
-*
-* Return(s)   : none.
-*
-* Caller(s)   : This is a task.
-*
-* Note(s)     : None.
-*********************************************************************************************************
-*/
-
-static  void  App_TaskStart (void *p_arg)
-{
-    /* Prevent compiler warning for not using 'p_arg'    */
-    (void)&p_arg;
-    /* Start the Ticker.                                 */
     C28x_BSP_Tick_Init();
     /* IMU Task.                                         */
     OSTaskCreateExt(App_TaskIMU,
@@ -204,16 +153,6 @@ static  void  App_TaskStart (void *p_arg)
                    (INT32U   )APP_CFG_TASK_STK_SIZE,
                    (void    *)0,
                    (INT16U   )(OS_TASK_OPT_STK_CHK | OS_TASK_OPT_STK_CLR));
-    /* ProcessVisionData Task.                           */
-    OSTaskCreateExt(App_TaskProcessReserveData,
-                  (void    *)0,
-                  (CPU_STK *)&App_TaskProcessReserveDataStk[0],
-                  (INT8U    )APP_CFG_TASK_ProcessReserveData_PRIO,
-                  (INT16U   )APP_CFG_TASK_ProcessReserveData_PRIO,
-                  (CPU_STK *)&App_TaskProcessReserveDataStk[APP_CFG_TASK_STK_SIZE - 1u],
-                  (INT32U   )APP_CFG_TASK_STK_SIZE,
-                  (void    *)0,
-                  (INT16U   )(OS_TASK_OPT_STK_CHK | OS_TASK_OPT_STK_CLR));
     /* ProcessPCData Task.                                */
     OSTaskCreateExt(App_TaskProcessPCData,
                    (void    *)0,
@@ -244,18 +183,44 @@ static  void  App_TaskStart (void *p_arg)
                     (INT32U   )APP_CFG_TASK_STK_SIZE,
                     (void    *)0,
                     (INT16U   )(OS_TASK_OPT_STK_CHK | OS_TASK_OPT_STK_CLR));
-    /* LED Task.                                        */
-    OSTaskCreateExt(App_TaskLED,
+    /* RemoteControl Task.                                        */
+    OSTaskCreateExt(App_TaskRemoteControl,
                     (void    *)0,
-                    (CPU_STK *)&App_TaskLEDStk[0],
-                    (INT8U    )APP_CFG_TASK_LED_PRIO,
-                    (INT16U   )APP_CFG_TASK_LED_PRIO,
-                    (CPU_STK *)&App_TaskLEDStk[APP_CFG_TASK_STK_SIZE - 1u],
+                    (CPU_STK *)&App_TaskRemoteControlStk[0],
+                    (INT8U    )APP_CFG_TASK_RemoteControl_PRIO,
+                    (INT16U   )APP_CFG_TASK_RemoteControl_PRIO,
+                    (CPU_STK *)&App_TaskRemoteControlStk[APP_CFG_TASK_STK_SIZE - 1u],
                     (INT32U   )APP_CFG_TASK_STK_SIZE,
                     (void    *)0,
                     (INT16U   )(OS_TASK_OPT_STK_CHK | OS_TASK_OPT_STK_CLR));
-
+    /* OLED Task.                                        */
+    OSTaskCreateExt(App_TaskOled,
+                    (void    *)0,
+                    (CPU_STK *)&App_TaskOledStk[0],
+                    (INT8U    )APP_CFG_TASK_Oled_PRIO,
+                    (INT16U   )APP_CFG_TASK_Oled_PRIO,
+                    (CPU_STK *)&App_TaskOledStk[APP_CFG_TASK_STK_SIZE - 1u],
+                    (INT32U   )APP_CFG_TASK_STK_SIZE,
+                    (void    *)0,
+                    (INT16U   )(OS_TASK_OPT_STK_CHK | OS_TASK_OPT_STK_CLR));
+    /* Flow Task.                                        */
+    OSTaskCreateExt(App_TaskFlow,
+                    (void    *)0,
+                    (CPU_STK *)&App_TaskFlowStk[0],
+                    (INT8U    )APP_CFG_TASK_Flow_PRIO,
+                    (INT16U   )APP_CFG_TASK_Flow_PRIO,
+                    (CPU_STK *)&App_TaskFlowStk[APP_CFG_TASK_STK_SIZE - 1u],
+                    (INT32U   )APP_CFG_TASK_STK_SIZE,
+                    (void    *)0,
+                    (INT16U   )(OS_TASK_OPT_STK_CHK | OS_TASK_OPT_STK_CLR));
+/* Start multitasking (i.e. give control to uC/OS-II).  */
+    OSStart();
+/* Should never get here.   */
+    while(DEF_TRUE){
+        ;
+    }
 }
+
 /*
 *********************************************************************************************************
 *                                            App_TaskIMU
@@ -275,7 +240,8 @@ static  void  App_TaskIMU (void *p_arg){
    /* Task body, always written as an infinite loop.       */
     while (DEF_TRUE) {
         IMU_getInfo();
-        OSTimeDly(2);
+//        OSTimeDly(2);
+        OSTimeDlyHMSM(0,0,0,2);
     }
 }
 /*
@@ -291,7 +257,6 @@ static  void  App_TaskIMU (void *p_arg){
 * Caller(s)   : This is a task.
 *********************************************************************************************************
 */
-unsigned char StartFly = 0;
 static  void  App_TaskAttitude (void *p_arg){
    /* Prevent compiler warning for not using 'p_arg'       */
    (void)&p_arg;
@@ -299,12 +264,14 @@ static  void  App_TaskAttitude (void *p_arg){
    Uint16 Preparationtime = 0;
    float PreparationPitch = 0;
    float PreparationRoll = 0;
-   bool PreparationFlag;
+//   float PreparationYaw = 0;
+   _Bool PreparationFlag = true;
+   FlightControl.ControlStart = false;
     while (DEF_TRUE) {
-        if(FlightControl.OnOff == Drone_On && RT_Info.Height >= 0.01f){
-//        if(FlightControl.OnOff == Drone_On){
+//        if(FlightControl.OnOff == Drone_On && RT_Info.Height >= 0.01f){
+        if(FlightControl.OnOff == Drone_On && RT_Info.Height >= -0.01f){     //无超声波调试
             if(FlightControl.DroneMode == Drone_Mode_4Axis){
-                if(Preparationtime < 800){
+                if(Preparationtime < 250){
                     Preparationtime ++;
                     PreparationPitch += RT_Info.Pitch;
                     PreparationRoll += RT_Info.Roll;
@@ -313,14 +280,19 @@ static  void  App_TaskAttitude (void *p_arg){
                 else{
                     /*起飞平地自校准*/
                     if(PreparationFlag){
-                        PreparationPitch /= 800;
-                        PreparationRoll /= 800;
+                        PreparationPitch /= 250;
+                        PreparationRoll /= 250;
+                        Target_Info.Yaw = RT_Info.Yaw;
+                        RT_Info.FlowX =0 ;
+                        RT_Info.FlowY =0 ;
                         PreparationFlag = false;
+                        FlightControl.ControlStart = true;
                     }
-                    StartFly = 1;
-                    Attitude_control(PreparationPitch,PreparationRoll);
-                    Safety_Protection();     //侧倾保护
-                }
+                    if(FlightControl.ControlStart){
+                        Attitude_control(PreparationPitch,PreparationRoll);
+                        Safety_Protection();     //侧倾保护
+                    }
+               }
             }
             else{
                 Attitude_control(0,0);
@@ -331,19 +303,26 @@ static  void  App_TaskAttitude (void *p_arg){
             PreparationPitch = 0;
             PreparationRoll = 0;
             Preparationtime = 0;
-            StartFly = 0;
             OriginalPitchRate.iOut = 0;
             OriginalRollRate.iOut = 0;
             OriginalYaw.iOut = 0;
             OriginalVelZ.iOut = 0;
             OriginalVelX.iOut = 0;
             OriginalVelY.iOut = 0;
-            Target_Info.Height = 1.00f;
-            Target_Info.Pitch = 0.0f;
-            Target_Info.Roll = 0.0f;
+            OriginalAccZ.iOut = 0;
+            OriginalFlowVelX.iOut =0;
+            OriginalFlowVelY.iOut =0;
+            RT_Info.FlowX =0;
+            RT_Info.FlowY =0;
+            Target_Info.Height = 0.90f; //恢复初始的默认目标高度
+            Target_Info.Pitch = 0.0f; //恢复初始的默认目标俯仰
+            Target_Info.Roll = 0.0f; //恢复初始的默认目标翻滚
+            FlightControl.LaunchFlag = true; //第一次起飞标志位
+            FlightControl.ControlStart = false;
             PWM_OUTPUT(0,0,0,0);
         }
-        OSTimeDly(5);
+//        OSTimeDly(5);
+        OSTimeDlyHMSM(0,0,0,5);
     }
 }
 
@@ -364,14 +343,15 @@ static  void  App_TaskPosition (void *p_arg){
    /* Prevent compiler warning for not using 'p_arg'       */
    (void)&p_arg;
    /* Task body, always written as an infinite loop.       */
-   float Climbing = 0.012f;
-   float Declining = 0.006f;
-   Target_Info.Height = 1.00f;
+   float Climbing = 0.008f;
+   float Declining = 0.002f;
+   Target_Info.Height = 0.90f;
     while (DEF_TRUE) {
-        if(FlightControl.DroneMode == Drone_Mode_4Axis){
+        if(FlightControl.DroneMode == Drone_Mode_4Axis && FlightControl.OnOff==Drone_On && FlightControl.ControlStart == true){
             Position_control(Fly_Mode,Climbing,Declining);
         }
-        OSTimeDly(10);
+//        OSTimeDly(5);
+        OSTimeDlyHMSM(0,0,0,5);
     }
 }
 
@@ -394,19 +374,47 @@ static  void  App_TaskCombine (void *p_arg){
    (void)&p_arg;
    /* Task body, always written as an infinite loop.       */
     while (DEF_TRUE) {
+        /* 超声波数据的卡尔曼滤波融合 */
         POS_KalmanFilter(&ZAxis,Sensor_Info.US100_Zaxis,RT_Info.accZaxis);
         RT_Info.Height = ZAxis.Axis_Pos;
         RT_Info.Height_V = ZAxis.Axis_Vel;
 
-        POS_KalmanFilter(&XAxis,Sensor_Info.Raspberry_Xaxis,RT_Info.accXaxis);
-        RT_Info.PointX = XAxis.Axis_Pos;
-        RT_Info.PointX_V = XAxis.Axis_Vel;
 
-        POS_KalmanFilter(&YAxis,Sensor_Info.Raspberry_Yaxis,-RT_Info.accYaxis);
-        RT_Info.PointY = YAxis.Axis_Pos;
-        RT_Info.PointY_V = YAxis.Axis_Vel;
+//        POS_KalmanFilter(&Barometer,Sensor_Info.MS5611_Zaxis,RT_Info.accZaxis);
+//        RT_Info.Height = Barometer.Axis_Pos;
+//        RT_Info.Height_V = Barometer.Axis_Vel;
 
-        OSTimeDly(8);
+        /* 物体追踪的位置数据卡尔曼融合 */
+        if(Fly_Mode == Data_Point )
+        {
+            /*地理坐标系的加速度X正轴  对应 相机的X正轴数据 */
+            POS_KalmanFilter(&XAxis,Sensor_Info.Raspberry_Xaxis/100,RT_Info.AccX);
+            RT_Info.PointX = XAxis.Axis_Pos;
+            RT_Info.PointX_V = XAxis.Axis_Vel;
+
+            /*地理坐标系的加速度Y负轴  对应 相机的Y正轴数据 */
+            POS_KalmanFilter(&YAxis,Sensor_Info.Raspberry_Yaxis/100,-RT_Info.AccY);
+            RT_Info.PointY = YAxis.Axis_Pos;
+            RT_Info.PointY_V = YAxis.Axis_Vel;
+        }
+        else if(Fly_Mode == Data_Flow)
+        {
+            OpticalFlow_Estimation(-Sensor_Info.FlowVX_fix ,Sensor_Info.FlowVY_fix ,RT_Info.AccX,RT_Info.AccY);
+            RT_Info.FlowX += RT_Info.FlowX_V * 0.005f;
+            RT_Info.FlowY += RT_Info.FlowY_V * 0.005f;
+        }
+        else if(Fly_Mode == Data_Follow)
+        {
+            /*地理坐标系的加速度Y负轴  对应 相机的Y正轴数据 */
+            POS_KalmanFilter(&YAxis,Sensor_Info.Raspberry_Yaxis/100,-RT_Info.AccY);
+            RT_Info.PointY = YAxis.Axis_Pos;
+            RT_Info.PointY_V = YAxis.Axis_Vel;
+            OpticalFlow_Estimation(Sensor_Info.FlowVelX /100,0,RT_Info.AccX,0);
+        }
+
+
+//        OSTimeDly(5);
+        OSTimeDlyHMSM(0,0,0,5);
     }
 }
 
@@ -437,31 +445,7 @@ static  void  App_TaskProcessVisionData (void *p_arg){
         Process_VisionData(ReciveVisionData);
     }
 }
-/*
-*********************************************************************************************************
-*                                            App_TaskProcessReserveData
-*
-* Description : ProcessReserveData task
-*
-* Argument(s) : p_arg       the argument passed by 'OSTaskCreateExt()'.
-*
-* Return(s)   : none.
-*
-* Caller(s)   : This is a task.
-*********************************************************************************************************
-*/
-OS_EVENT ProcessReserveData_proc;//信号量
-Uint16 ReciveReserveData[16];
-static  void  App_TaskProcessReserveData (void *p_arg){
-   /* Prevent compiler warning for not using 'p_arg'       */
-   (void)&p_arg;
-   INT8U err;
-   ProcessReserveData_proc = *OSSemCreate(1);
-   /* Task body, always written as an infinite loop.       */
-    while (DEF_TRUE) {
-        OSSemPend (&ProcessReserveData_proc,0,&err);
-    }
-}
+
 /*
 *********************************************************************************************************
 *                                            App_TaskProcessPCData
@@ -485,7 +469,6 @@ static  void  App_TaskProcessPCData (void *p_arg){
    /* Task body, always written as an infinite loop.       */
     while (DEF_TRUE) {
         OSSemPend (&ProcessPCData_proc,0,&err);
-
         Process_PCData(RecivePCData);
     }
 }
@@ -512,12 +495,24 @@ static  void  App_TaskDataToPC (void *p_arg){
             sendParaInfo();
             FlightControl.ReportSW=Report_RESET;
         }else{
-            sendRTInfo(); //上传实时数据
-            sendGyroData();  //上传陀螺仪数据
-            sendAccData(); //上传加速度数据
-            sendMagData(); //上传磁力计数据
+            if(OffsetData.MagOffseting){
+                /*上传校准数据*/
+                sendRTOffset();
+            }
+            else{
+                sendRTInfo(); //上传实时数据
+//                sendGyroData();  //上传陀螺仪数据
+//                sendAccData(); //上传加速度数据
+//                sendMagData(); //上传磁力计数据
+                sendPositionData(); //上传位置数据
+                sendUserData();//上传自定义数据
+            }
         }
-        OSTimeDly(50);
+//        OSTimeDly(100);
+
+//        unsigned char bluetooth_bound[8]="AT+BAUD8";
+//        scib_msg(bluetooth_bound);
+        OSTimeDlyHMSM(0,0,0,100);
     }
 }
 
@@ -539,18 +534,35 @@ static  void  App_TaskBattery (void *p_arg){
     /* Prevent compiler warning for not using 'p_arg'       */
     (void)&p_arg;
     /* Task body, always written as an infinite loop.       */
-    float Battery_Array[10];
+    float Battery_Array[5];
     while (DEF_TRUE) {
-        RT_Info.batteryVoltage = Average_Filter(Get_Battery(),10,Battery_Array);
-        OSTimeDly(200);
+        /* 获取滤波后的电压 */
+        RT_Info.batteryVoltage = Average_Filter(Get_Battery(),5,Battery_Array);
+        /* 起飞电压必须高于11.10V 才可以起飞 */
+        if(RT_Info.batteryVoltage<11.10f && (FlightControl.OnOff != Drone_On))
+        {
+            RT_Info.lowPowerFlag = 1;
+            //此处可加小灯闪烁表示电池电量低
+        }
+        else
+        {
+            /*飞行中如果电压低于10.30V则自动降落*/
+            if(RT_Info.batteryVoltage < 10.30f)
+            {
+                FlightControl.landFlag = 1;
+            }
+            RT_Info.lowPowerFlag = 0;
+        }
+//        OSTimeDly(200);
+        OSTimeDlyHMSM(0,0,0,200);
     }
 }
 
 /*
 *********************************************************************************************************
-*                                            App_TaskLED
+*                                            App_TaskRemoteControl
 *
-* Description : led task
+* Description : RemoteControl task
 *
 * Argument(s) : p_arg       the argument passed by 'OSTaskCreateExt()'.
 *
@@ -559,15 +571,76 @@ static  void  App_TaskBattery (void *p_arg){
 * Caller(s)   : This is a task.
 *********************************************************************************************************
 */
+OS_EVENT RemoteControl_proc;//信号量
+Uint16 Receive_PPM_In[9];
+static  void  App_TaskRemoteControl (void *p_arg)
+{
+    (void)&p_arg;
+    INT8U err;
+    RemoteControl_proc = *OSSemCreate(1);
+    /* Task body, always written as an infinite loop.       */
+     while (DEF_TRUE) {
+         OSSemPend (&RemoteControl_proc,0,&err);
+         Process_RemoteData(Receive_PPM_In);
+     }
+}
 
-static  void  App_TaskLED (void *p_arg)
+/*
+*********************************************************************************************************
+*                                  App_TaskFlow
+*
+* Description : flow task
+*
+* Argument(s) : p_arg       the argument passed by 'OSTaskCreateExt()'.
+*
+* Return(s)   : none.
+*
+* Caller(s)   : This is a task.
+*********************************************************************************************************
+*/
+OS_EVENT ProcessFlowData_proc;//信号量
+Uint16 ReciveFlowData[16];
+static  void  App_TaskFlow (void *p_arg)
+{
+    /* Prevent compiler warning for not using 'p_arg'       */
+    (void)&p_arg;
+    INT8U err;
+    ProcessFlowData_proc = *OSSemCreate(1);
+    /* Task body, always written as an infinite loop.       */
+     while (DEF_TRUE) {
+         OSSemPend (&ProcessFlowData_proc,0,&err);
+         Process_FlowData(ReciveFlowData);
+     }
+}
+
+/*
+*********************************************************************************************************
+*                                            App_TaskOled
+*
+* Description : Oled task
+*
+* Argument(s) : p_arg       the argument passed by 'OSTaskCreateExt()'.
+*
+* Return(s)   : none.
+*
+* Caller(s)   : This is a task.
+*********************************************************************************************************
+*/
+static  void  App_TaskOled (void *p_arg)
 {
    /* Prevent compiler warning for not using 'p_arg'       */
    (void)&p_arg;
    /* Task body, always written as an infinite loop.       */
     while (DEF_TRUE) {
-        GPIO_WritePin(31,1-GPIO_ReadPin(31));
-        OSTimeDly(1000);
+      if(FlightControl.OnOff == Drone_Off || FlightControl.OnOff == Drone_Land)
+       {
+          Display_Attitude();
+//          switch(RT_Info.Key1Status){
+//        case 0:Display_Position();break;
+//        case 1:Display_Mode();break;
+//        default:break;
+//        }
+      }
+        OSTimeDlyHMSM(0,0,0,100);
     }
 }
-

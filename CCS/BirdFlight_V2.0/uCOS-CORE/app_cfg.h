@@ -41,18 +41,25 @@
 *                                            TASK PRIORITIES
 *********************************************************************************************************
 */
-
-#define  APP_CFG_TASK_START_PRIO                     2u
 #define  APP_CFG_TASK_IMU_PRIO                       3u
 #define  APP_CFG_TASK_Attitude_PRIO                  4u
 #define  APP_CFG_TASK_Position_PRIO                  5u
 #define  APP_CFG_TASK_Combine_PRIO                   6u
 #define  APP_CFG_TASK_ProcessVisionData_PRIO         7u
-#define  APP_CFG_TASK_ProcessReserveData_PRIO        8u
-#define  APP_CFG_TASK_ProcessPCData_PRIO             9u
-#define  APP_CFG_TASK_DataToPC_PRIO                  10u
-#define  APP_CFG_TASK_Battery_PRIO                   11u
-#define  APP_CFG_TASK_LED_PRIO                       12u
+#define  APP_CFG_TASK_Flow_PRIO                      9u
+#define  APP_CFG_TASK_DataToPC_PRIO                  11u
+#define  APP_CFG_TASK_Oled_PRIO                      12u
+#define  APP_CFG_TASK_Battery_PRIO                   13u
+
+#define RemoteMode
+#ifdef RemoteMode
+    #define  APP_CFG_TASK_ProcessPCData_PRIO             10u
+    #define  APP_CFG_TASK_RemoteControl_PRIO             8u
+#endif
+#ifndef RemoteMode
+    #define  APP_CFG_TASK_ProcessPCData_PRIO             8u
+    #define  APP_CFG_TASK_RemoteControl_PRIO             10u
+#endif
 
 
 /*

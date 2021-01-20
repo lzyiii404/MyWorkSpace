@@ -8,22 +8,11 @@
 #ifndef CONTROL_POSITION_CONTROL_H_
 #define CONTROL_POSITION_CONTROL_H_
 
-#include "DronePara.h"
-#include "F28x_Project.h"
-#include "Attitude_control.h"
-#include "PID_Control.h"
-#include "SimpleDigitalFiltering.h"
+#include "task.h"
 
-extern DroneRTInfo RT_Info;;
-extern Thrust UAVThrust;
-
-extern PIDOut OriginalPitch,OriginalRoll,OriginalYaw,OriginalPosX,OriginalPosY,OriginalPosZ,
-OriginalPitchRate,OriginalRollRate,OriginalYawRate,OriginalVelX,OriginalVelY,OriginalVelZ;
-extern PIDPara PID_ParaInfo;
-
-extern RemoteControl RockerControl;
-extern SensorData Sensor_Info;
+#define kAlmostZeroValueThreshold   0.001f
 
 void Position_control(unsigned char Data_flag,float Climb,float Decline);
+void ComputeDesiredAttitude(Vector3f_t DesiredAcceleration,float reference_heading);
 
 #endif /* CONTROL_POSITION_CONTROL_H_ */

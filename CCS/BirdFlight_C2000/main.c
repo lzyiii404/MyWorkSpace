@@ -137,7 +137,7 @@ static  void  App_TaskStart (void *p_arg)
 
     C28x_BSP_Tick_Init();
     /* Start the Ticker.                                 */
-   OS_ENTER_CRITICAL();
+//   OS_ENTER_CRITICAL();
     OSTaskCreateExt(App_TaskIMU,
                     (void    *)0,
                     (CPU_STK *)&App_TaskIMUStk[0],
@@ -246,8 +246,8 @@ static  void  App_TaskStart (void *p_arg)
                     (INT32U   )APP_CFG_TASK_STK_SIZE,
                     (void    *)0,
                     (INT16U   )(OS_TASK_OPT_STK_CHK | OS_TASK_OPT_STK_CLR));
-    OS_EXIT_CRITICAL();
-    OSTaskSuspend(APP_CFG_TASK_START_PRIO); //挂起起始任务.
+//    OS_EXIT_CRITICAL();
+//    OSTaskSuspend(APP_CFG_TASK_START_PRIO); //挂起起始任务.
 }
 
 

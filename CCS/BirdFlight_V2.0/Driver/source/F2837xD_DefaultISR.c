@@ -45,7 +45,7 @@
 //
 #include "F2837xD_device.h"
 #include "F2837xD_Examples.h"
-
+#include "task.h"
 //
 // CPU Timer 1 Interrupt
 //
@@ -457,8 +457,9 @@ interrupt void XINT1_ISR(void)
     // Next two lines for debug only to halt the processor here
     // Remove after inserting ISR Code
     //
-    asm ("      ESTOP0");
-    for(;;);
+    RT_Info.Key1Status ++;
+
+    PieCtrlRegs.PIEACK.all = PIEACK_GROUP1;
 }
 
 //
@@ -480,8 +481,7 @@ interrupt void XINT2_ISR(void)
     // Next two lines for debug only to halt the processor here
     // Remove after inserting ISR Code
     //
-    asm ("      ESTOP0");
-    for(;;);
+    PieCtrlRegs.PIEACK.all = PIEACK_GROUP1;
 }
 
 //
@@ -2205,8 +2205,7 @@ interrupt void XINT3_ISR(void)
     // Next two lines for debug only to halt the processor here
     // Remove after inserting ISR Code
     //
-    asm ("      ESTOP0");
-    for(;;);
+    PieCtrlRegs.PIEACK.all = PIEACK_GROUP1;
 }
 
 //

@@ -14,6 +14,7 @@
 #include <cpu_core.h>
 #include <lib_def.h>
 #include "DronePara.h"
+#include "task.h"
 //init
 void C28x_BSP_Init(void);
 void C28x_BSP_Tick_Init(void);
@@ -25,20 +26,16 @@ void C28x_BSP_Scib_Init(void);
 void C28x_BSP_Scic_Init(void);
 void C28x_BSP_ADC_Init(void);
 void C28x_BSP_FLASH_Init(void);
+void C28x_BSP_eCAP_Init(void);
+void C28x_BSP_Scid_Init(void);
 
 
 //Function function
-void scia_msg(unsigned char * msg);
+void scia_msg(unsigned char msg);
 void scib_msg(unsigned char * msg);
 void scic_msg(unsigned char * msg);
+void scic_Xmsg(unsigned char msg);
 
-//External variables
-extern OS_EVENT ProcessPCData_proc;//信号量
-extern Uint16 RecivePCData[16];
-extern OS_EVENT ProcessVisionData_proc;//信号量
-extern Uint16 ReciveVisionData[16];
-extern OS_EVENT ProcessReserveData_proc;//信号量
-extern Uint16 ReciveReserveData[16];
 
 
 // Function function

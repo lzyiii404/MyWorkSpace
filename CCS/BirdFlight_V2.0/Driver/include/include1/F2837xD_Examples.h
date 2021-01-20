@@ -378,7 +378,6 @@ extern void F28x_usDelay(long LoopCount);
 //
 #define DELAY_US(A)  F28x_usDelay(((((long double) A * 1000.0L) / (long double)CPU_RATE) - 9.0L) / 5.0L)
 
-//
 // Timer Operations:
 //
 

@@ -8,19 +8,14 @@
 #ifndef SENSOR_AHRS_HARDWARE_H_
 #define SENSOR_AHRS_HARDWARE_H_
 
-#include "MPU6500.h"
-#include "LSM303D.h"
-#include "MahonyAHRS.h"
-#include "DronePara.h"
-#include <math.h>
+#include "task.h"
 
-#define PI 3.1415926
+#define PI 3.14159265358979f
 
 void AHRS_HardWareinit(void);
 void IMU_getValues(float * values);
 void IMU_getInfo(void);
 
 extern volatile float RDrone_R[3][3];
-extern float Accel_Src[3];
 
 #endif /* SENSOR_AHRS_HARDWARE_H_ */

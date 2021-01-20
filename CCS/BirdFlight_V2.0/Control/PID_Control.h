@@ -15,7 +15,6 @@
 
 #define lowpass_filter  7.9577e-3
 
-float PID_Control(PID *PIDpara, PIDOut *PIDstatus, float expect_PID, float feedback_PID
-                                , float PIDtime, float Integrallimiter,float LowpassFilter);
+float PID_Control(PID *PIDpara, PIDOut *PIDstatus, float expect_PID, float feedback_PID, float PIDtime, float Integrallimiter);
 
 #endif /* CONTROL_PID_CONTROL_H_ */

@@ -11,15 +11,15 @@ int16_t  lastMx,lastMy,lastMz;
 int16_t  LSM303_FIFO[6][Buf_SIZE];
 unsigned char  Wr_IndexAcc = 0,Wr_IndexMag = 0;
 
-int16_t  Mag_Offset_X = 0,
-                Mag_Offset_Y = 0,
-                Mag_Offset_Z = 0;
+int  Mag_Offset_X = 0,
+         Mag_Offset_Y = 0,
+         Mag_Offset_Z = 0;
 float  Mag_Scale_X = 1.0f,
-              Mag_Scale_Y = 1.0f,
-              Mag_Scale_Z = 1.0f;
+       Mag_Scale_Y = 1.0f,
+       Mag_Scale_Z = 1.0f;
 
 //当前磁场的最大值和最小值
-int16_t     Mag_maxx=0, Mag_maxy=0, Mag_maxz=0,
+int     Mag_maxx=0, Mag_maxy=0, Mag_maxz=0,
                     Mag_minx=-0,Mag_miny=-0,Mag_minz=-0;
 unsigned char Mag_calib=0; //初始化完成标志
 
@@ -95,9 +95,9 @@ void LSM303_Initial(void){
         LSM303_readMag(temp);
     }
 
-//    Mag_Offset_X = OffsetData.MagX;
-//    Mag_Offset_Y = OffsetData.MagY;
-//    Mag_Offset_Z = OffsetData.MagZ;
+    Mag_Offset_X = OffsetData.MagX;
+    Mag_Offset_Y = OffsetData.MagY;
+    Mag_Offset_Z = OffsetData.MagZ;
 }
 
 //读芯片ID
@@ -192,9 +192,9 @@ void LSM303_Start_Calib(void)
 void LSM303_Save_Calib(void)
 {
     Mag_calib=0;
-//    Mag_Offset_X = OffsetData.MagX = (Mag_minx + Mag_maxx)/2;
-//    Mag_Offset_Y = OffsetData.MagY = (Mag_miny + Mag_maxy)/2;
-//    Mag_Offset_Z = OffsetData.MagZ = (Mag_minz + Mag_maxz)/2;
+    Mag_Offset_X = OffsetData.MagX = (Mag_minx + Mag_maxx)/2;
+    Mag_Offset_Y = OffsetData.MagY = (Mag_miny + Mag_maxy)/2;
+    Mag_Offset_Z = OffsetData.MagZ = (Mag_minz + Mag_maxz)/2;
 }
 
 

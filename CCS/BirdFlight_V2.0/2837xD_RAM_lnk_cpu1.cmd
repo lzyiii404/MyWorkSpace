@@ -15,16 +15,16 @@ PAGE 0 :  /* Program Memory */
    FLASHB           : origin = 0x082000, length = 0x002000	/* on-chip Flash */
    FLASHC           : origin = 0x084000, length = 0x002000	/* on-chip Flash */
    FLASHD           : origin = 0x086000, length = 0x002000	/* on-chip Flash */
-   FLASHE           : origin = 0x088000, length = 0x008000	/* on-chip Flash */
-   FLASHF           : origin = 0x090000, length = 0x008000	/* on-chip Flash */
-   FLASHG           : origin = 0x098000, length = 0x008000	/* on-chip Flash */
-   FLASHH           : origin = 0x0A0000, length = 0x008000	/* on-chip Flash */
-   FLASHI           : origin = 0x0A8000, length = 0x008000	/* on-chip Flash */
-   FLASHJ           : origin = 0x0B0000, length = 0x008000	/* on-chip Flash */
-   FLASHK           : origin = 0x0B8000, length = 0x002000	/* on-chip Flash */
-   FLASHL           : origin = 0x0BA000, length = 0x002000	/* on-chip Flash */
-   FLASHM           : origin = 0x0BC000, length = 0x002000	/* on-chip Flash */
-   FLASHN           : origin = 0x0BE000, length = 0x002000	/* on-chip Flash */
+   FLASHE           : origin = 0x088000, length = 0x00A000	/* on-chip Flash */
+   FLASHF           : origin = 0x092000, length = 0x00A000	/* on-chip Flash */
+   FLASHG           : origin = 0x09C000, length = 0x008000	/* on-chip Flash */
+   FLASHH           : origin = 0x0A4000, length = 0x008000	/* on-chip Flash */
+   FLASHI           : origin = 0x0AC000, length = 0x008000	/* on-chip Flash */
+   FLASHJ           : origin = 0x0B4000, length = 0x008000	/* on-chip Flash */
+   FLASHK           : origin = 0x0BC000, length = 0x002000	/* on-chip Flash */
+   FLASHL           : origin = 0x0BE000, length = 0x002000	/* on-chip Flash */
+   FLASHM           : origin = 0x0C0000, length = 0x002000	/* on-chip Flash */
+   FLASHN           : origin = 0x0C2000, length = 0x002000	/* on-chip Flash */
 
 PAGE 1 : /* Data Memory */
          /* Memory (RAM/FLASH) blocks can be moved to PAGE0 for program allocation */
@@ -46,8 +46,8 @@ SECTIONS
 
 	/*** User Defined Sections ***/
    	codestart       : > BEGIN,	        PAGE = 0        /* Used by file CodeStartBranch.asm */
-   	wddisable		: > FLASHE | FLASHF,			PAGE = 0
-  	copysections	: > FLASHE | FLASHF,			PAGE = 0
+   	wddisable		: > FLASHA | FLASHE | FLASHF | FLASHB | FLASHL,			PAGE = 0
+  	copysections	: > FLASHA | FLASHE | FLASHF | FLASHB | FLASHL,			PAGE = 0
 
   	.reset           : > RESET,     PAGE = 0, TYPE = DSECT /* not used, */
 
@@ -64,7 +64,7 @@ SECTIONS
     {
         .TI.ramfunc
 
-    } LOAD = FLASHE | FLASHF,
+    } LOAD = FLASHA | FLASHE | FLASHF | FLASHB | FLASHL,
       RUN  = RAMGS4,
       LOAD_START(_RamfuncsLoadStart),
       LOAD_SIZE(_RamfuncsLoadSize),
@@ -75,38 +75,38 @@ SECTIONS
       PAGE = 0
 
 
-  	.cinit			:	LOAD = FLASHE | FLASHF,		PAGE = 0        /* can be ROM */
+  	.cinit			:	LOAD = FLASHA | FLASHE | FLASHF | FLASHB | FLASHL,		PAGE = 0        /* can be ROM */
                 		RUN = RAMGS4, PAGE = 0   		/* must be CSM secured RAM */
                 		LOAD_START(_cinit_loadstart),
                 		RUN_START(_cinit_runstart),
                 		SIZE(_cinit_size)
 
-	.const			:   LOAD = FLASHE | FLASHF,  	PAGE = 0        /* can be ROM */
+	.const			:   LOAD = FLASHA | FLASHE | FLASHF | FLASHB | FLASHL,  	PAGE = 0        /* can be ROM */
 						RUN = RAMGS4,	PAGE = 0        /* must be CSM secured RAM */
 						LOAD_START(_const_loadstart),
 						RUN_START(_const_runstart),
 						SIZE(_const_size)
 
 
-	.econst			:   LOAD = FLASHE | FLASHF,  	PAGE = 0        /* can be ROM */
+	.econst			:   LOAD = FLASHA | FLASHE | FLASHF | FLASHB | FLASHL,  	PAGE = 0        /* can be ROM */
                 		RUN = RAMGS4, PAGE = 0        /* must be CSM secured RAM */
                 		LOAD_START(_econst_loadstart),
                			RUN_START(_econst_runstart),
                 		SIZE(_econst_size)
 
-	.pinit			:   LOAD = FLASHE | FLASHF,  	PAGE = 0        /* can be ROM */
+	.pinit			:   LOAD = FLASHA | FLASHE | FLASHF | FLASHB | FLASHL,  	PAGE = 0        /* can be ROM */
                 		RUN = RAMGS4, PAGE = 0        /* must be CSM secured RAM */
                 		LOAD_START(_pinit_loadstart),
                 		RUN_START(_pinit_runstart),
                 		SIZE(_pinit_size)
 
-	.switch			:   LOAD = FLASHE | FLASHF,  	PAGE = 0        /* can be ROM */
+	.switch			:   LOAD = FLASHA | FLASHE | FLASHF | FLASHB | FLASHL,  	PAGE = 0        /* can be ROM */
                 		RUN = RAMGS4, PAGE = 0        /* must be CSM secured RAM */
                 		LOAD_START(_switch_loadstart),
                 		RUN_START(_switch_runstart),
                 		SIZE(_switch_size)
 
-	.text			:   LOAD = FLASHE | FLASHF, 		PAGE = 0        /* can be ROM */
+	.text			:   LOAD = FLASHA | FLASHE | FLASHF | FLASHB | FLASHL, 		PAGE = 0        /* can be ROM */
                 		RUN = RAMGS4, PAGE = 0        /* must be CSM secured RAM */
                 		LOAD_START(_text_loadstart),
                 		RUN_START(_text_runstart),

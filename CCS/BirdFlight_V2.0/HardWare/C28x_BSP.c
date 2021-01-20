@@ -10,45 +10,53 @@
 //
 // Function Prototypes
 //
-__interrupt void cpu_timer0_isr(void){
+__interrupt void cpu_timer2_isr(void){
     //
     // Acknowledge this interrupt to receive more interrupts from group 1
     //
-    PieCtrlRegs.PIEACK.all = PIEACK_GROUP1;
+//    PieCtrlRegs.PIEACK.all = PIEACK_GROUP1;
     OSIntEnter();
     OSTimeTick();
     OSIntExit();
+    EDIS;
 }
 
 void C28x_BSP_Init(void){
     C28x_BSP_Led_Init();
     C28x_BSP_Spi_Init();
     C28x_BSP_Epwm_Init();
-    C28x_BSP_Scia_Init();
+//    C28x_BSP_Scia_Init();
     C28x_BSP_Scib_Init();
     C28x_BSP_Scic_Init();
+    C28x_BSP_Scid_Init();
     C28x_BSP_ADC_Init();
     C28x_BSP_FLASH_Init();
+    C28x_BSP_eCAP_Init();
+    C28x_BSP_OLED_init();
+    C28x_BSP_Key_Init();
+//    IIC_Init();                                         // iic总线初始化
+//    MS5611_Init();                                      // MS5611气压计初始化
+//    WaitBaroInitOffset();                               // 等待气压初始化高度完成
 }
 /*
  * 操作系统时基配置
  */
 void C28x_BSP_Tick_Init(void){
     EALLOW;  // This is needed to write to EALLOW protected registers
-    PieVectTable.TIMER0_INT = &cpu_timer0_isr;
+    PieVectTable.TIMER2_INT = &cpu_timer2_isr;
     EDIS;    // This is needed to disable write to EALLOW protected registers
     InitCpuTimers();   // For this example, only initialize the Cpu Timers
 //
 // Configure CPU-Timer 0, 1, and 2 to interrupt every second:
 // 200MHz CPU Freq, 1 millisecond Period (in uSeconds)
 //
-    ConfigCpuTimer(&CpuTimer0, 200, 1000);
+    ConfigCpuTimer(&CpuTimer2, 200, 1000);
 
-    CpuTimer0Regs.TCR.all = 0x4000;
+    CpuTimer2Regs.TCR.all = 0x4001;
 
-    IER |= M_INT1;// Enable CPU int1 which is connected to CPU-Timer 0
+    IER |= M_INT14;// Enable CPU int1 which is connected to CPU-Timer 0
 
-    PieCtrlRegs.PIEIER1.bit.INTx7 = 1;
+//    PieCtrlRegs.PIEIER1.bit.INTx7 = 1;
 
     EINT;  // Enable Global interrupt INTM
     ERTM;  // Enable Global realtime interrupt DBGM
@@ -80,7 +88,7 @@ void spi_fifo_init()
 
 void C28x_BSP_Spi_Init(){
 
-    InitSpiaGpio();
+    InitSpiGpio();
 
     spi_fifo_init();     // Initialize the SPI FIFO
 }
@@ -216,12 +224,12 @@ void scia_fifo_init()
 }
 
 
-void scia_msg(unsigned char * msg)
+void scia_msg(unsigned char msg)//* msg
 {
     int i;
     while (SciaRegs.SCIFFTX.bit.TXFFST != 0) {}
     for (i = 0;i < 16;i ++){
-        SciaRegs.SCITXBUF.all = msg[i];
+        SciaRegs.SCITXBUF.all = msg;
     }
 }
 
@@ -231,37 +239,37 @@ void scia_msg(unsigned char * msg)
 
 interrupt void sciaRxFifoIsr(void)
 {
-    Uint16 i;
-    for(i=0;i<16;i++)
-    {
-       ReciveReserveData[i]=SciaRegs.SCIRXBUF.all;  // Read data
-    }
-
-    SciaRegs.SCIFFRX.bit.RXFFOVRCLR=1;   // Clear Overflow flag
-    SciaRegs.SCIFFRX.bit.RXFFINTCLR=1;   // Clear Interrupt flag
-
-    PieCtrlRegs.PIEACK.all|=0x100;       // Issue PIE ack
-    OSSemPost(&ProcessReserveData_proc);
+//    Uint16 i;
+//    for(i=0;i<16;i++)
+//    {
+//       ReciveReserveData[i]=SciaRegs.SCIRXBUF.all;  // Read data
+//    }
+//
+//    SciaRegs.SCIFFRX.bit.RXFFOVRCLR=1;   // Clear Overflow flag
+//    SciaRegs.SCIFFRX.bit.RXFFINTCLR=1;   // Clear Interrupt flag
+//
+//    PieCtrlRegs.PIEACK.all|=0x100;       // Issue PIE ack
+//    OSSemPost(&ProcessReserveData_proc);
 }
 
 void C28x_BSP_Scia_Init(){
 
-    GPIO_SetupPinMux(43, GPIO_MUX_CPU1, 15);
-    GPIO_SetupPinOptions(64, GPIO_INPUT, GPIO_PUSHPULL);
-    GPIO_SetupPinMux(42, GPIO_MUX_CPU1, 15);
-    GPIO_SetupPinOptions(65, GPIO_OUTPUT, GPIO_ASYNC);
-
-    EALLOW;  // This is needed to write to EALLOW protected registers
-    PieVectTable.SCIA_RX_INT = &sciaRxFifoIsr;
-    EDIS;    // This is needed to disable write to EALLOW protected registers
-
-    scia_fifo_init();   // Init SCI-A
-
-    IER |= M_INT9;
-    PieCtrlRegs.PIECTRL.bit.ENPIE = 1;   // Enable the PIE block
-    PieCtrlRegs.PIEIER9.bit.INTx1 = 1;     // PIE Group 9, INT1
-    EINT;
-    ERTM;  // Enable Global realtime interrupt DBGM
+//    GPIO_SetupPinMux(64, GPIO_MUX_CPU1, 6);
+//    GPIO_SetupPinOptions(64, GPIO_INPUT, GPIO_PUSHPULL);
+//    GPIO_SetupPinMux(65, GPIO_MUX_CPU1, 6);
+//    GPIO_SetupPinOptions(65, GPIO_OUTPUT, GPIO_ASYNC);
+//
+//    EALLOW;  // This is needed to write to EALLOW protected registers
+//    PieVectTable.SCIA_RX_INT = &sciaRxFifoIsr;
+//    EDIS;    // This is needed to disable write to EALLOW protected registers
+//
+//    scia_fifo_init();   // Init SCI-A
+//
+//    IER |= M_INT9;
+//    PieCtrlRegs.PIECTRL.bit.ENPIE = 1;   // Enable the PIE block
+//    PieCtrlRegs.PIEIER9.bit.INTx1 = 1;     // PIE Group 9, INT1
+//    EINT;
+//    ERTM;  // Enable Global realtime interrupt DBGM
 }
 
 
@@ -387,6 +395,23 @@ void scic_fifo_init()
    ScicRegs.SCICTL1.all = 0x0023;     // Relinquish SCI from Reset
    ScicRegs.SCIFFTX.bit.TXFIFORESET = 1;
    ScicRegs.SCIFFRX.bit.RXFIFORESET = 1;
+//    ScicRegs.SCICCR.all = 0x0007;      // 1 stop bit,  No loopback
+//                                       // No parity,8 char bits,
+//                                       // async mode, idle-line protocol
+//    ScicRegs.SCICTL1.all = 0x0003;     // enable TX, RX, internal SCICLK,
+//                                       // Disable RX ERR, SLEEP, TXWAKE
+//    ScicRegs.SCICTL2.bit.TXINTENA = 1;
+//    ScicRegs.SCICTL2.bit.RXBKINTENA = 1;
+//    ScicRegs.SCIHBAUD.all = 0x0002;    //9600 baund @ LSPCLK = 50Mhz
+//    ScicRegs.SCILBAUD.all = 0x008A;
+//    ScicRegs.SCICCR.bit.LOOPBKENA = 0; // Enable loop back
+//    ScicRegs.SCIFFTX.all = 0xC040;
+//    ScicRegs.SCIFFRX.all = 0x0022;
+//    ScicRegs.SCIFFCT.all = 0x00;
+//
+//    ScicRegs.SCICTL1.all = 0x0023;     // Relinquish SCI from Reset
+//    ScicRegs.SCIFFTX.bit.TXFIFORESET = 1;
+//    ScicRegs.SCIFFRX.bit.RXFIFORESET = 1;
 }
 
 
@@ -399,6 +424,13 @@ void scic_msg(unsigned char * msg)
     }
 }
 
+
+void scic_Xmsg(unsigned char msg)
+{
+    while (ScicRegs.SCIFFTX.bit.TXFFST != 0) {}
+    ScicRegs.SCITXBUF.all = msg;
+}
+
 //
 // scicRxFifoIsr - SCIC Receive FIFO ISR
 //
@@ -409,6 +441,40 @@ interrupt void scicRxFifoIsr(void)
     {
         ReciveVisionData[i]=ScicRegs.SCIRXBUF.all;  // Read data
     }
+//    scic_msg((unsigned char *)temp);
+//    for(i=0;i<16;i++)
+//    {
+//        if(i<15)
+//        {
+//           if((LastData[i]==0x55)&&(LastData[i+1]==0xAA))
+//           {
+//               StartIndex=i;
+//               break;
+//           }
+//        }
+//        else if((LastData[15]==0x55)&&(temp[0]==0xAA))
+//        {
+//            StartIndex=15;
+//               break;
+//        }
+//    }
+//    for(VisionDataIndex=0;VisionDataIndex<16;VisionDataIndex++)
+//      {
+//          if(StartIndex<16)
+//          {
+//              ReciveVisionData[VisionDataIndex]=LastData[StartIndex];
+//              StartIndex++;
+//          }
+//          else
+//          {
+//              ReciveVisionData[VisionDataIndex]=temp[StartIndex-16];
+//              StartIndex++;
+//          }
+//      }
+//    for(i=0;i<16;i++)
+//   {
+//        LastData[i]=temp[i];  // Read data
+//   }
 
     ScicRegs.SCIFFRX.bit.RXFFOVRCLR=1;   // Clear Overflow flag
     ScicRegs.SCIFFRX.bit.RXFFINTCLR=1;   // Clear Interrupt flag
@@ -418,11 +484,20 @@ interrupt void scicRxFifoIsr(void)
 }
 
 void C28x_BSP_Scic_Init(){
-
+    #ifdef LaunchPad_PinConfig
+    // launchpad usartC引脚
     GPIO_SetupPinMux(139, GPIO_MUX_CPU1, 6);
     GPIO_SetupPinOptions(139, GPIO_INPUT, GPIO_PUSHPULL);
     GPIO_SetupPinMux(56, GPIO_MUX_CPU1, 6);
     GPIO_SetupPinOptions(56, GPIO_OUTPUT, GPIO_ASYNC);
+#endif
+    #ifndef LaunchPad_PinConfig
+    // C2000飞控 usartC引脚
+    GPIO_SetupPinMux(13, GPIO_MUX_CPU1, 6);
+    GPIO_SetupPinOptions(13, GPIO_INPUT, GPIO_PULLUP);
+    GPIO_SetupPinMux(12, GPIO_MUX_CPU1, 6);
+    GPIO_SetupPinOptions(12, GPIO_OUTPUT, GPIO_ASYNC);
+#endif
 
     EALLOW;  // This is needed to write to EALLOW protected registers
     PieVectTable.SCIC_RX_INT = &scicRxFifoIsr;
@@ -436,6 +511,122 @@ void C28x_BSP_Scic_Init(){
     EINT;
     ERTM;  // Enable Global realtime interrupt DBGM
 }
+
+
+void scid_msg(unsigned char msg)
+{
+    while (ScidRegs.SCIFFTX.bit.TXFFST != 0) {}
+        ScidRegs.SCITXBUF.all = msg;
+}
+void scid_Xmsg(unsigned char *msg)
+{
+    int i;
+    while (ScidRegs.SCIFFTX.bit.TXFFST != 0) {}
+    for (i = 0;i < 16;i ++){
+        ScidRegs.SCITXBUF.all = msg[i];
+    }
+}
+void scid_fifo_init()
+{
+   ScidRegs.SCICCR.all = 0x0007;      // 1 stop bit,  No loopback
+                                      // No parity,8 char bits,
+                                      // async mode, idle-line protocol
+   ScidRegs.SCICTL1.all = 0x0003;    //0x0003 // enable TX, RX, internal SCICLK,
+                                      // Disable RX ERR, SLEEP, TXWAKE
+   ScidRegs.SCICTL2.bit.TXINTENA = 1;
+   ScidRegs.SCICTL2.bit.RXBKINTENA = 1;
+   ScidRegs.SCIHBAUD.all = 0x0001;    //115200 baund @ LSPCLK = 50Mhz
+   ScidRegs.SCILBAUD.all = 0x0044;    //144  -  19200 baund
+   ScidRegs.SCICCR.bit.LOOPBKENA = 0; // Enable loop back
+   ScidRegs.SCIFFTX.all = 0xC040;//0xC040//1100 0000 0100 0000
+  // ScidRegs.SCIFFRX.all = 0x002E;
+   ScidRegs.SCIFFRX.bit.RXFFIENA = 1;
+   ScidRegs.SCIFFRX.bit.RXFFIL = 14;
+   ScidRegs.SCIFFCT.all = 0x00;
+
+   ScidRegs.SCICTL1.all = 0x0023;     // Relinquish SCI from Reset
+
+   ScidRegs.SCIFFTX.bit.TXFIFORESET = 1;
+   ScidRegs.SCIFFRX.bit.RXFIFORESET = 1;
+}
+
+interrupt void scidRxFifoIsr(void)
+{
+    Uint16 i;
+    for(i = 0;i<14;i++)
+    {
+        ReciveFlowData[i]=ScidRegs.SCIRXBUF.all;  // Read data
+    }
+    ScidRegs.SCIFFRX.bit.RXFFOVRCLR=1;   // Clear Overflow flag
+    ScidRegs.SCIFFRX.bit.RXFFINTCLR=1;   // Clear Interrupt flag
+    PieCtrlRegs.PIEACK.all|=0x100;       // Issue PIE ack
+    OSSemPost(&ProcessFlowData_proc);
+}
+
+
+void C28x_BSP_Scid_Init(void){
+
+    GPIO_SetupPinMux(46, GPIO_MUX_CPU1, 6);
+    GPIO_SetupPinOptions(46, GPIO_INPUT, GPIO_PUSHPULL);
+    GPIO_SetupPinMux(47, GPIO_MUX_CPU1, 6);
+    GPIO_SetupPinOptions(47, GPIO_OUTPUT, GPIO_ASYNC);
+
+    EALLOW;  // This is needed to write to EALLOW protected registers
+    PieVectTable.SCID_RX_INT = &scidRxFifoIsr;//接收中断
+    EDIS;    // This is needed to disable write to EALLOW protected registers
+
+    scid_fifo_init();   // Init SCI-A
+
+    IER |= M_INT8;
+    PieCtrlRegs.PIECTRL.bit.ENPIE = 1;   // Enable the PIE block
+    PieCtrlRegs.PIEIER8.bit.INTx7 = 1;     // PIE Group 8, INT7
+    EINT;
+    ERTM;  // Enable Global realtime interrupt DBGM
+}
+
+
+
+Uint16 CH_State = 0;
+__interrupt void Enhanced_Capture1_ISR(void)
+{
+    Uint32 pulseTime= ECap1Regs.CAP2/200;
+
+   if(pulseTime<=4000)
+   {
+       Receive_PPM_In[CH_State++]=pulseTime;
+   }
+   else
+       CH_State=0;
+
+  if(CH_State>7)
+  {
+      CH_State=0;
+  }
+
+    ECap1Regs.ECCLR.bit.CEVT2 = 1;              //清标志位
+    ECap1Regs.ECCLR.bit.INT = 1;
+    ECap1Regs.ECCTL2.bit.REARM = 1;             //重新计数
+    PieCtrlRegs.PIEACK.all = PIEACK_GROUP4;     // Acknowledge this __interrupt to receive more __interrupts from group 4
+    OSSemPost(&RemoteControl_proc);
+}
+
+void C28x_BSP_eCAP_Init(void)
+{
+    InitECap();
+    GPIO_SetupPinOptions(30, GPIO_INPUT, GPIO_PULLUP);
+    InitECap1Gpio(30);
+
+    EALLOW;  // This is needed to write to EALLOW protected registers
+    PieVectTable.ECAP1_INT = &Enhanced_Capture1_ISR;
+    EDIS;
+
+    IER |= M_INT4;
+ // Enable eCAP INTn in the PIE: Group 3 __interrupt 1-6
+    PieCtrlRegs.PIEIER4.bit.INTx1 = 1;
+    EINT;
+    ERTM;  // Enable Global realtime interrupt DBGM
+}
+
 
 /*
  * C28x ADC端口配置

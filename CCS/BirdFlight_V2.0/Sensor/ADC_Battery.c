@@ -20,7 +20,7 @@ float Get_Battery(void){
     while(AdcaRegs.ADCINTFLG.bit.ADCINT1 == 0);
     AdcaRegs.ADCINTFLGCLR.bit.ADCINT1 = 1;
 
-    BatteryPower = ((float)AdcaResultRegs.ADCRESULT1) * 0.00024414 * 3.0 * 5.0;//1/4096 = 0.00024414
+    BatteryPower = ((float)AdcaResultRegs.ADCRESULT1) /4096.0f * 3.3f * 5.0f;   // 3.3V为基准电压  4.9为电阻分压比
     return BatteryPower;
 }
 

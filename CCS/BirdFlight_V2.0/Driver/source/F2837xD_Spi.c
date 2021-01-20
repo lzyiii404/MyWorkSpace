@@ -99,6 +99,40 @@ void InitSpi(void)
 
     // Release the SPI from reset
     SpiaRegs.SPICCR.bit.SPISWRESET = 1;
+
+
+    /*-----------------------------------------------------------------------*/
+
+    // Initialize SPI-B
+
+    // Set reset low before configuration changes
+    // Clock polarity (0 == rising, 1 == falling)
+    // 8-bit character
+    // Disable loop-back
+    SpibRegs.SPICCR.bit.SPISWRESET = 0;
+    SpibRegs.SPICCR.bit.CLKPOLARITY = 1;
+    SpibRegs.SPICCR.bit.SPICHAR = (8-1);
+    SpibRegs.SPICCR.bit.SPILBK = 0 ;
+    SpibRegs.SPICCR.bit.HS_MODE = 0 ;
+
+    // Enable master (0 == slave, 1 == master)
+    // Enable transmission (Talk)
+    // Clock phase (0 == normal, 1 == delayed)
+    // SPI interrupts are disabled
+    SpibRegs.SPICTL.bit.MASTER_SLAVE = 1;
+    SpibRegs.SPICTL.bit.TALK = 1;
+    SpibRegs.SPICTL.bit.CLK_PHASE = 0;
+    SpibRegs.SPICTL.bit.SPIINTENA = 0;
+
+    // Set the baud rate
+    SpibRegs.SPIBRR.bit.SPI_BIT_RATE = SPI_BRR;
+
+    // Set FREE bit
+    // Halting on a breakpoint will not halt the SPI
+    SpibRegs.SPIPRI.bit.FREE = 1;
+
+    // Release the SPI from reset
+    SpibRegs.SPICCR.bit.SPISWRESET = 1;
 }
 
 //
@@ -117,13 +151,16 @@ void InitSpi(void)
 //
 void InitSpiGpio()
 {
+    /* IMU SPI接口 */
    InitSpiaGpio();
+   /* OLED接口 */
+   InitSpibGpio();
 }
 
 //
 // InitSpiaGpio - Initialize SPIA GPIOs
 //
-void InitSpiaGpio()
+void InitSpiaGpio(void)
 {
     EALLOW;
 
@@ -185,6 +222,54 @@ void InitSpiaGpio()
     GPIO_WritePin(124, 1);
     EDIS;
 }
+
+
+void InitSpibGpio(void)
+{
+   EALLOW;
+
+    //
+    // Enable internal pull-up for the selected pins
+    //
+    // Pull-ups can be enabled or disabled by the user.
+    // This will enable the pullups for the specified pins.
+    // Comment out other unwanted lines.
+    //
+
+   GpioCtrlRegs.GPBPUD.bit.GPIO63 = 0;  // Enable pull-up on GPIO63 (SPISIMOA)
+   GpioCtrlRegs.GPCPUD.bit.GPIO65 = 0;  // Enable pull-up on GPIO65 (SPICLKA)
+
+
+    GpioCtrlRegs.GPBQSEL2.bit.GPIO63 = 3; // Asynch input GPIO16 (SPISIMOA)
+    GpioCtrlRegs.GPCQSEL1.bit.GPIO65 = 3; // Asynch input GPIO18 (SPICLKA)
+
+    //
+    //Configure SPI-A pins using GPIO regs
+    //
+    // This specifies which of the possible GPIO pins will be SPI functional
+    // pins.
+    // Comment out other unwanted lines.
+    //
+
+    GpioCtrlRegs.GPBGMUX2.bit.GPIO63 = 3;
+    GpioCtrlRegs.GPCGMUX1.bit.GPIO65 = 3;
+
+    GpioCtrlRegs.GPBMUX2.bit.GPIO63 = 3; // Configure GPIO16 as SPISIMOA
+
+    GpioCtrlRegs.GPCMUX1.bit.GPIO65 = 3; // Configure GPIO18 as SPICLKA
+
+    //RES(restart)
+    GPIO_SetupPinMux(64, GPIO_MUX_CPU1, 0);
+    GPIO_SetupPinOptions(64, GPIO_OUTPUT, GPIO_PUSHPULL);
+    //DC
+    GPIO_SetupPinMux(66, GPIO_MUX_CPU1, 0);
+    GPIO_SetupPinOptions(66, GPIO_OUTPUT, GPIO_PUSHPULL);
+    GPIO_WritePin(64, 0);
+    GPIO_WritePin(66, 1);
+    EDIS;
+}
+
+
 
 //
 // End of file

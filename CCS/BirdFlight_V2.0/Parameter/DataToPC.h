@@ -8,18 +8,15 @@
 #ifndef PARAMETER_DATATOPC_H_
 #define PARAMETER_DATATOPC_H_
 
-#include "DronePara.h"
-#include "C28x_BSP.h"
-
-extern DroneRTInfo RT_Info;
-extern SensorData Sensor_Info;
-extern DroneTargetInfo Target_Info;
-extern PIDPara PID_ParaInfo;
+#include "task.h"
 
 void sendRTInfo(void);
 void sendParaInfo(void);
 void sendGyroData(void);
 void sendAccData(void);
 void sendMagData(void);
+void sendPositionData(void);
+void sendUserData(void);
+void sendRTOffset(void);
 
 #endif /* PARAMETER_DATATOPC_H_ */

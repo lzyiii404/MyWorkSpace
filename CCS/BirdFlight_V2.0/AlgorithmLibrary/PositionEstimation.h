@@ -15,7 +15,8 @@
 
 #define CONSTANTS_ONE_G                 8.80665f        /* m/s^2*/
 
-void KalmanFilter_Init(KalmanFilter *XAXIS,KalmanFilter *YAXIS,KalmanFilter *ZAXIS);
+void KalmanFilter_Init(KalmanFilter *XAXIS,KalmanFilter *YAXIS,KalmanFilter *ZAXIS , KalmanFilter *BAROMETER);
+void OpticalFlow_Estimation(float flow_x,float flow_y,float Accx,float Accy);
 void POS_KalmanFilter(KalmanFilter *KalmanFilter_Input,float Position,float Acceleration);
 void Pos_Pixhawk(float Ultrasonic,float Xvision,float Yvision,float *Accel);
 

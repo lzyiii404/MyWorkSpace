@@ -84,6 +84,7 @@ extern void InitPieVectTable(void);
 extern void InitSpi(void);
 extern void InitSpiGpio(void);
 extern void InitSpiaGpio(void);
+extern void InitSpibGpio(void);
 extern void InitSysCtrl(void);
 extern void InitSysPll(Uint16 clock_source, Uint16 imult, Uint16 fmult,
                        Uint16 divsel);

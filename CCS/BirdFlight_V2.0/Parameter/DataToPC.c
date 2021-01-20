@@ -28,11 +28,11 @@ void sendRTInfo(void){
             DataToPC[1]=0XAA;
             DataToPC[2]=0X00;
 
-            FloatToUnsignedchar(3,RT_Info.Pitch,DataToPC);
+            FloatToUnsignedchar(3,RT_Info.Pitch ,DataToPC);
 
-            FloatToUnsignedchar(7,RT_Info.Roll,DataToPC);
+            FloatToUnsignedchar(7,RT_Info.Roll ,DataToPC);
 
-            FloatToUnsignedchar(11,RT_Info.Yaw,DataToPC);
+            FloatToUnsignedchar(11,RT_Info.Yaw ,DataToPC);
 
             DataToPC[15]=0x55;
 
@@ -43,7 +43,7 @@ void sendRTInfo(void){
             DataToPC[1]=0XAA;
             DataToPC[2]=0X01;
 
-            FloatToUnsignedchar(3,RT_Info.Height,DataToPC);
+            FloatToUnsignedchar(3,RT_Info.Height ,DataToPC);
 
             FloatToUnsignedchar(7,RT_Info.PointX,DataToPC);
 
@@ -108,6 +108,39 @@ void sendMagData(void)
     FloatToUnsignedchar(7,RT_Info.MagY,MagDataToPC);
     FloatToUnsignedchar(11,RT_Info.MagZ,MagDataToPC);
     scib_msg(MagDataToPC);
+}
+
+
+/* 上传位置原始数据 */
+void sendPositionData(void)
+{
+    unsigned char PosDataToPC[16];
+
+    PosDataToPC[0]=0X55;
+    PosDataToPC[1]=0XAA;
+
+    PosDataToPC[2]=0X23;
+
+    FloatToUnsignedchar(3,RT_Info.Height_V *100,PosDataToPC);
+    FloatToUnsignedchar(7,Target_Info.Yaw ,PosDataToPC);
+    FloatToUnsignedchar(11,Sensor_Info.FlowY*100,PosDataToPC);
+    scib_msg(PosDataToPC);
+}
+
+/* 上传自定义数据  */
+void sendUserData(void)
+{
+    unsigned char UserDataToPC[16];
+
+    UserDataToPC[0]=0X55;
+    UserDataToPC[1]=0XAA;
+
+    UserDataToPC[2]=0X24;
+
+    FloatToUnsignedchar(3, RT_Info.FlowX_V * 100 ,UserDataToPC);
+    FloatToUnsignedchar(7, RT_Info.FlowY_V * 100 ,UserDataToPC);
+    FloatToUnsignedchar(11,RT_Info.accZaxis *100 ,UserDataToPC);
+    scib_msg(UserDataToPC);
 }
 
 
@@ -190,9 +223,75 @@ void sendParaInfo(void)
     FloatToUnsignedchar(7,PID_ParaInfo.VelY.Ki,paraToPC);
     FloatToUnsignedchar(11,PID_ParaInfo.VelY.Kd,paraToPC);
     scib_msg(paraToPC);
+
+    paraToPC[2]=0X0E;
+    FloatToUnsignedchar(3,PID_ParaInfo.FlowX.Kp,paraToPC);
+    FloatToUnsignedchar(7,PID_ParaInfo.FlowX.Ki,paraToPC);
+    FloatToUnsignedchar(11,PID_ParaInfo.FlowX.Kd,paraToPC);
+    scib_msg(paraToPC);
+
+    paraToPC[2]=0X0F;
+    FloatToUnsignedchar(3,PID_ParaInfo.FlowY.Kp,paraToPC);
+    FloatToUnsignedchar(7,PID_ParaInfo.FlowY.Ki,paraToPC);
+    FloatToUnsignedchar(11,PID_ParaInfo.FlowY.Kd,paraToPC);
+    scib_msg(paraToPC);
+
+    paraToPC[2]=0X10;
+    FloatToUnsignedchar(3,PID_ParaInfo.FlowVelX.Kp,paraToPC);
+    FloatToUnsignedchar(7,PID_ParaInfo.FlowVelX.Ki,paraToPC);
+    FloatToUnsignedchar(11,PID_ParaInfo.FlowVelX.Kd,paraToPC);
+    scib_msg(paraToPC);
+
+    paraToPC[2]=0X11;
+    FloatToUnsignedchar(3,PID_ParaInfo.FlowVelY.Kp,paraToPC);
+    FloatToUnsignedchar(7,PID_ParaInfo.FlowVelY.Ki,paraToPC);
+    FloatToUnsignedchar(11,PID_ParaInfo.FlowVelY.Kd,paraToPC);
+    scib_msg(paraToPC);
+
+    paraToPC[2]=0X12;
+    FloatToUnsignedchar(3,PID_ParaInfo.AccZ.Kp,paraToPC);
+    FloatToUnsignedchar(7,PID_ParaInfo.AccZ.Ki,paraToPC);
+    FloatToUnsignedchar(11,PID_ParaInfo.AccZ.Kd,paraToPC);
+    scib_msg(paraToPC);
 }
 
+/*上传磁校准数据*/
+void sendRTOffset(void)
+{
+    int temp;
+    unsigned char dataToPC[16];
 
+    dataToPC[0]=0X55;
+    dataToPC[1]=0XAA;
+    dataToPC[2]=0X25;
+
+    temp = Mag_minx;
+    dataToPC[3] = temp & 0x00ff ;
+    dataToPC[4] = (temp  & 0xff00 ) >>8 ;
+
+    temp = Mag_maxx;
+    dataToPC[5] = temp & 0x00ff;
+    dataToPC[6] = (temp  & 0xff00 ) >>8;
+
+    temp = Mag_miny;
+    dataToPC[7] =  temp & 0x00ff;
+    dataToPC[8] = (temp  & 0xff00 ) >>8;
+
+    temp = Mag_maxy;
+    dataToPC[9] =  temp & 0x00ff;
+    dataToPC[10] = (temp  & 0xff00 ) >>8;
+
+    temp = Mag_minz;
+    dataToPC[11] =  temp & 0x00ff;
+    dataToPC[12] = (temp  & 0xff00 ) >>8;
+
+    temp = Mag_maxz;
+    dataToPC[13] =  temp & 0x00ff;
+    dataToPC[14] = (temp  & 0xff00 ) >>8;
+
+    dataToPC[15] = 0xAA;
+    scib_msg(dataToPC);
+}
 
 
 
